@@ -1,0 +1,5 @@
+﻿*.docx
+*.pptx
+*.xlsx
+~$*
+Thumbs.db

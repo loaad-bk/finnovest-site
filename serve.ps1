@@ -98,6 +98,38 @@ $injected = @'
     Array.prototype.forEach.call(clone.querySelectorAll('.rev.in'), function(el){ el.classList.remove('in'); });
     var cb=clone.querySelector('body'); if(cb) cb.className='';
     clone.classList.remove('js');
+
+    /* Extensions also inject <script src="chrome-extension://..."> into the
+       live DOM. Serializing those publishes a dead reference, leaks the
+       extension id, and - because the injection happens again on every load -
+       accumulates one more copy per save. */
+    Array.prototype.forEach.call(
+      clone.querySelectorAll('script[src^="chrome-extension://"], link[href^="chrome-extension://"], script[src^="moz-extension://"], [id^="PING_"]'),
+      function(el){ el.remove(); });
+
+    /* class="" left behind by removing .dirty is pure diff noise. Done before
+       the chrome reset below, which deliberately restores class="". */
+    Array.prototype.forEach.call(clone.querySelectorAll('[class=""]'), function(el){ el.removeAttribute('class'); });
+
+    /* Reset the editor chrome to its idle state. Without this the saved file
+       reopens with the edit bar already showing and the toggle reading
+       "Editing", because the DOM is cloned while edit mode is active. */
+    var cbar = clone.querySelector('#edit-bar');    if(cbar) cbar.className = '';
+    var ctog = clone.querySelector('#edit-toggle'); if(ctog){ ctog.className = ''; ctog.textContent = 'Edit page'; }
+    var ccnt = clone.querySelector('#ed-count');    if(ccnt) ccnt.textContent = 'No changes yet';
+
+    /* Browser extensions decorate the live DOM (form fillers add
+       fdprocessedid, password managers add their own attributes). Those are
+       runtime artefacts and must never be serialized into the repo. */
+    Array.prototype.forEach.call(clone.querySelectorAll('*'), function(el){
+      for(var i=el.attributes.length-1; i>=0; i--){
+        var n = el.attributes[i].name;
+        if(/^(fdprocessedid|data-lastpass|data-lp-|data-1p|data-bw|data-dashlane|data-form-type)/.test(n)){
+          el.removeAttribute(n);
+        }
+      }
+    });
+
     return '<!DOCTYPE html>\n' + clone.outerHTML;
   }
 
@@ -267,6 +299,16 @@ function Test-Payload([string]$html) {
   if ($html -notmatch 'Finnovest')     { return 'Payload does not mention Finnovest - refusing.' }
   if ($html -notmatch 'id="edit-bar"') { return 'Payload has no edit bar - would become uneditable.' }
   if ($html -match 'data-injected')    { return 'Payload still contains injected markup - refusing.' }
+
+  # Backstop against browser-extension contamination. These artefacts are
+  # re-injected on every page load, so a client-side miss accumulates one more
+  # copy per save and has already reached the published site twice. Refusing is
+  # better than silently publishing them; if a new extension appears, add it to
+  # the strip list in the injected serialize().
+  if ($html -match 'chrome-extension://|moz-extension://') { return 'Payload contains browser-extension markup (extension URL) - refusing.' }
+  if ($html -match 'id="PING_')                            { return 'Payload contains browser-extension markup (PING) - refusing.' }
+  if ($html -match 'fdprocessedid=')                       { return 'Payload contains browser-extension markup (fdprocessedid) - refusing.' }
+
   return $null
 }
 

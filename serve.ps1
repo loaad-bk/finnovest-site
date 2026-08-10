@@ -226,13 +226,27 @@ function Invoke-Commit([string]$html, [string]$message) {
 }
 
 # ---------------------------------------------------------------- serve
-$listener = New-Object System.Net.Sockets.TcpListener([System.Net.IPAddress]::Loopback, $Port)
-$listener.Start()
-Log "Serving $repo on http://localhost:$Port/  (branch $Branch$(if($NoPush){', no push'}))" 'Green'
+# Bind BOTH loopback stacks. "localhost" resolves to ::1 before 127.0.0.1 on
+# Windows, so an IPv4-only listener makes clients race and intermittently abort.
+# Loopback addresses only - never IPv6Any/IPv4Any, which would expose the
+# commit endpoint to the network.
+$listeners = @()
+foreach ($ip in @([System.Net.IPAddress]::Loopback, [System.Net.IPAddress]::IPv6Loopback)) {
+  try {
+    $l = New-Object System.Net.Sockets.TcpListener($ip, $Port)
+    $l.Start()
+    $listeners += $l
+  } catch { Log "could not bind $($ip): $($_.Exception.Message)" 'Yellow' }
+}
+if (-not $listeners.Count) { Log "no loopback address could be bound on $Port" 'Red'; exit 1 }
+Log "Serving $repo on http://localhost:$Port/  ($($listeners.Count) stack(s), branch $Branch$(if($NoPush){', no push'}))" 'Green'
 
 try {
   while ($true) {
-    $client = $listener.AcceptTcpClient()
+    $ready = $null
+    foreach ($l in $listeners) { if ($l.Pending()) { $ready = $l; break } }
+    if (-not $ready) { Start-Sleep -Milliseconds 40; continue }
+    $client = $ready.AcceptTcpClient()
     $stream = $client.GetStream()
     try {
       $req = Read-Request $stream
@@ -286,4 +300,7 @@ try {
     finally { $stream.Dispose(); $client.Close() }
   }
 }
-finally { $listener.Stop(); Log 'Stopped.' 'DarkGray' }
+finally {
+  foreach ($l in $listeners) { try { $l.Stop() } catch {} }
+  Log 'Stopped.' 'DarkGray'
+}

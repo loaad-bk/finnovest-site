@@ -202,6 +202,12 @@ function Invoke-Commit([string]$html, [string]$message) {
   if ($html -match 'data-injected')    { return @{ error = 'Payload still contains injected markup - refusing.' } }
 
   Push-Location $repo
+  # git writes normal progress to stderr. Under $ErrorActionPreference = 'Stop'
+  # that surfaces as a terminating NativeCommandError, which previously made a
+  # SUCCESSFUL push get reported to the browser as a failure. Never redirect
+  # native stderr with 2>&1 here - trust $LASTEXITCODE instead.
+  $prevEAP = $ErrorActionPreference
+  $ErrorActionPreference = 'Continue'
   try {
     $utf8 = New-Object System.Text.UTF8Encoding($false)
     [System.IO.File]::WriteAllText($target, $html, $utf8)
@@ -209,20 +215,22 @@ function Invoke-Commit([string]$html, [string]$message) {
     $changed = git status --porcelain -- index.html
     if (-not $changed) { return @{ nochange = $true } }
 
-    git add index.html                        | Out-Null
-    git commit -m $message                    | Out-Null
+    git add index.html | Out-Null
+    if ($LASTEXITCODE -ne 0) { return @{ error = 'git add failed' } }
+
+    git commit -m $message | Out-Null
     if ($LASTEXITCODE -ne 0) { return @{ error = 'git commit failed' } }
     $sha = (git rev-parse --short HEAD).Trim()
 
     $pushed = $false
     if (-not $NoPush) {
-      git push origin $Branch 2>&1 | Out-Null
+      git push origin $Branch | Out-Null
       $pushed = ($LASTEXITCODE -eq 0)
     }
-    return @{ sha = $sha; pushed = $pushed }
+    return @{ sha = $sha; pushed = $pushed; committed = $true }
   }
   catch  { return @{ error = $_.Exception.Message } }
-  finally { Pop-Location }
+  finally { $ErrorActionPreference = $prevEAP; Pop-Location }
 }
 
 # ---------------------------------------------------------------- serve

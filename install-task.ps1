@@ -46,7 +46,12 @@ if (-not (Test-Path $script)) { throw "serve.ps1 not found next to this script."
 $action = New-ScheduledTaskAction -Execute 'powershell.exe' `
   -Argument ('-ExecutionPolicy Bypass -NoProfile -WindowStyle Hidden -File "{0}" -Quiet' -f $script)
 
-$tLogon  = New-ScheduledTaskTrigger -AtLogOn -User $env:USERNAME
+# Both the logon trigger and the principal need a FULLY QUALIFIED account name
+# (DOMAIN\user). A bare username makes Register-ScheduledTask fail with
+# "The parameter is incorrect. (7,23):UserId:<name>".
+$me = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
+
+$tLogon  = New-ScheduledTaskTrigger -AtLogOn -User $me
 $tRepeat = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1) `
              -RepetitionInterval (New-TimeSpan -Minutes 5) `
              -RepetitionDuration (New-TimeSpan -Days 3650)
@@ -54,8 +59,7 @@ $tRepeat = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1) `
 $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries `
               -StartWhenAvailable -MultipleInstances IgnoreNew -ExecutionTimeLimit ([TimeSpan]::Zero)
 
-$principal = New-ScheduledTaskPrincipal -UserId "$env:USERDOMAIN\$env:USERNAME" `
-               -LogonType Interactive -RunLevel Limited
+$principal = New-ScheduledTaskPrincipal -UserId $me -LogonType Interactive -RunLevel Limited
 
 Register-ScheduledTask -TaskName $TaskName -Action $action -Trigger $tLogon,$tRepeat `
   -Settings $settings -Principal $principal -Force | Out-Null

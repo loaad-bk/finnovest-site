@@ -101,6 +101,68 @@ $injected = @'
     return '<!DOCTYPE html>\n' + clone.outerHTML;
   }
 
+  /* ---------------- autosave to disk (no git) ---------------- */
+  var SAVE_DELAY = 800;
+  var saveTimer=null, saving=false, queued=false, composing=false;
+  var lastSaved = null;   /* payload already on disk - skips redundant writes */
+
+  function stamp(){
+    var d=new Date(), p=function(n){ return (n<10?'0':'')+n; };
+    return p(d.getHours())+':'+p(d.getMinutes())+':'+p(d.getSeconds());
+  }
+
+  function doSave(){
+    if(composing){ schedule(); return; }        /* mid-IME: wait for compositionend */
+    var html = serialize();
+    if(html === lastSaved) return;              /* nothing actually changed */
+    if(saving){ queued = true; return; }        /* coalesce into one trailing save */
+
+    saving = true;
+    msg.textContent = 'Saving...';
+    fetch('/save', {
+      method:'POST',
+      headers:{'Content-Type':'text/plain;charset=utf-8','X-Edit-Token':TOKEN},
+      body: html
+    })
+    .then(function(r){ return r.json().then(function(j){ return {ok:r.ok, j:j}; }); })
+    .then(function(res){
+      if(!res.ok) throw new Error(res.j.error || 'save failed');
+      lastSaved = html;
+      msg.textContent = 'Saved to disk ' + stamp();
+    })
+    .catch(function(err){ msg.textContent = 'NOT saved: ' + err.message; })
+    .then(function(){
+      saving = false;
+      if(queued){ queued = false; schedule(); }
+    });
+  }
+
+  function schedule(){ clearTimeout(saveTimer); saveTimer = setTimeout(doSave, SAVE_DELAY); }
+
+  document.addEventListener('input', function(e){
+    var el = e.target.closest && e.target.closest('[data-edit]');
+    if(!el) return;
+    msg.textContent = 'Editing...';
+    schedule();
+  });
+
+  /* Hebrew and other IME input arrives as composition events - saving mid
+     composition would persist a half-formed word. */
+  document.addEventListener('compositionstart', function(){ composing = true; });
+  document.addEventListener('compositionend',   function(){ composing = false; schedule(); });
+
+  /* Leaving a block is a natural commit point - save straight away. */
+  document.addEventListener('blur', function(e){
+    var el = e.target.closest && e.target.closest('[data-edit]');
+    if(el){ clearTimeout(saveTimer); doSave(); }
+  }, true);
+
+  /* "Revert all" restores innerHTML without firing input, so the disk copy
+     would otherwise keep the edited text. */
+  var rev = document.getElementById('ed-revert');
+  if(rev) rev.addEventListener('click', function(){ setTimeout(schedule, 50); });
+
+  /* ---------------- commit ---------------- */
   var busy=false;
   btn.addEventListener('click', function(e){
     e.stopPropagation();
@@ -109,15 +171,18 @@ $injected = @'
     if(m === null) return;
     if(!m.trim()) m = 'Copy edit via in-page editor';
 
+    clearTimeout(saveTimer);
     busy=true; btn.disabled=true; msg.textContent='Committing...';
+    var html = serialize();
     fetch('/commit', {
       method:'POST',
       headers:{'Content-Type':'text/plain;charset=utf-8','X-Edit-Token':TOKEN,'X-Commit-Message':encodeURIComponent(m)},
-      body: serialize()
+      body: html
     })
     .then(function(r){ return r.json().then(function(j){ return {ok:r.ok, j:j}; }); })
     .then(function(res){
       if(!res.ok) throw new Error(res.j.error || 'commit failed');
+      lastSaved = html;   /* /commit writes the same bytes to disk */
       msg.textContent = res.j.nochange ? 'No change to commit.'
                       : ('Committed ' + res.j.sha + (res.j.pushed ? ' - pushed' : ' - not pushed'));
     })
@@ -195,11 +260,24 @@ function Send-Response($stream, [int]$status, [string]$type, [byte[]]$body) {
 function Json([hashtable]$o) { [Text.Encoding]::UTF8.GetBytes(($o | ConvertTo-Json -Compress)) }
 
 # ---------------------------------------------------------------- commit handler
+# Shared guards. Autosave writes far more often than commit, so a bad payload
+# must never be able to land on disk through the cheaper path.
+function Test-Payload([string]$html) {
+  if ($html.Length -lt 100000)         { return "Payload only $($html.Length) chars - refusing to write." }
+  if ($html -notmatch 'Finnovest')     { return 'Payload does not mention Finnovest - refusing.' }
+  if ($html -notmatch 'id="edit-bar"') { return 'Payload has no edit bar - would become uneditable.' }
+  if ($html -match 'data-injected')    { return 'Payload still contains injected markup - refusing.' }
+  return $null
+}
+
+function Save-Payload([string]$html) {
+  $utf8 = New-Object System.Text.UTF8Encoding($false)
+  [System.IO.File]::WriteAllText($target, $html, $utf8)
+}
+
 function Invoke-Commit([string]$html, [string]$message) {
-  if ($html.Length -lt 100000)         { return @{ error = "Payload only $($html.Length) chars - refusing to write." } }
-  if ($html -notmatch 'Finnovest')     { return @{ error = 'Payload does not mention Finnovest - refusing.' } }
-  if ($html -notmatch 'id="edit-bar"') { return @{ error = 'Payload has no edit bar - would become uneditable.' } }
-  if ($html -match 'data-injected')    { return @{ error = 'Payload still contains injected markup - refusing.' } }
+  $bad = Test-Payload $html
+  if ($bad) { return @{ error = $bad } }
 
   Push-Location $repo
   # git writes normal progress to stderr. Under $ErrorActionPreference = 'Stop'
@@ -209,8 +287,7 @@ function Invoke-Commit([string]$html, [string]$message) {
   $prevEAP = $ErrorActionPreference
   $ErrorActionPreference = 'Continue'
   try {
-    $utf8 = New-Object System.Text.UTF8Encoding($false)
-    [System.IO.File]::WriteAllText($target, $html, $utf8)
+    Save-Payload $html
 
     $changed = git status --porcelain -- index.html
     if (-not $changed) { return @{ nochange = $true } }
@@ -273,6 +350,26 @@ try {
           else                            { $html = $html + $injected }
           Send-Response $stream 200 'text/html; charset=utf-8' ([Text.Encoding]::UTF8.GetBytes($html))
           Log "GET / -> $([math]::Round($html.Length/1KB,1)) KB"
+          break
+        }
+
+        '^POST /save$' {
+          if ($req.Headers['x-edit-token'] -ne $TOKEN) {
+            Send-Response $stream 403 'application/json' (Json @{ error = 'bad token' })
+            Log "POST /save REJECTED - bad token" 'Yellow'
+            break
+          }
+          $html = [Text.Encoding]::UTF8.GetString($req.Body)
+          $bad  = Test-Payload $html
+          if ($bad) {
+            Send-Response $stream 400 'application/json' (Json @{ error = $bad })
+            Log "POST /save REFUSED - $bad" 'Yellow'
+          } else {
+            Save-Payload $html
+            Send-Response $stream 200 'application/json' (Json @{ saved = $true; bytes = $req.Body.Length })
+            # Successful saves are deliberately not logged - autosave fires on
+            # every typing pause and would flood serve.log.
+          }
           break
         }
 

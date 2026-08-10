@@ -134,9 +134,10 @@ $injected = @'
   }
 
   /* ---------------- autosave to disk (no git) ---------------- */
-  var SAVE_DELAY = 800;
-  var saveTimer=null, saving=false, queued=false, composing=false;
+  var SAVE_DELAY = 800, POLL_DELAY = 1000;
+  var saveTimer=null, saving=false, queued=false, composing=false, pendingSave=false;
   var lastSaved = null;   /* payload already on disk - skips redundant writes */
+  var knownV = null;      /* fingerprint of index.html as this page last knew it */
 
   function stamp(){
     var d=new Date(), p=function(n){ return (n<10?'0':'')+n; };
@@ -146,7 +147,7 @@ $injected = @'
   function doSave(){
     if(composing){ schedule(); return; }        /* mid-IME: wait for compositionend */
     var html = serialize();
-    if(html === lastSaved) return;              /* nothing actually changed */
+    if(html === lastSaved){ pendingSave = false; return; }   /* nothing changed */
     if(saving){ queued = true; return; }        /* coalesce into one trailing save */
 
     saving = true;
@@ -160,16 +161,23 @@ $injected = @'
     .then(function(res){
       if(!res.ok) throw new Error(res.j.error || 'save failed');
       lastSaved = html;
+      knownV = res.j.v || knownV;   /* our own write must not look external */
       msg.textContent = 'Saved to disk ' + stamp();
     })
     .catch(function(err){ msg.textContent = 'NOT saved: ' + err.message; })
     .then(function(){
       saving = false;
       if(queued){ queued = false; schedule(); }
+      else if(lastSaved === html) pendingSave = false;  /* failed saves stay pending,
+                                                           which blocks auto-reload */
     });
   }
 
-  function schedule(){ clearTimeout(saveTimer); saveTimer = setTimeout(doSave, SAVE_DELAY); }
+  function schedule(){
+    pendingSave = true;
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(doSave, SAVE_DELAY);
+  }
 
   document.addEventListener('input', function(e){
     var el = e.target.closest && e.target.closest('[data-edit]');
@@ -194,6 +202,51 @@ $injected = @'
   var rev = document.getElementById('ed-revert');
   if(rev) rev.addEventListener('click', function(){ setTimeout(schedule, 50); });
 
+  /* ---------------- live reload on external change ---------------- */
+  /* Picks up edits made outside this page - by Claude, git checkout, an
+     editor. Polls a cheap fingerprint rather than holding a connection open:
+     the server handles one request at a time, so an SSE stream would block it. */
+  fetch('/version').then(function(r){ return r.json(); })
+                   .then(function(j){ knownV = j.v; })
+                   .catch(function(){});
+
+  setInterval(function(){
+    /* Never reload over unsaved work - a failed or in-flight save keeps
+       pendingSave true, so the page waits rather than discarding edits. */
+    if(saving || queued || pendingSave) return;
+
+    fetch('/version').then(function(r){ return r.json(); }).then(function(j){
+      if(!j.v) return;
+      if(!knownV){ knownV = j.v; return; }
+      if(j.v === knownV) return;
+
+      knownV = j.v;
+      msg.textContent = 'Changed on disk - reloading...';
+      try{
+        sessionStorage.setItem('fnv_scroll', String(window.scrollY));
+        if(bar.classList.contains('on')) sessionStorage.setItem('fnv_editing','1');
+      }catch(e){}
+      setTimeout(function(){ location.reload(); }, 120);
+    }).catch(function(){});
+  }, POLL_DELAY);
+
+  /* Restore scroll position and edit mode after a live reload, so an external
+     change does not knock you back to the top of page one. */
+  try{
+    var sy = sessionStorage.getItem('fnv_scroll');
+    if(sy !== null){
+      sessionStorage.removeItem('fnv_scroll');
+      setTimeout(function(){ window.scrollTo(0, parseInt(sy,10)||0); }, 60);
+    }
+    if(sessionStorage.getItem('fnv_editing')){
+      sessionStorage.removeItem('fnv_editing');
+      setTimeout(function(){
+        var tg = document.getElementById('edit-toggle');
+        if(tg && !bar.classList.contains('on')) tg.click();
+      }, 80);
+    }
+  }catch(e){}
+
   /* ---------------- commit ---------------- */
   var busy=false;
   btn.addEventListener('click', function(e){
@@ -215,6 +268,8 @@ $injected = @'
     .then(function(res){
       if(!res.ok) throw new Error(res.j.error || 'commit failed');
       lastSaved = html;   /* /commit writes the same bytes to disk */
+      knownV = res.j.v || knownV;
+      pendingSave = false;
       msg.textContent = res.j.nochange ? 'No change to commit.'
                       : ('Committed ' + res.j.sha + (res.j.pushed ? ' - pushed' : ' - not pushed'));
     })
@@ -317,6 +372,13 @@ function Save-Payload([string]$html) {
   [System.IO.File]::WriteAllText($target, $html, $utf8)
 }
 
+# Cheap fingerprint of index.html. The page polls this to notice edits made
+# outside the browser (by Claude, git checkout, an editor) and reloads itself.
+function Get-Version {
+  try { $fi = Get-Item $target; return "$($fi.LastWriteTimeUtc.Ticks)-$($fi.Length)" }
+  catch { return '' }
+}
+
 function Invoke-Commit([string]$html, [string]$message) {
   $bad = Test-Payload $html
   if ($bad) { return @{ error = $bad } }
@@ -386,6 +448,12 @@ try {
           break
         }
 
+        '^GET /version$' {
+          Send-Response $stream 200 'application/json' (Json @{ v = (Get-Version) })
+          # Not logged: polled once a second per open tab.
+          break
+        }
+
         '^GET /(index\.html)?$' {
           $html = Get-Content $target -Raw -Encoding UTF8
           if ($html -match '(?i)</body>') { $html = $html -replace '(?i)</body>', ($injected + "`n</body>") }
@@ -408,7 +476,7 @@ try {
             Log "POST /save REFUSED - $bad" 'Yellow'
           } else {
             Save-Payload $html
-            Send-Response $stream 200 'application/json' (Json @{ saved = $true; bytes = $req.Body.Length })
+            Send-Response $stream 200 'application/json' (Json @{ saved = $true; bytes = $req.Body.Length; v = (Get-Version) })
             # Successful saves are deliberately not logged - autosave fires on
             # every typing pause and would flood serve.log.
           }
@@ -431,6 +499,7 @@ try {
             Send-Response $stream 400 'application/json' (Json $res)
             Log "POST /commit FAILED - $($res.error)" 'Red'
           } else {
+            $res.v = Get-Version   # so the page does not treat its own write as external
             Send-Response $stream 200 'application/json' (Json $res)
             if ($res.nochange) { Log "POST /commit - no change" 'DarkGray' }
             else { Log "POST /commit -> $($res.sha) pushed=$($res.pushed) : $msg" 'Green' }

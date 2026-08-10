@@ -1954,6 +1954,16 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
 <script>
 /* ================= EDIT MODE ================= */
 (function(){
+  /* Editing is local-only. On the published site the editor never initialises:
+     the toggle and bar are removed from the DOM and no listeners are bound. */
+  var IS_LOCAL = location.protocol === 'file:' ||
+                 /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+  if(!IS_LOCAL){
+    var t = document.getElementById('edit-toggle'); if(t) t.remove();
+    var b = document.getElementById('edit-bar');    if(b) b.remove();
+    return;
+  }
+
   var SEL = '#app h1, #app h2, #app h3, #app h4, #app p, #app cite, #app li, '
           + '#app .eyebrow, #app .tag, #app .k, #app .nm, #app .sv, #app .t, #app .d, #app .l, #app .n, '
           + '#app .meta, #app .chip, #app .lbl, #app .advice-body, #app .advice-why, #app .who, #app .want, '

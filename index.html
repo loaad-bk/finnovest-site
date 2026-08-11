@@ -119,71 +119,89 @@ a{color:inherit;text-decoration:none}
    different aspect ratios (FIBI wide and short, Discount tall and square), so
    a uniform height would make FIBI enormous and Discount tiny. These values
    balance them optically. Near-full opacity - .82 left them muddy on navy. */
-.hp-cell .lg{opacity:.96}
-.hp-cell .lg-fibi{height:32px;width:126px}
-.hp-cell .lg-excellence{height:39px;width:157px}
-.hp-cell .lg-discount{height:57px;width:92px}
+/* Monochrome marks. The row previously looked unbalanced because the heights
+   diverged badly - Discount is a stacked wordmark and was rendering 57px tall
+   against FIBI's 32px, so it dominated the row. These bring the cap heights
+   closer while keeping each asset's true aspect ratio (420x107, 420x104,
+   520x327), so nothing is stretched. */
+.hp-cell .lg{opacity:.95}
+.hp-cell .lg-fibi{height:34px;width:133px}
+.hp-cell .lg-excellence{height:34px;width:137px}
+.hp-cell .lg-discount{height:46px;width:73px}
 .hp-cap{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate-dim);margin-top:11px}
 .hp-logo{display:flex;align-items:center;gap:7px;font-family:var(--display);font-weight:600;font-size:.87rem;color:rgba(255,255,255,.74);white-space:nowrap}
 .hp-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:start;margin-top:20px}
 .hp-stat .n{font-family:var(--display);font-weight:800;font-size:clamp(1.55rem,2.6vw,2.25rem);letter-spacing:-.04em;line-height:1}
 .hp-stat .l{font-size:.72rem;color:var(--slate-dim);margin-top:7px;line-height:1.4;font-weight:300}
 .hp-foot{display:flex;justify-content:center;align-items:center;gap:14px 18px;flex-wrap:wrap;margin-top:18px}
-.hp-note{font-size:.78rem;color:var(--slate-dim);font-weight:300}
+.hp-note{font-size:.78rem;color:var(--slate-dim);font-weight:300;margin-top:10px}
+/* Separate credential, not a footnote. "Live production figures" qualifies the
+   numbers above it; IIA recognition is independent third-party validation of
+   the technology, so it gets its own badge rather than sharing a sentence. */
+.hp-iia{display:inline-flex;align-items:center;gap:10px;margin-top:14px;padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.025)}
+.hp-iia-txt{font-size:.74rem;color:var(--slate-dim);font-weight:300;line-height:1.35;text-align:left}
+.hp-iia-txt b{font-family:var(--display);font-weight:600;color:rgba(255,255,255,.82)}
+/* Logo slot - stays collapsed until an IIA asset is supplied, so nothing
+   renders as a broken image in the meantime. */
+.hp-iia-logo{display:none;flex:none;height:26px;width:26px;background-repeat:no-repeat;background-position:center;background-size:contain}
 .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:clamp(36px,4.4vw,64px);align-items:center}
 .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:2rem}
-/* Keep the proof strip (logos + numbers) above the fold on laptop-height
-   screens. The binding constraint is the stage, which is content-driven at
-   ~740px, plus a headline that wraps to four lines - so this trades whitespace
-   and one headline step, never the stat numbers or logos. */
-/* The stage is content-driven at ~740px and is what pushes the proof strip off
-   screen, so it is scaled as a whole rather than restyled piece by piece -
-   the mockup keeps its exact proportions, it just occupies less height.
-   The left column is stepped down in parallel so neither column becomes the
-   new constraint. */
+/* Keep the whole proof strip above the fold on laptop-height screens.
+   The binding constraint is the stage: it is content-driven at ~950px
+   unscaled, so it is scaled as a whole with zoom rather than restyled piece by
+   piece, and the mockup keeps its exact proportions. The left column steps
+   down in parallel so it does not become the new constraint.
+
+   One block per tier, each declaring the same properties in the same order.
+   Earlier revisions accumulated duplicate and stale rules across tiers - a
+   leftover .lg-fibi height silently overrode the rebalanced logo sizes, and
+   zoom ran backwards between tiers. Keep each property declared once. */
 @media (max-height:1080px){
   .hero{padding:clamp(22px,2.4vw,34px) 0 clamp(16px,2vw,26px)}
   .hero h1{font-size:clamp(2.15rem,3.35vw,3.05rem)}   /* four lines -> three */
   .lede{line-height:1.58}
   .hero-cta{margin-top:1.3rem}
-  .stage{zoom:.88;padding:14px 0 20px;gap:9px}
-  .hero-proof{margin-top:18px;padding-top:16px}
+  .stage{zoom:.86;padding:14px 0 20px;gap:9px}
+  .hero-proof{margin-top:16px;padding-top:14px}
   .hp-head{margin-bottom:12px}
-  .hp-cell{min-height:40px}
-  .hp-stats{gap:14px;margin-top:14px}
-  .hp-foot{margin-top:12px}
+  .hp-cell{min-height:46px}
+  .hp-stats{gap:16px;margin-top:14px}
+  .hp-cap{margin-top:9px}
+  .hp-iia{margin-top:11px}
 }
 @media (max-height:980px){
+  .hero{padding:clamp(14px,1.6vw,20px) 0 clamp(8px,1.2vw,14px)}
   .hero h1{font-size:clamp(2.05rem,3.1vw,2.8rem)}
   .lede{font-size:clamp(.95rem,1.18vw,1.05rem);line-height:1.5}
-  .stage{zoom:.74}
-  .hero{padding:clamp(16px,1.8vw,24px) 0 clamp(12px,1.5vw,18px)}
   .hero-cta{margin-top:1.1rem}
   .hero-grid{gap:clamp(28px,3.2vw,48px)}
-  .hero-proof{margin-top:13px;padding-top:12px}
-  .hp-cap{margin-top:8px}
-  .hp-foot{margin-top:9px}
-  .hp-head{margin-bottom:10px}
-  .hp-cell{min-height:48px}
-  .hp-cell .lg-fibi{height:28px;width:110px}
-  .hp-cell .lg-excellence{height:34px;width:137px}
-  .hp-cell .lg-discount{height:50px;width:80px}
-  .hp-stats{margin-top:12px}
-  .hp-foot{margin-top:10px}
+  .stage{zoom:.60;padding:10px 0 14px;gap:7px}
+  .hero-proof{margin-top:10px;padding-top:10px}
+  .hp-head{margin-bottom:9px}
+  .hp-cell{min-height:42px}
+  .hp-cell .lg-fibi{height:30px;width:118px}
+  .hp-cell .lg-excellence{height:30px;width:121px}
+  .hp-cell .lg-discount{height:41px;width:65px}
+  .hp-stats{gap:14px;margin-top:10px}
+  .hp-cap{margin-top:6px}
+  .hp-iia{margin-top:8px;padding:4px 11px}
 }
 @media (max-height:880px){
+  .hero{padding:clamp(10px,1.2vw,14px) 0 clamp(6px,1vw,10px)}
   .hero h1{font-size:clamp(1.95rem,2.9vw,2.55rem)}
-  .stage{zoom:.72;padding:10px 0 14px;gap:7px}
-  .hero-cta{margin-top:1.1rem}
-  .hero-proof{margin-top:12px;padding-top:12px}
-  .hp-head{margin-bottom:8px}
-  .hp-cell{min-height:42px}
-  .hp-cell .lg-fibi{height:24px;width:94px}
-  .hp-cell .lg-excellence{height:30px;width:121px}
-  .hp-cell .lg-discount{height:44px;width:70px}
-  .hp-cap{margin-top:8px}
-  .hp-stats{margin-top:10px}
-  .hp-foot{margin-top:8px}
+  .lede{font-size:clamp(.92rem,1.1vw,1rem);line-height:1.46}
+  .hero-cta{margin-top:.9rem}
+  .hero-grid{gap:clamp(22px,2.6vw,38px)}
+  .stage{zoom:.52;padding:8px 0 12px;gap:6px}
+  .hero-proof{margin-top:8px;padding-top:8px}
+  .hp-head{margin-bottom:7px}
+  .hp-cell{min-height:36px}
+  .hp-cell .lg-fibi{height:26px;width:102px}
+  .hp-cell .lg-excellence{height:26px;width:105px}
+  .hp-cell .lg-discount{height:35px;width:56px}
+  .hp-stats{gap:12px;margin-top:8px}
+  .hp-cap{margin-top:5px}
+  .hp-iia{margin-top:6px;padding:3px 10px}
 }
 
 .stage{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:clamp(320px,42vh,452px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;padding:24px 0 40px;border:1px solid var(--line);
@@ -645,9 +663,9 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
       <div class="hero-proof">
         <div class="hp-head">Running today at</div>
         <div class="hp-logos">
-          <div class="hp-cell"><span class="lg lg-lg lg-fibi" role="img" aria-label="FIBI Bank"></span></div>
-          <div class="hp-cell"><span class="lg lg-lg lg-excellence" role="img" aria-label="Excellence Trade · Phoenix Investment House"></span></div>
-          <div class="hp-cell"><span class="lg lg-lg lg-discount" role="img" aria-label="Israel Discount Bank"></span></div>
+          <div class="hp-cell"><span class="lg lg-fibi" role="img" aria-label="FIBI Bank"></span></div>
+          <div class="hp-cell"><span class="lg lg-excellence" role="img" aria-label="Excellence Trade · Phoenix Investment House"></span></div>
+          <div class="hp-cell"><span class="lg lg-discount" role="img" aria-label="Israel Discount Bank"></span></div>
         </div>
         <div class="hp-stats">
           <div class="hp-stat"><div class="n">$19B</div><div class="l">Assets under advisory</div></div>
@@ -656,6 +674,10 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
           <div class="hp-stat"><div class="n mint">ZERO</div><div class="l">Compliance errors</div></div>
         </div>
         <div class="hp-cap">Live production figures</div>
+        <div class="hp-iia">
+          <span class="hp-iia-logo" role="img" aria-label="Israel Innovation Authority"></span>
+          <span class="hp-iia-txt"><b>Israel Innovation Authority</b> · two components assessed as breakthrough technology</span>
+        </div>
       </div>
     </div>
   </div>
@@ -2033,7 +2055,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
           + '#app .eyebrow, #app .tag, #app .k, #app .nm, #app .sv, #app .t, #app .d, #app .l, #app .n, '
           + '#app .meta, #app .chip, #app .lbl, #app .advice-body, #app .advice-why, #app .who, #app .want, '
           + '#app .prod-depth, #app .case-flag, #app .p-note, #app .p-soon, #app .rail-h, #app .p-act, '
-          + '#app .hp-lbl, #app .hp-head, #app .hp-cap, #app .hp-note, #app .sn, #app .desk-v, #app .desk-s, #app .pgroup-sub, '
+          + '#app .hp-lbl, #app .hp-head, #app .hp-cap, #app .hp-note, #app .hp-iia-txt, #app .sn, #app .desk-v, #app .desk-s, #app .pgroup-sub, '
           + '#app .bundle-h, #app .stepline, #app .advice-who, #app .advice-from, #app .advice-when, #app .stage-cap, '
           + 'footer h5, footer .small, footer a, footer .foot-base span';
   var nodes=[], original=new Map(), editing=false;

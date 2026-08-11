@@ -107,6 +107,18 @@ a{color:inherit;text-decoration:none}
 .rail .d{font-size:.8rem;color:var(--slate-dim);font-weight:300;line-height:1.4;margin-top:2px}
 .rail .go{margin-left:auto;color:var(--mint);opacity:0;transition:opacity .18s,transform .18s;flex:none}
 .rail a:hover .go{opacity:1;transform:translateX(3px)}
+/* Find your fit: two questions, then a result and a lead capture. Steps are
+   siblings and only .on is shown, so the rail never changes height abruptly. */
+.fit-step{display:none}
+.fit-step.on{display:block}
+.fit-q{font-family:var(--display);font-weight:600;font-size:.95rem;letter-spacing:-.01em;color:#fff;padding:15px 22px 12px;border-top:1px solid var(--line);line-height:1.35}
+.fit-why{font-size:.84rem;color:var(--slate);font-weight:300;line-height:1.6;padding:0 22px;margin:0}
+.fit-form{padding:15px 22px 4px;display:grid;gap:9px}
+.fit-form input{padding:11px 13px;font-size:.88rem}
+.fit-sent{font-size:.79rem;color:var(--mint);line-height:1.5}
+.fit-sent.err{color:#FF8F8F}
+.fit-back{background:none;border:0;color:var(--slate-soft);font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;cursor:pointer;padding:14px 22px 16px;transition:color .18s}
+.fit-back:hover{color:#fff}
 .prod{scroll-margin-top:92px}
 .hero-proof{margin-top:clamp(26px,3.2vw,40px);padding-top:24px;border-top:1px solid var(--line);text-align:center}
 /* "Running today at" is a lead-in phrase, not a statement, so it takes the
@@ -569,8 +581,8 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
     </button>
     <div class="nav-links" id="navlinks">
       <a data-go="advisedtrading">Advised trading</a>
-      <a data-go="products">Products</a>
-      <a data-go="platform" class="on">Platform</a>
+      <a data-go="products" class="on">Products</a>
+      <a data-go="platform">Platform</a>
       <a data-go="advisors">For advisors</a>
       <a data-go="cases">Case studies</a>
       <a data-go="press">Press</a>
@@ -836,11 +848,35 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
           <h1 style="font-size:clamp(1.95rem,3.6vw,3rem)">One platform. Three ways to fit it in.</h1>
           <p class="lede" style="margin-top:1.4rem">Core, Embedded or Complete the same advised trading platform, deployed three ways. What differs is how much of it you need, because a bank with its own systems, a brokerage with its own app, and a firm with neither are starting from three different places.</p>
         </div>
-        <div class="rail">
+        <div class="rail" id="fit">
           <div class="rail-h">Find your fit</div>
-          <a href="#prod-institutional"><div><div class="t">Advised clients and your own systems</div><div class="d">Finnovest Core</div></div><svg class="go" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-          <a href="#prod-sdk"><div><div class="t">A trading app your clients use</div><div class="d">Finnovest Embedded</div></div><svg class="go" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-          <a href="#prod-complete"><div><div class="t">Clients and a licence, but no app</div><div class="d">Finnovest Complete</div></div><svg class="go" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+
+          <div class="fit-step on" data-step="1">
+            <div class="fit-q">What do you run today?</div>
+            <a data-fit="core"><div><div class="t">Our own core systems and OMS</div><div class="d">Advised clients, your infrastructure</div></div><svg class="go" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+            <a data-fit="sdk"><div><div class="t">A trading app our clients already use</div><div class="d">Independent trading, in your own app</div></div><svg class="go" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+            <a data-fit="complete"><div><div class="t">Neither yet</div><div class="d">Clients and a licence, but no app</div></div><svg class="go" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+          </div>
+
+          <div class="fit-step" data-step="2">
+            <div class="fit-q">Where does the advice come from?</div>
+            <a data-adv="own"><div><div class="t">Our own licensed advisors</div><div class="d">In house, under your licence</div></div><svg class="go" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+            <a data-adv="platform"><div><div class="t">We would connect to an advisor on the platform</div><div class="d">No advisory of your own yet</div></div><svg class="go" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+            <button class="fit-back" type="button" data-back="1">Back</button>
+          </div>
+
+          <div class="fit-step" data-step="3">
+            <div class="fit-q" id="fit-name">Finnovest Core</div>
+            <p class="fit-why" id="fit-why"></p>
+            <div class="fit-form">
+              <input id="f-name" type="text" placeholder="Name" autocomplete="name">
+              <input id="f-firm" type="text" placeholder="Firm" autocomplete="organization">
+              <input id="f-email" type="email" placeholder="Work email" autocomplete="email">
+              <button class="btn btn-mint btn-sm" id="f-send" type="button">Send me the detail</button>
+              <div class="fit-sent" id="f-sent"></div>
+            </div>
+            <button class="fit-back" type="button" data-back="0">Start again</button>
+          </div>
         </div>
       </div>
     </div>
@@ -887,14 +923,17 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
 
       <div class="grid-2 rev" style="gap:clamp(32px,5vw,58px);align-items:center;margin-top:clamp(48px,6vw,80px)">
         <div>
-          <span class="eyebrow plain">The question we get asked</span>
-          <h2 style="margin-bottom:20px">"If my competitor licenses this too, where's my advantage?"</h2>
-          <p class="body-dim">The platform distributes your professional judgement — not ours. Two houses running Finnovest still compete on the quality of their calls, the depth of their research and the trust their advisors have built. What changes is that your expertise now reaches every client instead of the largest few.</p>
-          <p class="body-dim" style="margin-top:1.1rem">That is an escape from competing on price, and it does not expire when someone else signs.</p>
+          <span class="eyebrow plain">What stays yours</span>
+          <h2 style="margin-bottom:20px">Your judgement. Your brand. Your advantage.</h2>
+          <p class="body-dim">Every client now hears from an advisor who knows what they actually hold, and can act on that advice in a single tap. Thousands of conversations, each one specific to the person receiving it, each one in your name and carrying your advisors' judgement. A competitor can license the same platform. They cannot license that.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
+            <button class="btn btn-mint btn-sm" data-go="products" data-anchor="fit">Find your fit</button>
+            <button class="btn btn-ghost btn-sm" data-go="contact">Talk to us</button>
+          </div>
         </div>
         <div>
           <div class="quote">
-            <p>The technology carries the expertise. It does not supply it.</p>
+            <p>The technology carries your expertise. It does not supply it.</p>
             <cite>Finnovest product principle</cite>
           </div>
         </div>
@@ -2026,7 +2065,10 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
      Submissions are delivered to whichever mailbox the Formspree
      form is configured to forward to (contact@finnovest.com).
      ========================================================= */
-  var FORM_ENDPOINT = '';
+  /* One place to paste it. Used by BOTH the contact form and the Find your fit
+     qualifier, so leads from either route land in the same mailbox. */
+  window.FINNOVEST_FORM_ENDPOINT = '';
+  var FORM_ENDPOINT = window.FINNOVEST_FORM_ENDPOINT;
 
   var send=document.getElementById('send'),sent=document.getElementById('sent');
   var sentDefault=sent.textContent;
@@ -2083,6 +2125,108 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
   <span class="cnt" id="ed-count">No changes yet</span>
 </div>
 <script>
+/* ================= FIND YOUR FIT ================= */
+(function(){
+  var root = document.getElementById('fit');
+  if(!root) return;
+
+  var steps   = root.querySelectorAll('.fit-step');
+  var answers = { runs:'', advice:'' };
+
+  var COPY = {
+    core:{ name:'Finnovest Core',
+      why:'You already run the systems and the advisory. Core integrates with your core banking and OMS, so one recommendation reaches every eligible client through the channel they already use.' },
+    sdk:{ name:'Finnovest Embedded',
+      why:'Your clients already trade in your app. Embedded drops advised trading into it, so your advisors reach every one of them without a second login.' },
+    complete:{ name:'Finnovest Complete',
+      why:'No app yet, and no need to build one. Complete is a white-label app under your brand, with independent trading and advised trading both built in.' }
+  };
+
+  function show(n){
+    Array.prototype.forEach.call(steps, function(s){
+      s.classList.toggle('on', parseInt(s.dataset.step,10) === n);
+    });
+  }
+
+  function decide(){
+    /* Sourcing advice from the platform only works in Complete, so it wins
+       over whatever they said they already run. */
+    var key = answers.advice === 'platform' ? 'complete' : (answers.runs || 'complete');
+    var c = COPY[key];
+    var why = c.why;
+    if(answers.advice === 'platform' && answers.runs !== 'complete'){
+      why += ' You would source the advice from an advisor already on the platform rather than your own desk, and Complete is the route that carries that.';
+    }
+    document.getElementById('fit-name').textContent = c.name;
+    document.getElementById('fit-why').textContent  = why;
+    show(3);
+  }
+
+  root.addEventListener('click', function(e){
+    var opt = e.target.closest('[data-fit]');
+    if(opt){ answers.runs = opt.dataset.fit; show(2); return; }
+
+    var adv = e.target.closest('[data-adv]');
+    if(adv){ answers.advice = adv.dataset.adv; decide(); return; }
+
+    var back = e.target.closest('.fit-back');
+    if(back){
+      if(parseInt(back.dataset.back,10) === 0){
+        answers = { runs:'', advice:'' };
+        var s = document.getElementById('f-sent');
+        s.textContent = ''; s.className = 'fit-sent';
+      }
+      show(1);
+    }
+  });
+
+  var send = document.getElementById('f-send');
+  var sent = document.getElementById('f-sent');
+
+  send.addEventListener('click', function(){
+    var em = document.getElementById('f-email');
+    if(!em.value.trim()){ em.focus(); em.style.borderColor = '#FF6B6B'; return; }
+    em.style.borderColor = '';
+
+    var payload = {
+      name        : (document.getElementById('f-name').value||'').trim(),
+      firm        : (document.getElementById('f-firm').value||'').trim(),
+      email       : em.value.trim(),
+      enquiry     : 'Find your fit',
+      runs_today  : answers.runs,
+      advice_from : answers.advice,
+      recommended : document.getElementById('fit-name').textContent,
+      _subject    : 'Finnovest fit enquiry'
+    };
+
+    var endpoint = window.FINNOVEST_FORM_ENDPOINT;
+    if(!endpoint){
+      sent.className = 'fit-sent err';
+      sent.textContent = 'Not connected yet. Please email contact@finnovest.com.';
+      return;
+    }
+
+    var label = send.textContent;
+    send.textContent = 'Sending...'; send.disabled = true;
+    fetch(endpoint, {
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body: JSON.stringify(payload)
+    })
+    .then(function(r){
+      if(!r.ok) throw new Error('bad response');
+      sent.className = 'fit-sent';
+      sent.textContent = 'Thank you. We will come back to you about ' + payload.recommended + '.';
+      send.textContent = 'Sent';
+    })
+    .catch(function(){
+      sent.className = 'fit-sent err';
+      sent.textContent = 'Something went wrong. Please email contact@finnovest.com.';
+      send.textContent = label; send.disabled = false;
+    });
+  });
+})();
+
 /* ================= EDIT MODE ================= */
 (function(){
   /* Editing is local-only. On the published site the editor never initialises:
@@ -2208,6 +2352,10 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
   });
 })();
 </script>
+
+
+
+
 
 
 

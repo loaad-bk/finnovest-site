@@ -202,6 +202,27 @@ $injected = @'
   var rev = document.getElementById('ed-revert');
   if(rev) rev.addEventListener('click', function(){ setTimeout(schedule, 50); });
 
+  /* One-shot layout report, so the hero fit can be tuned against real numbers
+     instead of estimates read off screenshots. */
+  window.addEventListener('load', function(){
+    setTimeout(function(){
+      var q = function(s){
+        var e = document.querySelector(s); if(!e) return null;
+        var b = e.getBoundingClientRect();
+        return {t:Math.round(b.top), b:Math.round(b.bottom), h:Math.round(b.height)};
+      };
+      var d = {
+        vh: window.innerHeight, vw: window.innerWidth, sy: Math.round(window.scrollY),
+        hero:q('.band.hero'), grid:q('.hero-grid'), stage:q('.stage'),
+        left:q('.hero-grid > div:first-child'), proof:q('.hero-proof'),
+        stats:q('.hp-stats'), cap:q('.hp-cap'), iia:q('.hp-iia')
+      };
+      fetch('/measure', {method:'POST',
+        headers:{'Content-Type':'text/plain;charset=utf-8','X-Edit-Token':TOKEN},
+        body: JSON.stringify(d)}).catch(function(){});
+    }, 500);
+  });
+
   /* ---------------- live reload on external change ---------------- */
   /* Picks up edits made outside this page - by Claude, git checkout, an
      editor. Polls a cheap fingerprint rather than holding a connection open:
@@ -460,6 +481,14 @@ try {
           else                            { $html = $html + $injected }
           Send-Response $stream 200 'text/html; charset=utf-8' ([Text.Encoding]::UTF8.GetBytes($html))
           Log "GET / -> $([math]::Round($html.Length/1KB,1)) KB"
+          break
+        }
+
+        '^POST /measure$' {
+          if ($req.Headers['x-edit-token'] -eq $TOKEN) {
+            Log ("MEASURE " + [Text.Encoding]::UTF8.GetString($req.Body)) 'Cyan'
+          }
+          Send-Response $stream 200 'application/json' (Json @{ ok = $true })
           break
         }
 

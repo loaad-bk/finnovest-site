@@ -2065,9 +2065,20 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
      Submissions are delivered to whichever mailbox the Formspree
      form is configured to forward to (contact@finnovest.com).
      ========================================================= */
-  /* One place to paste it. Used by BOTH the contact form and the Find your fit
-     qualifier, so leads from either route land in the same mailbox. */
-  window.FINNOVEST_FORM_ENDPOINT = '';
+  /* One place to change it. Used by BOTH the contact form and the Find your fit
+     qualifier, so leads from either route land in the same mailbox.
+
+     FormSubmit needs no account - it forwards to the address in the URL. The
+     /ajax/ path returns JSON, which is what the fetch below expects.
+
+     FIRST SUBMISSION ONLY: FormSubmit emails contact@finnovest.com an
+     activation link. Until someone clicks it, nothing is forwarded. Send one
+     enquiry through the site, click the link, and it is live from then on.
+
+     Once activated you can swap this for FormSubmit's hashed endpoint so the
+     address is not in the page source - though it already appears in the
+     mailto link in the footer. */
+  window.FINNOVEST_FORM_ENDPOINT = 'https://formsubmit.co/ajax/contact@finnovest.com';
   var FORM_ENDPOINT = window.FINNOVEST_FORM_ENDPOINT;
 
   var send=document.getElementById('send'),sent=document.getElementById('sent');

@@ -116,8 +116,31 @@ a{color:inherit;text-decoration:none}
 .hp-note{font-size:.78rem;color:var(--slate-dim);font-weight:300}
 .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:clamp(36px,4.4vw,64px);align-items:center}
 .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:2rem}
+/* Keep the proof strip (logos + numbers) above the fold on laptop-height
+   screens. The binding constraint is the stage, which is content-driven at
+   ~740px, plus a headline that wraps to four lines - so this trades whitespace
+   and one headline step, never the stat numbers or logos. */
+@media (max-height:1080px){
+  .hero{padding:clamp(22px,2.4vw,34px) 0 clamp(16px,2vw,26px)}
+  .hero h1{font-size:clamp(2.15rem,3.35vw,3.05rem)}   /* four lines -> three */
+  .lede{line-height:1.6}
+  .hero-cta{margin-top:1.3rem}
+  .stage{padding:14px 0 20px;gap:9px}
+  .hero-proof{margin-top:18px;padding-top:16px}
+  .hp-top{margin-bottom:12px}
+  .hp-stats{gap:14px}
+  .hp-foot{margin-top:12px}
+}
+@media (max-height:860px){
+  .hero h1{font-size:clamp(2rem,3vw,2.7rem)}
+  .hero-grid{gap:clamp(24px,3vw,44px)}
+  .stage{padding:10px 0 14px;gap:7px}
+  .hero-proof{margin-top:13px;padding-top:13px}
+  .hp-top{margin-bottom:9px}
+  .hp-foot{margin-top:9px}
+}
 
-.stage{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:452px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;padding:24px 0 40px;border:1px solid var(--line);
+.stage{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:clamp(320px,42vh,452px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;padding:24px 0 40px;border:1px solid var(--line);
   background:radial-gradient(420px 300px at 24% 18%, rgba(46,229,157,.16), transparent 68%),radial-gradient(340px 340px at 84% 80%, rgba(56,132,255,.14), transparent 70%),linear-gradient(160deg,#0A2233,#050C17 78%)}
 .bokeh{position:absolute;border-radius:50%;filter:blur(22px);opacity:.5}
 .b1{width:110px;height:110px;background:rgba(46,229,157,.5);top:9%;left:12%}
@@ -442,7 +465,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
 .tool{flex:1;text-align:center;font-size:.71rem;color:#54657A;border:1px solid rgba(10,21,34,.12);border-radius:8px;padding:7px 4px;line-height:1.3}
 </style>
 </head>
-<body class="">
+<body>
 <div class="field"></div>
 <div class="shell">
 
@@ -456,7 +479,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
     </button>
     <div class="nav-links" id="navlinks">
       <a data-go="advisedtrading">Advised trading</a>
-      <a data-go="products" class="">Products</a>
+      <a data-go="products">Products</a>
       <a data-go="platform">Platform</a>
       <a data-go="advisors">For advisors</a>
       <a data-go="cases">Case studies</a>
@@ -489,7 +512,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         <div>
           <span class="eyebrow">One-to-many · non-discretionary</span>
           <h1>One advisor. <span class="mint">Endless traders.</span> Each one advised personally.</h1>
-          <p class="lede" style="margin-top:1.3rem">Finnovest is the personalized distribution platform behind advised trading. A licensed advisor issues one recommendation; the platform resolves it against every client's own portfolio, so ten thousand traders receive ten thousand different sets of orders — each one ready to act on in a single tap.</p>
+          <p class="lede" style="margin-top:1.3rem">Finnovest is the personalized distribution platform behind advised trading. It enables a licensed advisor to issues one recommendation; the platform resolves it against every client's own portfolio and personal constraints, so ten thousand traders receive ten thousand different sets of orders each one ready to act on in a single tap.</p>
           <p class="small" style="margin-top:.9rem"><span class="mint" data-go="advisedtrading" style="cursor:pointer;text-decoration:underline">What is advised trading?</span></p>
           <div class="hero-cta">
             <button class="btn btn-mint" data-go="contact">Request a demo</button>
@@ -2077,4 +2100,5 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
   });
 })();
 </script>
+
 </body></html>

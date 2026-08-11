@@ -2090,7 +2090,18 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
     };
 
     if(!FORM_ENDPOINT){
-      sent.textContent='This form isn\u2019t connected yet. Please email contact@finnovest.com directly.';
+      /* Same fallback as the Find your fit form: hand it to the visitor's mail
+         client pre-filled rather than losing the enquiry. */
+      var mbody = 'Enquiry: ' + payload.enquiry + '\n'
+                + (payload.product ? 'Product: ' + payload.product + '\n' : '')
+                + '\nName: '  + (payload.name || '-') + '\n'
+                + 'Firm: '  + (payload.firm || '-') + '\n'
+                + 'Email: ' + payload.email + '\n\n'
+                + (payload.message || '');
+      window.location.href = 'mailto:contact@finnovest.com'
+        + '?subject=' + encodeURIComponent(payload._subject)
+        + '&body='    + encodeURIComponent(mbody);
+      sent.textContent='Opening your email app with your enquiry filled in. If nothing happens, write to contact@finnovest.com.';
       sent.classList.add('on');
       return;
     }
@@ -2201,8 +2212,20 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
 
     var endpoint = window.FINNOVEST_FORM_ENDPOINT;
     if(!endpoint){
-      sent.className = 'fit-sent err';
-      sent.textContent = 'Not connected yet. Please email contact@finnovest.com.';
+      /* No form service configured, so hand the enquiry to the visitor's mail
+         client with everything pre-filled rather than losing it. Replaced by a
+         silent POST the moment an endpoint is pasted above. */
+      var body = 'Recommended: ' + payload.recommended + '\n'
+               + 'Runs today: '   + (payload.runs_today  || '-') + '\n'
+               + 'Advice from: '  + (payload.advice_from || '-') + '\n\n'
+               + 'Name: '  + (payload.name || '-') + '\n'
+               + 'Firm: '  + (payload.firm || '-') + '\n'
+               + 'Email: ' + payload.email + '\n';
+      window.location.href = 'mailto:contact@finnovest.com'
+        + '?subject=' + encodeURIComponent('Finnovest fit enquiry - ' + payload.recommended)
+        + '&body='    + encodeURIComponent(body);
+      sent.className = 'fit-sent';
+      sent.textContent = 'Opening your email app with the detail filled in. If nothing happens, write to contact@finnovest.com.';
       return;
     }
 

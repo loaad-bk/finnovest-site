@@ -104,15 +104,31 @@ a{color:inherit;text-decoration:none}
 .rail .go{margin-left:auto;color:var(--mint);opacity:0;transition:opacity .18s,transform .18s;flex:none}
 .rail a:hover .go{opacity:1;transform:translateX(3px)}
 .prod{scroll-margin-top:92px}
-.hero-proof{margin-top:clamp(26px,3.2vw,40px);padding-top:24px;border-top:1px solid var(--line)}
-.hp-top{display:flex;align-items:center;gap:14px 26px;flex-wrap:wrap;margin-bottom:22px}
+.hero-proof{margin-top:clamp(26px,3.2vw,40px);padding-top:24px;border-top:1px solid var(--line);text-align:center}
+/* "Running today at" is a lead-in phrase, not a statement, so it takes the
+   design system's mono label treatment rather than display type - centred to
+   match the module, and it costs far less vertical space than a bold heading. */
+.hp-head{font-family:var(--mono);font-weight:500;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--slate-dim);margin-bottom:14px}
 .hp-lbl{font-family:var(--mono);font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--slate-dim);white-space:nowrap}
-.hp-logos{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
+.hp-logos{display:flex;align-items:center;justify-content:center;flex-wrap:wrap}
+/* Each logo sits in its own cell so the rules between them are even, rather
+   than hanging off the logo boxes, whose widths differ per brand. */
+.hp-cell{display:flex;align-items:center;justify-content:center;padding:0 clamp(22px,3.4vw,52px);min-height:58px}
+.hp-cell + .hp-cell{border-left:1px solid var(--line)}
+/* Sized per brand rather than by a shared height: the three marks have very
+   different aspect ratios (FIBI wide and short, Discount tall and square), so
+   a uniform height would make FIBI enormous and Discount tiny. These values
+   balance them optically. Near-full opacity - .82 left them muddy on navy. */
+.hp-cell .lg{opacity:.96}
+.hp-cell .lg-fibi{height:32px;width:126px}
+.hp-cell .lg-excellence{height:39px;width:157px}
+.hp-cell .lg-discount{height:57px;width:92px}
+.hp-cap{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate-dim);margin-top:11px}
 .hp-logo{display:flex;align-items:center;gap:7px;font-family:var(--display);font-weight:600;font-size:.87rem;color:rgba(255,255,255,.74);white-space:nowrap}
-.hp-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:start}
+.hp-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:start;margin-top:20px}
 .hp-stat .n{font-family:var(--display);font-weight:800;font-size:clamp(1.55rem,2.6vw,2.25rem);letter-spacing:-.04em;line-height:1}
 .hp-stat .l{font-size:.72rem;color:var(--slate-dim);margin-top:7px;line-height:1.4;font-weight:300}
-.hp-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:22px}
+.hp-foot{display:flex;justify-content:center;align-items:center;gap:14px 18px;flex-wrap:wrap;margin-top:18px}
 .hp-note{font-size:.78rem;color:var(--slate-dim);font-weight:300}
 .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:clamp(36px,4.4vw,64px);align-items:center}
 .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:2rem}
@@ -120,24 +136,54 @@ a{color:inherit;text-decoration:none}
    screens. The binding constraint is the stage, which is content-driven at
    ~740px, plus a headline that wraps to four lines - so this trades whitespace
    and one headline step, never the stat numbers or logos. */
+/* The stage is content-driven at ~740px and is what pushes the proof strip off
+   screen, so it is scaled as a whole rather than restyled piece by piece -
+   the mockup keeps its exact proportions, it just occupies less height.
+   The left column is stepped down in parallel so neither column becomes the
+   new constraint. */
 @media (max-height:1080px){
   .hero{padding:clamp(22px,2.4vw,34px) 0 clamp(16px,2vw,26px)}
   .hero h1{font-size:clamp(2.15rem,3.35vw,3.05rem)}   /* four lines -> three */
-  .lede{line-height:1.6}
+  .lede{line-height:1.58}
   .hero-cta{margin-top:1.3rem}
-  .stage{padding:14px 0 20px;gap:9px}
+  .stage{zoom:.88;padding:14px 0 20px;gap:9px}
   .hero-proof{margin-top:18px;padding-top:16px}
-  .hp-top{margin-bottom:12px}
-  .hp-stats{gap:14px}
+  .hp-head{margin-bottom:12px}
+  .hp-cell{min-height:40px}
+  .hp-stats{gap:14px;margin-top:14px}
   .hp-foot{margin-top:12px}
 }
-@media (max-height:860px){
-  .hero h1{font-size:clamp(2rem,3vw,2.7rem)}
-  .hero-grid{gap:clamp(24px,3vw,44px)}
-  .stage{padding:10px 0 14px;gap:7px}
-  .hero-proof{margin-top:13px;padding-top:13px}
-  .hp-top{margin-bottom:9px}
+@media (max-height:980px){
+  .hero h1{font-size:clamp(2.05rem,3.1vw,2.8rem)}
+  .lede{font-size:clamp(.95rem,1.18vw,1.05rem);line-height:1.5}
+  .stage{zoom:.74}
+  .hero{padding:clamp(16px,1.8vw,24px) 0 clamp(12px,1.5vw,18px)}
+  .hero-cta{margin-top:1.1rem}
+  .hero-grid{gap:clamp(28px,3.2vw,48px)}
+  .hero-proof{margin-top:13px;padding-top:12px}
+  .hp-cap{margin-top:8px}
   .hp-foot{margin-top:9px}
+  .hp-head{margin-bottom:10px}
+  .hp-cell{min-height:48px}
+  .hp-cell .lg-fibi{height:28px;width:110px}
+  .hp-cell .lg-excellence{height:34px;width:137px}
+  .hp-cell .lg-discount{height:50px;width:80px}
+  .hp-stats{margin-top:12px}
+  .hp-foot{margin-top:10px}
+}
+@media (max-height:880px){
+  .hero h1{font-size:clamp(1.95rem,2.9vw,2.55rem)}
+  .stage{zoom:.72;padding:10px 0 14px;gap:7px}
+  .hero-cta{margin-top:1.1rem}
+  .hero-proof{margin-top:12px;padding-top:12px}
+  .hp-head{margin-bottom:8px}
+  .hp-cell{min-height:42px}
+  .hp-cell .lg-fibi{height:24px;width:94px}
+  .hp-cell .lg-excellence{height:30px;width:121px}
+  .hp-cell .lg-discount{height:44px;width:70px}
+  .hp-cap{margin-top:8px}
+  .hp-stats{margin-top:10px}
+  .hp-foot{margin-top:8px}
 }
 
 .stage{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:clamp(320px,42vh,452px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;padding:24px 0 40px;border:1px solid var(--line);
@@ -378,7 +424,8 @@ textarea{resize:vertical;min-height:106px}
   .case-hd,.beat,.case-foot{padding-left:20px;padding-right:20px}
   .card,.prod,.gate,.ask,.feed{padding:22px 20px}
   .cta-in{flex-direction:column;align-items:flex-start;gap:20px}
-  .hp-foot{flex-direction:column;align-items:flex-start}
+  .hp-foot{flex-direction:column;align-items:center}
+  .hp-cell{padding:0 clamp(14px,4vw,26px)}
   .stage{min-height:390px}
   .advice{width:min(340px,94%)}
   .desk,.fanline{width:min(340px,94%)}
@@ -512,7 +559,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         <div>
           <span class="eyebrow">One-to-many · non-discretionary</span>
           <h1>One advisor. <span class="mint">Endless traders.</span> Each one advised personally.</h1>
-          <p class="lede" style="margin-top:1.3rem">Finnovest is the personalized distribution platform behind advised trading. It enables a licensed advisor to issues one recommendation; the platform resolves it against every client's own portfolio and personal constraints, so ten thousand traders receive ten thousand different sets of orders each one ready to act on in a single tap.</p>
+          <p class="lede" style="margin-top:1.3rem">Finnovest is the personalized distribution platform behind advised trading. It enables a licensed advisor to issue one recommendation; the platform resolves it against every client's own portfolio and personal constraints, so ten thousand traders receive ten thousand different sets of orders each one ready to act on in a single tap.</p>
           <p class="small" style="margin-top:.9rem"><span class="mint" data-go="advisedtrading" style="cursor:pointer;text-decoration:underline">What is advised trading?</span></p>
           <div class="hero-cta">
             <button class="btn btn-mint" data-go="contact">Request a demo</button>
@@ -596,13 +643,11 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
 
       <!-- PROOF ON LANDING: logos + numbers inside the first screen -->
       <div class="hero-proof">
-        <div class="hp-top">
-          <span class="hp-lbl">Running today at</span>
-          <div class="hp-logos">
-            <span class="lg lg-md lg-fibi" role="img" aria-label="FIBI"></span>
-            <span class="lg lg-md lg-excellence" role="img" aria-label="Excellence Trade"></span>
-            <span class="lg lg-md lg-discount" role="img" aria-label="Israel Discount Bank"></span>
-          </div>
+        <div class="hp-head">Running today at</div>
+        <div class="hp-logos">
+          <div class="hp-cell"><span class="lg lg-lg lg-fibi" role="img" aria-label="FIBI Bank"></span></div>
+          <div class="hp-cell"><span class="lg lg-lg lg-excellence" role="img" aria-label="Excellence Trade · Phoenix Investment House"></span></div>
+          <div class="hp-cell"><span class="lg lg-lg lg-discount" role="img" aria-label="Israel Discount Bank"></span></div>
         </div>
         <div class="hp-stats">
           <div class="hp-stat"><div class="n">$19B</div><div class="l">Assets under advisory</div></div>
@@ -610,8 +655,9 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
           <div class="hp-stat"><div class="n">53%</div><div class="l">Registered accounts</div></div>
           <div class="hp-stat"><div class="n mint">ZERO</div><div class="l">Compliance errors</div></div>
         </div>
+        <div class="hp-cap">Live production figures</div>
         <div class="hp-foot">
-          <span class="hp-note">Live production figures · two components recognised as breakthrough technology by the Israel Innovation Authority</span>
+          <span class="hp-note">Two components recognised as breakthrough technology by the Israel Innovation Authority</span>
           <button class="btn btn-ghost btn-sm" data-go="cases">Read the case studies</button>
         </div>
       </div>
@@ -1991,7 +2037,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
           + '#app .eyebrow, #app .tag, #app .k, #app .nm, #app .sv, #app .t, #app .d, #app .l, #app .n, '
           + '#app .meta, #app .chip, #app .lbl, #app .advice-body, #app .advice-why, #app .who, #app .want, '
           + '#app .prod-depth, #app .case-flag, #app .p-note, #app .p-soon, #app .rail-h, #app .p-act, '
-          + '#app .hp-lbl, #app .hp-note, #app .sn, #app .desk-v, #app .desk-s, #app .pgroup-sub, '
+          + '#app .hp-lbl, #app .hp-head, #app .hp-cap, #app .hp-note, #app .sn, #app .desk-v, #app .desk-s, #app .pgroup-sub, '
           + '#app .bundle-h, #app .stepline, #app .advice-who, #app .advice-from, #app .advice-when, #app .stage-cap, '
           + 'footer h5, footer .small, footer a, footer .foot-base span';
   var nodes=[], original=new Map(), editing=false;
@@ -2100,5 +2146,8 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
   });
 })();
 </script>
+
+
+
 
 </body></html>

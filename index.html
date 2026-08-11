@@ -271,9 +271,25 @@ a{color:inherit;text-decoration:none}
 .card p{font-size:.92rem;color:var(--slate);font-weight:300;line-height:1.68}
 .ico{width:40px;height:40px;border-radius:11px;background:rgba(46,229,157,.1);border:1px solid rgba(46,229,157,.2);display:grid;place-items:center;margin-bottom:15px}
 
-.prod{display:grid;grid-template-columns:104px 1fr;gap:26px;align-items:start;padding:32px 30px;border:1px solid var(--line);border-radius:var(--r-md);background:rgba(255,255,255,.02);margin-bottom:16px;transition:border-color .22s,background .22s}
+/* Three abreast, so all three headlines are visible on landing rather than
+   one per screenful. Cards stack internally instead of the old label-beside-
+   content row, since 104px of label plus prose does not fit a third of the
+   width. */
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
+.prod{display:flex;flex-direction:column;padding:28px 26px;border:1px solid var(--line);border-radius:var(--r-md);background:rgba(255,255,255,.02);margin-bottom:0;transition:border-color .22s,background .22s}
+.prod > div:last-child{display:flex;flex-direction:column;flex:1}
+/* Chips and whatever follows them sit against the bottom, so the three cards
+   share a baseline even though the paragraphs differ in length. */
+.prod .feat{margin-top:auto;padding-top:18px}
+/* Case-study link sits on its own line so it never breaks the paragraph's last
+   sentence across a link boundary. Muted rather than mint - the mint button
+   below is the primary action and two mint elements would compete. */
+.case-link{display:inline-block;align-self:flex-start;margin-top:12px;font-size:.86rem;color:var(--slate-soft);text-decoration:underline;text-underline-offset:2px;cursor:pointer;transition:color .18s}
+.case-link:hover{color:#fff}
+@media(max-width:1040px){.prod-grid{grid-template-columns:1fr;gap:14px}
+  .prod .feat{margin-top:17px;padding-top:0}}
 .prod:hover{border-color:rgba(46,229,157,.34);background:rgba(46,229,157,.03)}
-.prod-depth{font-family:var(--mono);font-size:.64rem;letter-spacing:.13em;text-transform:uppercase;color:var(--mint);line-height:1.55}
+.prod-depth{font-family:var(--mono);font-size:.64rem;letter-spacing:.13em;text-transform:uppercase;color:var(--mint);line-height:1.55;margin-bottom:15px;min-height:2.1em}
 .prod h3{margin-bottom:10px}
 .feat{display:flex;flex-wrap:wrap;gap:8px;margin-top:17px}
 .chip{font-family:var(--mono);font-size:.68rem;color:var(--slate);border:1px solid var(--line);border-radius:999px;padding:5px 13px}
@@ -553,8 +569,8 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
     </button>
     <div class="nav-links" id="navlinks">
       <a data-go="advisedtrading">Advised trading</a>
-      <a data-go="products" class="on">Products</a>
-      <a data-go="platform">Platform</a>
+      <a data-go="products">Products</a>
+      <a data-go="platform" class="on">Platform</a>
       <a data-go="advisors">For advisors</a>
       <a data-go="cases">Case studies</a>
       <a data-go="press">Press</a>
@@ -833,13 +849,17 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
   <div class="band" style="padding-top:0">
     <div class="wrap">
 
+      <p class="small" style="margin:0 0 20px;color:var(--slate-soft);max-width:88ch">Every deployment runs the same advised-trading platform: portfolio building, full position and order history, and the advisor console. What differs is where it sits, where the advice comes from, and whether independent trading comes built in or is already yours.</p>
+
+      <div class="prod-grid">
       <div class="prod rev" id="prod-institutional">
         <div class="prod-depth">For banks</div>
         <div>
           <h3>Finnovest Core</h3>
           <p class="body-dim" style="font-size:.96rem;max-width:64ch">Your advisory relationships already exist yet what limits them is that each one is served a conversation at a time. While many investors seek professional advice Finnovest-Core platform integrates into your own systems and environment, so a single advisor's recommendation reaches every eligible client in the book, resolved against each portfolio individually and delivered through the channel your clients already use.</p>
-          <div class="feat"><span class="chip">Full system integration</span><span class="chip">Your environment, your data</span><span class="chip">Core banking and OMS</span><span class="chip">Supervisory reporting</span></div>
-          <p class="small" style="margin-top:16px">Running at Discount Bank and FIBI. <span class="mint" data-go="cases" style="cursor:pointer;text-decoration:underline">Read the case studies</span></p>
+          <span class="case-link" data-go="cases">Read the case studies</span>
+          <div class="feat"><span class="chip">Advised trading, inside your systems</span><span class="chip">Core banking and OMS integration</span><span class="chip">Runs in your environment</span><span class="chip">Supervisory reporting</span></div>
+          <div style="margin-top:18px"><button class="btn btn-mint btn-sm" data-go="contact">Request a demo</button></div>
         </div>
       </div>
 
@@ -847,9 +867,10 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         <div class="prod-depth">For brokerages</div>
         <div>
           <h3>Finnovest Embedded</h3>
-          <p class="body-dim" style="font-size:.96rem;max-width:64ch">Your independent traders act alone today. Not because they want to&nbsp; but because professional advice has never been available inside a trading app, so they take it from finfluencers, forums and general market calls, none of which has ever seen what they hold. Finnovest Embedded drops into the app you already run and gives your licensed advisors a way to reach all of them, personally. Allowing all investors to choose between independent-trading or advised-trading leaving all decisions in thier hands.&nbsp;</p>
-          <div class="feat"><span class="chip">SDK, inside your existing app</span><span class="chip">Your brand and execution</span><span class="chip">Advisor console</span><span class="chip">No second login</span></div>
-          <p class="small" style="margin-top:16px">Running at Excellence Trade. <span class="mint" data-go="cases" style="cursor:pointer;text-decoration:underline">Read the case study</span></p>
+          <p class="body-dim" style="font-size:.96rem;max-width:64ch">Your independent traders act alone today. Not because they want to, but because professional advice has never been available inside a trading app, so they take it from finfluencers, forums and general market calls, none of which has ever seen what they hold. Finnovest Embedded drops into the app you already run and gives your licensed advisors a way to reach all of them, personally. Allowing all investors to choose between independent-trading or advised-trading, leaving all decisions in their hands.</p>
+          <span class="case-link" data-go="cases" data-anchor="case-excellence">Read the case study</span>
+          <div class="feat"><span class="chip">Advised trading, inside your app</span><span class="chip">SDK, no second login</span><span class="chip">Your brand and execution</span></div>
+          <div style="margin-top:18px"><button class="btn btn-mint btn-sm" data-go="contact">Request a demo</button></div>
         </div>
       </div>
 
@@ -857,10 +878,11 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         <div class="prod-depth">For full service advised-trading app</div>
         <div>
           <h3>Finnovest Complete</h3>
-          <p class="body-dim" style="font-size:.96rem;max-width:64ch">Your one-stop solution for financial product distribution. Finnovest Complete is a state-of-the-art, cloud-based, white-label app where a client can choose between independent- trading or advised-trading. Meaning they can place their own orders whenever they like, and receive bundled recommendations from your advisors in the same product.&nbsp;</p>
-          <div class="feat"><span class="chip">Complete white-label app</span><span class="chip">Independent trading</span><span class="chip">Advised trading</span><span class="chip">Onboarding and portfolio building</span><span class="chip">Cloud-based</span></div>
-          <div style="margin-top:18px"><button class="btn btn-mint btn-sm" data-go="contact">Book a demo</button></div>
+          <p class="body-dim" style="font-size:.96rem;max-width:64ch">Your products and your licence are already in place. What isn't is a direct line to retail investors — for most houses that still runs through somebody else's distribution. Finnovest Complete is a full-service app under your own brand, cloud-based and fast to launch, with both modes in one product: independent-trading, where clients act on their own judgement whenever they like, and advised-trading, where your advisors send personalized recommendations that retail investors can act on as bundled orders, buy and sell, in a single tap. Bring your own licensed advisors, or connect to one already on the platform. Distribution you own, not distribution you rent.</p>
+          <div class="feat"><span class="chip">Independent and advised trading, both built in</span><span class="chip">Our app, your brand</span><span class="chip">Your advisors, or one already on the platform</span><span class="chip">Cloud-hosted, fast to launch</span></div>
+          <div style="margin-top:18px"><button class="btn btn-mint btn-sm" data-go="contact">Request a demo</button></div>
         </div>
+      </div>
       </div>
 
       <div class="grid-2 rev" style="gap:clamp(32px,5vw,58px);align-items:center;margin-top:clamp(48px,6vw,80px)">
@@ -1026,12 +1048,12 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
   <div class="band" style="padding-top:0">
     <div class="wrap">
 
-      <div class="layer top rev"><div class="lbl">1 · Onboarding</div><p>The client arrives with a portfolio or without one. An existing portfolio is imported as it stands, whatever the starting point. A client with no portfolio has one built from the advisor's recommendations, shaped by their own profile — and approves it before anything executes.</p></div>
+      <div class="layer top rev"><div class="lbl">1 · Onboarding</div><p>The client arrives with a portfolio or without one. An existing portfolio is imported as it stands, whatever the starting point. A client with no portfolio has one built from the advisor's recommendations, shaped by their own profile and approves it before anything executes.</p></div>
       <div class="layer rev"><div class="lbl">2 · Constraints</div><p>Risk profile, goals, personal information, current holdings, and available cash and credit. This is the set that makes one recommendation land differently for every client, and it is applied to everything that follows.</p></div>
-      <div class="layer rev"><div class="lbl">3 · The house view</div><p>The head of advisory sets the institution's position on the market — the trading vision the desk is working to.</p></div>
+      <div class="layer rev"><div class="lbl">3 · The house view</div><p>The head of advisory sets the institution's position on the market and the trading vision of the financial house.</p></div>
       <div class="layer rev"><div class="lbl">4 · The advisor</div><p>Each advisor turns that view into a recommendation for their own book: a specific thesis, a purchase, the funding strategy behind it, and the reasoning written in their own words. Two layers of professional judgement before any software runs.</p></div>
-      <div class="layer rev"><div class="lbl">5 · Translation</div><p>The Generic Constraints Algorithm resolves that one instruction against every portfolio: which holding funds the purchase here, how much this client can take on, and whether the recommendation suits them at all. If it does not, it is never sent.</p></div>
-      <div class="layer rev"><div class="lbl">6 · Execution</div><p>The client sees the thesis, the reasoning behind each individual order, and how long the recommendation stays open. They can simulate the effect on their portfolio before deciding, and read the full documentation. One press approves everything — the Automatic Order Management Module sequences the interdependent orders, with no human intervention.</p></div>
+      <div class="layer rev"><div class="lbl">5 · translation</div><p>Finnovest Generic Constraints Algorithm resolves that one instruction against every portfolio: which holding funds the purchase here, how much this client can take on, and whether the recommendation suits them at all. If it does not, it is never sent.</p></div>
+      <div class="layer rev"><div class="lbl">6 · Execution</div><p>The client sees the thesis, the reasoning behind each individual order, and how long the recommendation stays open. They can simulate the effect on their portfolio before deciding, and read the full documentation. One press approves everything (bundeled set of sell and buy orders) the Automatic Order Management Module sequences the interdependent orders, with no human intervention.</p></div>
       <div class="layer rev"><div class="lbl">7 · Follow-up</div><p>Sent, opened, executed — per client for the advisor to act on, and in aggregate for the institution to learn from.</p></div>
 
       <div class="rev" style="margin-top:clamp(48px,6vw,80px)">
@@ -1834,7 +1856,19 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
   }
   document.addEventListener('click',function(e){
     var t=e.target.closest('[data-go]');
-    if(t){e.preventDefault();go(t.dataset.go);}
+    if(t){
+      e.preventDefault();
+      go(t.dataset.go);
+      /* go() only accepts .page elements and always scrolls to top, so an
+         optional data-anchor lets a link land on a specific block within the
+         page it just opened - e.g. one case study rather than the top. */
+      if(t.dataset.anchor){
+        safe(function(){
+          var el=document.getElementById(t.dataset.anchor);
+          if(el) el.scrollIntoView({block:'start'});
+        });
+      }
+    }
   });
   burger.addEventListener('click',function(){
     var open=menu.classList.toggle('open');
@@ -2174,6 +2208,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
   });
 })();
 </script>
+
 
 
 

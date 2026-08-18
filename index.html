@@ -618,11 +618,6 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
 .at-you .row{display:flex;align-items:center;gap:12px;margin-top:12px;flex-wrap:wrap}
 .at-you .row .s{margin-top:0}
 .at-you .pill{display:inline-block;background:var(--mint);color:#04150E;font-weight:600;font-size:.82rem;padding:7px 22px;border-radius:999px}
-.at-step{border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:9px;padding:11px 16px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
-.at-step .t{font-size:.9rem;font-weight:500;color:#C8D4E0}
-.at-step .s{font-size:.78rem;color:var(--slate-soft);font-weight:300}
-.at-arr{color:var(--slate-soft);font-size:.9rem;line-height:1;padding:3px 0 3px 18px}
-.at-cap{font-size:.8rem;color:var(--slate-soft);margin-top:14px;font-weight:300}
 @media(max-width:1100px){.at-fig{grid-template-columns:1fr;justify-items:start;gap:18px}.at-phone{justify-self:start}.at-legs{gap:14px;flex-direction:row;flex-wrap:wrap;align-self:auto}.at-leg{padding-left:0;flex:1 1 200px}.at-arrows{display:none}.at-leg p{max-width:none}}
 @media(max-width:720px){.at-hero{grid-template-columns:1fr}}
 </style>
@@ -1075,11 +1070,18 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
 
 
       <div class="rev" style="margin-top:clamp(48px,6vw,80px)">
-        <span class="eyebrow plain">One tap, MULTIPLE orders</span>
-        <h2 style="max-width:24ch;margin-bottom:14px">One tap executes the whole recommendation.</h2>
-        <p class="lede" style="margin-bottom:26px">A recommendation is rarely one trade. Buying usually means selling something first, and the sale has to complete before the purchase can be funded. On Finnovest you approve once. The platform sells, confirms the cash, buys and reconciles, in the right order, with no human intervention.</p>
-
         <div class="grid-2" style="gap:clamp(28px,4vw,56px);align-items:center">
+          <div>
+            <span class="eyebrow plain">One tap, multiple orders</span>
+            <h2 style="max-width:24ch;margin-bottom:14px">One tap executes the whole recommendation.</h2>
+            <p class="lede" style="margin-bottom:26px">A recommendation is rarely one trade. Buying usually means selling something first, and the sale has to complete before the purchase can be funded. On Finnovest you approve once. The platform sells, confirms the cash, buys and reconciles, in the right order, with no human intervention.</p>
+            <div class="at-you">
+              <div class="at-flow-h mint" style="margin-bottom:12px">What you do</div>
+              <div class="row" style="margin-top:0"><span class="pill">Approve</span><span class="t" style="font-size:1.05rem">One press. That is all you do.</span></div>
+              <div class="s" style="margin-top:12px">One recommendation, sized to your portfolio. Every order, the reasoning behind each one, and how long it stays open.</div>
+            </div>
+          </div>
+
           <div class="advice at-card" role="img" aria-label="A recommendation card with one buy and two sell orders, the reasoning behind each, and a single Approve button">
             <div class="advice-top">
               <div class="avatar">AD</div>
@@ -1116,24 +1118,6 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
               <span class="act-btn">Approve</span>
               <span class="act-btn sec">Ask</span>
             </div>
-          </div>
-
-          <div class="at-flow">
-            <div class="at-flow-h mint">What you do</div>
-            <div class="at-you">
-              <div class="t">One recommendation, sized to your portfolio</div>
-              <div class="s">Every order, the reasoning behind each one, and how long it stays open</div>
-              <div class="row"><span class="pill">Approve</span><span class="s">One press. That is all you do.</span></div>
-            </div>
-            <div class="at-flow-h">What the platform does for you</div>
-            <div class="at-step"><div class="t">Sells the holding</div><div class="s">raises the cash</div></div>
-            <div class="at-arr">↓</div>
-            <div class="at-step"><div class="t">Confirms settlement</div><div class="s">before anything else moves</div></div>
-            <div class="at-arr">↓</div>
-            <div class="at-step"><div class="t">Places the purchase</div><div class="s">funded and sized for you</div></div>
-            <div class="at-arr">↓</div>
-            <div class="at-step"><div class="t">Reconciles</div><div class="s">automatically</div></div>
-            <p class="at-cap">Four steps, one order of execution, no human intervention.</p>
           </div>
         </div>
       </div>
@@ -2535,6 +2519,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
   });
 })();
 </script>
+
 
 
 

@@ -2,7 +2,7 @@
 <html lang="en" class=""><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Finnovest — The advisory platform banks, brokers and wealth managers run on</title>
+<title>Finnovest | The advisory platform banks, brokers and wealth managers run on</title>
 <meta name="description" content="The Finnovest operating system enables executable advised trades, letting licensed advisors deliver personalised investment advice to thousands of clients simultaneously. Installed on-premise, embedded in your app, or licensed as a ready product.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -576,6 +576,55 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
 .tot b{color:#0A1522;font-weight:500}
 .tools{display:flex;gap:7px;margin-top:11px}
 .tool{flex:1;text-align:center;font-size:.71rem;color:#54657A;border:1px solid rgba(10,21,34,.12);border-radius:8px;padding:7px 4px;line-height:1.3}
+
+/* Advised-trading hero: two-path phone infographic */
+.at-hero{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
+.at-fig{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center}
+.at-phone{width:216px;height:432px;border-radius:34px;background:#0B1826;border:1px solid rgba(255,255,255,.14);box-shadow:0 30px 80px rgba(0,0,0,.55),inset 0 0 0 6px #050C14;padding:22px 16px;position:relative;justify-self:end}
+.at-phone:before{content:"";position:absolute;top:12px;left:50%;transform:translateX(-50%);width:80px;height:20px;border-radius:12px;background:#050C14}
+.at-scr{margin-top:22px}
+.at-app{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate-soft)}
+.at-hi{font-family:var(--display);font-weight:700;font-size:1.02rem;color:#fff;margin-top:6px;letter-spacing:-.02em}
+.at-pick{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate-soft);margin-top:30px}
+.at-btn{margin-top:10px;border-radius:14px;padding:14px 30px 14px 13px;border:1px solid var(--line);background:rgba(255,255,255,.04);position:relative}
+.at-btn .t{font-family:var(--display);font-weight:700;font-size:.82rem;color:#fff;letter-spacing:-.02em;white-space:nowrap;line-height:1.25}
+.at-btn .s{font-size:.66rem;color:var(--slate);margin-top:4px;font-weight:300;line-height:1.35}
+.at-btn .a{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--slate);font-size:1rem}
+.at-btn.mint{background:var(--mint);border-color:var(--mint)}
+.at-btn.mint .t{color:#04150E}
+.at-btn.mint .s{color:#0B3B29}
+.at-btn.mint .a{color:#04150E}
+.at-foot{margin-top:24px;font-size:.66rem;color:var(--slate-soft);line-height:1.5;font-weight:300}
+.at-legs{position:relative;align-self:stretch;display:flex;flex-direction:column;justify-content:center;gap:44px;padding-top:76px}
+.at-leg{padding-left:64px}
+.at-arrows{position:absolute;left:-26px;top:0;width:90px;height:100%;overflow:visible;pointer-events:none}
+.at-arrows path{fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.at-leg .h{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate-soft)}
+.at-leg.two .h{color:var(--mint)}
+.at-leg h4{font-family:var(--display);font-weight:700;font-size:1.02rem;color:#fff;margin-top:6px;letter-spacing:-.01em;line-height:1.3}
+.at-leg p{font-size:.9rem;line-height:1.55;color:var(--slate);margin-top:6px;max-width:30ch;font-weight:300}
+.at-claim{grid-column:1 / -1;margin-top:6px;font-family:var(--display);font-weight:700;font-size:1.05rem;color:#fff;letter-spacing:-.01em}
+.at-claim span{color:var(--mint)}
+.at-card{width:min(376px,100%);margin:0 auto}
+.at-card .side{font-family:var(--mono);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:5px;white-space:nowrap;align-self:center}
+.at-card .buy{background:rgba(18,164,114,.13);color:#0D7B57}
+.at-card .sell{background:rgba(200,60,50,.1);color:#A3352C}
+.at-card .act-btn{text-align:center;cursor:default}
+.at-flow-h{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate-soft);margin:22px 0 10px}
+.at-flow-h.mint{color:var(--mint);margin-top:0}
+.at-you{border:1px solid rgba(46,229,157,.3);background:rgba(46,229,157,.05);border-radius:12px;padding:18px 20px}
+.at-you .t{font-family:var(--display);font-weight:600;font-size:1rem;color:#fff;letter-spacing:-.015em}
+.at-you .s{font-size:.82rem;color:var(--slate);margin-top:6px;font-weight:300;line-height:1.5}
+.at-you .row{display:flex;align-items:center;gap:12px;margin-top:12px;flex-wrap:wrap}
+.at-you .row .s{margin-top:0}
+.at-you .pill{display:inline-block;background:var(--mint);color:#04150E;font-weight:600;font-size:.82rem;padding:7px 22px;border-radius:999px}
+.at-step{border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:9px;padding:11px 16px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.at-step .t{font-size:.9rem;font-weight:500;color:#C8D4E0}
+.at-step .s{font-size:.78rem;color:var(--slate-soft);font-weight:300}
+.at-arr{color:var(--slate-soft);font-size:.9rem;line-height:1;padding:3px 0 3px 18px}
+.at-cap{font-size:.8rem;color:var(--slate-soft);margin-top:14px;font-weight:300}
+@media(max-width:1100px){.at-fig{grid-template-columns:1fr;justify-items:start;gap:18px}.at-phone{justify-self:start}.at-legs{gap:14px;flex-direction:row;flex-wrap:wrap;align-self:auto}.at-leg{padding-left:0;flex:1 1 200px}.at-arrows{display:none}.at-leg p{max-width:none}}
+@media(max-width:720px){.at-hero{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -591,8 +640,8 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
     </button>
     <div class="nav-links" id="navlinks">
-      <a data-go="advisedtrading">Advised trading</a>
-      <a data-go="products" class="on">Products</a>
+      <a data-go="advisedtrading" class="on">Advised-trading</a>
+      <a data-go="products">Products</a>
       <a data-go="platform">Platform</a>
       <a data-go="advisors">For advisors</a>
       <a data-go="cases">Case studies</a>
@@ -625,8 +674,8 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         <div>
           <span class="eyebrow">One-to-many · non-discretionary</span>
           <h1>One advisor. <span class="mint">Endless traders.</span> Each one advised personally.</h1>
-          <p class="lede" style="margin-top:1.3rem">Finnovest is the personalized distribution platform behind advised trading. It enables a licensed advisor to issue one recommendation; the platform resolves it against every client's own portfolio and personal constraints, so ten thousand traders receive ten thousand different sets of orders each one ready to act on in a single tap.</p>
-          <p class="small" style="margin-top:.9rem"><span class="mint" data-go="advisedtrading" style="cursor:pointer;text-decoration:underline">What is advised trading?</span></p>
+          <p class="lede" style="margin-top:1.3rem">Finnovest is the personalized distribution platform behind advised-trading. It enables a licensed advisor to issue one recommendation while the platform resolves it against every client's own portfolio and personal constraints, so ten thousand traders receive ten thousand different sets of advice and orders each one ready to act on in a single tap.</p>
+          <p class="small" style="margin-top:.9rem"><span class="mint" data-go="advisedtrading" style="cursor:pointer;text-decoration:underline">What is advised-trading?</span></p>
           <div class="hero-cta">
             <button class="btn btn-mint" data-go="contact">Request a demo</button>
             <button class="btn btn-ghost" data-go="products">See the products</button>
@@ -737,7 +786,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
       <div class="rev" style="margin-bottom:40px">
         <span class="eyebrow">Products</span>
         <h2 style="max-width:20ch">One platform. Three ways to fit it in.</h2>
-        <p class="lede" style="margin-top:1.1rem">What differs isn't how deep the platform goes — it's what you already have. A bank with its own systems, a brokerage with its own app, and a firm with neither start from three different places.</p>
+        <p class="lede" style="margin-top:1.1rem">What differs isn't how deep the platform goes: it's what you already have. A bank with its own systems, a brokerage with its own app, and a firm with neither start from three different places.</p>
       </div>
       <div class="grid-3 rev">
         <div class="card" data-go="products" style="cursor:pointer">
@@ -748,12 +797,12 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         <div class="card" data-go="products" style="cursor:pointer">
           <span class="tag">For brokerages</span>
           <h3>Finnovest Embedded</h3>
-          <p>You have a trading app your clients already use. The SDK drops advised trading into it, under your brand, with no second login.</p>
+          <p>You have a trading app your clients already use. The SDK drops advised-trading into it, under your brand, with no second login.</p>
         </div>
         <div class="card" data-go="products" style="cursor:pointer">
           <span class="tag">For firms without an app</span>
           <h3>Finnovest Complete</h3>
-          <p>You have clients and a licence, but nowhere for them to trade. A white-label app carrying both independent trading and advised trading.</p>
+          <p>You have clients and a licence, but nowhere for them to trade. A white-label app carrying both independent-trading and advised-trading.</p>
         </div>
       </div>
     </div>
@@ -768,9 +817,9 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
       </div>
       <div class="grid-2 rev">
         <div class="card"><span class="tag">Distribution</span><h4>Mass digital distribution</h4><p>Send personal, guaranteed-suitable, actionable recommendations to every eligible client at once. Proactive contact instead of waiting for the call.</p></div>
-        <div class="card"><span class="tag">Personalisation</span><h4>Hyper-personalised advice</h4><p>The personalisation algorithm reads each investor's holdings, preferences and personal factors, then shapes the recommendation to them.</p></div>
+        <div class="card"><span class="tag">Personalisation</span><h4>Hyper-personalised advice</h4><p>The personalisation algorithm reads each retail investor's holdings, preferences and personal factors, then shapes the recommendation to them.</p></div>
         <div class="card"><span class="tag">Execution</span><h4>Effortless advice execution</h4><p>One tap authorises a bundle of multiple customised, interconnected orders in a single action.</p></div>
-        <div class="card"><span class="tag">Compliance</span><h4>Automatic compliance</h4><p>Suitability verification and documentation automated end to end — frictionless for the investor, defensible for the supervisor.</p></div>
+        <div class="card"><span class="tag">Compliance</span><h4>Automatic compliance</h4><p>Suitability verification and documentation automated end to end: frictionless for the retail investor, defensible for the supervisor.</p></div>
       </div>
       <div style="margin-top:28px" class="rev"><button class="btn btn-ghost" data-go="platform">See how the platform works</button></div>
     </div>
@@ -816,7 +865,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         <h2>Groundbreaking impact for investment professionals.</h2>
       </div>
       <div class="grid-2 rev">
-        <div class="card"><h4>Dramatically boost advisor productivity</h4><p>Deliver a high-touch advisory experience to far more clients with the same team — and compete on professional, hyper-personal advice under your own brand rather than on price.</p></div>
+        <div class="card"><h4>Dramatically boost advisor productivity</h4><p>Deliver a high-touch advisory experience to far more clients with the same team, and compete on professional, hyper-personal advice under your own brand rather than on price.</p></div>
         <div class="card"><h4>Deepen engagement and retention</h4><p>Real-time personalised advice plus a streamlined execution path builds a relationship clients don't want to leave.</p></div>
         <div class="card"><h4>New data-driven revenue streams</h4><p>Advice-to-action data reveals what clients actually respond to, opening high-value products built on real behaviour instead of guesswork.</p></div>
         <div class="card"><h4>Grow assets under advice</h4><p>Reach segments that want professional advice and are underserved by traditional advisory economics.</p></div>
@@ -830,9 +879,9 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
       <div class="grid-2" style="gap:clamp(34px,5vw,64px);align-items:center">
         <div class="rev">
           <span class="eyebrow">Human led, tech driven</span>
-          <h2 style="margin-bottom:20px">Your advisor still makes the call.</h2>
-          <p class="body-dim">Finnovest doesn't author advice, score clients, or decide anything a licensed human should decide. It takes the recommendation your professional has already made and removes every obstacle between it and a filled order. Nothing executes without an explicit client tap — that's what non-discretionary means, and it's what makes the scale possible.</p>
-          <div style="margin-top:26px"><button class="btn btn-ghost btn-sm" data-go="howitworks">If you're an individual investor, start here</button></div>
+          <h2 style="margin-bottom:20px">Your advisor still advises. Your client still decides.</h2>
+          <p class="body-dim">Finnovest doesn't author advice, score clients, or form a view of its own. It takes the recommendation your professional has already made and removes every obstacle between it and a filled order. Nothing executes without an explicit client tap: that's what non-discretionary means, and it's what makes the scale possible.</p>
+          <div style="margin-top:26px"><button class="btn btn-ghost btn-sm" data-go="howitworks">If you're a retail investor, start here</button></div>
         </div>
         <div class="rev">
           <div class="quote">
@@ -857,7 +906,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         <div>
           <span class="eyebrow">Products</span>
           <h1 style="font-size:clamp(1.95rem,3.6vw,3rem)">One platform. Three ways to fit it in.</h1>
-          <p class="lede" style="margin-top:1.4rem">Core, Embedded or Complete the same advised trading platform, deployed three ways. What differs is how much of it you need, because a bank with its own systems, a brokerage with its own app, and a firm with neither are starting from three different places.</p>
+          <p class="lede" style="margin-top:1.4rem">Core, Embedded or Complete: the same advised-trading platform, deployed three ways. What differs is how much of it you need, because a bank with its own systems, a brokerage with its own app, and a firm with neither are starting from three different places.</p>
         </div>
         <div class="rail" id="fit">
           <div class="fit-head"><span class="rail-h" style="padding:0">Find your fit</span><span class="fit-hint">Two questions</span></div>
@@ -865,7 +914,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
           <div class="fit-step on" data-step="1">
             <div class="fit-q"><span class="fit-n">Question 1 of 2</span>What do you run today?</div>
             <a data-fit="core"><div><div class="t">Our own core systems and OMS</div><div class="d">Advised clients, your infrastructure</div></div><svg class="go" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-            <a data-fit="sdk"><div><div class="t">A trading app our clients already use</div><div class="d">Independent trading, in your own app</div></div><svg class="go" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+            <a data-fit="sdk"><div><div class="t">A trading app our clients already use</div><div class="d">Independent-trading, in your own app</div></div><svg class="go" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
             <a data-fit="complete"><div><div class="t">Neither yet</div><div class="d">Clients and a licence, but no app</div></div><svg class="go" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
           </div>
 
@@ -896,16 +945,16 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
   <div class="band" style="padding-top:0">
     <div class="wrap">
 
-      <p class="small" style="margin:0 0 20px;color:var(--slate-soft);max-width:88ch">Every deployment runs the same advised-trading platform: portfolio building, full position and order history, and the advisor console. What differs is where it sits, where the advice comes from, and whether independent trading comes built in or is already yours.</p>
+      <p class="small" style="margin:0 0 20px;color:var(--slate-soft);max-width:88ch">Every deployment runs the same advised-trading platform: portfolio building, full position and order history, and the advisor console. What differs is where it sits, where the advice comes from, and whether independent-trading comes built in or is already yours.</p>
 
       <div class="prod-grid">
       <div class="prod rev" id="prod-institutional">
         <div class="prod-depth">For banks</div>
         <div>
           <h3>Finnovest Core</h3>
-          <p class="body-dim" style="font-size:.96rem;max-width:64ch">Your advisory relationships already exist yet what limits them is that each one is served a conversation at a time. While many investors seek professional advice Finnovest-Core platform integrates into your own systems and environment, so a single advisor's recommendation reaches every eligible client in the book, resolved against each portfolio individually and delivered through the channel your clients already use.</p>
+          <p class="body-dim" style="font-size:.96rem;max-width:64ch">Your advisory relationships already exist yet what limits them is that each one is served a conversation at a time. While many retail investors seek professional advice Finnovest-Core platform integrates into your own systems and environment, so a single advisor's recommendation reaches every eligible client in the book, resolved against each portfolio individually and delivered through the channel your clients already use.</p>
           <span class="case-link" data-go="cases">Read the case studies</span>
-          <div class="feat"><span class="chip">Advised trading, inside your systems</span><span class="chip">Core banking and OMS integration</span><span class="chip">Runs in your environment</span><span class="chip">Supervisory reporting</span></div>
+          <div class="feat"><span class="chip">Advised-trading, inside your systems</span><span class="chip">Core banking and OMS integration</span><span class="chip">Runs in your environment</span><span class="chip">Supervisory reporting</span></div>
           <div style="margin-top:18px"><button class="btn btn-mint btn-sm" data-go="contact">Request a demo</button></div>
         </div>
       </div>
@@ -914,9 +963,9 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         <div class="prod-depth">For brokerages</div>
         <div>
           <h3>Finnovest Embedded</h3>
-          <p class="body-dim" style="font-size:.96rem;max-width:64ch">Your independent traders act alone today. Not because they want to, but because professional advice has never been available inside a trading app, so they take it from finfluencers, forums and general market calls, none of which has ever seen what they hold. Finnovest Embedded drops into the app you already run and gives your licensed advisors a way to reach all of them, personally. Allowing all investors to choose between independent-trading or advised-trading, leaving all decisions in their hands.</p>
+          <p class="body-dim" style="font-size:.96rem;max-width:64ch">Your independent traders act alone today. Not because they want to, but because professional advice has never been available inside a trading app, so they take it from finfluencers, forums and general market calls, none of which has ever seen what they hold. Finnovest Embedded drops into the app you already run and gives your licensed advisors a way to reach all of them, personally. Allowing all retail investors to choose between independent-trading or advised-trading, leaving all decisions in their hands.</p>
           <span class="case-link" data-go="cases" data-anchor="case-excellence">Read the case study</span>
-          <div class="feat"><span class="chip">Advised trading, inside your app</span><span class="chip">SDK, no second login</span><span class="chip">Your brand and execution</span></div>
+          <div class="feat"><span class="chip">Advised-trading, inside your app</span><span class="chip">SDK, no second login</span><span class="chip">Your brand and execution</span></div>
           <div style="margin-top:18px"><button class="btn btn-mint btn-sm" data-go="contact">Request a demo</button></div>
         </div>
       </div>
@@ -925,8 +974,8 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         <div class="prod-depth">For full service advised-trading app</div>
         <div>
           <h3>Finnovest Complete</h3>
-          <p class="body-dim" style="font-size:.96rem;max-width:64ch">Your products and your licence are already in place. What isn't is a direct line to retail investors — for most houses that still runs through somebody else's distribution. Finnovest Complete is a full-service app under your own brand, cloud-based and fast to launch, with both modes in one product: independent-trading, where clients act on their own judgement whenever they like, and advised-trading, where your advisors send personalized recommendations that retail investors can act on as bundled orders, buy and sell, in a single tap. Bring your own licensed advisors, or connect to one already on the platform. Distribution you own, not distribution you rent.</p>
-          <div class="feat"><span class="chip">Independent and advised trading, both built in</span><span class="chip">Our app, your brand</span><span class="chip">Your advisors, or one already on the platform</span><span class="chip">Cloud-hosted, fast to launch</span></div>
+          <p class="body-dim" style="font-size:.96rem;max-width:64ch">Your products and your licence are already in place. What isn't is a direct line to retail investors. For most houses that still runs through somebody else's distribution. Finnovest Complete is a full-service app under your own brand, cloud-based and fast to launch, with both modes in one product: independent-trading, where clients act on their own judgement whenever they like, and advised-trading, where your advisors send personalized recommendations that retail investors can act on as bundled orders, buy and sell, in a single tap. Bring your own licensed advisors, or connect to one already on the platform. Distribution you own, not distribution you rent.</p>
+          <div class="feat"><span class="chip">Independent and advised-trading, both built in</span><span class="chip">Our app, your brand</span><span class="chip">Your advisors, or one already on the platform</span><span class="chip">Cloud-hosted, fast to launch</span></div>
           <div style="margin-top:18px"><button class="btn btn-mint btn-sm" data-go="contact">Request a demo</button></div>
         </div>
       </div>
@@ -962,85 +1011,139 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
 <!-- ================= ADVISED TRADING (category) ================= -->
 <section class="page" id="advisedtrading">
   <div class="band" style="padding-bottom:clamp(24px,3vw,36px)">
-    <div class="wrap">
-      <span class="eyebrow">The category</span>
-      <h1 style="font-size:clamp(1.95rem,3.6vw,3rem);max-width:18ch">What is advised trading?</h1>
-      <p class="lede" style="margin-top:1.4rem">Two things have existed for years, in separate places. Advised trading is what happens when you put them together — and until Finnovest, nobody had.</p>
+    <div class="wrap at-hero">
+      <div>
+        <span class="eyebrow">The category</span>
+        <h1 style="font-size:clamp(1.95rem,3.6vw,3rem);max-width:18ch">What is advised-trading?</h1>
+        <p class="lede" style="margin-top:1.4rem">A new way of independent-trading, where retail investors can enjoy advice from a licensed professional advisor, built for their own portfolio, in their trading app, executable in one tap. Investors keep every decision. They just stop making them alone. Same control. Better information. Less time.</p>
+        <p class="small" style="margin-top:1.2rem;max-width:62ch;font-family:var(--mono);line-height:1.6"><span class="mint">advised-trading</span> (n.) Independent-trading in which a licensed advisor's recommendation reaches each retail investor already fitted to their own portfolio, executable in a single tap, with the decision remaining theirs.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:1.6rem"><button class="btn btn-mint" data-go="contact">Book a demo</button><button class="btn btn-ghost" data-go="where">Find an advisor</button></div>
+      </div>
+
+      <div class="at-fig" role="img" aria-label="A phone showing two buttons, Independent-trading and Advised-trading, with the two paths explained beside it">
+        <div class="at-phone">
+          <div class="at-scr">
+            <div class="at-app">Your bank's app</div>
+            <div class="at-hi">Good morning</div>
+            <div class="at-pick">Choose your path</div>
+            <div class="at-btn">
+              <div class="t">Independent-trading</div>
+              <div class="s">Place your own orders</div>
+              <span class="a">→</span>
+            </div>
+            <div class="at-btn mint">
+              <div class="t">Advised-trading</div>
+              <div class="s">1 new recommendation from your advisor</div>
+              <span class="a">→</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="at-legs">
+          <svg class="at-arrows" aria-hidden="true"><path id="at-arrow-1" stroke="#5C7089" d="M0 182.4 C 34 182.4, 50 127.2, 84 127.2 M78 122.2 L 84 127.2 L 78 132.2"></path><path id="at-arrow-2" stroke="#2EE59D" d="M0 264.2 C 34 264.2, 50 297.2, 84 297.2 M78 292.2 L 84 297.2 L 78 302.2"></path></svg>
+          <div class="at-leg one">
+            <div class="h">Path 1 · Independent-trading</div>
+            <h4>Your ideas, your research, your orders.</h4>
+            <p>Exactly what you do today. Nothing about it changes.</p>
+          </div>
+          <div class="at-leg two">
+            <div class="h">Path 2 · Advised-trading</div>
+            <h4>A licensed advisor's recommendation, fitted to your portfolio.</h4>
+            <p>With the reasoning behind it, already turned into a bundle of orders that fits what you own. One tap executes it.</p>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 
   <div class="band" style="padding-top:0">
     <div class="wrap">
 
-      <div class="split rev">
-        <div>
-          <div class="h">Already existed</div>
-          <h4>Professional advice, in banks</h4>
-          <p>Licensed advisors giving real guidance to real people. Personal, considered, and built on genuine expertise — but delivered one conversation at a time, which is why it has always reached the largest accounts and few others.</p>
-        </div>
-        <div>
-          <div class="h">Already existed</div>
-          <h4>Trading, in apps</h4>
-          <p>Fast, cheap, independent trading apps that put the whole market in a pocket. Excellent at execution, and completely silent on what to do. The trader is on their own.</p>
-        </div>
+      <div class="join rev" style="margin-top:0">
+        <div class="h" style="font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mint);margin-bottom:12px">The decision is yours</div>
+        <p class="claim">Have an idea? Act on it. Like the advisor's idea? Act on it. No idea yet? Your advisor will have one, fitted to your account.</p>
       </div>
 
-      <div class="join rev">
-        <div class="h" style="font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mint);margin-bottom:12px">Did not exist</div>
-        <p class="claim">Advised trading — professional human advice, delivered personally, and executable in a single tap.</p>
+      <div class="rev" style="margin-top:clamp(48px,6vw,80px)">
+        <span class="eyebrow plain">Who is advising you</span>
+        <h2 style="max-width:24ch;margin-bottom:14px">A licensed advisor. A real person, accountable to you and to a regulator.</h2>
+        <p class="body-dim">The advice comes from a licensed professional at your bank or brokerage. Someone who reads the market every day, forms a view, and writes down the reasoning before it reaches you. Regulated, accountable, and paid to get it right. That advice arrives already fitted to what you actually hold, and it waits for your tap. Not a finfluencer's call to a million followers, not a formula sorting you into a bucket, not a manager trading your money without asking. A professional, thinking about you.</p>
+        <p class="body-dim" style="margin-top:1.1rem">And if a recommendation does not suit your profile, you never see it. Every one is checked for suitability against your own account before it is sent.</p>
+        <p class="body-dim" style="margin-top:1.1rem">Until now this kind of advice was reserved for the wealthy few, because it was delivered one conversation at a time. Advised-trading brings it to every retail investor.</p>
       </div>
 
 
       <div class="rev" style="margin-top:clamp(48px,6vw,80px)">
-        <span class="eyebrow plain">Why "executable" is the hard word</span>
-        <h2 style="max-width:24ch;margin-bottom:14px">The orders depend on each other.</h2>
-        <p class="lede" style="margin-bottom:26px">A recommendation is rarely one trade. Buying usually means selling something first — and the sale has to complete before the purchase can be funded. Everywhere else, that is four separate actions and a phone call.</p>
+        <span class="eyebrow plain">One tap, MULTIPLE orders</span>
+        <h2 style="max-width:24ch;margin-bottom:14px">One tap executes the whole recommendation.</h2>
+        <p class="lede" style="margin-bottom:26px">A recommendation is rarely one trade. Buying usually means selling something first, and the sale has to complete before the purchase can be funded. On Finnovest you approve once. The platform sells, confirms the cash, buys and reconciles, in the right order, with no human intervention.</p>
 
-        <svg viewBox="0 0 660 300" style="width:100%;height:auto;display:block" role="img" aria-label="Diagram contrasting four dependent orders handled separately with one approval that sequences them automatically">
-          <defs><marker id="cx" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#5C7089" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></marker></defs>
+        <div class="grid-2" style="gap:clamp(28px,4vw,56px);align-items:center">
+          <div class="advice at-card" role="img" aria-label="A recommendation card with one buy and two sell orders, the reasoning behind each, and a single Approve button">
+            <div class="advice-top">
+              <div class="avatar">AD</div>
+              <div><div class="advice-who">Hi Noa</div><div class="advice-from">Your advisor</div><div class="advice-when"><span class="live-dot"><i></i>Active</span> · Expires in 14 days</div></div>
+            </div>
+            <p class="thesis">Adding semiconductor exposure, funded from two overlapping index positions</p>
+            <p class="advice-why">Following recent moves in the market, I'd like to update a few positions in your portfolio.</p>
+            <div class="bundle">
+              <div class="bundle-h">Bundled recommendation · 1 buy · 2 sells</div>
+              <div class="ord-r">
+                <span class="side buy">Buy</span>
+                <span class="tk">NVIDIA CORP</span>
+                <span class="qt">20 × $118.40</span>
+              </div>
+              <div class="ord-r">
+                <span class="side sell">Sell</span>
+                <span class="tk">ISHARES CORE S&amp;P 500</span>
+                <span class="qt">12 × $101.15</span>
+              </div>
+              <div class="ord-r">
+                <span class="side sell">Sell</span>
+                <span class="tk">VANGUARD FTSE EUROPE</span>
+                <span class="qt">9 × $130.20</span>
+                <span class="leg-why">Funding the purchase from your two overlapping index positions, so your overall equity exposure stays where it is.</span>
+              </div>
+              <div class="tot"><span>To buy</span><b>$2,368.00</b></div>
+              <div class="tot" style="border-top:1px solid rgba(10,21,34,.07)"><span>To sell</span><b>$2,385.60</b></div>
+            </div>
+            <div class="tools">
+              <span class="tool">Simulate portfolio</span>
+              <span class="tool">Recommendation documentation</span>
+            </div>
+            <div class="advice-act">
+              <span class="act-btn">Approve</span>
+              <span class="act-btn sec">Ask</span>
+            </div>
+          </div>
 
-          <text x="0" y="12" fill="#5C7089" font-family="IBM Plex Mono,monospace" font-size="10.5" letter-spacing="1.4">EVERYWHERE ELSE</text>
-
-          <rect x="0" y="26" width="150" height="46" rx="8" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.12)"></rect>
-          <text x="75" y="45" text-anchor="middle" fill="#C8D4E0" font-family="Inter,sans-serif" font-size="12.5" font-weight="500">Sell the holding</text>
-          <text x="75" y="61" text-anchor="middle" fill="#5C7089" font-family="Inter,sans-serif" font-size="11">raise the cash</text>
-          <line x1="156" y1="49" x2="170" y2="49" stroke="#5C7089" stroke-width="1.4" marker-end="url(#cx)"></line>
-
-          <rect x="176" y="26" width="150" height="46" rx="8" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.12)"></rect>
-          <text x="251" y="45" text-anchor="middle" fill="#C8D4E0" font-family="Inter,sans-serif" font-size="12.5" font-weight="500">Wait for settlement</text>
-          <text x="251" y="61" text-anchor="middle" fill="#5C7089" font-family="Inter,sans-serif" font-size="11">hope the price holds</text>
-          <line x1="332" y1="49" x2="346" y2="49" stroke="#5C7089" stroke-width="1.4" marker-end="url(#cx)"></line>
-
-          <rect x="352" y="26" width="150" height="46" rx="8" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.12)"></rect>
-          <text x="427" y="45" text-anchor="middle" fill="#C8D4E0" font-family="Inter,sans-serif" font-size="12.5" font-weight="500">Place the purchase</text>
-          <text x="427" y="61" text-anchor="middle" fill="#5C7089" font-family="Inter,sans-serif" font-size="11">if the cash arrived</text>
-          <line x1="508" y1="49" x2="522" y2="49" stroke="#5C7089" stroke-width="1.4" marker-end="url(#cx)"></line>
-
-          <rect x="528" y="26" width="132" height="46" rx="8" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.12)"></rect>
-          <text x="594" y="45" text-anchor="middle" fill="#C8D4E0" font-family="Inter,sans-serif" font-size="12.5" font-weight="500">Reconcile</text>
-          <text x="594" y="61" text-anchor="middle" fill="#5C7089" font-family="Inter,sans-serif" font-size="11">by hand</text>
-
-          <text x="0" y="96" fill="#5C7089" font-family="Inter,sans-serif" font-size="11.5">Four decisions · and if one leg fails, the others are wrong</text>
-
-          <line x1="0" y1="122" x2="660" y2="122" stroke="rgba(255,255,255,.12)" stroke-dasharray="4 4"></line>
-
-          <text x="0" y="150" fill="#2EE59D" font-family="IBM Plex Mono,monospace" font-size="10.5" letter-spacing="1.4">ADVISED TRADING</text>
-
-          <rect x="0" y="164" width="660" height="106" rx="10" fill="rgba(46,229,157,.05)" stroke="rgba(46,229,157,.3)"></rect>
-          <text x="24" y="192" fill="#FFFFFF" font-family="Sora,sans-serif" font-size="15" font-weight="600">One recommendation, sized to this portfolio</text>
-          <text x="24" y="215" fill="#8DA2B8" font-family="Inter,sans-serif" font-size="12">Every order, the reasoning behind each one, and how long it stays open</text>
-          <rect x="24" y="228" width="128" height="30" rx="15" fill="#2EE59D"></rect>
-          <text x="88" y="247" text-anchor="middle" fill="#04150E" font-family="Inter,sans-serif" font-size="12.5" font-weight="600">Approve</text>
-          <text x="168" y="247" fill="#8DA2B8" font-family="Inter,sans-serif" font-size="12">One press. The platform sequences the rest, with no human touch.</text>
-        </svg>
+          <div class="at-flow">
+            <div class="at-flow-h mint">What you do</div>
+            <div class="at-you">
+              <div class="t">One recommendation, sized to your portfolio</div>
+              <div class="s">Every order, the reasoning behind each one, and how long it stays open</div>
+              <div class="row"><span class="pill">Approve</span><span class="s">One press. That is all you do.</span></div>
+            </div>
+            <div class="at-flow-h">What the platform does for you</div>
+            <div class="at-step"><div class="t">Sells the holding</div><div class="s">raises the cash</div></div>
+            <div class="at-arr">↓</div>
+            <div class="at-step"><div class="t">Confirms settlement</div><div class="s">before anything else moves</div></div>
+            <div class="at-arr">↓</div>
+            <div class="at-step"><div class="t">Places the purchase</div><div class="s">funded and sized for you</div></div>
+            <div class="at-arr">↓</div>
+            <div class="at-step"><div class="t">Reconciles</div><div class="s">automatically</div></div>
+            <p class="at-cap">Four steps, one order of execution, no human intervention.</p>
+          </div>
+        </div>
       </div>
 
       <div class="grid-2 rev" style="gap:clamp(32px,5vw,60px);align-items:center;margin-top:clamp(48px,6vw,80px)">
         <div>
-          <span class="eyebrow plain">Why it took this long</span>
-          <h2 style="margin-bottom:20px">Personal advice never scaled, so nobody offered it.</h2>
-          <p class="body-dim">A trading app is not obliged to give advice. But the moment it claims to give <em>personal</em> advice, that advice has to genuinely be personal — matched to what each client holds, what they can afford, and what they are trying to achieve. Done by hand, that is one advisor and one client at a time, which does not work at retail scale.</p>
-          <p class="body-dim" style="margin-top:1.1rem">So brokerages stayed out of it. Their clients did not stop wanting guidance — they took it from finfluencers, forums and general market calls, none of which has ever seen a single one of their portfolios.</p>
+          <span class="eyebrow plain">For banks and brokerages</span>
+          <h2 style="margin-bottom:20px">Your advisors, in your app, in your name, reaching every account.</h2>
+          <p class="body-dim">Personalised advice never scaled. To be personalised it has to match what each client holds, what they can afford and what they are trying to achieve, and done by hand that is one advisor and one client at a time. So it reached the largest accounts and almost nobody else.</p>
+          <p class="body-dim" style="margin-top:1.1rem">On Finnovest an advisor issues one recommendation and the platform resolves it against every client's own portfolio. Every account hears from an advisor who knows what they actually hold, with the reasoning attached, in your name and carrying your advisors' judgement.</p>
         </div>
         <div>
           <div class="quote">
@@ -1050,12 +1153,21 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         </div>
       </div>
 
+      <div class="grid-2 rev" style="gap:clamp(32px,5vw,60px);align-items:center;margin-top:clamp(48px,6vw,80px)">
+        <div>
+          <span class="eyebrow plain">Compliance, built in</span>
+          <h2 style="margin-bottom:20px">Suitability checked before it is sent. Documented before anyone asks.</h2>
+          <p class="body-dim">Every recommendation is verified against each client's risk profile, holdings, cash and credit before it reaches them. Where it does not fit, it is filtered out, not softened. The reasoning, the checks and the fills are recorded as they happen, so the file is already written when the supervisor wants it. Personalised advice at retail scale, with no exception queue at the end of the day.</p>
+        </div>
+        <div>
+          <div class="hp-stat"><div class="n mint">ZERO</div><div class="l">compliance errors<br>across the client base to date</div></div>
+        </div>
+      </div>
+
       <div class="rev" style="margin-top:clamp(48px,6vw,80px)">
         <span class="eyebrow plain">The distinction that matters</span>
-        <h2 style="max-width:22ch;margin-bottom:26px">Personal is not the same as personalised.</h2>
-        <div class="row"><div class="meta">Not this</div><div><h4>A model portfolio for your risk bucket</h4><p class="small">Everyone scored the same way receives the same advice. It scales, but nothing about it is yours.</p></div><div class="arw">→</div></div>
-        <div class="row"><div class="meta">Not this</div><div><h4>Automated management on your behalf</h4><p class="small">Discretionary systems act without asking. Convenient, but the decision stops being the client's.</p></div><div class="arw">→</div></div>
-        <div class="row"><div class="meta">This</div><div><h4>A licensed human decides. Your portfolio determines what that means for you.</h4><p class="small">The advisor issues one recommendation and writes the reasoning. The platform resolves it against your holdings, your available cash and credit, your risk profile and your goals — then waits for you to approve it.</p></div><div class="arw">→</div></div>
+        <h2 style="max-width:22ch;margin-bottom:26px">Personalised to you. Not to your type.</h2>
+        <p class="body-dim">Finnovest delivers personalised advice. A licensed advisor forms one view and writes down the reasoning. The platform then works out what that view means for your portfolio specifically: what you hold, what you can afford, what you are aiming for. The same advisor and the same reasoning produce a different set of orders for every single client, and each one waits for that client to approve it. That is personalised to you. A model portfolio for your risk bucket is personalised to your type, and that is a different thing.</p>
       </div>
 
       <div class="rev" style="margin-top:clamp(48px,6vw,80px)">
@@ -1066,13 +1178,13 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         <div class="award">
           <span class="badge">Israel Innovation Authority</span>
           <h4>Generic Constraints Algorithm</h4>
-          <p>Handles any operational or client-specific constraint, automating the personal suitability process for a large number of clients simultaneously. The result is a recommendation tailored to each individual client — despite wide variation between one portfolio and the next.</p>
+          <p>Handles any operational or client-specific constraint, automating the personal suitability process for a large number of clients simultaneously. The result is a recommendation tailored to each individual client, despite wide variation between one portfolio and the next.</p>
         </div>
 
         <div class="award">
           <span class="badge">Israel Innovation Authority</span>
           <h4>Automatic Order Management Module</h4>
-          <p>Manages and supervises the sending of multiple interdependent trade orders for each individual client, with no human intervention — executing several trades from a single press of the approval button. Interdependent is the hard part: when a sale funds a purchase, the orders rely on each other.</p>
+          <p>Manages and supervises the sending of multiple interdependent trade orders for each individual client, with no human intervention, executing several trades from a single press of the approval button. Interdependent is the hard part: when a sale funds a purchase, the orders rely on each other.</p>
         </div>
         <p class="small" style="margin-top:16px">Recognition and funding from the Israel Innovation Authority. Finnovest holds no patents on these components.</p>
       </div>
@@ -1081,8 +1193,34 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
   </div>
 
   <div class="cta-band band-tight">
-    <div class="wrap cta-in"><h2>Want to offer this to your clients?</h2><button class="btn btn-mint" data-go="contact">Request a demo</button></div>
+    <div class="wrap cta-in"><h2>Offer it to your clients, or find it at your bank.</h2><div style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn btn-mint" data-go="contact">Request a demo</button><button class="btn btn-ghost" data-go="where">Where to get it</button></div></div>
   </div>
+<script>
+(function(){
+  /* Draw each hero arrow from its phone button to its path label, by measurement,
+     so alignment holds whatever the text wrapping. */
+  function draw(){
+    var legs=document.querySelector('#advisedtrading .at-legs'); if(!legs) return;
+    var svg=legs.querySelector('.at-arrows'); if(!svg||getComputedStyle(svg).display==='none') return;
+    var lr=legs.getBoundingClientRect(); if(!lr.height) return;
+    var btns=document.querySelectorAll('#advisedtrading .at-btn');
+    var heads=document.querySelectorAll('#advisedtrading .at-leg h4');
+    for(var i=0;i<2;i++){
+      var p=document.getElementById('at-arrow-'+(i+1)); if(!p||!btns[i]||!heads[i]) continue;
+      var b=btns[i].getBoundingClientRect(), h=heads[i].getBoundingClientRect();
+      var y0=b.top+b.height/2-lr.top, y1=h.top+h.height/2-lr.top;
+      var x0=0, x1=84;
+      p.setAttribute('d','M'+x0+' '+y0.toFixed(1)+' C '+(x0+34)+' '+y0.toFixed(1)+', '+(x1-34)+' '+y1.toFixed(1)+', '+x1+' '+y1.toFixed(1)+' M'+(x1-6)+' '+(y1-5).toFixed(1)+' L '+x1+' '+y1.toFixed(1)+' L '+(x1-6)+' '+(y1+5).toFixed(1));
+    }
+  }
+  var t; function soon(){clearTimeout(t); t=setTimeout(draw,60);}
+  window.addEventListener('load',soon); window.addEventListener('resize',soon);
+  if(document.fonts&&document.fonts.ready){document.fonts.ready.then(soon);}
+  document.addEventListener('click',function(e){ if(e.target.closest&&e.target.closest('[data-go]')) soon(); });
+  window.addEventListener('hashchange',soon);
+  soon();
+})();
+</script>
 </section>
 
 <!-- ================= PLATFORM ================= -->
@@ -1104,14 +1242,14 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
       <div class="layer rev"><div class="lbl">4 · The advisor</div><p>Each advisor turns that view into a recommendation for their own book: a specific thesis, a purchase, the funding strategy behind it, and the reasoning written in their own words. Two layers of professional judgement before any software runs.</p></div>
       <div class="layer rev"><div class="lbl">5 · translation</div><p>Finnovest Generic Constraints Algorithm resolves that one instruction against every portfolio: which holding funds the purchase here, how much this client can take on, and whether the recommendation suits them at all. If it does not, it is never sent.</p></div>
       <div class="layer rev"><div class="lbl">6 · Execution</div><p>The client sees the thesis, the reasoning behind each individual order, and how long the recommendation stays open. They can simulate the effect on their portfolio before deciding, and read the full documentation. One press approves everything (bundeled set of sell and buy orders) the Automatic Order Management Module sequences the interdependent orders, with no human intervention.</p></div>
-      <div class="layer rev"><div class="lbl">7 · Follow-up</div><p>Sent, opened, executed — per client for the advisor to act on, and in aggregate for the institution to learn from.</p></div>
+      <div class="layer rev"><div class="lbl">7 · Follow-up</div><p>Sent, opened, executed: per client for the advisor to act on, and in aggregate for the institution to learn from.</p></div>
 
       <div class="rev" style="margin-top:clamp(48px,6vw,80px)">
         <span class="eyebrow">Stage five in detail</span>
         <h2 style="max-width:24ch;margin-bottom:14px">What "personal" actually requires.</h2>
         <p class="lede" style="margin-bottom:28px">A recommendation to buy is meaningless until you know what this particular client can sell, afford, and carry. Five things determine it.</p>
         <div class="grid-3">
-          <div class="card"><h4>Existing holdings</h4><p>What they already own decides what can be trimmed to fund a purchase — and whether they are already overweight in the thing being recommended.</p></div>
+          <div class="card"><h4>Existing holdings</h4><p>What they already own decides what can be trimmed to fund a purchase, and whether they are already overweight in the thing being recommended.</p></div>
           <div class="card"><h4>Cash available</h4><p>Whether the purchase needs funding at all, or whether it can be made outright.</p></div>
           <div class="card"><h4>Credit available</h4><p>What the account permits beyond cash, and what that means for sizing.</p></div>
           <div class="card"><h4>Risk profile</h4><p>Whether this instrument belongs in this portfolio, and at what weight. Where it does not fit, the recommendation is filtered out entirely.</p></div>
@@ -1147,7 +1285,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
     <div class="wrap">
       <span class="eyebrow">For advisors</span>
       <h1 style="font-size:clamp(1.95rem,3.6vw,3rem);max-width:19ch">An operating system for the work you already do.</h1>
-      <p class="lede" style="margin-top:1.4rem">Your head of advisory sets the house view. You turn it into a recommendation for your own book, in your own words. What changes is how many clients hear it — and that for the first time, you find out what they did about it.</p>
+      <p class="lede" style="margin-top:1.4rem">Your head of advisory sets the house view. You turn it into a recommendation for your own book, in your own words. What changes is how many clients hear it, and that for the first time, you find out what they did about it.</p>
     </div>
   </div>
 
@@ -1158,7 +1296,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         <span class="eyebrow plain">The console</span>
         <h2 style="max-width:22ch;margin-bottom:26px">Your whole book, and one place to write.</h2>
         <div class="grid-2">
-          <div class="card"><h4>Every client in one list</h4><p>Holdings, risk profile, goals and available cash and credit — the full book, without opening four systems to see it.</p></div>
+          <div class="card"><h4>Every client in one list</h4><p>Holdings, risk profile, goals and available cash and credit: the full book, without opening four systems to see it.</p></div>
           <div class="card"><h4>Compose once</h4><p>Write the recommendation and the reasoning behind it. Issue it to one client, a segment, or the entire book.</p></div>
         </div>
       </div>
@@ -1167,7 +1305,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         <span class="eyebrow plain">What you can issue</span>
         <h2 style="max-width:24ch;margin-bottom:26px">Four kinds of instruction.</h2>
         <div class="row"><div class="meta">Buy</div><div><h4>Recommend a purchase, and define how it is funded</h4><p class="small">You set the funding strategy, not the individual sale. The platform applies that strategy to each portfolio, working out which holding is sold here, and how much.</p></div><div class="arw">→</div></div>
-        <div class="row"><div class="meta">Sell</div><div><h4>Recommend a sale, with or without a replacement</h4><p class="small">A change of conviction. The replacement purchase is optional — sometimes the right advice is simply to reduce exposure.</p></div><div class="arw">→</div></div>
+        <div class="row"><div class="meta">Sell</div><div><h4>Recommend a sale, with or without a replacement</h4><p class="small">A change of conviction. The replacement purchase is optional. Sometimes the right advice is simply to reduce exposure.</p></div><div class="arw">→</div></div>
         <div class="row"><div class="meta">Balance</div><div><h4>Find and correct deviations across the book</h4><p class="small">Not a trade but a sweep. The platform identifies portfolios that have drifted outside their agreed bounds and proposes the corrections, client by client.</p></div><div class="arw">→</div></div>
         <div class="row"><div class="meta">Build</div><div><h4>A portfolio for a client who has none</h4><p class="small">Constructed from your recommendations, filtered through that client's profile and constraints, and presented to them for approval.</p></div><div class="arw">→</div></div>
         <div class="row"><div class="meta">Message</div><div><h4>Or write with no orders attached</h4><p class="small">Sometimes the right thing to send is context, not a trade. The platform carries that too.</p></div><div class="arw">→</div></div>
@@ -1179,11 +1317,11 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         <p class="lede">Advice has always disappeared after it left your desk. You gave it, and unless the client mentioned it, you never learned whether it was read, considered, or acted on.</p>
         <div class="funnel">
           <div class="fstep"><div class="fn">Sent</div><div class="fl">Delivered</div><p>Who received it, and who was filtered out because it did not suit them.</p></div>
-          <div class="fstep"><div class="fn">Opened</div><div class="fl">Read</div><p>Who looked at it, and who has not yet — a list worth following up.</p></div>
+          <div class="fstep"><div class="fn">Opened</div><div class="fl">Read</div><p>Who looked at it, and who has not yet: a list worth following up.</p></div>
           <div class="fstep"><div class="fn">Executed</div><div class="fl">Acted on</div><p>Who approved the orders, and who read it and chose not to.</p></div>
         </div>
         <div class="grid-2" style="margin-top:20px">
-          <div class="card"><h4>Per client, as a workflow</h4><p>See that a specific client opened a recommendation three days ago and did nothing. That is a reason to call — and something to talk about when you do.</p></div>
+          <div class="card"><h4>Per client, as a workflow</h4><p>See that a specific client opened a recommendation three days ago and did nothing. That is a reason to call, and something to talk about when you do.</p></div>
           <div class="card"><h4>In aggregate, as insight</h4><p>Which recommendations convert, which segments respond, and what the book actually does. Advisory becomes measurable, and therefore improvable.</p></div>
         </div>
       </div>
@@ -1192,7 +1330,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         <div>
           <span class="eyebrow plain">What stays yours</span>
           <h2 style="margin-bottom:20px">The platform never forms a view.</h2>
-          <p class="body-dim">It does not decide what to buy, rank instruments, or write reasoning on your behalf. Your recommendation is the input. What the platform does is work out what that instruction means for each individual client — which holding, how much, and whether it suits them at all.</p>
+          <p class="body-dim">It does not decide what to buy, rank instruments, or write reasoning on your behalf. Your recommendation is the input. What the platform does is work out what that instruction means for each individual client: which holding, how much, and whether it suits them at all.</p>
           <p class="body-dim" style="margin-top:1.1rem">Nothing is sent to a client it does not suit, and nothing executes until that client approves it.</p>
         </div>
         <div><div class="quote"><p>Your judgement, carried to every client instead of a few.</p><cite>What the console is for</cite></div></div>
@@ -1214,7 +1352,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         <div>
           <span class="eyebrow">Case studies</span>
           <h1 style="font-size:clamp(1.95rem,3.6vw,3rem)">What our partners have built.</h1>
-          <p class="lede" style="margin-top:1.4rem">Proof that one-to-many non-discretionary advisory works in production, at institutions with real books and real regulators. Each story belongs to the partner — what they set out to do, what they put in front of their clients, and why it mattered.</p>
+          <p class="lede" style="margin-top:1.4rem">Proof that one-to-many non-discretionary advisory works in production, at institutions with real books and real regulators. Each story belongs to the partner: what they set out to do, what they put in front of their clients, and why it mattered.</p>
         </div>
         <div class="rail">
           <div class="rail-h">The partners</div>
@@ -1229,26 +1367,26 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
   <div class="band" style="padding-top:0">
     <div class="wrap">
 
-      <!-- ---- 01 EXCELLENCE TRADE — the breakthrough, most recent ---- -->
+      <!-- ---- 01 EXCELLENCE TRADE - the breakthrough, most recent ---- -->
       <div class="case lead rev" id="case-excellence">
         <div class="case-hd">
           <span class="idx">01</span>
           <span class="lg lg-lg lg-excellence" role="img" aria-label="Excellence Trade"></span>
           <h3>Excellence Trade · Phoenix Investment House</h3>
-          <span class="case-flag">Next Trade · the first advised trading launch</span>
+          <span class="case-flag">Next Trade · the first advised-trading launch</span>
         </div>
         <div class="beats">
           <div class="beat">
             <div class="k">The challenge</div>
-            <p>A brokerage competing in a market where the obvious lever is price, and where personal investment advice had always belonged to the banks. Its clients traded independently, with no professional guidance attached to the screen they were already looking at — every decision about new money, a position to trim, or a portfolio drifting off its risk level fell to them alone.</p>
+            <p>A brokerage competing in a market where the obvious lever is price, and where personal investment advice had always belonged to the banks. Its clients traded independently, with no professional guidance attached to the screen they were already looking at: every decision about new money, a position to trim, or a portfolio drifting off its risk level fell to them alone.</p>
           </div>
           <div class="beat">
             <div class="k">What they launched</div>
-            <p>Next Trade, live August 2026 — built on Finnovest and delivered inside the Phoenix Investment House app the client already uses. Excellence's investment experts issue a recommendation; the platform resolves it against each client's own holdings and stated risk level, then pushes it to their phone with the trade instruction already prepared. The client approves or declines, and only on approval does the order route to the exchange. Offered at no additional cost to clients with portfolios from ₪20,000, after a six-question profile and a digital agreement. More than a year in development.</p>
+            <p>Next Trade, live August 2026, built on Finnovest and delivered inside the Phoenix Investment House app the client already uses. Excellence's investment experts issue a recommendation; the platform resolves it against each client's own holdings and stated risk level, then pushes it to their phone with the trade instruction already prepared. The client approves or declines, and only on approval does the order route to the exchange. Offered at no additional cost to clients with portfolios from ₪20,000, after a six-question profile and a digital agreement. More than a year in development.</p>
           </div>
           <div class="beat">
             <div class="k">Why it matters</div>
-            <p>The first time independent traders received personal, executable recommendations inside the app they already traded in. Not a model portfolio and not a general market insight, but a personal recommendation created by a professional, authorised investment advisor. The platform resolves each recommendation against the client's own position and lets investors stay in control — approve or decline. It also allows new investors to build a portfolio based on the advisor's recommendations, shaped by their own profile.</p>
+            <p>The first time independent traders received personal, executable recommendations inside the app they already traded in. Not a model portfolio and not a general market insight, but a personal recommendation created by a professional, authorised investment advisor. The platform resolves each recommendation against the client's own position and lets retail investors stay in control: approve or decline. It also allows new investors to build a portfolio based on the advisor's recommendations, shaped by their own profile.</p>
           </div>
         </div>
         <div class="case-foot">
@@ -1271,7 +1409,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
           </div>
           <div class="beat">
             <div class="k">What they launched</div>
-            <p>Smart Invest — proactive, fully tailored recommendations on single stocks, bonds, ETFs and mutual funds, delivered into the bank's own mobile app. Clients read the reasoning behind each one and authorise the whole set of orders with a single press.</p>
+            <p>Smart Invest: proactive, fully tailored recommendations on single stocks, bonds, ETFs and mutual funds, delivered into the bank's own mobile app. Clients read the reasoning behind each one and authorise the whole set of orders with a single press.</p>
           </div>
           <div class="beat">
             <div class="k">Why it matters</div>
@@ -1295,7 +1433,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
           </div>
           <div class="beat">
             <div class="k">What they launched</div>
-            <p>Advise.me, unique to the bank — personal investment recommendations a client receives and can act on directly from the phone, with suitability verification and documentation running automatically behind every one.</p>
+            <p>Advise.me, unique to the bank: personal investment recommendations a client receives and can act on directly from the phone, with suitability verification and documentation running automatically behind every one.</p>
           </div>
           <div class="beat">
             <div class="k">Why it matters</div>
@@ -1328,7 +1466,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
       <div class="grid-2" style="gap:clamp(34px,5vw,64px);align-items:center">
         <div class="rev">
           <span class="eyebrow plain">The thesis</span>
-          <h2 style="margin-bottom:20px">Next-gen investors want to act independently — and still want to be advised.</h2>
+          <h2 style="margin-bottom:20px">Next-gen retail investors want to act independently, and still want to be advised.</h2>
           <p class="body-dim">Until now, scaling non-discretionary advisory wasn't feasible. Finnovest is the first to deliver the depth of traditional one-to-one advice at one-to-many scale: actionable, tailored recommendations created simultaneously for each client's own portfolio, holdings and risk appetite, arriving in real time and authorised with a single tap.</p>
         </div>
         <div class="rev"><div class="quote"><p>Preserve the depth of personalised advice while achieving the scale today's market demands.</p><cite>The standard we're setting</cite></div></div>
@@ -1356,7 +1494,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
     <div class="wrap">
       <span class="eyebrow">Press and awards</span>
       <h1 style="font-size:clamp(2.05rem,4vw,3.3rem);max-width:17ch">Coverage, interviews and recognition.</h1>
-      <p class="lede" style="margin-top:1.5rem">Everything written and broadcast about Finnovest and the shift to advised trading. For press enquiries and brand assets, contact the press desk.</p>
+      <p class="lede" style="margin-top:1.5rem">Everything written and broadcast about Finnovest and the shift to advised-trading. For press enquiries and brand assets, contact the press desk.</p>
     </div>
   </div>
   <div class="band" style="padding-top:0">
@@ -1383,7 +1521,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         <span class="eyebrow plain">Podcasts and long-form</span>
         <a class="row" href="https://open.spotify.com/episode/4Dm0Kb6a8lf13QClBdSMQQ">
           <div class="meta">Spotify</div>
-          <div><span class="kind pod">Podcast</span><h4 class="he">השקעות (לא) רק לבלונדיניות — פרק 82: עתיד ההשקעות בישראל</h4><p class="small">Tal Brockmann on the future of investing in Israel, with the Israeli women investors community. Hebrew.</p></div>
+          <div><span class="kind pod">Podcast</span><h4 class="he">השקעות (לא) רק לבלונדיניות: פרק 82: עתיד ההשקעות בישראל</h4><p class="small">Tal Brockmann on the future of investing in Israel, with the Israeli women investors community. Hebrew.</p></div>
           <div class="arw">→</div>
         </a>
         <a class="row" href="https://headchannel.co.uk/blog/the-journey-of-developing-a-proprietary-platform-with-internal-and-external-teams/">
@@ -1402,7 +1540,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         <span class="eyebrow plain">Print and online</span>
         <a class="row" href="https://www.bizportal.co.il/financialconsumerism/news/article/20038391">
           <div class="meta">Bizportal · Aug 2026</div>
-          <div><span class="kind print">Launch</span><h4 class="he">אקסלנס משיקה שירות המלצות למשקיעים עצמאיים</h4><p class="small">The most detailed account of the Next Trade launch: how a recommendation becomes a trade instruction, who the service is for, and what an investor should ask of any service like it. Hebrew.</p></div>
+          <div><span class="kind print">Launch</span><h4 class="he">אקסלנס משיקה שירות המלצות למשקיעים עצמאיים</h4><p class="small">The most detailed account of the Next Trade launch: how a recommendation becomes a trade instruction, who the service is for, and what a retail investor should ask of any service like it. Hebrew.</p></div>
           <div class="arw">→</div>
         </a>
         <a class="row" href="https://www.funder.co.il/article/207056">
@@ -1417,7 +1555,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         </a>
         <a class="row" href="https://tech.walla.co.il/item/3769249">
           <div class="meta">Walla Tech · Jul 2025</div>
-          <div><span class="kind print">Interview</span><h4 class="he">"ביצוע הוראות מסחר באפליקציות כבר לא מספיק למשקיעים"</h4><p class="small">Tal Brockmann on why one-to-one advisory never scaled, why generic recommendations fail the individual investor, and the scale the platform now analyses daily. Hebrew.</p></div>
+          <div><span class="kind print">Interview</span><h4 class="he">"ביצוע הוראות מסחר באפליקציות כבר לא מספיק למשקיעים"</h4><p class="small">Tal Brockmann on why one-to-one advisory never scaled, why generic recommendations fail the retail investor, and the scale the platform now analyses daily. Hebrew.</p></div>
           <div class="arw">→</div>
         </a>
         <a class="row" href="https://www.themarker.com/markets/2026-06-21/ty-article-magazine/.highlight/0000019e-da69-db7a-a9bf-dffd6afa0000">
@@ -1432,7 +1570,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         </a>
         <a class="row" href="https://www.ynetnews.com/business/article/s1vaermkbx">
           <div class="meta">Ynetnews · Mar 2026</div>
-          <div><span class="kind print">Commentary</span><h4>Investors weigh a strategic shift as war tests the Tel Aviv rally</h4><p class="small">Brockmann on the scenario that has to be priced in: a prolonged campaign would damage consumption, a central pillar of the local economy — though the economy enters the event in relatively good shape.</p></div>
+          <div><span class="kind print">Commentary</span><h4>Investors weigh a strategic shift as war tests the Tel Aviv rally</h4><p class="small">Brockmann on the scenario that has to be priced in: a prolonged campaign would damage consumption, a central pillar of the local economy, though the economy enters the event in relatively good shape.</p></div>
           <div class="arw">→</div>
         </a>
         <a class="row" href="https://www.themarker.com/labels/fintech/2020-08-19/ty-article-labels/0000017f-f890-ddde-abff-fcf5e4640000">
@@ -1476,7 +1614,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         </div>
       </div>
 
-      <!-- LIVE FEEDS — hidden until YouTube/Facebook credentials are set in the SOCIAL config block below.
+      <!-- LIVE FEEDS - hidden until YouTube/Facebook credentials are set in the SOCIAL config block below.
            The loader functions null-check their containers, so nothing breaks while this is commented out.
            To re-enable: uncomment this block and fill in SOCIAL at the bottom of the file. -->
       <!--
@@ -1484,7 +1622,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
       <div style="margin-top:56px" class="rev">
         <span class="eyebrow">Live feeds</span>
         <h2 style="max-width:20ch;margin-bottom:10px">Built to plug in, not to be rebuilt.</h2>
-        <p class="lede" style="margin-bottom:30px">Two slots are wired and waiting. Once the channel IDs and access tokens are in place, both fill themselves — no layout work, no new page.</p>
+        <p class="lede" style="margin-bottom:30px">Two slots are wired and waiting. Once the channel IDs and access tokens are in place, both fill themselves: no layout work, no new page.</p>
 
         <div class="feed" style="margin-bottom:16px">
           <div class="feed-head">
@@ -1590,7 +1728,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
     <div class="wrap">
       <span class="eyebrow">For retail investors</span>
       <h1 style="font-size:clamp(1.95rem,3.6vw,3rem);max-width:19ch">The professionals' thinking. Your portfolio. Your call.</h1>
-      <p class="lede" style="margin-top:1.4rem">If you trade on your own, you have probably taken advice from somewhere — a finfluencer, a forum, a general market call. None of them has ever seen your portfolio. Advised trading is different: a licensed professional at your broker decides, and the platform works out what that means for what you actually hold.</p>
+      <p class="lede" style="margin-top:1.4rem">If you trade on your own, you have probably taken advice from somewhere: a finfluencer, a forum, a general market call. None of them has ever seen your portfolio. Advised-trading is different: a licensed professional at your broker advises, the platform works out what that means for what you actually hold, and you decide.</p>
     </div>
   </div>
 
@@ -1600,12 +1738,12 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         <div class="card">
           <span class="tag">Step one</span>
           <h4>A professional committee forms a view</h4>
-          <p>At your bank or brokerage, licensed professionals research the market and reach a decision — reduce exposure to a sector, add a position, rebalance. The same analysis that has always driven institutional money.</p>
+          <p>At your bank or brokerage, licensed professionals research the market and form a recommendation: reduce exposure to a sector, add a position, rebalance. The same analysis that has always driven institutional money.</p>
         </div>
         <div class="card">
           <span class="tag">Step two</span>
           <h4>It's translated to your portfolio</h4>
-          <p>The platform reads what you actually hold, your risk level and what you're trying to achieve, then works out what that view means for you specifically — which holdings, how much, and whether it suits you at all. If it doesn't fit you, it never arrives.</p>
+          <p>The platform reads what you actually hold, your risk level and what you're trying to achieve, then works out what that view means for you specifically: which holdings, how much, and whether it suits you at all. If it doesn't fit you, it never arrives.</p>
         </div>
         <div class="card">
           <span class="tag">Step three</span>
@@ -1618,8 +1756,8 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         <div>
           <span class="eyebrow plain">Why this was out of reach</span>
           <h2 style="margin-bottom:20px">Professional advice used to be a question of portfolio size.</h2>
-          <p class="body-dim">An advisor could only speak to one client at a time, so the most attentive service went to the largest accounts. Everyone else got a newsletter, a generic model, or nothing. The constraint was never the quality of the thinking — it was how many people one professional could reach in a day.</p>
-          <p class="body-dim" style="margin-top:1.1rem">That constraint is what the technology removes. The same committee view now reaches thousands of investors at once, individually sized for each one, without anyone having to wait their turn.</p>
+          <p class="body-dim">An advisor could only speak to one client at a time, so the most attentive service went to the largest accounts. Everyone else got a newsletter, a generic model, or nothing. The constraint was never the quality of the thinking. It was how many people one professional could reach in a day.</p>
+          <p class="body-dim" style="margin-top:1.1rem">That constraint is what the technology removes. The same committee view now reaches thousands of retail investors at once, individually sized for each one, without anyone having to wait their turn.</p>
         </div>
         <div>
           <div class="quote">
@@ -1632,7 +1770,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
       <div style="margin-top:clamp(52px,7vw,88px)" class="rev">
         <h2 style="max-width:20ch;margin-bottom:26px">What Finnovest does not do</h2>
         <div class="row"><div class="meta">Never</div><div><h4>We don't hold your money</h4><p class="small">Your assets stay with your bank or broker. Finnovest is software; it never takes custody of anything.</p></div><div class="arw">→</div></div>
-        <div class="row"><div class="meta">Never</div><div><h4>We don't decide what you should buy</h4><p class="small">The view comes from licensed professionals at your institution. The platform translates and sizes it — it doesn't form opinions of its own.</p></div><div class="arw">→</div></div>
+        <div class="row"><div class="meta">Never</div><div><h4>We don't decide what you should buy</h4><p class="small">The view comes from licensed professionals at your institution. The platform translates and sizes it. It doesn't form opinions of its own.</p></div><div class="arw">→</div></div>
         <div class="row"><div class="meta">Never</div><div><h4>We don't trade without your approval</h4><p class="small">Non-discretionary means every order waits for you. No automatic trading, no exceptions, however small the change.</p></div><div class="arw">→</div></div>
         <div class="row"><div class="meta">Never</div><div><h4>We don't send you something that doesn't fit</h4><p class="small">If a recommendation sits outside your risk level or your limits, it's filtered out before it reaches your screen.</p></div><div class="arw">→</div></div>
       </div>
@@ -1650,7 +1788,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
     <div class="wrap">
       <span class="eyebrow">For retail investors</span>
       <h1 style="font-size:clamp(1.95rem,3.6vw,3rem);max-width:17ch">Choose your advisor and open an account.</h1>
-      <p class="lede" style="margin-top:1.4rem">Finnovest is the technology, not the provider — we don't open accounts and never hold your money. Below are the institutions offering this service today, and the ones that don't yet.</p>
+      <p class="lede" style="margin-top:1.4rem">Finnovest is the technology, not the provider. We don't open accounts and never hold your money. Below are the institutions offering this service today, and the ones that don't yet.</p>
 
       <div class="steps">
         <div class="step-c"><div class="sn">STEP 1</div><p>Pick an institution from the list below.</p></div>
@@ -1688,26 +1826,26 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         </div>
       </div>
 
-      <!-- "Not available yet" group — hidden until real brokerage names are supplied.
+      <!-- "Not available yet" group - hidden until real brokerage names are supplied.
            Uncomment and replace each "Add brokerage name" with a real institution. -->
       <!--
       <div class="pgroup">
         <div class="pgroup-h"><h3>Not available yet</h3></div>
-        <p class="pgroup-sub">These institutions don't offer advised trading at the moment. If you're a client, telling them you want it is the fastest way to change that.</p>
+        <p class="pgroup-sub">These institutions don't offer advised-trading at the moment. If you're a client, telling them you want it is the fastest way to change that.</p>
         <!&#45;&#45; Replace each row below with a real brokerage name. Keep the "soon" class so the row stays unclickable. &#45;&#45;>
         <div class="provider soon">
           <div class="mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5C7089" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></div>
-          <div><div class="nm">Add brokerage name</div><div class="sv">Not currently offering advised trading</div></div>
+          <div><div class="nm">Add brokerage name</div><div class="sv">Not currently offering advised-trading</div></div>
           <span class="p-soon">Not yet</span>
         </div>
         <div class="provider soon">
           <div class="mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5C7089" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></div>
-          <div><div class="nm">Add brokerage name</div><div class="sv">Not currently offering advised trading</div></div>
+          <div><div class="nm">Add brokerage name</div><div class="sv">Not currently offering advised-trading</div></div>
           <span class="p-soon">Not yet</span>
         </div>
         <div class="provider soon">
           <div class="mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5C7089" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></div>
-          <div><div class="nm">Add brokerage name</div><div class="sv">Not currently offering advised trading</div></div>
+          <div><div class="nm">Add brokerage name</div><div class="sv">Not currently offering advised-trading</div></div>
           <span class="p-soon">Not yet</span>
         </div>
       </div>
@@ -1731,7 +1869,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
     <div class="wrap">
       <span class="eyebrow">Finno Insights</span>
       <h1 style="font-size:clamp(2.05rem,4vw,3.3rem);max-width:16ch">Markets, explained without the jargon.</h1>
-      <p class="lede" style="margin-top:1.5rem">How investing actually works, written for people who have a life outside it. Educational only — nothing here is a recommendation, and none of it is specific to your situation.</p>
+      <p class="lede" style="margin-top:1.5rem">How investing actually works, written for people who have a life outside it. Educational only. Nothing here is a recommendation, and none of it is specific to your situation.</p>
     </div>
   </div>
   <div class="band" style="padding-top:0">
@@ -1757,7 +1895,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
       <div style="margin-top:44px;display:grid;gap:12px">
         <div class="card"><h4>We are a technology company</h4><p>Finnovest builds the software your institution uses to send you personalised recommendations. We're not a bank, a broker, or an advisor.</p></div>
         <div class="card"><h4>We never hold your money</h4><p>Your assets stay exactly where they are, with your institution. We have no custody of anything and never will.</p></div>
-        <div class="card"><h4>Your advisor writes the advice</h4><p>Every recommendation you see originates with a licensed professional at your institution. Our software personalises and delivers it — it doesn't decide it.</p></div>
+        <div class="card"><h4>Your advisor writes the advice</h4><p>Every recommendation you see originates with a licensed professional at your institution. Our software personalises and delivers it. It doesn't decide it.</p></div>
         <div class="card"><h4>Nothing happens until you tap</h4><p>No order is placed without your explicit approval. That's what non-discretionary means, and it's not optional.</p></div>
       </div>
 
@@ -1818,7 +1956,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
             <div><div style="font-family:var(--mono);font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--slate-dim);margin-bottom:5px">Partnerships and press</div><a class="mint" href="mailto:contact@finnovest.com">contact@finnovest.com</a></div>
             <div><div style="font-family:var(--mono);font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--slate-dim);margin-bottom:5px">Office</div><p class="small">Tel Aviv, Israel</p></div>
           </div>
-          <p class="small" style="margin-top:30px;max-width:44ch">If you're an individual investor with a question about advice you received, contact your bank or broker — they hold your account, not us.</p>
+          <p class="small" style="margin-top:30px;max-width:44ch">If you're a retail investor with a question about advice you received, contact your bank or broker. They hold your account, not us.</p>
         </div>
         <div>
           <div class="tabs">
@@ -1833,7 +1971,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
             <div><label for="c-email">Work email</label><input id="c-email" type="email" placeholder="you@yourfirm.com"></div>
             <div id="biz-only"><label for="c-type">Which install are you considering?</label>
               <select id="c-type">
-                <option>Not sure yet — help me choose</option>
+                <option>Not sure yet, help me choose</option>
                 <option>Finnovest Core · banks, on-premise</option>
                 <option>Finnovest Embedded · into our existing app</option>
                 <option>Finnovest Complete · white-label app</option>
@@ -1841,7 +1979,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
             </div>
             <div><label for="c-msg">What are you trying to solve?</label><textarea id="c-msg" placeholder="A sentence or two is plenty."></textarea></div>
             <button class="btn btn-mint" id="send">Request a demo</button>
-            <div class="sent" id="sent">Thanks — we've got it. Someone from the team will reply within one business day.</div>
+            <div class="sent" id="sent">Thanks, we've got it. Someone from the team will reply within one business day.</div>
           </div>
         </div>
       </div>
@@ -1867,7 +2005,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
       <div><h5>Partners</h5><a data-go="academy">Advisory Academy</a><a data-go="academy">Partner login</a></div>
     </div>
     <div class="foot-base">
-      <span>© 2026 Finnovest. Technology provider only — not an investment advisor, broker or dealer.</span>
+      <span>© 2026 Finnovest. Technology provider only, not an investment advisor, broker or dealer.</span>
       <span>Privacy Policy</span>
     </div>
   </div>
@@ -1979,7 +2117,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
   });
 
   /* =========================================================
-     SOCIAL FEED CONFIG — fill these in to go live.
+     SOCIAL FEED CONFIG - fill these in to go live.
      Leave blank and the static placeholder slots stay put.
      ========================================================= */
   var SOCIAL = {
@@ -2071,7 +2209,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
      CONTACT FORM ENDPOINT
      Paste the Formspree endpoint below. It looks like:
        https://formspree.io/f/xxxxxxxx
-     Until this is filled in, the form does NOT send anything —
+     Until this is filled in, the form does NOT send anything -
      it tells the visitor so instead of pretending it worked.
      Submissions are delivered to whichever mailbox the Formspree
      form is configured to forward to (contact@finnovest.com).
@@ -2170,9 +2308,9 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
     core:{ name:'Finnovest Core',
       why:'You already run the systems and the advisory. Core integrates with your core banking and OMS, so one recommendation reaches every eligible client through the channel they already use.' },
     sdk:{ name:'Finnovest Embedded',
-      why:'Your clients already trade in your app. Embedded drops advised trading into it, so your advisors reach every one of them without a second login.' },
+      why:'Your clients already trade in your app. Embedded drops advised-trading into it, so your advisors reach every one of them without a second login.' },
     complete:{ name:'Finnovest Complete',
-      why:'No app yet, and no need to build one. Complete is a white-label app under your brand, with independent trading and advised trading both built in.' }
+      why:'No app yet, and no need to build one. Complete is a white-label app under your brand, with independent-trading and advised-trading both built in.' }
   };
 
   function show(n){
@@ -2397,6 +2535,12 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
   });
 })();
 </script>
+
+
+
+
+
+
 
 
 

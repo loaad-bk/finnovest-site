@@ -160,7 +160,14 @@ a{color:inherit;text-decoration:none}
 /* Separate credential, not a footnote. "Live production figures" qualifies the
    numbers above it; IIA recognition is independent third-party validation of
    the technology, so it gets its own badge rather than sharing a sentence. */
-.hp-iia{display:flex;width:100%;justify-content:center;align-items:center;gap:16px;margin-top:26px;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.015)}
+.hp-iia{display:inline-flex;align-items:center;gap:12px;margin-top:22px;padding:6px 16px 6px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.025)}
+/* IIA recognition sits with the product: inside the stage, right of the phone.
+   The stage is zoomed per height tier, so these sizes are unscaled values. */
+.stage-iia{position:absolute;right:16px;bottom:16px;width:220px;display:flex;flex-direction:column;align-items:flex-end;gap:10px;text-align:right}
+.stage-iia .hp-iia-logo{height:64px;width:216px;opacity:.95}
+.stage-iia-txt{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.42);line-height:1.45}
+.hp-iia-link{display:none}
+@media(max-width:620px){.stage-iia{display:none}}
 .hp-iia-txt{font-size:.74rem;color:var(--slate-soft);font-weight:300;line-height:1.35;text-align:left}
 .hp-iia-txt b{font-family:var(--display);font-weight:600;color:rgba(255,255,255,.82)}
 /* Logo slot - stays collapsed until an IIA asset is supplied, so nothing
@@ -188,7 +195,7 @@ a{color:inherit;text-decoration:none}
   .hero h1{font-size:clamp(2.15rem,3.35vw,3.05rem)}   /* four lines -> three */
   .lede{line-height:1.58}
   .hero-cta{margin-top:1.3rem}
-  .stage{zoom:.66;padding:14px 0 20px;gap:9px}
+  .stage{zoom:.66;padding:14px 110px 20px 0;gap:9px}
   .hero-proof{margin-top:22px;padding-top:20px}
   .hp-head{margin-bottom:14px}
   .hp-cell{min-height:56px}
@@ -202,7 +209,7 @@ a{color:inherit;text-decoration:none}
   .lede{font-size:clamp(.95rem,1.18vw,1.05rem);line-height:1.5}
   .hero-cta{margin-top:1.1rem}
   .hero-grid{gap:clamp(28px,3.2vw,48px)}
-  .stage{zoom:.66;padding:10px 0 14px;gap:7px}
+  .stage{zoom:.66;padding:10px 110px 14px 0;gap:7px}
   .hero-proof{margin-top:12px;padding-top:12px}
   .hp-head{margin-bottom:9px}
   .hp-cell{min-height:50px}
@@ -220,7 +227,7 @@ a{color:inherit;text-decoration:none}
   .lede{font-size:clamp(.92rem,1.1vw,1rem);line-height:1.46}
   .hero-cta{margin-top:.9rem}
   .hero-grid{gap:clamp(22px,2.6vw,38px)}
-  .stage{zoom:.52;padding:8px 0 12px;gap:6px}
+  .stage{zoom:.52;padding:8px 110px 12px 0;gap:6px}
   .hero-proof{margin-top:8px;padding-top:8px}
   .hp-head{margin-bottom:7px}
   .hp-cell{min-height:42px}
@@ -233,7 +240,7 @@ a{color:inherit;text-decoration:none}
   .hp-iia-logo{height:36px;width:122px}
 }
 
-.stage{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:clamp(320px,42vh,452px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;padding:24px 0 40px;border:1px solid var(--line);
+.stage{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:clamp(320px,42vh,452px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;padding:24px 110px 40px 0;border:1px solid var(--line);
   background:radial-gradient(420px 300px at 24% 18%, rgba(46,229,157,.16), transparent 68%),radial-gradient(340px 340px at 84% 80%, rgba(56,132,255,.14), transparent 70%),linear-gradient(160deg,#0A2233,#050C17 78%)}
 .bokeh{position:absolute;border-radius:50%;filter:blur(22px);opacity:.5}
 .b1{width:110px;height:110px;background:rgba(46,229,157,.5);top:9%;left:12%}
@@ -750,6 +757,10 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
             </div>
           </div>
           <div class="stage-cap">Tap-to-Act · live demo</div>
+          <div class="stage-iia" data-go="platform" style="cursor:pointer" title="How the platform works">
+            <span class="stage-iia-txt">Recognised as<br>breakthrough technology</span>
+            <span class="hp-iia-logo" role="img" aria-label="Israel Innovation Authority"></span>
+          </div>
         </div>
       </div>
 
@@ -762,11 +773,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
           <div class="hp-stat"><div class="n">53%</div><div class="l">Registered accounts</div></div>
           <div class="hp-stat"><div class="n mint">ZERO</div><div class="l">Compliance errors</div></div>
         </div>
-        <div class="hp-iia" data-go="platform" style="cursor:pointer" title="How the platform works">
-          <span class="hp-iia-logo" role="img" aria-label="Israel Innovation Authority"></span>
-          <span class="hp-iia-txt">Two components assessed as breakthrough technology · <span class="mint" style="text-decoration:underline;white-space:nowrap">How the platform works</span></span>
-        </div>
-        <div class="hp-head" style="margin-top:22px">Running today at</div>
+        <div class="hp-head" style="margin-top:26px">Running today at</div>
         <div class="hp-logos">
           <div class="hp-cell"><span class="lg lg-fibi" role="img" aria-label="FIBI Bank"></span></div>
           <div class="hp-cell"><span class="lg lg-excellence" role="img" aria-label="Excellence Trade · Phoenix Investment House"></span></div>

@@ -19,6 +19,8 @@ Founder & CEO: Tal Brockmann.
   "compliance engine" are fine; the company is not an engine.
 - Finnovest holds **no patents**. Its external validation is Israel Innovation Authority (IIA)
   recognition as breakthrough technology, plus IIA funding. Never imply patents.
+- In Hebrew the company name is spelled **פינובסט** — single vav, with a ב. Never write
+  פינוובסט (double vav). This applies to every Hebrew asset: site, decks, copy.
 
 ## The core concept — three-level translation chain
 

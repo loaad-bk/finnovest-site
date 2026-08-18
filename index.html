@@ -111,7 +111,12 @@ a{color:inherit;text-decoration:none}
    siblings and only .on is shown, so the rail never changes height abruptly. */
 .fit-step{display:none}
 .fit-step.on{display:block}
-.fit-q{font-family:var(--display);font-weight:600;font-size:.95rem;letter-spacing:-.01em;color:#fff;padding:15px 22px 12px;border-top:1px solid var(--line);line-height:1.35}
+.fit-q{font-family:var(--display);font-weight:600;font-size:.95rem;letter-spacing:-.01em;color:#fff;padding:6px 22px 12px;line-height:1.35}
+/* The old rail looked identical to step 1, so nothing said this was now
+   interactive. The step counter and the prompt below carry that signal. */
+.fit-n{display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mint);margin-bottom:7px}
+.fit-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:15px 22px 0;border-top:1px solid var(--line)}
+.fit-hint{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--slate-soft)}
 .fit-why{font-size:.84rem;color:var(--slate);font-weight:300;line-height:1.6;padding:0 22px;margin:0}
 .fit-form{padding:15px 22px 4px;display:grid;gap:9px}
 .fit-form input{padding:11px 13px;font-size:.88rem}
@@ -346,7 +351,13 @@ a{color:inherit;text-decoration:none}
 .case-jump a:hover{border-color:var(--mint);color:var(--mint)}
 
 .vid{display:block;border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;background:rgba(255,255,255,.02)}
-.vid-frame{aspect-ratio:16/9;background:linear-gradient(150deg,#0A2233,#050C17);display:grid;place-items:center;border-bottom:1px solid var(--line)}
+.vid-frame{aspect-ratio:16/9;background:linear-gradient(150deg,#0A2233,#050C17);display:grid;place-items:center;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+/* Real poster frames, pulled from YouTube by video id - nothing to maintain,
+   and they update if the video is replaced. Held at 72% so the frame keeps the
+   site's dark register and the mint play button stays the focal point. */
+.vid-thumb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.72;transition:opacity .22s,transform .5s}
+.vid:hover .vid-thumb{opacity:.92;transform:scale(1.03)}
+.vid-frame .play{position:relative;z-index:1}
 .play{width:54px;height:54px;border-radius:50%;background:rgba(46,229,157,.15);border:1px solid rgba(46,229,157,.4);display:grid;place-items:center;transition:background .2s,transform .2s}
 .vid:hover .play{background:rgba(46,229,157,.28);transform:scale(1.06)}
 .vid-body{padding:21px 23px}
@@ -849,24 +860,24 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
           <p class="lede" style="margin-top:1.4rem">Core, Embedded or Complete the same advised trading platform, deployed three ways. What differs is how much of it you need, because a bank with its own systems, a brokerage with its own app, and a firm with neither are starting from three different places.</p>
         </div>
         <div class="rail" id="fit">
-          <div class="rail-h">Find your fit</div>
+          <div class="fit-head"><span class="rail-h" style="padding:0">Find your fit</span><span class="fit-hint">Two questions</span></div>
 
           <div class="fit-step on" data-step="1">
-            <div class="fit-q">What do you run today?</div>
+            <div class="fit-q"><span class="fit-n">Question 1 of 2</span>What do you run today?</div>
             <a data-fit="core"><div><div class="t">Our own core systems and OMS</div><div class="d">Advised clients, your infrastructure</div></div><svg class="go" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
             <a data-fit="sdk"><div><div class="t">A trading app our clients already use</div><div class="d">Independent trading, in your own app</div></div><svg class="go" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
             <a data-fit="complete"><div><div class="t">Neither yet</div><div class="d">Clients and a licence, but no app</div></div><svg class="go" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
           </div>
 
           <div class="fit-step" data-step="2">
-            <div class="fit-q">Where does the advice come from?</div>
+            <div class="fit-q"><span class="fit-n">Question 2 of 2</span>Where does the advice come from?</div>
             <a data-adv="own"><div><div class="t">Our own licensed advisors</div><div class="d">In house, under your licence</div></div><svg class="go" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
             <a data-adv="platform"><div><div class="t">We would connect to an advisor on the platform</div><div class="d">No advisory of your own yet</div></div><svg class="go" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
             <button class="fit-back" type="button" data-back="1">Back</button>
           </div>
 
           <div class="fit-step" data-step="3">
-            <div class="fit-q" id="fit-name">Finnovest Core</div>
+            <div class="fit-q"><span class="fit-n">Your fit</span><span id="fit-name">Finnovest Core</span></div>
             <p class="fit-why" id="fit-why"></p>
             <div class="fit-form">
               <input id="f-name" type="text" placeholder="Name" autocomplete="name">
@@ -1352,7 +1363,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
     <div class="wrap">
       <div class="grid-2 rev">
         <a class="vid" href="https://www.youtube.com/watch?v=dfQlX_WoXnA">
-          <div class="vid-frame"><div class="play"><svg width="18" height="18" viewBox="0 0 24 24" fill="#2EE59D"><path d="M8 5v14l11-7z"></path></svg></div></div>
+          <div class="vid-frame"><img class="vid-thumb" src="https://img.youtube.com/vi/dfQlX_WoXnA/maxresdefault.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/dfQlX_WoXnA/hqdefault.jpg'"><div class="play"><svg width="18" height="18" viewBox="0 0 24 24" fill="#2EE59D"><path d="M8 5v14l11-7z"></path></svg></div></div>
           <div class="vid-body">
             <div class="meta">TV10 Israel · June 2025</div>
             <h4 style="margin-bottom:8px">Bridging the gap between retail investors and professional advice</h4>
@@ -1360,7 +1371,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
           </div>
         </a>
         <a class="vid" href="https://www.youtube.com/watch?v=CdAYIPChgtA">
-          <div class="vid-frame"><div class="play"><svg width="18" height="18" viewBox="0 0 24 24" fill="#2EE59D"><path d="M8 5v14l11-7z"></path></svg></div></div>
+          <div class="vid-frame"><img class="vid-thumb" src="https://img.youtube.com/vi/CdAYIPChgtA/maxresdefault.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/CdAYIPChgtA/hqdefault.jpg'"><div class="play"><svg width="18" height="18" viewBox="0 0 24 24" fill="#2EE59D"><path d="M8 5v14l11-7z"></path></svg></div></div>
           <div class="vid-body">
             <div class="meta">TV10 Israel · June 2025</div>
             <h4 style="margin-bottom:8px">איך נראים פני העתיד של ייעוץ השקעות?</h4>

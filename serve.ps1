@@ -136,6 +136,7 @@ $injected = @'
   /* ---------------- autosave to disk (no git) ---------------- */
   var SAVE_DELAY = 800, POLL_DELAY = 1000;
   var saveTimer=null, saving=false, queued=false, composing=false, pendingSave=false;
+  var pendingSince=0, STUCK_AFTER=15000;   /* a save that never resolves must not block reload forever */
   var lastSaved = null;   /* payload already on disk - skips redundant writes */
   var knownV = null;      /* fingerprint of index.html as this page last knew it */
 
@@ -175,6 +176,7 @@ $injected = @'
 
   function schedule(){
     pendingSave = true;
+    pendingSince = Date.now();
     clearTimeout(saveTimer);
     saveTimer = setTimeout(doSave, SAVE_DELAY);
   }
@@ -233,8 +235,12 @@ $injected = @'
 
   setInterval(function(){
     /* Never reload over unsaved work - a failed or in-flight save keeps
-       pendingSave true, so the page waits rather than discarding edits. */
-    if(saving || queued || pendingSave) return;
+       pendingSave true, so the page waits rather than discarding edits.
+       But a save that never resolves used to block live reload for the life of
+       the tab, which silently stranded the page on stale content. Give up
+       guarding after STUCK_AFTER so the page recovers on its own. */
+    if(saving || queued) return;
+    if(pendingSave && (Date.now() - pendingSince) < STUCK_AFTER) return;
 
     fetch('/version').then(function(r){ return r.json(); }).then(function(j){
       if(!j.v) return;

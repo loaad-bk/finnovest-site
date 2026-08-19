@@ -685,7 +685,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
     </button>
     <div class="nav-links" id="navlinks">
       <a data-go="advisedtrading">Advised-trading</a>
-      <a data-go="platform">Platform</a>
+      <a data-go="platform" class="on">Platform</a>
       <a data-go="products">Products</a>
       <a data-go="cases">Case studies</a>
       <a data-go="advisors">For advisors</a>
@@ -1240,7 +1240,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
     <div class="wrap">
       <span class="eyebrow">Platform</span>
       <h1 style="font-size:clamp(1.95rem,3.6vw,3rem);max-width:20ch">From one recommendation to ten thousand different ones.</h1>
-      <p class="lede" style="margin-top:1.4rem">The platform follows the client, not the architecture. Here is what happens from the moment someone opens an account to the moment their orders fill.</p>
+      <p class="lede" style="margin-top:1.4rem">finnovest advised-trading platform distributed personalized trading advice focused on retail-investors. Here is what happens from the moment someone opens an account to the moment their orders fill.</p>
     </div>
   </div>
 
@@ -1250,14 +1250,14 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
       <div class="layer top rev"><div class="lbl">1 · Onboarding</div><p>The client arrives with a portfolio or without one. An existing portfolio is imported as it stands, whatever the starting point. A client with no portfolio has one built from the advisor's recommendations, shaped by their own profile and approves it before anything executes.</p></div>
       <div class="layer rev"><div class="lbl">2 · Constraints</div><p>Risk profile, goals, personal information, current holdings, and available cash and credit. This is the set that makes one recommendation land differently for every client, and it is applied to everything that follows.</p></div>
       <div class="layer rev"><div class="lbl">3 · The house view</div><p>The head of advisory sets the institution's position on the market and the trading vision of the financial house.</p></div>
-      <div class="layer rev"><div class="lbl">4 · The advisor</div><p>Each advisor turns that view into a recommendation for their own book: a specific thesis, a purchase, the funding strategy behind it, and the reasoning written in their own words. Two layers of professional judgement before any software runs.</p></div>
+      <div class="layer rev"><div class="lbl">4 · The advisor</div><p>Each advisor turns the 'house view' into a recommendation for their own book: a specific thesis, a purchase, the funding strategy behind it, and the reasoning written in their own words. Two layers of professional judgement before any software runs.</p></div>
       <div class="layer rev"><div class="lbl">5 · translation</div><p>Finnovest Generic Constraints Algorithm resolves that one instruction against every portfolio: which holding funds the purchase here, how much this client can take on, and whether the recommendation suits them at all. If it does not, it is never sent.</p></div>
       <div class="layer rev"><div class="lbl">6 · Execution</div><p>The client sees the thesis, the reasoning behind each individual order, and how long the recommendation stays open. They can simulate the effect on their portfolio before deciding, and read the full documentation. One press approves everything (bundeled set of sell and buy orders) the Automatic Order Management Module sequences the interdependent orders, with no human intervention.</p></div>
       <div class="layer rev"><div class="lbl">7 · Follow-up</div><p>Sent, opened, executed: per client for the advisor to act on, and in aggregate for the institution to learn from.</p></div>
 
       <div class="rev" style="margin-top:clamp(48px,6vw,80px)">
-        <span class="eyebrow">Stage five in detail</span>
-        <h2 style="max-width:24ch;margin-bottom:14px">What "personal" actually requires.</h2>
+        <span class="eyebrow">The translation process</span>
+        <h2 style="max-width:24ch;margin-bottom:14px">What "personalization" actually requires.</h2>
         <p class="lede" style="margin-bottom:28px">A recommendation to buy is meaningless until you know what this particular client can sell, afford, and carry. Five things determine it.</p>
         <div class="grid-3">
           <div class="card"><h4>Existing holdings</h4><p>What they already own decides what can be trimmed to fund a purchase, and whether they are already overweight in the thing being recommended.</p></div>
@@ -2001,8 +2001,8 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         </div>
         <div>
           <div class="tabs">
-            <button class="tab on" data-tab="biz">Partnerships</button>
-            <button class="tab" data-tab="gen">General enquiry</button>
+            <button class="tab" data-tab="biz">Partnerships</button>
+            <button class="tab on" data-tab="gen">General enquiry</button>
           </div>
           <div class="form">
             <div class="f-row">
@@ -2010,7 +2010,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
               <div><label for="c-firm">Firm</label><input id="c-firm" type="text" placeholder="Company"></div>
             </div>
             <div><label for="c-email">Work email</label><input id="c-email" type="email" placeholder="you@yourfirm.com"></div>
-            <div id="biz-only"><label for="c-type">Which install are you considering?</label>
+            <div id="biz-only" style="display: none;"><label for="c-type">Which install are you considering?</label>
               <select id="c-type">
                 <option>Not sure yet, help me choose</option>
                 <option>Finnovest Core · banks, on-premise</option>
@@ -2019,7 +2019,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
               </select>
             </div>
             <div><label for="c-msg">What are you trying to solve?</label><textarea id="c-msg" placeholder="A sentence or two is plenty."></textarea></div>
-            <button class="btn btn-mint" id="send">Request a demo</button>
+            <button class="btn btn-mint" id="send">Send message</button>
             <div class="sent" id="sent">Thanks, we've got it. Someone from the team will reply within one business day.</div>
           </div>
         </div>
@@ -2624,6 +2624,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
   });
 })();
 </script>
+
 
 
 

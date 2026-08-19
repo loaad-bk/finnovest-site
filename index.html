@@ -881,9 +881,10 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         <div class="rail fit-lite" id="fit-home">
           <div class="fit-head" style="align-items:center;padding:18px 22px 14px"><span class="fit-title">Start here</span></div>
           <div class="fit-q">Tick what is already in place.</div>
-          <a data-have="systems"><div><div class="t">Core banking systems</div><div class="d">Accounts and order routing of your own</div></div><span class="pick"></span></a>
-          <a data-have="app"><div><div class="t">A trading app clients already use</div><div class="d">Independent trading under your brand</div></div><span class="pick"></span></a>
-          <a data-have="none"><div><div class="t">Nothing yet</div><div class="d">Clients and a licence, no systems or app of your own</div></div><span class="pick"></span></a>
+            <a data-have="advisors"><div><div class="t">Licensed advisors of your own</div><div class="d">Investment advisors or wealth managers, under your licence</div></div><span class="pick"></span></a>
+            <a data-have="app"><div><div class="t">A trading app your clients already use</div><div class="d">Independent trading under your brand</div></div><span class="pick"></span></a>
+            <a data-have="orders"><div><div class="t">Order placement and tracking of your own</div><div class="d">Exchange membership, or your own execution</div></div><span class="pick"></span></a>
+            <a data-have="none"><div><div class="t">None of these yet</div><div class="d">Clients and a licence, nothing else in place</div></div><span class="pick"></span></a>
           <div class="fit-foot"><span class="fit-hint"></span><button class="fit-next fit-lite-go" type="button" data-go="products" data-anchor="fit">Find your fit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></div>
         </div>
       </div>
@@ -1012,9 +1013,10 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
 
           <div class="fit-step on" data-step="1">
             <div class="fit-q">Tick what is already in place.</div>
-            <a data-have="systems"><div><div class="t">Core banking systems</div><div class="d">Accounts and order routing of your own</div></div><span class="pick"></span></a>
-            <a data-have="app"><div><div class="t">A trading app clients already use</div><div class="d">Independent trading under your brand</div></div><span class="pick"></span></a>
-            <a data-have="none"><div><div class="t">Nothing yet</div><div class="d">Clients and a licence, no systems or app of your own</div></div><span class="pick"></span></a>
+            <a data-have="advisors"><div><div class="t">Licensed advisors of your own</div><div class="d">Investment advisors or wealth managers, under your licence</div></div><span class="pick"></span></a>
+            <a data-have="app"><div><div class="t">A trading app your clients already use</div><div class="d">Independent trading under your brand</div></div><span class="pick"></span></a>
+            <a data-have="orders"><div><div class="t">Order placement and tracking of your own</div><div class="d">Exchange membership, or your own execution</div></div><span class="pick"></span></a>
+            <a data-have="none"><div><div class="t">None of these yet</div><div class="d">Clients and a licence, nothing else in place</div></div><span class="pick"></span></a>
             <div class="fit-foot"><span class="fit-hint"></span><button class="fit-next" type="button" data-next="4">Find your fit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></div>
           </div>
 
@@ -2393,13 +2395,33 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
      Scoped to its own .fit-root, so nothing here uses ids. */
   var COPY = {
     core:{ name:'Finnovest Core', card:'prod-institutional',
-      why:'You run your own systems but have no trading app to add to. Core integrates with your core banking, so one recommendation reaches every eligible client through the channel they already use.' },
+      why:'You have your own advisors and you place and track orders yourselves, but no trading app to add to. Core integrates into your own systems and environment, so one recommendation reaches every eligible client through the channel they already use.' },
     sdk:{ name:'Finnovest Embedded', card:'prod-sdk',
-      why:'Your clients already trade in your app. Embedded drops advised-trading into it, so your advisors reach every one of them without a second login.' },
+      why:'Your advisors are in place and your clients already trade in your app. Embedded drops into the app you already run, so your advisors reach every one of them without a second login.' },
     complete:{ name:'Finnovest Complete', card:'prod-complete',
-      why:'No app yet, and no need to build one. Complete is a white-label app under your brand, with independent-trading and advised-trading both built in.' }
+      why:'Complete is a full-service app under your own brand, cloud-hosted and fast to launch, with independent-trading and advised-trading both built in.' }
   };
-  function route(have){ return have.app ? 'sdk' : (have.systems ? 'core' : 'complete'); }
+  var COMPLETE_LEAD = {
+    noAdvisors:'Without licensed advisors of your own, the advice comes from an advisor already on the platform, and Complete is the only product that carries that. ',
+    noApp:'You have the advisors and the licence, but no app of your own to put them in. ',
+    nothing:'Nothing in place yet beyond clients and a licence. '
+  };
+  /* Core and Embedded both run on your own advisors; only Complete can
+     connect you to an advisor already on the platform. So no advisors means
+     Complete whatever else is ticked. With advisors: an app takes Embedded,
+     order placement without an app takes Core, neither takes Complete. */
+  function route(have){
+    if(!have.advisors) return 'complete';
+    if(have.app) return 'sdk';
+    if(have.orders) return 'core';
+    return 'complete';
+  }
+  function why(key, have){
+    var c = COPY[key];
+    if(key !== 'complete') return c.why;
+    var lead = !have.advisors ? (have.app || have.orders ? COMPLETE_LEAD.noAdvisors : COMPLETE_LEAD.nothing) : COMPLETE_LEAD.noApp;
+    return lead + c.why;
+  }
   function ticked(scope){
     var h = {};
     Array.prototype.forEach.call(scope.querySelectorAll('a[data-have].sel'), function(a){ h[a.getAttribute('data-have')] = true; });
@@ -2430,9 +2452,9 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
     }
 
     function decide(){
-      var c = COPY[route(ticked(root))];
+      var have = ticked(root), key = route(have), c = COPY[key];
       q('.fit-name').textContent = c.name;
-      q('.fit-why').textContent  = c.why;
+      q('.fit-why').textContent  = why(key, have);
       var see = q('.fit-see');
       if(see){ see.setAttribute('data-anchor', c.card); see.textContent = 'See ' + c.name + ' below ↓'; }
       show(4);

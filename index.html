@@ -369,6 +369,11 @@ a{color:inherit;text-decoration:none}
 .prod-depth{font-family:var(--mono);font-size:.64rem;letter-spacing:.13em;text-transform:uppercase;color:var(--mint);line-height:1.55;margin-bottom:15px;min-height:2.1em}
 .prod h3{margin-bottom:10px}
 .feat{display:flex;flex-wrap:wrap;gap:8px;margin-top:17px}
+.prod .feat{margin-top:auto;padding-top:20px}
+.prod-hook{font-size:.98rem;color:rgba(255,255,255,.88);font-weight:400;line-height:1.5;margin:0 0 2px}
+.prod-pts{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:9px}
+.prod-pts li{position:relative;padding-left:18px;font-size:.9rem;color:var(--slate);font-weight:300;line-height:1.55}
+.prod-pts li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:50%;background:var(--mint);opacity:.8}
 .chip{font-family:var(--mono);font-size:.68rem;color:var(--slate);border:1px solid var(--line);border-radius:999px;padding:5px 13px}
 .axis{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 20px;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate-dim);padding:0 2px 14px;border-bottom:1px solid var(--line);margin-bottom:26px}
 
@@ -1046,10 +1051,15 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
 
       <div class="prod-grid">
       <div class="prod rev" id="prod-institutional">
-        <div class="prod-depth">For banks</div>
+        <div class="prod-depth">Inside your systems</div>
         <div>
           <h3>Finnovest Core</h3>
-          <p class="body-dim" style="font-size:.96rem;max-width:64ch">Your advisory relationships already exist yet what limits them is that each one is served a conversation at a time. While many retail investors seek professional advice Finnovest-Core platform integrates into your own systems and environment, so a single advisor's recommendation reaches every eligible client in the book, resolved against each portfolio individually and delivered through the channel your clients already use.</p>
+          <p class="prod-hook">Advised-trading inside the systems you already run.</p>
+          <ul class="prod-pts">
+            <li>One advisor's recommendation reaches every eligible client in the book, resolved against each portfolio individually</li>
+            <li>Delivered through the channel your clients already use, so there is nothing new for them to adopt</li>
+            <li>Integrates into your core banking and order management, runs in your environment, with supervisory reporting</li>
+          </ul>
           <span class="case-link" data-go="cases">Read the case studies</span>
           <div class="feat"><span class="chip">Advised-trading, inside your systems</span><span class="chip">Core banking and OMS integration</span><span class="chip">Runs in your environment</span><span class="chip">Supervisory reporting</span></div>
           <div style="margin-top:18px"><button class="btn btn-mint btn-sm" data-go="contact">Request a demo</button></div>
@@ -1057,10 +1067,15 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
       </div>
 
       <div class="prod rev" id="prod-sdk" style="border-color:rgba(46,229,157,.3);background:rgba(46,229,157,.035)">
-        <div class="prod-depth">For brokerages</div>
+        <div class="prod-depth">Inside your app</div>
         <div>
           <h3>Finnovest Embedded</h3>
-          <p class="body-dim" style="font-size:.96rem;max-width:64ch">Your independent traders act alone today. Not because they want to, but because professional advice has never been available inside a trading app, so they take it from finfluencers, forums and general market calls, none of which has ever seen what they hold. Finnovest Embedded drops into the app you already run and gives your licensed advisors a way to reach all of them, personally. Allowing all retail investors to choose between independent-trading or advised-trading, leaving all decisions in their hands.</p>
+          <p class="prod-hook">Advised-trading inside the app your clients already use.</p>
+          <ul class="prod-pts">
+            <li>Your licensed advisors reach every client personally, not one conversation at a time</li>
+            <li>Clients choose: trade alone, or act on your advisor's recommendation in one tap. Every decision stays theirs</li>
+            <li>Drops into your existing app as an SDK: your brand, your execution, no second login</li>
+          </ul>
           <span class="case-link" data-go="cases" data-anchor="case-excellence">Read the case study</span>
           <div class="feat"><span class="chip">Advised-trading, inside your app</span><span class="chip">SDK, no second login</span><span class="chip">Your brand and execution</span></div>
           <div style="margin-top:18px"><button class="btn btn-mint btn-sm" data-go="contact">Request a demo</button></div>
@@ -1068,10 +1083,15 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
       </div>
 
       <div class="prod rev" id="prod-complete">
-        <div class="prod-depth">For full service advised-trading app</div>
+        <div class="prod-depth">Your own app</div>
         <div>
           <h3>Finnovest Complete</h3>
-          <p class="body-dim" style="font-size:.96rem;max-width:64ch">Your products and your licence are already in place. What isn't is a direct line to retail investors. For most houses that still runs through somebody else's distribution. Finnovest Complete is a full-service app under your own brand, cloud-based and fast to launch, with both modes in one product: independent-trading, where clients act on their own judgement whenever they like, and advised-trading, where your advisors send personalized recommendations that retail investors can act on as bundled orders, buy and sell, in a single tap. Bring your own licensed advisors, or connect to one already on the platform. Distribution you own, not distribution you rent.</p>
+          <p class="prod-hook">A full-service trading app under your brand, with advised-trading built in.</p>
+          <ul class="prod-pts">
+            <li>Independent-trading and advised-trading in one product: clients act on their own judgement, or on your advisors' personalized recommendations, as bundled buy and sell orders in a single tap</li>
+            <li>Bring your own licensed advisors, or connect to one already on the platform</li>
+            <li>Cloud-hosted and fast to launch: a direct line to retail investors, distribution you own, not distribution you rent</li>
+          </ul>
           <div class="feat"><span class="chip">Independent and advised-trading, both built in</span><span class="chip">Our app, your brand</span><span class="chip">Your advisors, or one already on the platform</span><span class="chip">Cloud-hosted, fast to launch</span></div>
           <div style="margin-top:18px"><button class="btn btn-mint btn-sm" data-go="contact">Request a demo</button></div>
         </div>

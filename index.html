@@ -126,8 +126,11 @@ a{color:inherit;text-decoration:none}
 .fit-sub{font-family:var(--body);font-weight:300;font-size:.88rem;color:var(--slate);padding:4px 22px 16px}
 .fit-lite-foot{font-size:.78rem;color:var(--slate-soft);font-weight:300;line-height:1.5;padding:14px 22px 16px;border-top:1px solid var(--line)}
 .fit-why{font-size:.84rem;color:var(--slate);font-weight:300;line-height:1.6;padding:0 22px;margin:0}
-.fit-see{display:inline-block;margin:12px 22px 0;font-size:.84rem;color:var(--mint);cursor:pointer;text-decoration:none;border-bottom:1px solid rgba(46,229,157,.4);padding-bottom:1px}
-.fit-see:hover{border-color:var(--mint)}
+.fit-acts{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:16px 22px 18px}
+.fit-see{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--mint);border:1px solid rgba(46,229,157,.45);border-radius:999px;padding:8px 14px 8px 16px;font-family:var(--body);font-weight:600;font-size:.82rem;cursor:pointer;transition:background .18s,border-color .18s}
+.fit-see:hover{background:rgba(46,229,157,.08);border-color:var(--mint)}
+.prod.is-fit{position:relative}
+.prod.is-fit::after{content:"Your fit";position:absolute;top:16px;right:16px;font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:#04150E;background:var(--mint);border-radius:999px;padding:5px 10px}
 .prod.is-fit{border-color:rgba(46,229,157,.55)!important;box-shadow:0 0 0 1px rgba(46,229,157,.25),0 18px 50px rgba(46,229,157,.08)}
 .fit-flash{animation:fitflash 1.2s ease-out 1}
 @keyframes fitflash{0%{box-shadow:0 0 0 0 rgba(46,229,157,.55)}100%{box-shadow:0 0 0 14px rgba(46,229,157,0)}}
@@ -1027,8 +1030,9 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
 
           <div class="fit-step" data-step="4">
             <div class="fit-q"><span class="fit-n">Your fit</span><span class="fit-name">Finnovest Embedded</span></div>
-            <p class="fit-why"></p><a class="fit-see" data-anchor="">See it below <span aria-hidden="true">&darr;</span></a>
-            <div class="fit-foot" style="margin-top:18px"><button class="fit-back" type="button" data-back="0">Start again</button><button class="fit-next" type="button" data-go="contact">Book a demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></div>
+            <p class="fit-why"></p>
+            <div class="fit-acts"><button class="fit-see" type="button" data-anchor="">Read about it below <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"></path></svg></button><button class="fit-next" type="button" data-go="contact">Book a demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></div>
+            <div class="fit-foot"><button class="fit-back" type="button" data-back="0">Start again</button></div>
           </div>
         </div>
       </div>
@@ -2453,7 +2457,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
       q('.fit-name').textContent = c.name;
       q('.fit-why').textContent  = why(key, have);
       var see = q('.fit-see');
-      if(see){ see.setAttribute('data-anchor', c.card); see.textContent = 'See ' + c.name + ' below ↓'; }
+      if(see){ see.setAttribute('data-anchor', c.card); see.firstChild.nodeValue = 'Read about ' + c.name + ' '; }
       show(4);
       /* Light up the matching product card so the eye finds it when they scroll. */
       Array.prototype.forEach.call(document.querySelectorAll('.prod.is-fit'), function(p){ p.classList.remove('is-fit'); });

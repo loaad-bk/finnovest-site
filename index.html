@@ -127,8 +127,8 @@ a{color:inherit;text-decoration:none}
 .fit-lite-foot{font-size:.78rem;color:var(--slate-soft);font-weight:300;line-height:1.5;padding:14px 22px 16px;border-top:1px solid var(--line)}
 .fit-why{font-size:.84rem;color:var(--slate);font-weight:300;line-height:1.6;padding:0 22px;margin:0}
 .fit-acts{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:16px 22px 18px}
-.rail .fit-why a.fit-see{display:inline;padding:0;border-top:0;background:none;color:var(--mint);cursor:pointer;text-decoration:none;white-space:nowrap;border-bottom:1px solid rgba(46,229,157,.4);transition:border-color .18s}
-.rail .fit-why a.fit-see:hover{background:none;border-color:var(--mint)}
+.rail .fit-why .fit-see{display:inline;padding:0 0 1px;border:0;background:none;font:inherit;line-height:inherit;color:var(--mint);cursor:pointer;text-decoration:none;white-space:nowrap;border-bottom:1px solid rgba(46,229,157,.4);transition:border-color .18s}
+.rail .fit-why .fit-see:hover{background:none;border-color:var(--mint)}
 .prod.is-fit{position:relative}
 .prod.is-fit::after{content:"Your fit";position:absolute;top:16px;right:16px;font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:#04150E;background:var(--mint);border-radius:999px;padding:5px 10px}
 .prod.is-fit{border-color:rgba(46,229,157,.55)!important;box-shadow:0 0 0 1px rgba(46,229,157,.25),0 18px 50px rgba(46,229,157,.08)}
@@ -735,8 +735,8 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
     </button>
     <div class="nav-links" id="navlinks">
       <a data-go="advisedtrading">Advised-trading</a>
-      <a data-go="platform">Platform</a>
-      <a data-go="products" class="on">Products</a>
+      <a data-go="platform" class="on">Platform</a>
+      <a data-go="products">Products</a>
       <a data-go="cases">Case studies</a>
       <a data-go="advisors">For advisors</a>
       <span class="retail-link" data-go="howitworks">For retail investors</span>
@@ -2456,7 +2456,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
       var have = ticked(root), key = route(have), c = COPY[key];
       q('.fit-name').textContent = c.name;
       var w = q('.fit-why'); w.textContent = why(key, have) + ' ';
-      var more = document.createElement('a'); more.className = 'fit-see'; more.setAttribute('data-anchor', c.card); more.textContent = 'More →'; w.appendChild(more);
+      var more = document.createElement('button'); more.type = 'button'; more.className = 'fit-see'; more.setAttribute('data-anchor', c.card); more.textContent = 'More →'; w.appendChild(more);
       show(4);
       /* Light up the matching product card so the eye finds it when they scroll. */
       Array.prototype.forEach.call(document.querySelectorAll('.prod.is-fit'), function(p){ p.classList.remove('is-fit'); });
@@ -2660,6 +2660,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
   });
 })();
 </script>
+
 
 
 

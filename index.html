@@ -425,6 +425,16 @@ a{color:inherit;text-decoration:none}
 .vid:hover .play{background:rgba(46,229,157,.28);transform:scale(1.06)}
 .vid-body{padding:21px 23px}
 .vid-body .meta{font-family:var(--mono);font-size:.67rem;letter-spacing:.11em;text-transform:uppercase;color:var(--slate-dim);margin-bottom:9px}
+.vid-feat{display:grid;grid-template-columns:1.15fr 1fr;margin-bottom:16px;border-color:rgba(46,229,157,.28);background:rgba(46,229,157,.03)}
+.vid-feat .vid-frame{border-bottom:0;border-right:1px solid var(--line)}
+.vid-feat .vid-thumb{opacity:.9}
+.vid-feat .play{justify-self:start;margin-left:9%}
+.vid-feat .vid-body{padding:28px 30px;display:flex;flex-direction:column;justify-content:center}
+.vid-feat h4{font-size:1.22rem;line-height:1.3}
+.vid-feat .meta{color:var(--mint)}
+.vid-cta{display:block;margin-top:16px;font-size:.86rem;color:var(--slate-soft);transition:color .2s}
+.vid-feat:hover .vid-cta{color:var(--mint)}
+@media(max-width:820px){.vid-feat{grid-template-columns:1fr}.vid-feat .vid-frame{border-right:0;border-bottom:1px solid var(--line)}}
 
 a.row{text-decoration:none}
 .kind{font-family:var(--mono);font-size:.62rem;letter-spacing:.11em;text-transform:uppercase;padding:3px 9px;border-radius:5px;border:1px solid var(--line);color:var(--slate-dim);display:inline-block;margin-bottom:8px}
@@ -1609,7 +1619,16 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
   </div>
   <div class="band" style="padding-top:0">
     <div class="wrap">
-      <div class="grid-2 rev">
+            <a class="vid vid-feat rev" href="https://www.youtube.com/watch?v=s5zEA-qzSnQ">
+        <div class="vid-frame"><img class="vid-thumb" src="assets/press-channel10-2026-08.jpg" alt="Tal Brockmann in the Channel 10 studio" loading="lazy"><div class="play"><svg width="18" height="18" viewBox="0 0 24 24" fill="#2EE59D"><path d="M8 5v14l11-7z"></path></svg></div></div>
+        <div class="vid-body">
+          <div class="meta">Latest · Channel 10 · סוגרים שוק · August 2026</div>
+          <h4 style="margin-bottom:10px">Advised-trading on Channel 10: Excellence Trade launches Nextrade, powered by Finnovest</h4>
+          <p class="small">Tal Brockmann on Channel 10's business desk: one platform that joins independent trading with advisor recommendations, each one resolved against the client's portfolio, risk profile and preferences and executed in a single tap. Hebrew, 9 minutes.</p>
+          <span class="vid-cta">Watch on YouTube →</span>
+        </div>
+      </a>
+<div class="grid-2 rev">
         <a class="vid" href="https://www.youtube.com/watch?v=dfQlX_WoXnA">
           <div class="vid-frame"><img class="vid-thumb" src="https://img.youtube.com/vi/dfQlX_WoXnA/maxresdefault.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/dfQlX_WoXnA/hqdefault.jpg'"><div class="play"><svg width="18" height="18" viewBox="0 0 24 24" fill="#2EE59D"><path d="M8 5v14l11-7z"></path></svg></div></div>
           <div class="vid-body">

@@ -733,7 +733,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
     <div class="nav-links" id="navlinks">
       <a data-go="advisedtrading">Advised-trading</a>
       <a data-go="platform">Platform</a>
-      <a data-go="products">Products</a>
+      <a data-go="products" class="on">Products</a>
       <a data-go="cases">Case studies</a>
       <a data-go="advisors">For advisors</a>
       <span class="retail-link" data-go="howitworks">For retail investors</span>
@@ -1013,21 +1013,21 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
           <p class="body-dim" style="max-width:42ch;margin-top:clamp(24px,3vw,36px)">Tick what you already have in place, and we'll find the perfect fit for you.</p>
           <button class="btn btn-mint fit-go" type="button" data-fit-target="fit" style="margin-top:1.2rem">Find your fit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-left:6px"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
         </div>
-        <div class="rail fit-root fit-flash" id="fit">
+        <div class="rail fit-root fit-hidden" id="fit">
 
-          <div class="fit-step" data-step="1">
+          <div class="fit-step on" data-step="1">
             <div class="fit-head" style="flex-direction:column;align-items:flex-start;gap:6px;padding:20px 22px 0;border-top:0"><span class="fit-title">Find your fit</span></div>
             <div class="fit-q fit-sub">Tick what is already in place.</div>
-            <a data-have="advisors" class="sel"><div><div class="t">Licensed advisors of your own</div><div class="d">Investment advisors or wealth managers, under your licence</div></div><span class="pick"></span></a>
-            <a data-have="app" class="sel"><div><div class="t">A trading app your clients already use</div><div class="d">Independent trading under your brand</div></div><span class="pick"></span></a>
+            <a data-have="advisors"><div><div class="t">Licensed advisors of your own</div><div class="d">Investment advisors or wealth managers, under your licence</div></div><span class="pick"></span></a>
+            <a data-have="app"><div><div class="t">A trading app your clients already use</div><div class="d">Independent trading under your brand</div></div><span class="pick"></span></a>
             <a data-have="orders"><div><div class="t">Order placement and tracking of your own</div><div class="d">Exchange membership, or your own execution</div></div><span class="pick"></span></a>
             <a data-have="none"><div><div class="t">None of these yet</div><div class="d">Clients and a licence, nothing else in place</div></div><span class="pick"></span></a>
             <div class="fit-foot"><span class="fit-hint"></span><button class="fit-next" type="button" data-next="4">Show my fit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></div>
           </div>
 
-          <div class="fit-step on" data-step="4">
+          <div class="fit-step" data-step="4">
             <div class="fit-q"><span class="fit-n">Your fit</span><span class="fit-name">Finnovest Embedded</span></div>
-            <p class="fit-why">Your advisors are in place and your clients already trade in your app. Embedded drops into the app you already run, so your advisors reach every one of them without a second login.</p><a class="fit-see" data-anchor="prod-sdk">See Finnovest Embedded below ↓</a>
+            <p class="fit-why"></p><a class="fit-see" data-anchor="">See it below <span aria-hidden="true">&darr;</span></a>
             <div class="fit-foot" style="margin-top:18px"><button class="fit-back" type="button" data-back="0">Start again</button><button class="fit-next" type="button" data-go="contact">Book a demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></div>
           </div>
         </div>
@@ -1051,7 +1051,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         </div>
       </div>
 
-      <div class="prod rev is-fit" id="prod-sdk" style="border-color:rgba(46,229,157,.3);background:rgba(46,229,157,.035)">
+      <div class="prod rev" id="prod-sdk" style="border-color:rgba(46,229,157,.3);background:rgba(46,229,157,.035)">
         <div class="prod-depth">For brokerages</div>
         <div>
           <h3>Finnovest Embedded</h3>
@@ -1085,7 +1085,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         </div>
         <div>
           <div class="quote">
-            <p>The technology carries your expertise. It does not supply it.</p>
+            <p>The technology carries your expertise. <br><br></p>
             <cite>Finnovest product principle</cite>
           </div>
         </div>
@@ -2657,6 +2657,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
   });
 })();
 </script>
+
 
 
 

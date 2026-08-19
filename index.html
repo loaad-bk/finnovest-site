@@ -132,7 +132,9 @@ a{color:inherit;text-decoration:none}
 .fit-back{background:none;border:0;color:var(--slate-soft);font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;cursor:pointer;padding:14px 22px 16px;transition:color .18s}
 .fit-back:hover{color:#fff}
 /* Answers select; one arrow per question continues. */
-.rail a[data-fit],.rail a[data-adv],.rail a[data-when]{position:relative;padding-right:52px}
+.rail a[data-fit],.rail a[data-adv],.rail a[data-when],.rail a[data-have]{position:relative;padding-right:52px}
+.rail a[data-have] .pick{border-radius:5px}
+.fit-hint{font-size:.78rem;color:var(--slate-soft);font-weight:300;padding:14px 22px}
 .rail a .pick{position:absolute;right:22px;top:50%;transform:translateY(-50%);width:18px;height:18px;border-radius:50%;border:1px solid var(--line-strong);transition:border-color .18s,background .18s;flex:none}
 .rail a.sel{background:rgba(46,229,157,.07)}
 .rail a.sel .t{color:var(--mint)}
@@ -874,14 +876,15 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
           <span class="eyebrow">Products</span>
           <h2 style="max-width:20ch">One platform. Three ways to fit it in.</h2>
           <p class="lede" style="margin-top:1.1rem">What differs isn't how deep the platform goes: it's what you already have. A bank with its own systems, a brokerage with its own app, and a firm with neither start from three different places.</p>
-          <p class="small" style="margin-top:1.4rem;color:var(--slate-soft)">Not sure which one you are? Find your fit, and we will send you the detail.</p>
+          <p class="small" style="margin-top:1.4rem;color:var(--slate-soft)">Not sure which one fits? Tick what you already have, and we will show you.</p>
         </div>
         <div class="rail fit-lite" id="fit-home">
-          <div class="fit-head" style="align-items:center;padding:18px 22px 14px"><span class="fit-title">Find your fit</span></div>
-          <a data-go="products" data-anchor="fit" data-fitpre="core"><div><div class="t">A bank with its own systems</div><div class="d">Core banking and an advisory desk in place</div></div><svg class="go" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-          <a data-go="products" data-anchor="fit" data-fitpre="sdk"><div><div class="t">A brokerage with its own app</div><div class="d">Clients already trading in your app</div></div><svg class="go" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-          <a data-go="products" data-anchor="fit" data-fitpre="complete"><div><div class="t">A firm with neither</div><div class="d">Clients and a licence, no app yet</div></div><svg class="go" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-          <div class="fit-lite-foot">One question, and it shows you the product that fits.</div>
+          <div class="fit-head" style="align-items:center;padding:18px 22px 14px"><span class="fit-title">Start here</span></div>
+          <div class="fit-q">Tick what is already in place.</div>
+          <a data-have="systems"><div><div class="t">Core banking systems</div><div class="d">Accounts and order routing of your own</div></div><span class="pick"></span></a>
+          <a data-have="app"><div><div class="t">A trading app clients already use</div><div class="d">Independent trading under your brand</div></div><span class="pick"></span></a>
+          <a data-have="none"><div><div class="t">Nothing yet</div><div class="d">Clients and a licence, no systems or app of your own</div></div><span class="pick"></span></a>
+          <div class="fit-foot"><span class="fit-hint"></span><button class="fit-next fit-lite-go" type="button" data-go="products" data-anchor="fit">Find your fit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></div>
         </div>
       </div>
       <div class="grid-3 rev">
@@ -1008,11 +1011,11 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
           <div class="fit-head"><span class="rail-h" style="padding:0">Start here</span></div>
 
           <div class="fit-step on" data-step="1">
-            <div class="fit-q">Where are you starting from?</div>
-            <a data-fit="core"><div><div class="t">A bank with its own systems</div><div class="d">Core banking and an advisory desk in place</div></div><span class="pick"></span></a>
-            <a data-fit="sdk"><div><div class="t">A brokerage with its own app</div><div class="d">Clients already trading in your app</div></div><span class="pick"></span></a>
-            <a data-fit="complete"><div><div class="t">A firm with neither</div><div class="d">Clients and a licence, no app yet</div></div><span class="pick"></span></a>
-            <div class="fit-foot"><span class="fit-back" aria-hidden="true"></span><button class="fit-next" type="button" data-next="4" disabled="">Find your fit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></div>
+            <div class="fit-q">Tick what is already in place.</div>
+            <a data-have="systems"><div><div class="t">Core banking systems</div><div class="d">Accounts and order routing of your own</div></div><span class="pick"></span></a>
+            <a data-have="app"><div><div class="t">A trading app clients already use</div><div class="d">Independent trading under your brand</div></div><span class="pick"></span></a>
+            <a data-have="none"><div><div class="t">Nothing yet</div><div class="d">Clients and a licence, no systems or app of your own</div></div><span class="pick"></span></a>
+            <div class="fit-foot"><span class="fit-hint"></span><button class="fit-next" type="button" data-next="4">Find your fit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></div>
           </div>
 
           <div class="fit-step" data-step="4">
@@ -2384,20 +2387,40 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
 <script>
 /* ================= FIND YOUR FIT ================= */
 (function(){
-  /* One quiz, any number of instances (Home and Products carry one each).
-     Everything is scoped to its own .fit-root, so nothing here uses ids. */
+  /* Find your fit: a checklist of what is already in place. The route is by
+     what you have, not by who you are: a trading app, whoever runs it, takes
+     Embedded; systems without an app take Core; nothing yet takes Complete.
+     Scoped to its own .fit-root, so nothing here uses ids. */
   var COPY = {
     core:{ name:'Finnovest Core', card:'prod-institutional',
-      why:'You already run the systems and the advisory. Core integrates with your core banking, so one recommendation reaches every eligible client through the channel they already use.' },
+      why:'You run your own systems but have no trading app to add to. Core integrates with your core banking, so one recommendation reaches every eligible client through the channel they already use.' },
     sdk:{ name:'Finnovest Embedded', card:'prod-sdk',
       why:'Your clients already trade in your app. Embedded drops advised-trading into it, so your advisors reach every one of them without a second login.' },
     complete:{ name:'Finnovest Complete', card:'prod-complete',
       why:'No app yet, and no need to build one. Complete is a white-label app under your brand, with independent-trading and advised-trading both built in.' }
   };
+  function route(have){ return have.app ? 'sdk' : (have.systems ? 'core' : 'complete'); }
+  function ticked(scope){
+    var h = {};
+    Array.prototype.forEach.call(scope.querySelectorAll('a[data-have].sel'), function(a){ h[a.getAttribute('data-have')] = true; });
+    return h;
+  }
+  /* "Nothing yet" is exclusive: ticking it clears the others, ticking any
+     other clears it. */
+  function toggle(a){
+    var scope = a.closest('.rail');
+    var on = a.classList.toggle('sel');
+    if(!on) return;
+    var none = a.getAttribute('data-have') === 'none';
+    Array.prototype.forEach.call(scope.querySelectorAll('a[data-have].sel'), function(x){
+      if(x === a) return;
+      var xNone = x.getAttribute('data-have') === 'none';
+      if(none || xNone) x.classList.remove('sel');
+    });
+  }
 
   function init(root){
-    var steps   = root.querySelectorAll('.fit-step');
-    var answers = { runs:'' };
+    var steps = root.querySelectorAll('.fit-step');
     var q  = function(sel){ return root.querySelector(sel); };
 
     function show(n){
@@ -2407,8 +2430,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
     }
 
     function decide(){
-      var key = answers.runs || 'complete';
-      var c = COPY[key];
+      var c = COPY[route(ticked(root))];
       q('.fit-name').textContent = c.name;
       q('.fit-why').textContent  = c.why;
       var see = q('.fit-see');
@@ -2419,22 +2441,13 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
       var card = document.getElementById(c.card); if(card) card.classList.add('is-fit');
     }
 
-    /* Selecting an answer highlights it and arms that step's Continue arrow;
-       only the arrow moves on. */
-    function select(a, attr, key){
-      var step = a.closest('.fit-step');
-      Array.prototype.forEach.call(step.querySelectorAll('a['+attr+']'), function(x){ x.classList.toggle('sel', x === a); });
-      answers[key] = a.getAttribute(attr);
-      var nx = step.querySelector('.fit-next'); if(nx) nx.disabled = false;
-    }
     function clearSel(){
       Array.prototype.forEach.call(root.querySelectorAll('a.sel'), function(x){ x.classList.remove('sel'); });
-      Array.prototype.forEach.call(root.querySelectorAll('.fit-next'), function(b){ b.disabled = true; });
     }
 
     root.addEventListener('click', function(e){
-      var opt = e.target.closest('[data-fit]');
-      if(opt){ select(opt, 'data-fit', 'runs'); return; }
+      var opt = e.target.closest('[data-have]');
+      if(opt){ toggle(opt); return; }
 
       var see = e.target.closest('.fit-see');
       if(see){
@@ -2455,7 +2468,6 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
       if(back && back.tagName === 'BUTTON'){
         var b = parseInt(back.dataset.back,10);
         if(b === 0){
-          answers = { runs:'' };
           clearSel();
           Array.prototype.forEach.call(document.querySelectorAll('.prod.is-fit'), function(p){ p.classList.remove('is-fit'); });
           var s = q('.fit-sent');
@@ -2479,7 +2491,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         firm        : (q('.f-firm').value||'').trim(),
         email       : em.value.trim(),
         enquiry     : 'Find your fit',
-        runs_today  : answers.runs,
+        in_place    : Object.keys(ticked(root)).join(', ') || 'nothing yet',
         recommended : q('.fit-name').textContent,
         source      : root.id || 'fit',
         _subject    : 'Finnovest fit enquiry'
@@ -2491,7 +2503,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
            client with everything pre-filled rather than losing it. Replaced by a
            silent POST the moment an endpoint is pasted above. */
         var body = 'Recommended: ' + payload.recommended + '\n'
-                 + 'Runs today: '   + (payload.runs_today  || '-') + '\n\n'
+                 + 'In place: '     + payload.in_place + '\n\n'
                  + 'Name: '  + (payload.name || '-') + '\n'
                  + 'Firm: '  + (payload.firm || '-') + '\n'
                  + 'Email: ' + payload.email + '\n';
@@ -2527,16 +2539,20 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
   var roots = document.querySelectorAll('.fit-root');
   Array.prototype.forEach.call(roots, init);
 
-  /* Hand-off from the Home teaser: its answers navigate to the Products page
-     (data-go/data-anchor) and carry data-fitpre. Preset the quiz there so it
-     opens straight on the result for that answer. */
+  /* Home teaser: the same checklist, ticked locally. Its button navigates to
+     the Products page (data-go/data-anchor); before that, copy the ticks into
+     the Products instance and open it straight on the result. */
   document.addEventListener('click', function(e){
-    var a = e.target.closest('[data-fitpre]'); if(!a) return;
+    var lite = e.target.closest('.fit-lite'); if(!lite) return;
+    var row = e.target.closest('a[data-have]');
+    if(row){ e.preventDefault(); toggle(row); return; }
+    var go = e.target.closest('.fit-lite-go'); if(!go) return;
     var root = document.getElementById('fit'); if(!root) return;
-    var pick = root.querySelector('a[data-fit="'+a.dataset.fitpre+'"]'); if(!pick) return;
-    /* Reset, then replay the selection through the instance's own handler. */
     var again = root.querySelector('.fit-back[data-back="0"]'); if(again) again.click();
-    pick.click();
+    Array.prototype.forEach.call(lite.querySelectorAll('a[data-have].sel'), function(a){
+      var twin = root.querySelector('a[data-have="'+a.getAttribute('data-have')+'"]');
+      if(twin) twin.classList.add('sel');
+    });
     var next = root.querySelector('.fit-step[data-step="1"] .fit-next'); if(next) next.click();
   }, true);
 })();

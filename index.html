@@ -358,11 +358,6 @@ a{color:inherit;text-decoration:none}
 /* Chips and whatever follows them sit against the bottom, so the three cards
    share a baseline even though the paragraphs differ in length. */
 .prod .feat{margin-top:auto;padding-top:18px}
-/* Case-study link sits on its own line so it never breaks the paragraph's last
-   sentence across a link boundary. Muted rather than mint - the mint button
-   below is the primary action and two mint elements would compete. */
-.case-link{display:inline-block;align-self:flex-start;margin-top:12px;font-size:.86rem;color:var(--slate-soft);text-decoration:underline;text-underline-offset:2px;cursor:pointer;transition:color .18s}
-.case-link:hover{color:#fff}
 @media(max-width:1040px){.prod-grid{grid-template-columns:1fr;gap:14px}
   .prod .feat{margin-top:17px;padding-top:0}}
 .prod:hover{border-color:rgba(46,229,157,.34);background:rgba(46,229,157,.03)}
@@ -1062,7 +1057,6 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
             <li>Delivered through the channel your clients already use, so there is nothing new for them to adopt</li>
             <li>Integrates into your core banking and order management, runs in your environment, with supervisory reporting</li>
           </ul>
-          <span class="case-link" data-go="cases">Read the case studies</span>
           <div class="feat"><span class="chip">Advised-trading, inside your systems</span><span class="chip">Core banking and OMS integration</span><span class="chip">Runs in your environment</span><span class="chip">Supervisory reporting</span></div>
           <div style="margin-top:18px"><button class="btn btn-mint btn-sm" data-go="contact">Request a demo</button></div>
         </div>
@@ -1078,7 +1072,6 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
             <li>Clients choose: trade alone, or act on your advisor's recommendation in one tap. Every decision stays theirs</li>
             <li>Drops into your existing app as an SDK: your brand, your execution, no second login</li>
           </ul>
-          <span class="case-link" data-go="cases" data-anchor="case-excellence">Read the case study</span>
           <div class="feat"><span class="chip">Advised-trading, inside your app</span><span class="chip">SDK, no second login</span><span class="chip">Your brand and execution</span></div>
           <div style="margin-top:18px"><button class="btn btn-mint btn-sm" data-go="contact">Request a demo</button></div>
         </div>

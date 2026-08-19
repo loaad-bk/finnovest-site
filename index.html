@@ -651,9 +651,12 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
 .pf-hero{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(32px,5vw,72px);align-items:center}
 .pf-iia{display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding:26px 28px 22px;border:1px solid rgba(46,229,157,.28);border-radius:var(--r-md);background:rgba(46,229,157,.04);color:inherit;text-decoration:none;cursor:pointer;transition:border-color .2s,background .2s}
 .pf-iia:hover{border-color:rgba(46,229,157,.55);background:rgba(46,229,157,.065)}
-.pf-iia .hp-iia-logo{height:40px;width:140px;margin-bottom:2px}
+.pf-iia-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;width:100%}
+.pf-iia-head>div{display:flex;flex-direction:column;gap:8px}
+.pf-iia .hp-iia-logo{height:40px;width:140px;margin:0;background-position:right top}
+@media(max-width:600px){.pf-iia-head{flex-direction:column-reverse;align-items:flex-start}}
 .pf-iia-eb{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mint)}
-.pf-iia-h{font-family:var(--display);font-weight:600;font-size:1.18rem;line-height:1.3;color:#fff;margin-top:-6px}
+.pf-iia-h{font-family:var(--display);font-weight:600;font-size:1.18rem;line-height:1.3;color:#fff;}
 .pf-iia ul{list-style:none;margin:2px 0 0;padding:0;width:100%;display:flex;flex-direction:column;gap:9px}
 .pf-iia li{display:flex;justify-content:space-between;align-items:baseline;gap:14px;font-size:.88rem;color:var(--slate);border-top:1px solid var(--line);padding-top:9px}
 .pf-iia li em{font-style:normal;font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate-soft);white-space:nowrap}
@@ -1293,14 +1296,12 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         <p class="lede" style="margin-top:1.4rem">finnovest advised-trading platform distributed personalized trading advice focused on retail-investors. Here is what happens from the moment someone opens an account to the moment their orders fill.</p>
       </div>
       <a class="pf-iia" data-go="platform" data-anchor="iia" title="How each component was assessed">
-        <span class="hp-iia-logo" role="img" aria-label="Israel Innovation Authority"></span>
-        <span class="pf-iia-eb">Israel Innovation Authority</span>
-        <strong class="pf-iia-h">Recognised as breakthrough technology.</strong>
+        <div class="pf-iia-head"><div><span class="pf-iia-eb">Israel Innovation Authority</span><strong class="pf-iia-h">Recognised as breakthrough technology.</strong></div><span class="hp-iia-logo" role="img" aria-label="Israel Innovation Authority"></span></div>
         <ul>
           <li>Generic Constraints Algorithm <em>Personalisation</em></li>
           <li>Automatic Order Management Module <em>Execution</em></li>
         </ul>
-        <span class="pf-iia-more">How each was assessed <span aria-hidden="true">↓</span></span>
+        <span class="pf-iia-more">More <span aria-hidden="true">↓</span></span>
       </a>
     </div>
   </div>
@@ -2677,6 +2678,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
   });
 })();
 </script>
+
 
 
 

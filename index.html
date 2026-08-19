@@ -579,6 +579,7 @@ body.editing [data-edit].dirty{outline-color:#FFC46B}
 body.editing{padding-bottom:64px}
 body.editing a{pointer-events:none}
 body.editing .nav a,body.editing .nav-links *,body.editing .subnav-in a{pointer-events:auto}
+body.editing .rail a .pick{pointer-events:auto}
 #edit-bar button{white-space:nowrap}
 @media(max-width:620px){#edit-bar{gap:8px;padding:10px 14px}#edit-bar .cnt{width:100%;margin-left:0;order:9}}
 
@@ -731,8 +732,8 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
     </button>
     <div class="nav-links" id="navlinks">
       <a data-go="advisedtrading">Advised-trading</a>
-      <a data-go="platform" class="on">Platform</a>
-      <a data-go="products">Products</a>
+      <a data-go="platform">Platform</a>
+      <a data-go="products" class="on">Products</a>
       <a data-go="cases">Case studies</a>
       <a data-go="advisors">For advisors</a>
       <span class="retail-link" data-go="howitworks">For retail investors</span>
@@ -1009,7 +1010,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
           <span class="eyebrow">Products</span>
           <h1 style="font-size:clamp(1.95rem,3.6vw,3rem)">One platform. Three ways to fit it in.</h1>
           <p class="lede" style="margin-top:1.4rem">Core, Embedded or Complete: the same advised-trading platform, deployed three ways. What differs is how much of it you need, because a bank with its own systems, a brokerage with its own app, and a firm with neither are starting from three different places.</p>
-          <p class="body-dim" style="max-width:42ch;margin-top:clamp(24px,3vw,36px)">Tick what you already have in place, and the product that fits appears, with the reason why.</p>
+          <p class="body-dim" style="max-width:42ch;margin-top:clamp(24px,3vw,36px)">Tick what you already have in place, and we'll find the perfect fit for you.</p>
           <button class="btn btn-mint fit-go" type="button" data-fit-target="fit" style="margin-top:1.2rem">Find your fit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-left:6px"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
         </div>
         <div class="rail fit-root fit-hidden" id="fit">
@@ -1025,7 +1026,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
 
           <div class="fit-step" data-step="4">
             <div class="fit-q"><span class="fit-n">Your fit</span><span class="fit-name">Finnovest Core</span></div>
-            <p class="fit-why"></p><a class="fit-see" data-anchor="">See it below <span aria-hidden="true">&darr;</span></a>
+            <p class="fit-why"></p><a class="fit-see" data-anchor="">See it below <span aria-hidden="true">↓</span></a>
             <div class="fit-foot" style="margin-top:18px"><button class="fit-back" type="button" data-back="0">Start again</button><button class="fit-next" type="button" data-go="contact">Book a demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></div>
           </div>
         </div>
@@ -1332,14 +1333,14 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
         </div>
         <div class="pf-rec-col">
           <div class="pf-rec" role="img" aria-label="The advice record kept for every recommendation: house view, advisor reasoning, suitability check, client approval, execution, retained for review">
-            <div class="pf-rec-top"><span class="pf-rec-l">Advice record</span><span class="pf-rec-s">per client &middot; per recommendation</span></div>
+            <div class="pf-rec-top"><span class="pf-rec-l">Advice record</span><span class="pf-rec-s">per client · per recommendation</span></div>
             <ul>
-              <li><span class="k">House view</span><span class="v">Set by the head of advisory</span><span class="t">&#10003;</span></li>
-              <li><span class="k">Reasoning</span><span class="v">Written by the advisor, attached</span><span class="t">&#10003;</span></li>
-              <li><span class="k">Suitability</span><span class="v">Profile, holdings, cash and credit checked</span><span class="t">&#10003;</span></li>
-              <li><span class="k">Approval</span><span class="v">Client&rsquo;s tap, time-stamped</span><span class="t">&#10003;</span></li>
-              <li><span class="k">Execution</span><span class="v">Orders sequenced and filled</span><span class="t">&#10003;</span></li>
-              <li><span class="k">Retained</span><span class="v">Ready for the supervisor on request</span><span class="t">&#10003;</span></li>
+              <li><span class="k">House view</span><span class="v">Set by the head of advisory</span><span class="t">✓</span></li>
+              <li><span class="k">Reasoning</span><span class="v">Written by the advisor, attached</span><span class="t">✓</span></li>
+              <li><span class="k">Suitability</span><span class="v">Profile, holdings, cash and credit checked</span><span class="t">✓</span></li>
+              <li><span class="k">Approval</span><span class="v">Client’s tap, time-stamped</span><span class="t">✓</span></li>
+              <li><span class="k">Execution</span><span class="v">Orders sequenced and filled</span><span class="t">✓</span></li>
+              <li><span class="k">Retained</span><span class="v">Ready for the supervisor on request</span><span class="t">✓</span></li>
             </ul>
           </div>
           <div class="hp-stat pf-zero"><div class="n mint">ZERO</div><div class="l">compliance errors<br>across the client base to date</div></div>
@@ -2655,6 +2656,7 @@ a:hover .lg,.provider:hover .lg,.hp-logo:hover .lg{opacity:1}
   });
 })();
 </script>
+
 
 
 

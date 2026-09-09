@@ -84,8 +84,13 @@ from the earlier system; everything else follows this.
 - Links: dark circle with a chevron followed by the label (class `alink`).
 - Motion: halftone dot-matrix canvas graphics in a mint gradient (one-to-many burst in the Home
   hero, tap ripple in every CTA band), a client-logo marquee, scroll reveals, wipes on hover.
-- Page structure: dark hero band, light sections alternating white and off-white, dark CTA band,
-  light footer. Bands are classed `dk`, `lt` and `lt lt2`.
+- Page types, following the reference site: product-style pages (Home, Products, Platform,
+  How it works, Careers, Powered by, Advised trading) open on a dark centred hero with the halftone
+  burst, often with a screenshot tile overlapping into the first light section; solution and
+  newsroom pages (For advisors, Media, Events, Insights, Where to get it, Academy, Contact) open on
+  an off-white left-aligned hero, with a photo or card beside the copy where there is one. Every
+  page ends on a dark CTA band except the short retail and directory pages. Bands are classed
+  `dk`, `lt` and `lt lt2`. Cards sit on pastel tiles that alternate mint, lime, lilac, teal.
 - Hero image concept stays: the real Tap-to-Act hand and phone photo, right of the copy.
 
 Apply this style to any new landing page, hero section, deck or mockup.

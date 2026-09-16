@@ -1330,6 +1330,17 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 .hm-hero .hm-frame .gap{display:inline-block;width:.6em}
 .hm-hero .hm-frame .promise{color:#DDD0EA}
 .hm-hero .lede{margin-top:22px}
+/* Home: Market Shift band (16 Sep 2026) */
+.hm-shift{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hm-shift .txt h2{margin-top:0;max-width:16ch}
+.hm-shift .txt p{margin-top:18px;color:var(--slate);font-size:1rem;line-height:1.65;max-width:52ch}
+.hm-shift-tile{background:var(--tile-lilac);border-radius:6px;padding:40px 40px 36px;display:flex;flex-direction:column;justify-content:center;min-height:360px}
+.hm-shift-tile .eyebrow{margin-bottom:12px}
+.hm-shift-tile h3{margin:0;font-size:clamp(1.4rem,2vw,1.85rem);line-height:1.15;letter-spacing:-.02em}
+.hm-shift-tile p{margin-top:16px;color:var(--slate);font-size:.95rem;line-height:1.6}
+.hm-shift-tile .alink{margin-top:24px}
+@media(max-width:900px){.hm-shift{grid-template-columns:1fr;gap:32px}.hm-shift-tile{min-height:0;padding:28px 24px}}
+
 @media(max-width:620px){.hm-hero .hm-frame{font-size:1.1rem}.hm-hero .hm-frame .gap{display:block;height:4px}.hm-hero .hm-h1 .nowrap{white-space:normal}}
 
 .hm-shotband{padding:0 0 72px!important}
@@ -1517,6 +1528,26 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       <span class="lg lg-fibi"></span><span class="lg lg-excellence"></span><span class="lg lg-discount"></span>
       <span class="lg lg-fibi"></span><span class="lg lg-excellence"></span><span class="lg lg-discount"></span>
       <span class="lg lg-fibi"></span><span class="lg lg-excellence"></span><span class="lg lg-discount"></span>
+    </div>
+  </div>
+
+  <!-- THE MARKET SHIFT -->
+  <div class="band lt">
+    <div class="wrap">
+      <div class="hm-shift rev">
+        <div class="txt">
+          <span class="eyebrow">The investment decision is moving</span>
+          <h2>Your institution may hold the account. <em>Someone else</em> increasingly shapes the decision.</h2>
+          <p>Self-directed investors increasingly discover investment ideas, build confidence and decide when to act through social media, online communities, financial platforms and AI tools.</p>
+          <p>The assets may remain with the bank, brokerage firm or wealth manager, while someone else influences the decision and owns the investor relationship.</p>
+        </div>
+        <div class="hm-shift-tile">
+          <span class="eyebrow">Reclaim the journey</span>
+          <h3>Finnovest enables the institution to reclaim the complete journey that creates the trade.</h3>
+          <p>Professional recommendation, suitable investor action, automatically orchestrated trading and the booked trade become one continuous institutional experience inside your brand, governance and infrastructure.</p>
+          <a class="alink" data-go="advisedtrading"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"/></svg></span>See how Advice-driven Trades™ works</a>
+        </div>
+      </div>
     </div>
   </div>
 

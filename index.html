@@ -1356,6 +1356,24 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 .hm-eq-after .a{color:inherit}
 .hm-eq-after .b{color:var(--slate)}
 @media(max-width:900px){.hm-eq{grid-template-columns:1fr;gap:14px}.hm-op{justify-self:center}.hm-world{min-height:0;padding:26px 24px}}
+/* Home: the cycle band, scroll 4 (16 Sep 2026) */
+.hm-cycle{margin:48px auto 0;max-width:1100px;position:relative;text-align:left}
+.hm-cyc-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;position:relative}
+.hm-cyc-row::before{content:"";position:absolute;left:8%;right:8%;top:34px;height:1.5px;background:#BBD0CB;z-index:0}
+.hm-cyc-turn{height:26px;position:relative}
+.hm-cyc-turn::before{content:"";position:absolute;left:50%;top:0;width:1.5px;height:100%;background:var(--mint)}
+.hm-cyc-node{z-index:1;display:flex;flex-direction:column}
+.hm-cyc-node .t{font-size:.95rem;padding:16px 18px;border-bottom:1px solid var(--line);gap:12px}
+.hm-cyc-node .t .n{font-family:var(--display);font-weight:500;font-size:.8rem;color:#061A1A;background:var(--mint);border-radius:999px;padding:3px 9px;line-height:1;flex:none}
+.hm-cyc-node .d{font-size:.84rem;color:var(--slate);padding:12px 18px 6px;line-height:1.5;flex:1}
+.hm-cyc-node .w{font-size:.74rem;color:var(--slate-dim);padding:0 18px 14px}
+.hm-cyc-rail{margin-top:22px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;padding:16px 22px;border-radius:6px;background:var(--tile-mint);font-size:.9rem}
+.hm-cyc-rail b{font-family:var(--display);font-weight:500;font-size:1rem}
+.hm-cyc-rail span{color:var(--slate)}
+.hm-cyc-rail em{font-style:normal;margin-left:auto;color:var(--slate);font-size:.82rem}
+@media(max-width:900px){.hm-cyc-rail em{margin-left:0}}
+@media(max-width:900px){.hm-cyc-row{grid-template-columns:1fr}.hm-cyc-row::before{display:none}.hm-cyc-turn{display:none}}
+
 
 
 @media(max-width:620px){.hm-hero .hm-frame{font-size:1.1rem}.hm-hero .hm-frame .gap{display:block;height:4px}.hm-hero .hm-h1 .nowrap{white-space:normal}}
@@ -1590,6 +1608,26 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
     </div>
   </div>
 
+  <!-- THE CYCLE: what only Finnovest delivers -->
+  <div class="band lt lt2">
+    <div class="wrap hm-center">
+      <span class="eyebrow rev">Finnovest end-to-end operating system</span>
+      <h2 class="rev" style="max-width:20ch;margin:0 auto">One recommendation enters. <em>Thousands of authorized trades follow.</em></h2>
+      <p class="lede rev" style="margin-top:22px;max-width:52ch">The complete Advice-driven Trades™ cycle, from the house view to the booked trade.</p>
+      <div class="hm-cycle rev">
+        <div class="hm-cyc-row">
+<div class="hm-node hm-cyc-node"><div class="t"><span class="n">01</span>House view</div><div class="d">Management sets the house view across the financial products the institution supports.</div><div class="w">Management Console</div></div><div class="hm-node hm-cyc-node"><div class="t"><span class="n">02</span>One recommendation</div><div class="d">The advisor writes it for their book, with reasoning, sees how many clients it suits, and sends it once.</div><div class="w">Advisor Console</div></div><div class="hm-node hm-cyc-node"><div class="t"><span class="n">03</span>Personalized per client</div><div class="d">Resolved against each client's holdings, cash, credit, risk profile and goals.</div><div class="w">One-to-Many Personalization Engine</div></div>
+        </div>
+        <div class="hm-cyc-turn" aria-hidden="true"></div>
+        <div class="hm-cyc-row">
+<div class="hm-node hm-cyc-node"><div class="t"><span class="n">04</span>Thousands of order bundles</div><div class="d">Each client receives a different, personally suitable bundle of buy and sell orders, each one checked before it is sent.</div><div class="w">Sent simultaneously</div></div><div class="hm-node hm-cyc-node"><div class="t"><span class="n">05</span>One Tap-to-Act™</div><div class="d">The investor authorizes the whole bundle once. The investor always makes the final decision.</div><div class="w">Tap-to-Act™</div></div><div class="hm-node hm-cyc-node"><div class="t"><span class="n">06</span>Orchestrated and booked</div><div class="d">Every authorized order is traded through the institution's own systems to the exchange, booked to the client account and documented.</div><div class="w">Automatic orchestration · Documentation</div></div>
+        </div>
+        <div class="hm-cyc-rail"><b>Compliance Engine</b><span>governs every step</span><em>Suitability · House policy · Regulation · Documentation · Real-time revalidation</em></div>
+      </div>
+      <a class="alink rev" data-go="platform" style="margin-top:34px"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"/></svg></span>See how the operating system runs it</a>
+    </div>
+  </div>
+
   <!-- DEPLOYMENT MODELS: three starting points -->
   <div class="band lt">
     <div class="wrap">
@@ -1632,27 +1670,6 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
             </div>
           </div>
           <div class="hm-tile-txt"><span class="hm-step">03 · Launch</span><h4>Complete Branded App</h4><p>Launch a full-service trading app under your brand, with Finnovest CORE and Advice-driven Trades™ built in end to end.</p><a class="alink" data-go="products"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>Explore the Complete Experience</a></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- WHAT FINNOVEST IS: the translation chain -->
-  <div class="band lt lt2">
-    <div class="wrap hm-center">
-      <h2 class="rev" style="max-width:20ch;margin:0 auto">Finnovest is the infrastructure making professional advice <em>executable at scale</em></h2>
-      <p class="lede rev" style="margin-top:22px;max-width:56ch">The only input we need is the recommendation. Finnovest resolves it against every client's holdings, cash, credit, risk profile and goals, and returns a bundle of orders each client can approve in a single tap.</p>
-      <a class="alink rev" data-go="platform" style="margin-top:26px"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>Learn more</a>
-      <div class="hm-flow rev">
-        <div class="hm-flow-grid">
-          <div class="hm-node pill">Head of advisory</div>
-          <div class="hm-node"><div class="t"><i><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h7"></path></svg></i>Advisor writes the call</div><div class="d">One recommendation, with reasoning</div></div>
-          <div class="hm-core"><img src="data:image/png;base64,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" alt="Finnovest"></div>
-          <div class="hm-node"><div class="t"><i><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="3"></circle></svg></i>Resolved per client</div><div class="d">Holdings, cash, credit, risk, goals</div></div>
-          <div class="hm-node pill">Thousands of investors</div>
-        </div>
-        <div class="hm-flow-bottom">
-          <div class="hm-node"><div class="t"><i><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 5-3 7.5-7 9-4-1.5-7-4-7-9V6z"></path></svg></i>Compliance engine</div><div class="d">Suitability · House policy · Regulation · Documentation · Real-time revalidation</div></div>
         </div>
       </div>
     </div>

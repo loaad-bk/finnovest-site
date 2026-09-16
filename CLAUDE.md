@@ -4,7 +4,7 @@ Single-file HTML marketing site for Finnovest, deployed via GitHub Pages to finn
 
 ## Company
 
-Finnovest is a B2B2C fintech platform, HQ Tel Aviv. It is an **advised trading platform**: it
+Finnovest is a B2B2C fintech platform, HQ Tel Aviv. It is the platform for **Advice-driven Trades™**: it
 enables licensed advisors at banks, brokerages and wealth management firms to deliver
 personalized investment recommendations to thousands of retail investors simultaneously.
 
@@ -12,8 +12,11 @@ Founder & CEO: Tal Brockmann.
 
 ## Vocabulary — follow exactly
 
-- **Advised trading** — advisor-issued bundled orders, personalized per client. This is the new
-  market category Finnovest is establishing. Use this term consistently.
+- **Advice-driven Trades™** — advisor-issued bundled orders, personalized per client. This is the
+  new market category Finnovest is establishing. Use this term consistently, with the ™ mark.
+  Spelling fixed 16 September 2026: hyphenated, lower-case d. Never "Advice Driven Trades".
+  It replaces the earlier term "advised trading" (changed 14 September 2026); do not use
+  "advised trading" in new copy.
 - **Independent trading** — self-directed single orders.
 - Finnovest is a **platform**, never an "engine". Internal component names like
   "compliance engine" are fine; the company is not an engine.
@@ -39,7 +42,7 @@ selects the appropriate holding to sell per client.
 
 - **Finnovest Core** — institutional, for banks.
 - **Finnovest Embedded** — SDK into an existing brokerage app.
-- **Finnovest Complete** — full white-label app combining independent trading + advised trading.
+- **Finnovest Complete** — full white-label app combining independent trading + Advice-driven Trades™.
 
 Frame the differences around **what the buyer already has**, not installation depth.
 
@@ -58,10 +61,10 @@ FIBI Bank Ltd. · Excellence Trade / Phoenix Investment House · Discount Bank
 Heading: "Trusted by forward-thinking financial institutions"
 Three client logos (white monochrome, transparent background), then a four-stat strip:
 
-- **$19B** assets under advisory  ← $19B is correct. Not $23B.
+- **$19B** assets analyzed daily  ← $19B is correct. Not $23B. Label is "analyzed daily", not "under advisory".
 - **$195M** monthly trading volume
-- **53%** registered accounts
-- **ZERO** compliance errors
+- **24%** tapped-to-act advice conversion  ← not "53% registered accounts" (stale, removed 16 September 2026)
+- **Zero** compliance errors since 2018
 
 ## Design system (adopted 9 September 2026)
 

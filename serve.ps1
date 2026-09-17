@@ -6,6 +6,7 @@
 .DESCRIPTION
   GET  /            -> index.html, with the Commit UI injected on the fly
   POST /commit      -> writes index.html, then git add/commit/push
+  POST /revert      -> git checkout -- index.html (back to the last commit)
   GET  /ping        -> liveness probe
 
   The Commit UI is injected at serve time and stripped by the client before the
@@ -139,6 +140,7 @@ $injected = @'
   var pendingSince=0, STUCK_AFTER=15000;   /* a save that never resolves must not block reload forever */
   var lastSaved = null;   /* payload already on disk - skips redundant writes */
   var knownV = null;      /* fingerprint of index.html as this page last knew it */
+  var reverting = false;  /* set while Revert runs - autosave must not write the trial back */
 
   function stamp(){
     var d=new Date(), p=function(n){ return (n<10?'0':'')+n; };
@@ -146,6 +148,7 @@ $injected = @'
   }
 
   function doSave(){
+    if(reverting) return;
     if(composing){ schedule(); return; }        /* mid-IME: wait for compositionend */
     var html = serialize();
     if(html === lastSaved){ pendingSave = false; return; }   /* nothing changed */
@@ -201,8 +204,8 @@ $injected = @'
 
   /* "Revert all" restores innerHTML without firing input, so the disk copy
      would otherwise keep the edited text. */
-  var rev = document.getElementById('ed-revert');
-  if(rev) rev.addEventListener('click', function(){ setTimeout(schedule, 50); });
+  /* Superseded: "Revert all" is taken over below and restores index.html from
+     the last Commit, which survives the page reloading itself. */
 
   /* One-shot layout report, so the hero fit can be tuned against real numbers
      instead of estimates read off screenshots. */
@@ -273,6 +276,49 @@ $injected = @'
       }, 80);
     }
   }catch(e){}
+
+  /* ---------------- revert ---------------- */
+  /* The page's own "Revert all" only remembers the text from when the page
+     last loaded, and the page reloads whenever index.html changes on disk -
+     so after any reload it could no longer go back. Take the button over in
+     the capture phase (the old handler never runs) and restore from git.
+     Clicking blurs the block being edited, which fires a save first - so wait
+     for that save to land, THEN ask the server to restore. */
+  var rbtn = document.getElementById('ed-revert');
+  bar.addEventListener('click', function(e){
+    if(!(e.target.closest && e.target.closest('#ed-revert'))) return;
+    e.stopPropagation(); e.preventDefault();
+    if(reverting) return;
+    if(!window.confirm('Revert to the last Commit?\n\nEverything you changed since then will be discarded.')) return;
+
+    reverting = true;
+    clearTimeout(saveTimer); queued = false;
+    if(rbtn) rbtn.disabled = true;
+    btn.disabled = true;
+    msg.textContent = 'Reverting...';
+
+    var waited = 0;
+    (function go(){
+      if(saving && waited < 5000){ waited += 50; return setTimeout(go, 50); }
+      fetch('/revert', { method:'POST', headers:{'X-Edit-Token':TOKEN} })
+      .then(function(r){ return r.json().then(function(j){ return {ok:r.ok, j:j}; }); })
+      .then(function(res){
+        if(!res.ok) throw new Error(res.j.error || 'revert failed');
+        msg.textContent = res.j.nochange ? 'Nothing to revert - reloading...' : ('Reverted to ' + res.j.sha + ' - reloading...');
+        try{
+          sessionStorage.setItem('fnv_scroll', String(window.scrollY));
+          if(bar.classList.contains('on')) sessionStorage.setItem('fnv_editing','1');
+        }catch(e){}
+        setTimeout(function(){ location.reload(); }, 150);
+      })
+      .catch(function(err){
+        reverting = false;
+        if(rbtn) rbtn.disabled = false;
+        btn.disabled = false;
+        msg.textContent = 'Revert failed: ' + err.message;
+      });
+    })();
+  }, true);
 
   /* ---------------- commit ---------------- */
   var busy=false;
@@ -441,6 +487,25 @@ function Invoke-Commit([string]$html, [string]$message) {
   finally { $ErrorActionPreference = $prevEAP; Pop-Location }
 }
 
+# Restore index.html to the last commit. Only ever touches index.html, so other
+# work in the repo (serve.ps1, CLAUDE.md, notes) is left alone.
+function Invoke-Revert {
+  Push-Location $repo
+  $prevEAP = $ErrorActionPreference
+  $ErrorActionPreference = 'Continue'
+  try {
+    $changed = git status --porcelain -- index.html
+    $sha = (git rev-parse --short HEAD).Trim()
+    if (-not $changed) { return @{ nochange = $true; sha = $sha } }
+
+    git checkout -- index.html | Out-Null
+    if ($LASTEXITCODE -ne 0) { return @{ error = 'git checkout failed' } }
+    return @{ reverted = $true; sha = $sha }
+  }
+  catch  { return @{ error = $_.Exception.Message } }
+  finally { $ErrorActionPreference = $prevEAP; Pop-Location }
+}
+
 # ---------------------------------------------------------------- serve
 # Bind BOTH loopback stacks. "localhost" resolves to ::1 before 127.0.0.1 on
 # Windows, so an IPv4-only listener makes clients race and intermittently abort.
@@ -538,6 +603,25 @@ try {
             Send-Response $stream 200 'application/json' (Json $res)
             if ($res.nochange) { Log "POST /commit - no change" 'DarkGray' }
             else { Log "POST /commit -> $($res.sha) pushed=$($res.pushed) : $msg" 'Green' }
+          }
+          break
+        }
+
+        '^POST /revert$' {
+          if ($req.Headers['x-edit-token'] -ne $TOKEN) {
+            Send-Response $stream 403 'application/json' (Json @{ error = 'bad token' })
+            Log "POST /revert REJECTED - bad token" 'Yellow'
+            break
+          }
+          $res = Invoke-Revert
+          if ($res.error) {
+            Send-Response $stream 400 'application/json' (Json $res)
+            Log "POST /revert FAILED - $($res.error)" 'Red'
+          } else {
+            $res.v = Get-Version
+            Send-Response $stream 200 'application/json' (Json $res)
+            if ($res.nochange) { Log "POST /revert - nothing to revert" 'DarkGray' }
+            else { Log "POST /revert -> index.html restored to $($res.sha)" 'Green' }
           }
           break
         }

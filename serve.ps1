@@ -81,6 +81,30 @@ $injected = @'
 
   var save = document.getElementById('ed-save');
   bar.insertBefore(btn, save ? save.nextSibling : null);
+
+  var ubtn = document.createElement('button');
+  ubtn.className = 'btn btn-sm';
+  ubtn.id = 'ed-undo';
+  ubtn.setAttribute('data-injected','1');
+  ubtn.textContent = 'Undo';
+  ubtn.title = 'Undo your last edit (Ctrl+Alt+Z)';
+  ubtn.style.cssText = 'background:#fff;color:#061A1A;border:0';
+  ubtn.disabled = true;
+  bar.insertBefore(ubtn, btn.nextSibling);
+
+  var gbtn = document.createElement('button');
+  gbtn.className = 'btn btn-sm';
+  gbtn.id = 'ed-revert-git';
+  gbtn.setAttribute('data-injected','1');
+  gbtn.textContent = 'Revert to last Commit';
+  gbtn.title = 'Discard everything since the last Commit';
+  gbtn.style.cssText = 'background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.7)';
+  bar.insertBefore(gbtn, ubtn.nextSibling);
+
+  var hide = document.createElement('style');
+  hide.setAttribute('data-injected','1');
+  hide.textContent = '#ed-revert{display:none!important}#ed-undo:disabled{opacity:.45;cursor:default}';
+  document.head.appendChild(hide);
   bar.appendChild(msg);
 
   function serialize(){
@@ -277,6 +301,67 @@ $injected = @'
     }
   }catch(e){}
 
+  /* ---------------- undo ---------------- */
+  /* One step per burst of typing in a block. Kept in sessionStorage so it
+     survives the page reloading itself (after a commit, a revert, or an
+     outside edit). Each step records the block's index plus its text before
+     and after; a step is only applied if the block still holds the "after"
+     text, so a stale step can never overwrite the wrong block. */
+  var HKEY = 'fnv_undo', steps = [], undoing = false, lastEl = null, lastAt = 0;
+  try{ steps = JSON.parse(sessionStorage.getItem(HKEY) || '[]') || []; }catch(e){ steps = []; }
+
+  function persist(){
+    while(steps.length > 60) steps.shift();
+    try{ sessionStorage.setItem(HKEY, JSON.stringify(steps)); }
+    catch(e){ steps = steps.slice(-10); try{ sessionStorage.setItem(HKEY, JSON.stringify(steps)); }catch(e2){} }
+    ubtn.disabled = steps.length === 0;
+    ubtn.textContent = steps.length ? ('Undo (' + steps.length + ')') : 'Undo';
+  }
+  persist();
+
+  document.addEventListener('focusin', function(e){
+    var el = e.target.closest && e.target.closest('[data-edit]');
+    if(el && el._last === undefined) el._last = el.innerHTML;
+  });
+
+  document.addEventListener('input', function(e){
+    if(undoing) return;
+    var el = e.target.closest && e.target.closest('[data-edit]');
+    if(!el) return;
+    var now = Date.now(), before = (el._last === undefined) ? el.innerHTML : el._last;
+    if(el !== lastEl || (now - lastAt) > 1500){
+      steps.push({ i: el.getAttribute('data-edit'), before: before, after: el.innerHTML });
+    } else if(steps.length){
+      steps[steps.length - 1].after = el.innerHTML;   /* same burst: extend the step */
+    }
+    lastEl = el; lastAt = now; el._last = el.innerHTML;
+    persist();
+  }, true);
+
+  function undo(){
+    while(steps.length){
+      var step = steps.pop();
+      var el = document.querySelector('[data-edit="' + step.i + '"]');
+      if(!el || el.innerHTML !== step.after) continue;      /* stale step - skip it */
+      undoing = true;
+      el.innerHTML = step.before; el._last = step.before;
+      el.dispatchEvent(new Event('input', {bubbles:true})); /* lets the page recount and autosave */
+      undoing = false;
+      lastEl = null;
+      persist();
+      msg.textContent = 'Undone.';
+      try{ el.scrollIntoView({block:'center', behavior:'smooth'}); }catch(e){}
+      return;
+    }
+    persist();
+    msg.textContent = 'Nothing to undo.';
+  }
+  ubtn.addEventListener('mousedown', function(e){ e.preventDefault(); });   /* keep focus, avoid a blur-save race */
+  ubtn.addEventListener('click', function(e){ e.stopPropagation(); undo(); });
+  document.addEventListener('keydown', function(e){
+    if(e.ctrlKey && e.altKey && (e.key === 'z' || e.key === 'Z')){ e.preventDefault(); undo(); }
+  });
+
   /* ---------------- revert ---------------- */
   /* The page's own "Revert all" only remembers the text from when the page
      last loaded, and the page reloads whenever index.html changes on disk -
@@ -286,7 +371,7 @@ $injected = @'
      for that save to land, THEN ask the server to restore. */
   var rbtn = document.getElementById('ed-revert');
   bar.addEventListener('click', function(e){
-    if(!(e.target.closest && e.target.closest('#ed-revert'))) return;
+    if(!(e.target.closest && e.target.closest('#ed-revert, #ed-revert-git'))) return;
     e.stopPropagation(); e.preventDefault();
     if(reverting) return;
     if(!window.confirm('Revert to the last Commit?\n\nEverything you changed since then will be discarded.')) return;
@@ -294,7 +379,7 @@ $injected = @'
     reverting = true;
     clearTimeout(saveTimer); queued = false;
     if(rbtn) rbtn.disabled = true;
-    btn.disabled = true;
+    gbtn.disabled = true; btn.disabled = true;
     msg.textContent = 'Reverting...';
 
     var waited = 0;
@@ -305,6 +390,7 @@ $injected = @'
       .then(function(res){
         if(!res.ok) throw new Error(res.j.error || 'revert failed');
         msg.textContent = res.j.nochange ? 'Nothing to revert - reloading...' : ('Reverted to ' + res.j.sha + ' - reloading...');
+        try{ sessionStorage.removeItem('fnv_undo'); }catch(e){}
         try{
           sessionStorage.setItem('fnv_scroll', String(window.scrollY));
           if(bar.classList.contains('on')) sessionStorage.setItem('fnv_editing','1');
@@ -314,7 +400,7 @@ $injected = @'
       .catch(function(err){
         reverting = false;
         if(rbtn) rbtn.disabled = false;
-        btn.disabled = false;
+        gbtn.disabled = false; btn.disabled = false;
         msg.textContent = 'Revert failed: ' + err.message;
       });
     })();
@@ -341,6 +427,7 @@ $injected = @'
     .then(function(res){
       if(!res.ok) throw new Error(res.j.error || 'commit failed');
       lastSaved = html;   /* /commit writes the same bytes to disk */
+      steps = []; persist();   /* a commit is the new baseline */
       knownV = res.j.v || knownV;
       pendingSave = false;
       msg.textContent = res.j.nochange ? 'No change to commit.'

@@ -1324,7 +1324,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 /* Home hero v2 (16 Sep 2026): headline, category-and-promise line */
 .hm-hero .hm-h1{margin-top:44px}
 .hm-hero .hm-h1 .nowrap{white-space:nowrap}
-.hm-hero .hm-frame{display:block;margin:30px auto 0;max-width:64ch;font-family:var(--display);font-weight:500;font-size:clamp(1.3rem,1.9vw,1.75rem);line-height:1.25;letter-spacing:-.015em;color:rgba(255,255,255,.92)}
+.hm-hero .hm-frame{display:block;margin:30px auto 0;max-width:72ch;text-wrap:balance;font-family:var(--display);font-weight:500;font-size:clamp(1.3rem,1.9vw,1.75rem);line-height:1.25;letter-spacing:-.015em;color:rgba(255,255,255,.92)}
 .hm-hero .hm-frame em{font-style:italic;font-weight:inherit}
 .hm-hero .hm-frame .cat{color:var(--mint)}
 .hm-hero .hm-frame .gap{display:inline-block;width:.6em}
@@ -1544,9 +1544,9 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
   <div class="band dk hm-hero">
     <canvas class="hm-burst" width="1200" height="900" aria-hidden="true"></canvas>
     <div class="wrap">
-      <h1 class="hm-h1">One advisor. Thousands of retail investors. <em class="nowrap">One Tap-to-Act.</em></h1>
-      <p class="hm-frame"><span class="cat">Advice-driven Trades™.</span><span class="gap"></span><span class="promise">Reclaim control of the <em>full</em> retail investing journey.</span></p>
-      <p class="lede">Finnovest is the end-to-end operating system for Advice-driven Trades™. It turns one professional recommendation into thousands of individually suitable, compliance-checked bundles of buy and sell orders. Each investor authorizes the whole bundle with One Tap to Act™, and Finnovest orchestrates the trading automatically.</p>
+      <h1 class="hm-h1"><em>Own Investor Relationships.<br>with Advice-driven Trades. At&nbsp; scale</em></h1>
+      <p class="hm-frame"><span class="promise">Because independent trading doesn't have to mean investing alone.</span></p>
+      <p class="lede">Finnovest is the end-to-end operating system for Advice-driven Trades™. <br>It turns one professional recommendation into thousands of personalized bundles of buy and sell orders, approved by the investor with <br>One Tap-to-Act™ and automatically orchestrated to the exchange.</p>
       <div class="hm-cta">
         <button class="btn btn-mint" data-go="contact">Request a demo<span class="wipe" aria-hidden="true"><i></i><i></i><i></i></span></button>
         <button class="btn btn-ghost" data-go="platform">Explore the operating system<span class="wipe" aria-hidden="true"><i></i><i></i><i></i></span></button>
@@ -3607,6 +3607,9 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
   if(tabs.length&&slides){Array.prototype.forEach.call(tabs,function(tb){tb.addEventListener('click',function(){Array.prototype.forEach.call(tabs,function(x){x.classList.remove('on')});tb.classList.add('on');var i=+tb.getAttribute('data-i'),w=slides.children[0].getBoundingClientRect().width+24;slides.style.transform='translateX('+(-i*w)+'px)'})})}
 })();
 </script>
+
+
+
 
 
 

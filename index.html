@@ -1499,6 +1499,24 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 .hm-tabs{margin-top:22px}
 .hm-corebar{margin-left:auto;margin-right:auto}
 
+/* Home: hero copy, capability tiles, proof row, category statement (23 Sep 2026) */
+.hm-pill{display:inline-block;border:1px solid var(--mint);color:var(--mint);border-radius:999px;padding:8px 22px;font-size:1.02rem}
+#home .hm-hero .hm-h1{max-width:20ch;font-size:clamp(38px,5vw,76px)!important;line-height:1!important;margin-top:26px}
+#home .hm-hero .lede{max-width:64ch}
+.hm-cap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.hm-cap .tl{border-radius:6px;height:245px;display:flex;align-items:center;justify-content:center}
+.hm-cap h3{font-size:clamp(1.5rem,2vw,1.9rem);line-height:1.08;letter-spacing:-.02em;margin:26px 0 14px}
+.hm-cap p{color:var(--slate);font-size:1rem;line-height:1.6;margin:0}
+.hm-cap p b{font-weight:400;color:#07282A}
+.hm-cap .card{background:#fff;border-radius:6px;padding:20px 26px;font-size:1.02rem;line-height:1.85;color:#07282A}
+.hm-cap .card .ok{color:#0B8A5F}
+.hm-cap .card .tb{display:block;margin-top:14px;background:#07282A;color:var(--mint);border-radius:999px;text-align:center;padding:12px 0}
+.hm-cap-proof{margin-top:64px}
+.hm-cap-proof h2{margin:0 auto 28px;max-width:34ch}
+.hm-cap-proof .hm-stat{text-align:left}
+#home .hm-hero{padding-top:124px!important}
+.hm-stats.hm-stats4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:900px){.hm-cap{grid-template-columns:1fr}.hm-stats.hm-stats4{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -1544,13 +1562,11 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
   <div class="band dk hm-hero">
     <canvas class="hm-burst" width="1200" height="900" aria-hidden="true"></canvas>
     <div class="wrap">
-      <h1 class="hm-h1"><em>Own Investor Relationships.<br>with Advice-driven Trades. At&nbsp; scale</em></h1>
-      <p class="hm-frame"><span class="promise">Because independent trading doesn't have to mean investing alone.</span></p>
-      <p class="lede">Finnovest is the end-to-end operating system for Advice-driven Trades™. <br>It turns one professional recommendation into thousands of personalized bundles of buy and sell orders, approved by the investor with <br>One Tap-to-Act™ and automatically orchestrated to the exchange.</p>
+      <span class="hm-pill">Advised Trading&trade;</span>
+      <h1 class="hm-h1">Give your retail investors professional advice they can <em>execute in one tap.</em></h1>
+      <p class="lede">Finnovest brings professional advice into independent trading. One recommendation becomes thousands of portfolio-specific bundles of buy and sell orders in your app. The investor decides and executes with one tap of Trade-All&trade;, and Finnovest orchestrates the whole Advised Trading&trade; process with full end-to-end compliance.</p>
       <div class="hm-cta">
         <button class="btn btn-mint" data-go="contact">Request a demo<span class="wipe" aria-hidden="true"><i></i><i></i><i></i></span></button>
-        <button class="btn btn-ghost" data-go="platform">Explore the operating system<span class="wipe" aria-hidden="true"><i></i><i></i><i></i></span></button>
-        <a class="alink hm-see" data-go="advisedtrading"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>See how Advice-driven Trades™ works</a>
       </div>
       <div class="hm-badge" data-go="platform" title="How the platform works"><span>Recognised as breakthrough technology by the</span><span class="hp-iia-logo" role="img" aria-label="Israel Innovation Authority"></span></div>
     </div>
@@ -1563,6 +1579,47 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       <span class="lg lg-fibi"></span><span class="lg lg-excellence"></span><span class="lg lg-discount"></span>
       <span class="lg lg-fibi"></span><span class="lg lg-excellence"></span><span class="lg lg-discount"></span>
       <span class="lg lg-fibi"></span><span class="lg lg-excellence"></span><span class="lg lg-discount"></span>
+    </div>
+  </div>
+
+  <!-- CAPABILITIES + PROOF ROW (23 Sep 2026) -->
+  <div class="band lt">
+    <div class="wrap">
+      <div class="hm-cap">
+        <div class="rev">
+          <div class="tl" style="background:var(--tile-mint)"><svg width="210" height="126" viewBox="0 0 150 90" aria-hidden="true"><g stroke="#0B8A5F" stroke-width="1"><line x1="20" y1="45" x2="120" y2="12"/><line x1="20" y1="45" x2="130" y2="30"/><line x1="20" y1="45" x2="135" y2="48"/><line x1="20" y1="45" x2="130" y2="66"/><line x1="20" y1="45" x2="120" y2="82"/></g><circle cx="20" cy="45" r="9" fill="#07282A"/><g fill="#2EE59D" stroke="#07282A"><circle cx="120" cy="12" r="5"/><circle cx="130" cy="30" r="5"/><circle cx="135" cy="48" r="5"/><circle cx="130" cy="66" r="5"/><circle cx="120" cy="82" r="5"/></g></svg></div>
+          <h3>High-touch personal advisory <em>at scale</em></h3>
+          <p>The <b>Generic Constraints Algorithm</b> handles any operational or client-specific constraint, automating the personal suitability process for a large number of clients simultaneously. The result is a recommendation tailored to each individual client, despite wide variation between one portfolio and the next.</p>
+        </div>
+        <div class="rev">
+          <div class="tl" style="background:var(--tile-lime)"><div class="card">Sell 40 <span class="ok">&rarr; funds</span><br>Buy 25 &middot; Buy 15<span class="tb">Trade-All&trade;</span></div></div>
+          <h3>Advanced algorithmic trading, <em>no human intervention</em></h3>
+          <p>The <b>Automatic Order Management Module</b> manages and supervises the sending of multiple interdependent trade orders for each individual client, executing several trades from a single press of the approval button.</p>
+        </div>
+        <div class="rev">
+          <div class="tl" style="background:var(--tile-lilac)"><div class="card"><span class="ok">&#10003;</span> Advice push<br><span class="ok">&#10003;</span> Trade execution<br><span class="ok">&#10003;</span> Booking<br><span class="ok">&#10003;</span> Reporting</div></div>
+          <h3>Full <em>end-to-end</em> compliance</h3>
+          <p>Compliance runs across the full lifecycle, from the advice push through the trade to booking and reporting, so every order stays inside the rules.</p>
+        </div>
+      </div>
+      <div class="hm-center hm-cap-proof">
+        <h2 class="rev">Trusted by forward-thinking <em>financial institutions</em></h2>
+        <div class="hm-stats hm-stats4 rev">
+          <div class="hm-stat" style="background:var(--tile-mint)"><div class="n">$19B</div><div class="l">assets analyzed daily</div></div>
+          <div class="hm-stat" style="background:var(--tile-lime)"><div class="n">$195M</div><div class="l">monthly trading volume</div></div>
+          <div class="hm-stat" style="background:var(--tile-lilac)"><div class="n">Zero</div><div class="l">compliance errors since 2018</div></div>
+          <div class="hm-stat" style="background:var(--tile-teal)"><div class="n">IIA</div><div class="l">recognised as breakthrough technology</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY STATEMENT (23 Sep 2026) -->
+  <div class="band lt lt2">
+    <div class="wrap hm-center">
+      <h2 class="rev" style="max-width:22ch;margin:0 auto">Finnovest is the platform for <em>Advised Trading&trade;</em></h2>
+      <p class="lede rev" style="margin-top:22px;max-width:56ch">Robo-advisors decide for the investor. Trading apps leave them alone with the market. Advised Trading&trade; puts a professional's advice, fitted to their portfolio, in front of them to act on or not.</p>
+      <a class="alink rev" data-go="advisedtrading" style="margin-top:34px"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>How it works</a>
     </div>
   </div>
 

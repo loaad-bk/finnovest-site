@@ -18,8 +18,15 @@ Founder & CEO: Tal Brockmann.
   It replaces the earlier term "advised trading" (changed 14 September 2026); do not use
   "advised trading" in new copy.
 - **Independent trading** — self-directed single orders.
-- Finnovest is a **platform**, never an "engine". Internal component names like
+- **Trade-All™** — the one-tap action that executes a recommendation's entire bundle of orders.
+  Spelling fixed 24 September 2026: hyphenated, capital A, with the ™ mark. It replaces
+  "Tap-to-Act™" site-wide; do not use "Tap-to-Act" in new copy. The feature is addressed
+  with the fixed phrase "One tap to Trade-All™". The stat label
+  "Tapped-to-act advice conversion" is still under review; ask before changing it.
+- Finnovest is an **operating system** (changed 24 September 2026: "Operating System is what we
+  are selling, not a platform"), never an "engine". Internal component names like
   "compliance engine" are fine; the company is not an engine.
+- "Live inside your app in weeks" is false. Never claim a deployment time.
 - Finnovest holds **no patents**. Its external validation is Israel Innovation Authority (IIA)
   recognition as breakthrough technology, plus IIA funding. Never imply patents.
 - In Hebrew the company name is spelled **פינובסט** — single vav, with a ב. Never write

@@ -1964,14 +1964,14 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 .vh-proof .vh-logos .lg { opacity: 0.92; }
 .vh-proof .vh-logos .lg-fibi, .vh-proof .vh-logos .lg-excellence { width: 180px; height: 46px; }
 .vh-proof .vh-logos .lg-discount { width: 100px; height: 64px; }
-.vh-proof .vh-nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 900px; margin: 34px auto 0; }
+.vh-proof .vh-nums { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: 1180px; margin: 34px auto 0; }
 .vh-proof .vh-nums div { display: grid; gap: 6px; padding: 0 14px; border-left: 1px solid rgba(255,255,255,0.12); min-width: 0; }
 .vh-proof .vh-nums div:first-child { border-left: 0; }
 .vh-proof .vh-nums b { font-family: "Instrument Sans", "Helvetica Neue", Arial, sans-serif; font-weight: 500; font-size: clamp(34px, 3.4vw, 50px); line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
 .vh-proof .vh-nums span { font-size: 13px; color: rgba(255,255,255,0.64); }
 .vh-proof .vh-iia { display: inline-flex; align-items: center; gap: 14px; margin-top: 34px; font-size: 13px; color: rgba(255,255,255,0.7); }
 .vh-proof .vh-iia .hp-iia-logo { width: 100px; height: 26px; flex: none; }
-@media (max-width: 760px) { .vh-proof .vh-nums b { font-size: 28px; } .vh-proof .vh-nums div { padding: 0 8px; } .vh-proof .vh-logos { gap: 22px 40px; } }
+@media (max-width: 760px) { .vh-proof .vh-nums { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 28px; } .vh-proof .vh-nums div:nth-child(3) { border-left: 0; } .vh-proof .vh-logos { gap: 22px 40px; } }
 
 /* client logos scroll continuously left to right, fading at both edges */
 .vh-proof .vh-marq { max-width: 1180px; margin: 0 auto; overflow: hidden; padding: 6px 0 38px; border-bottom: 1px solid rgba(255,255,255,0.12); -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 86%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 86%, transparent 100%); }
@@ -2146,7 +2146,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 
     <div class="vh-copy">
       <h1>Give your retail investors tailored advice they can <em>execute in one tap.</em></h1>
-      <p class="vh-lede">Personalized buy and sell bundles for every client. One tap to Trade-All™ executes them, with suitability, compliance and documentation built in.</p>
+      <p class="vh-lede">From one investment idea to thousands of personalized, advice-driven trades. Finnovest turns professional investment advice into portfolio-specific recommendations and ready-to-execute buy and sell order bundles, tailored to each client's holdings, risk profile and constraints. Investors approve the entire recommendation in one tap, while Finnovest orchestrates execution and manages suitability, compliance and documentation end to end.</p>
       <div class="vh-cta"><button class="btn btn-mint" data-go="advisedtrading"><span class="vh-play" aria-hidden="true"></span>Advised-trading demo<span class="wipe" aria-hidden="true"><i></i><i></i><i></i></span></button></div>
     </div>
 
@@ -2154,7 +2154,6 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       <div class="vh-top"><span class="vh-dot"></span>Advisor console<span>Live</span></div>
       <div class="vh-pin-t">Increase exposure to global technology</div>
       <div class="vh-pin-n"><b>13,452</b> investors in your book fit this recommendation</div>
-      <div class="vh-pin-e"><span>Executed with Trade-All™</span><b id="vh-exec">0</b></div>
     </div>
 
     <div class="vh-layer" id="vh-layer" aria-live="polite">
@@ -2172,7 +2171,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       <div class="vh-cn-status" id="vh-status"><i></i><span id="vh-stat">Matching against every client book</span></div>
     </div>
 
-    <div class="vh-closing" id="vh-closing"><p><span class="vh-cl">One investment idea.</span><span class="vh-cl"><em>Thousands</em> of personalized trades, simultaneously.</span><span class="vh-cl m">One tap to Trade-All™.</span></p></div>
+    <div class="vh-closing" id="vh-closing"><p><span class="vh-cl">One investment idea.</span><span class="vh-cl"><em>Thousands</em> of tailored recommendations, simultaneously.</span><span class="vh-cl m">One tap to Trade-All™.</span></p></div>
     <div class="vh-foot"><button class="vh-pp" id="vh-pp" type="button" aria-label="Pause">❚❚</button></div>
   </div>
 
@@ -2194,7 +2193,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       <article class="vh-oc p">
         <p class="k">Governance</p>
         <h3>Built-in compliance from advice to <em>execution</em></h3>
-        <p>Every recommendation is checked against suitability, house policy and regulatory rules when created by the advisor, then revalidated in real time when the client opens it.</p>
+        <p>Every recommendation is checked against suitability, house policy and regulatory rules when created by the advisor, then revalidated in real time when the client opens it. Finnovest automatically generates the complete Advice Protocol, records it in the CRM and makes it immediately available to the client.</p>
         <a class="alink" data-go="products"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>Learn more</a>
       </article>
     </div>
@@ -2206,6 +2205,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
     <div class="vh-nums">
       <div><b>$20B+</b><span>Assets analyzed daily</span></div>
       <div><b>$200M+</b><span>Monthly trading volume</span></div>
+      <div><b>53%</b><span>Registered accounts</span></div>
       <div><b>Zero</b><span>Compliance errors since 2018</span></div>
     </div>
   </div>
@@ -4675,7 +4675,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 
   /* executed counter: each tap stands for thousands acting at once; it ends at 26% of 13,452 */
   var execNow = 0;
-  function showExec(n) { $('vh-exec').textContent = Math.round(n).toLocaleString('en-US'); }
+  function showExec(n) { var x = $('vh-exec'); if (x) x.textContent = Math.round(n).toLocaleString('en-US'); }
   function execTo(target) { var from = execNow, t0 = performance.now(); execNow = target; (function f() { var k = Math.min(1, (performance.now() - t0) / 1200), e = 1 - Math.pow(1 - k, 3); showExec(from + (target - from) * e); if (k < 1) setTimeout(f, 30); })(); }
   function countUp(el, to, ms) { return new Promise(function (res) { var t0 = performance.now(); (function f() { var k = Math.min(1, Math.max(0, (performance.now() - t0) / ms)), e = 1 - Math.pow(1 - k, 3); el.textContent = Math.round(to * e).toLocaleString('en-US'); if (k < 1) setTimeout(f, 30); else res(); })(); }); }
 

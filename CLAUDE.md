@@ -12,6 +12,8 @@ Founder & CEO: Tal Brockmann.
 
 ## Vocabulary — follow exactly
 
+**Do not change our text. Keep our terminology exactly as written; never replace it with generic wording.**
+
 - **Advice-driven Trades™** — advisor-issued bundled orders, personalized per client. This is the
   new market category Finnovest is establishing. Use this term consistently, with the ™ mark.
   Spelling fixed 16 September 2026: hyphenated, lower-case d. Never "Advice Driven Trades".

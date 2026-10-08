@@ -2094,7 +2094,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       <div class="vh-top"><span class="vh-dot"></span>Advisor console<span>Live</span></div>
       <div class="vh-pin-t">Increase exposure to global technology</div>
       <div class="vh-pin-n"><b>13,452</b> investors in your book fit this recommendation</div>
-      <div class="vh-pin-e"><span>Executed with Trade-All™</span><b id="vh-exec">0</b><div class="bar"><i id="vh-bar"></i></div><small><em id="vh-pct">0%</em> of eligible investors so far</small></div>
+      <div class="vh-pin-e"><span>Executed with Trade-All™</span><b id="vh-exec">0</b><div class="bar"><i id="vh-bar"></i></div><small><em id="vh-pct">0%</em> Trade-All™ conversion</small></div>
     </div>
 
     <div class="vh-layer" id="vh-layer" aria-live="polite">
@@ -4621,7 +4621,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 
   /* executed counter: each tap stands for thousands acting at once; it ends at 24% of 13,452 */
   var execNow = 0;
-  function showExec(n) { $('vh-exec').textContent = Math.round(n).toLocaleString('en-US'); var p = n / ELIG * 100; $('vh-pct').textContent = Math.round(p) + '%'; $('vh-bar').style.width = (p / 24 * 100) + '%'; }
+  function showExec(n) { $('vh-exec').textContent = Math.round(n).toLocaleString('en-US'); var p = n / ELIG * 100; $('vh-pct').textContent = Math.round(p) + '%'; $('vh-bar').style.width = p + '%'; }
   function execTo(target) { var from = execNow, t0 = performance.now(); execNow = target; (function f() { var k = Math.min(1, (performance.now() - t0) / 1200), e = 1 - Math.pow(1 - k, 3); showExec(from + (target - from) * e); if (k < 1) setTimeout(f, 30); })(); }
   function countUp(el, to, ms) { return new Promise(function (res) { var t0 = performance.now(); (function f() { var k = Math.min(1, Math.max(0, (performance.now() - t0) / ms)), e = 1 - Math.pow(1 - k, 3); el.textContent = Math.round(to * e).toLocaleString('en-US'); if (k < 1) setTimeout(f, 30); else res(); })(); }); }
 

@@ -2037,17 +2037,6 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 #home .vh-dep-l { font-size: 10.5px; color: rgba(255,255,255,0.62); margin-top: 2px; }
 #home .vh-dep-t2 { font-family: "Instrument Sans", "Helvetica Neue", Arial, sans-serif; font-weight: 500; font-size: 13.5px; line-height: 1.2; margin-top: 2px; }
 #home .vh-dep-ta { margin-top: 8px; height: 36px; border-radius: 999px; background: #2EE59D; color: #07282A; font: 600 14px/36px "Inter", system-ui, sans-serif; text-align: center; box-shadow: 0 8px 22px rgba(46,229,157,0.35); }
-/* deployment tile 02: the recommendation card inside the client's own app, same dark card as tiles 01 and 03 */
-#home .vh-app { padding: 14px 14px 16px; }
-#home .vh-app-bar { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
-#home .vh-app-av { width: 22px; height: 22px; border-radius: 50%; background: rgba(184,245,90,0.18); color: #B8F55A; font-size: 10.5px; font-weight: 600; display: grid; place-items: center; }
-#home .vh-app-nm { font-size: 11.5px; font-weight: 600; }
-#home .vh-app-bell { margin-left: auto; width: 7px; height: 7px; border-radius: 50%; background: #2EE59D; box-shadow: 0 0 0 3px rgba(46,229,157,0.2); }
-#home .vh-app-tabs { display: flex; gap: 16px; font-size: 11px; color: rgba(255,255,255,0.5); border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 12px; }
-#home .vh-app-tabs span { padding-bottom: 7px; }
-#home .vh-app-tabs .on { color: #fff; box-shadow: inset 0 -2px 0 #2EE59D; }
-#home .vh-app-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 12px; }
-#home .vh-app-card .vh-dep-ta { margin-top: 12px; }
 /* Growth / Scale / Governance cards rising over the hero bottom */
 .vh-cards { position: relative; z-index: 6; margin-top: -118px; padding: 0 24px; background: linear-gradient(transparent 118px, var(--forest, #07282A) 118px); }
 .vh-cards-in { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; max-width: calc(var(--max, 1265px) - 36px); margin: 0 auto; }
@@ -2310,12 +2299,11 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
           <div class="hm-tile-txt"><span class="hm-step">01 · Finnovest Connect</span><h4>Private deployment</h4><p>Use your existing client experience. Finnovest connects to the advisory, compliance and execution systems you already operate.</p><a class="alink" data-go="products"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>Explore Connect</a></div>
         </div>
         <div class="rev" style="transition-delay:.1s">
-          <div class="hm-tile teal">
-            <div class="vh-dep vh-app">
-              <div class="vh-app-bar"><span class="vh-app-av">D</span><span class="vh-app-nm">Your trading app</span><span class="vh-app-bell"></span></div>
-              <div class="vh-app-tabs"><span>Portfolio</span><span class="on">Advice</span><span>Markets</span></div>
-              <div class="vh-app-card"><div class="vh-dep-hi">Hi <span>Daniel</span>,</div><div class="vh-dep-l">your advisor recommends</div><div class="vh-dep-t2">Increase exposure to global technology</div><div class="vh-dep-ta">Trade-All™</div></div>
-            </div>
+          <div class="hm-tile sage">
+            <div class="hm-phone"><div class="scr"><canvas class="hm-burst-phone" width="300" height="560" aria-hidden="true"></canvas>
+              <div class="time"><small>23 June</small>11:28</div>
+              <div class="vh-dep-phone"><div class="vh-dep-bub"><div class="vh-dep-hi">Hi <span>Daniel</span>,</div><div class="vh-dep-l">your advisor recommends</div><div class="vh-dep-t2">Increase exposure to global technology</div></div><div class="vh-dep-ta">Trade-All™</div></div>
+            </div></div>
           </div>
           <div class="hm-tile-txt"><span class="hm-step">02 · Finnovest Embedded</span><h4>SDK integration</h4><p>Embed Finnovest's proven Advised-trading journey inside the trading app your clients already use. Included with Finnovest CORE.</p><a class="alink" data-go="products"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>Explore Embedded</a></div>
         </div>
@@ -4739,13 +4727,13 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
     await wait(700, g);
 
     // 1. greeting and the recommendation in one bubble
-    push('<div class="vh-glass vh-bub"><div class="vh-hi">Hi <span>' + s.name + '</span>,</div><div class="vh-lbl">your advisor recommends</div><div class="vh-ttl">Increase exposure to global technology</div></div>', 'pop');
+    push('<div class="vh-meta"><span class="vh-ic"></span><b>Your trading app</b> · now</div><div class="vh-glass vh-bub"><div class="vh-hi">Hi <span>' + s.name + '</span>,</div><div class="vh-lbl">Your advisor recommends</div><div class="vh-ttl">Increase exposure to global technology</div></div>', 'pop');
     await wait(2100, g);
 
     // 2. their own bundle
     var row = function (o) { return '<div class="vh-o ' + o[0].toLowerCase() + '" data-s="queued"><span class="side">' + o[0] + '</span><span class="inst">' + o[1] + '</span><span class="amt">' + fmt(o[2]) + '</span><span class="st"></span></div>'; };
     var sells = s.orders.filter(function (o) { return o[0] === 'Sell'; }), buys = s.orders.filter(function (o) { return o[0] === 'Buy'; });
-    var b = push('<div class="vh-glass vh-bub"><div class="vh-rows">' + sells.map(row).join('') + buys.map(row).join('') + '</div></div>');
+    var b = push('<div class="vh-meta"><span class="vh-av">F</span><b>Your orders, ' + s.name + '</b> · personalized</div><div class="vh-glass vh-bub"><div class="vh-rows">' + sells.map(row).join('') + buys.map(row).join('') + '</div></div>');
     var rows = Array.prototype.slice.call(b.querySelectorAll('.vh-o'));
     for (var r = 0; r < rows.length; r++) { await wait(150, g); rows[r].classList.add('in'); }
     await wait(900, g);

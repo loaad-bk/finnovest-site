@@ -2206,14 +2206,13 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 
   <div class="vh-proof">
     <h2>Trusted by forward-thinking financial <em>institutions</em></h2>
-    <div class="vh-logos"><span class="lg lg-fibi" role="img" aria-label="FIBI Bank"></span><span class="lg lg-excellence" role="img" aria-label="Excellence Trade · Phoenix Investment House"></span><span class="lg lg-discount" role="img" aria-label="Israel Discount Bank"></span></div>
+    <div class="vh-marq"><div class="vh-belt"><span class="lg lg-fibi" role="img" aria-label="FIBI Bank"></span><span class="lg lg-excellence" role="img" aria-label="Excellence Trade · Phoenix Investment House"></span><span class="lg lg-discount" role="img" aria-label="Israel Discount Bank"></span><span class="lg lg-fibi" aria-hidden="true"></span><span class="lg lg-excellence" aria-hidden="true"></span><span class="lg lg-discount" aria-hidden="true"></span><span class="lg lg-fibi" aria-hidden="true"></span><span class="lg lg-excellence" aria-hidden="true"></span><span class="lg lg-discount" aria-hidden="true"></span><span class="lg lg-fibi" aria-hidden="true"></span><span class="lg lg-excellence" aria-hidden="true"></span><span class="lg lg-discount" aria-hidden="true"></span><span class="lg lg-fibi" aria-hidden="true"></span><span class="lg lg-excellence" aria-hidden="true"></span><span class="lg lg-discount" aria-hidden="true"></span><span class="lg lg-fibi" aria-hidden="true"></span><span class="lg lg-excellence" aria-hidden="true"></span><span class="lg lg-discount" aria-hidden="true"></span><span class="lg lg-fibi" aria-hidden="true"></span><span class="lg lg-excellence" aria-hidden="true"></span><span class="lg lg-discount" aria-hidden="true"></span><span class="lg lg-fibi" aria-hidden="true"></span><span class="lg lg-excellence" aria-hidden="true"></span><span class="lg lg-discount" aria-hidden="true"></span></div></div>
     <div class="vh-nums">
       <div><b>$20B+</b><span>Assets analyzed daily</span></div>
       <div><b>$200M+</b><span>Monthly trading volume</span></div>
-      <div><b>24%</b><span>Trade-All™ conversion</span></div>
+      <div><b>26%</b><span>Trade-All™ conversion</span></div>
       <div><b>Zero</b><span>Compliance errors since 2018</span></div>
     </div>
-    <div class="vh-iia"><span class="hp-iia-logo" role="img" aria-label="Israel Innovation Authority"></span>Two technologies recognized as breakthrough innovations.</div>
   </div>
 
   <!-- THE PROBLEM: cause, consequence, answer. Market Shift + Two Worlds merged (24 Sep 2026) -->
@@ -3100,7 +3099,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       <div class="hp-stats rev" style="margin:0 0 14px;max-width:880px">
               <div class="hp-stat"><div class="n">$20B+</div><div class="l">Assets analyzed daily</div></div>
               <div class="hp-stat"><div class="n">$200M+</div><div class="l">Monthly trading volume</div></div>
-              <div class="hp-stat"><div class="n">24%</div><div class="l">Tapped-to-act advice conversion</div></div>
+              <div class="hp-stat"><div class="n">26%</div><div class="l">Tapped-to-act advice conversion</div></div>
               <div class="hp-stat"><div class="n mint">ZERO</div><div class="l">Compliance errors since 2018</div></div>
             </div>
       <div style="margin-top:28px"><div class="facts rev">
@@ -4577,7 +4576,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       vf: 'saturate(0.7) contrast(0.95) brightness(0.96)', amt: 0.4, mood: '#7B5BB0', accent: '#D7C4F7', tile: '#DDD0EA',
       orders: [['Sell', 'Government bond fund', 5000], ['Buy', 'Global tech ETF', 2000], ['Buy', 'Global dividend fund', 3000]] }
   ];
-  var ELIG = 13452, EXEC = [1076, 2152, 3228];
+  var ELIG = 13452, EXEC = [1166, 2332, 3498];
   var vids = [0, 1, 2].map(function (i) { return $('vh-v' + i); });
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var fmt = function (n) { return '$' + n.toLocaleString('en-US'); };
@@ -4680,7 +4679,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
     return el;
   }
 
-  /* executed counter: each tap stands for thousands acting at once; it ends at 24% of 13,452 */
+  /* executed counter: each tap stands for thousands acting at once; it ends at 26% of 13,452 */
   var execNow = 0;
   function showExec(n) { $('vh-exec').textContent = Math.round(n).toLocaleString('en-US'); var p = n / ELIG * 100; $('vh-pct').textContent = Math.round(p) + '%'; $('vh-bar').style.width = p + '%'; }
   function execTo(target) { var from = execNow, t0 = performance.now(); execNow = target; (function f() { var k = Math.min(1, (performance.now() - t0) / 1200), e = 1 - Math.pow(1 - k, 3); showExec(from + (target - from) * e); if (k < 1) setTimeout(f, 30); })(); }

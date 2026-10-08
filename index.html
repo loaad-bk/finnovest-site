@@ -4799,8 +4799,13 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
   if (e2e) e2e.classList.remove('vh-arm', 'vh-go');
   if (e2e && 'IntersectionObserver' in window && !reduce) {
     e2e.classList.add('vh-arm');
-    var io2 = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { e2e.classList.add('vh-go'); io2.disconnect(); } }); }, { threshold: 0.4 });
-    io2.observe(e2e);
+    var io2, mo2, e2eGo = function () { e2e.classList.add('vh-go'); if (io2) io2.disconnect(); if (mo2) mo2.disconnect(); };
+    /* fire as soon as the strip is on screen; a ratio threshold never fires on narrow screens where the strip is wider than the view */
+    io2 = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) e2eGo(); }); }, { threshold: 0, rootMargin: '0px 0px -15% 0px' });
+    /* fallback: the page's own reveal marks the strip .in when it scrolls into view */
+    mo2 = new MutationObserver(function () { if (e2e.classList.contains('in')) setTimeout(e2eGo, 300); });
+    io2.observe(e2e); mo2.observe(e2e, { attributes: true, attributeFilter: ['class'] });
+    if (e2e.classList.contains('in')) e2eGo();
   }
   if (reduce) { userPaused = true; $('vh-pp').textContent = '▶'; $('vh-pp').setAttribute('aria-label', 'Play'); }
   run(gen);

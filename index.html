@@ -1977,6 +1977,35 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 .vh-proof .vh-iia .hp-iia-logo { width: 100px; height: 26px; flex: none; }
 @media (max-width: 760px) { .vh-proof .vh-nums { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 28px; } .vh-proof .vh-nums div:nth-child(3) { border-left: 0; } .vh-proof .vh-logos { gap: 22px 40px; } }
 
+/* client logos scroll continuously left to right, fading at both edges */
+.vh-proof .vh-marq { max-width: 1180px; margin: 0 auto; overflow: hidden; padding: 6px 0 38px; border-bottom: 1px solid rgba(255,255,255,0.12); -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 86%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 86%, transparent 100%); }
+.vh-proof .vh-belt { display: flex; align-items: center; width: max-content; animation: vh-belt 42s linear infinite; }
+.vh-proof .vh-belt .lg { flex: none; margin-right: 96px; opacity: 0.92; }
+.vh-proof .vh-belt .lg-fibi, .vh-proof .vh-belt .lg-excellence { width: 180px; height: 46px; }
+.vh-proof .vh-belt .lg-discount { width: 100px; height: 64px; }
+.vh-proof .vh-marq:hover .vh-belt { animation-play-state: paused; }
+@keyframes vh-belt { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+@media (prefers-reduced-motion: reduce) { .vh-proof .vh-belt { animation: none; } }
+/* end-to-end strip: the six numbers pop one after another, the line draws across */
+#home .hm-e2e.vh-arm:before { transform: scaleX(0); transform-origin: left center; }
+#home .hm-e2e.vh-arm.vh-go:before { transform: scaleX(1); transition: transform 3s cubic-bezier(.4,0,.2,1) 0.2s; }
+#home .hm-e2e.vh-arm .hm-e2e-st .dot { transform: scale(0); opacity: 0; }
+#home .hm-e2e.vh-arm .hm-e2e-st b, #home .hm-e2e.vh-arm .hm-e2e-st span { opacity: 0; transform: translateY(8px); transition: opacity 0.6s ease, transform 0.6s ease; }
+#home .hm-e2e.vh-arm.vh-go .hm-e2e-st .dot { animation: vh-dotpop 0.7s cubic-bezier(.2,1.4,.4,1) forwards; }
+#home .hm-e2e.vh-arm.vh-go .hm-e2e-st b, #home .hm-e2e.vh-arm.vh-go .hm-e2e-st span { opacity: 1; transform: none; }
+#home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(1) b, #home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(1) span { transition-delay: 0.15s; }
+#home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(2) .dot { animation-delay: 0.5s; }
+#home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(2) b, #home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(2) span { transition-delay: 0.65s; }
+#home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(3) .dot { animation-delay: 1s; }
+#home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(3) b, #home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(3) span { transition-delay: 1.15s; }
+#home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(4) .dot { animation-delay: 1.5s; }
+#home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(4) b, #home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(4) span { transition-delay: 1.65s; }
+#home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(5) .dot { animation-delay: 2s; }
+#home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(5) b, #home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(5) span { transition-delay: 2.15s; }
+#home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(6) .dot { animation-delay: 2.5s; }
+#home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(6) b, #home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(6) span { transition-delay: 2.65s; }
+@keyframes vh-dotpop { 0% { transform: scale(0); opacity: 0; } 60% { transform: scale(1.18); opacity: 1; } 100% { transform: scale(1); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { #home .hm-e2e.vh-arm .hm-e2e-st .dot, #home .hm-e2e.vh-arm .hm-e2e-st b, #home .hm-e2e.vh-arm .hm-e2e-st span { animation: none; opacity: 1; transform: none; } #home .hm-e2e.vh-arm:before { transform: none; } }
 /* Growth / Scale / Governance cards rising over the hero bottom */
 .vh-cards { position: relative; z-index: 6; margin-top: -118px; padding: 0 24px; background: linear-gradient(transparent 118px, var(--forest, #07282A) 118px); }
 .vh-cards-in { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; max-width: calc(var(--max, 1265px) - 36px); margin: 0 auto; }
@@ -2146,7 +2175,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 
   <div class="vh-proof">
     <h2>Trusted by forward-thinking financial <em>institutions</em></h2>
-    <div class="vh-logos"><span class="lg lg-fibi" role="img" aria-label="FIBI Bank"></span><span class="lg lg-excellence" role="img" aria-label="Excellence Trade · Phoenix Investment House"></span><span class="lg lg-discount" role="img" aria-label="Israel Discount Bank"></span></div>
+    <div class="vh-marq"><div class="vh-belt"><span class="lg lg-fibi" role="img" aria-label="FIBI Bank"></span><span class="lg lg-excellence" role="img" aria-label="Excellence Trade · Phoenix Investment House"></span><span class="lg lg-discount" role="img" aria-label="Israel Discount Bank"></span><span class="lg lg-fibi" aria-hidden="true"></span><span class="lg lg-excellence" aria-hidden="true"></span><span class="lg lg-discount" aria-hidden="true"></span><span class="lg lg-fibi" aria-hidden="true"></span><span class="lg lg-excellence" aria-hidden="true"></span><span class="lg lg-discount" aria-hidden="true"></span><span class="lg lg-fibi" aria-hidden="true"></span><span class="lg lg-excellence" aria-hidden="true"></span><span class="lg lg-discount" aria-hidden="true"></span><span class="lg lg-fibi" aria-hidden="true"></span><span class="lg lg-excellence" aria-hidden="true"></span><span class="lg lg-discount" aria-hidden="true"></span><span class="lg lg-fibi" aria-hidden="true"></span><span class="lg lg-excellence" aria-hidden="true"></span><span class="lg lg-discount" aria-hidden="true"></span><span class="lg lg-fibi" aria-hidden="true"></span><span class="lg lg-excellence" aria-hidden="true"></span><span class="lg lg-discount" aria-hidden="true"></span><span class="lg lg-fibi" aria-hidden="true"></span><span class="lg lg-excellence" aria-hidden="true"></span><span class="lg lg-discount" aria-hidden="true"></span></div></div>
     <div class="vh-nums">
       <div><b>$20B+</b><span>Assets analyzed daily</span></div>
       <div><b>$200M+</b><span>Monthly trading volume</span></div>
@@ -2178,12 +2207,8 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
         <div class="hm-op" aria-hidden="true">+</div>
         <div class="hm-world w2"><h3>Self-Directed Retail Trading</h3><p>App-native, investor-controlled and simple to act upon.</p></div>
         <div class="hm-op" aria-hidden="true">=</div>
-        <div class="hm-world w3"><span class="k">The result</span><h3>Advised-trading</h3><p>In-app institution-grade personalized advice, investor easier to act on than self-directed retail trading.</p></div>
+        <div class="hm-world w3"><span class="k">The result</span><h3>Advised-trading</h3><p>In-app, institution-grade personalized advice, easier for investors to act on than self-directed retail trading.</p><a class="alink" data-go="advisedtrading" style="margin-top:16px"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>Learn more</a></div>
       </div>
-      <div class="hm-eq-after rev">
-        <p><br></p>
-      </div>
-      <div class="hm-center rev" style="margin-top:28px"><a class="alink" data-go="advisedtrading"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>What is Advised-trading?</a></div>
     </div>
   </div>
 
@@ -2227,7 +2252,6 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
         <span class="eyebrow">Deployment models</span>
         <h2 style="max-width:16ch;margin:0 auto">Built around what you <em>already have.</em></h2>
         <p class="lede" style="margin-top:22px;max-width:60ch">Every path is powered by Finnovest CORE. The technology and the end-to-end Advised-trading sequence remain the same. Only the way Finnovest connects to your business changes.</p>
-        <div class="hm-corebar"><b>FINNOVEST CORE</b><span>One core. Three deployment paths.</span></div>
       </div>
       <div class="hm-tiles">
         <div class="rev">
@@ -2239,7 +2263,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
               <span class="go">Trade-All™</span>
             </div>
           </div>
-          <div class="hm-tile-txt"><span class="hm-step">01 · Connect</span><h4>Systems integration</h4><p>Use your existing client experience. Finnovest connects to the advisory, compliance and execution systems you already operate.</p><a class="alink" data-go="products"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>Explore Connect Integration</a></div>
+          <div class="hm-tile-txt"><span class="hm-step">01 · Connect</span><h4>Systems integration</h4><p>Use your existing client experience. Finnovest connects to the advisory, compliance and execution systems you already operate.</p><a class="alink" data-go="products"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>Explore</a></div>
         </div>
         <div class="rev" style="transition-delay:.1s">
           <div class="hm-tile sage">
@@ -2248,7 +2272,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
               <div class="notif"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#061A1A" stroke-width="2"><path d="M4 14l5-5 4 4 7-7"></path></svg></span><div><b>Your advisor</b><span>Hi Daniel, a new recommendation is ready. One tap to Trade-All™.</span></div></div>
             </div></div>
           </div>
-          <div class="hm-tile-txt"><span class="hm-step">02 · Embed</span><h4>SDK integration</h4><p>Embed Finnovest's proven Advised-trading journey inside the trading app your clients already use. Included with Finnovest CORE.</p><a class="alink" data-go="products"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>Explore the Embedded Experience</a></div>
+          <div class="hm-tile-txt"><span class="hm-step">02 · Embed</span><h4>SDK integration</h4><p>Embed Finnovest's proven Advised-trading journey inside the trading app your clients already use. Included with Finnovest CORE.</p><a class="alink" data-go="products"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>Explore</a></div>
         </div>
         <div class="rev" style="transition-delay:.2s">
           <div class="hm-tile mint">
@@ -2261,7 +2285,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
               <div class="row" style="border:0"><small>Powered by Finnovest CORE</small></div>
             </div>
           </div>
-          <div class="hm-tile-txt"><span class="hm-step">03 · Launch</span><h4>White-label app</h4><p>Launch a full-service trading app under your brand, with Finnovest CORE and Advised-trading built in end to end.</p><a class="alink" data-go="products"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>Explore the Complete Experience</a></div>
+          <div class="hm-tile-txt"><span class="hm-step">03 · Launch</span><h4>White-label app</h4><p>Launch a full-service trading app under your brand, with Finnovest CORE and Advised-trading built in end to end.</p><a class="alink" data-go="products"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>Explore</a></div>
         </div>
       </div>
     </div>
@@ -4738,6 +4762,14 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
     userPaused = !userPaused;
     this.textContent = userPaused ? '▶' : '❚❚'; this.setAttribute('aria-label', userPaused ? 'Play' : 'Pause'); syncVideo();
   });
+  /* end-to-end strip: numbers pop one after another when it scrolls into view */
+  var e2e = document.querySelector('#home .hm-e2e');
+  if (e2e) e2e.classList.remove('vh-arm', 'vh-go');
+  if (e2e && 'IntersectionObserver' in window && !reduce) {
+    e2e.classList.add('vh-arm');
+    var io2 = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { e2e.classList.add('vh-go'); io2.disconnect(); } }); }, { threshold: 0.4 });
+    io2.observe(e2e);
+  }
   if (reduce) { userPaused = true; $('vh-pp').textContent = '▶'; $('vh-pp').setAttribute('aria-label', 'Play'); }
   run(gen);
 })();

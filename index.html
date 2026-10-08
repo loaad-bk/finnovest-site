@@ -1897,8 +1897,9 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 #vh .vh-hi span { color: var(--vh-accent); transition: color 1s ease; }
 #vh .vh-lbl { font-size: 11px; color: var(--vh-dim); }
 #vh .vh-ttl { font-family: var(--vh-display); font-weight: 500; font-size: 16px; line-height: 1.2; margin: 2px 0 3px; }
-#vh .vh-why { display: inline-flex; align-items: center; gap: 6px; margin-top: 7px; font-size: 12px; font-weight: 600; color: var(--vh-mint); }
-#vh .vh-why i { width: 6px; height: 6px; border: solid currentColor; border-width: 1.5px 1.5px 0 0; transform: rotate(45deg); }
+#vh .vh-why { display: flex; align-items: center; gap: 9px; margin-top: 10px; padding-top: 9px; border-top: 1px solid rgba(255,255,255,0.14); font-size: 13.5px; font-weight: 600; color: #fff; }
+#vh .vh-why i { order: -1; width: 22px; height: 22px; border-radius: 50%; background: var(--vh-mint); position: relative; flex: none; box-shadow: 0 0 0 4px rgba(46,229,157,0.16); }
+#vh .vh-why i::after { content: ""; position: absolute; left: 7px; top: 8px; width: 5px; height: 5px; border: solid var(--vh-teal); border-width: 2px 2px 0 0; transform: rotate(45deg); }
 #vh .vh-rows { display: grid; gap: 4px; }
 #vh .vh-o { display: grid; grid-template-columns: 34px minmax(0, 1fr) auto 14px; gap: 8px; align-items: center; font-size: 12.5px; padding: 6px 8px; border-radius: 6px; background: rgba(255,255,255,0.06); opacity: 0; transform: translateY(6px); transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease; }
 #vh .vh-o.in { opacity: 1; transform: none; }
@@ -2047,8 +2048,9 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 #home .vh-app-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 12px; }
 #home .vh-app-card .vh-dep-ta { margin-top: 12px; }
 /* "Read reasoning" link in the tile 02 recommendation */
-#home .vh-dep-why { display: inline-flex; align-items: center; gap: 6px; margin-top: 6px; font-size: 11.5px; font-weight: 600; color: #2EE59D; }
-#home .vh-dep-why i { width: 5px; height: 5px; border: solid currentColor; border-width: 1.5px 1.5px 0 0; transform: rotate(45deg); }
+#home .vh-dep-why { display: flex; align-items: center; gap: 8px; margin-top: 9px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.14); font-size: 12.5px; font-weight: 600; color: #fff; }
+#home .vh-dep-why i { order: -1; width: 19px; height: 19px; border-radius: 50%; background: #2EE59D; position: relative; flex: none; }
+#home .vh-dep-why i::after { content: ""; position: absolute; left: 5.5px; top: 6.5px; width: 4px; height: 4px; border: solid #07282A; border-width: 2px 2px 0 0; transform: rotate(45deg); }
 /* Growth / Scale / Governance cards rising over the hero bottom */
 .vh-cards { position: relative; z-index: 6; margin-top: -118px; padding: 0 24px; background: linear-gradient(transparent 118px, var(--forest, #07282A) 118px); }
 .vh-cards-in { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; max-width: calc(var(--max, 1265px) - 36px); margin: 0 auto; }
@@ -4703,15 +4705,15 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
     $('vh-status').classList.remove('done'); $('vh-stat').textContent = 'Matching against every client book';
     setVar('--vh-mood', '#0E5A52'); pin.classList.remove('on');
     hero.classList.add('sending'); $('vh-cast').classList.add('spot');
-    await wait(350, g);
+    await wait(150, g);
     c.classList.add('on');
-    await wait(800, g);
-    countUp($('vh-elig'), ELIG, 1300);
+    await wait(450, g);
+    countUp($('vh-elig'), ELIG, 1000);
     await wait(250, g);
-    await countUp($('vh-bund'), ELIG, 1300);
+    await countUp($('vh-bund'), ELIG, 1000);
     $('vh-status').classList.add('done'); $('vh-stat').textContent = 'Sent to 13,452 investors';
     burst(c);
-    await wait(1000, g);
+    await wait(800, g);
     var cr = c.getBoundingClientRect(), pr = pin.getBoundingClientRect();
     var dx = (pr.left + pr.width / 2) - (cr.left + cr.width / 2), dy = (pr.top + pr.height / 2) - (cr.top + cr.height / 2), s = Math.min(pr.width / cr.width, 1);
     c.animate([{ transform: 'none', opacity: 1 }, { transform: 'translate(' + dx + 'px, ' + dy + 'px) scale(' + s + ')', opacity: 0.25 }], { duration: 700, easing: 'cubic-bezier(.65,0,.35,1)', fill: 'forwards' });
@@ -4733,9 +4735,9 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
     $('vh-thread').innerHTML = ''; hero.querySelectorAll('.vh-float').forEach(function (e) { e.remove(); }); $('vh-pin').classList.remove('quiet');
     showVideo(s.video, s);
     setVar('--vh-accent', s.accent); setVar('--vh-amt', s.amt); setVar('--vh-tile', s.tile);
-    await wait(700, g);
+    await wait(550, g);
     placeLayer(s); $('vh-layer').classList.add('on');
-    await wait(700, g);
+    await wait(550, g);
 
     // 1. greeting and the recommendation in one bubble
     push('<div class="vh-meta"><span class="vh-ic"></span><b>Your trading app</b> · now</div><div class="vh-glass vh-bub"><div class="vh-hi">Hi <span>' + s.name + '</span>,</div><div class="vh-lbl">a new recommendation is ready</div><div class="vh-ttl">Increase exposure to global technology</div><div class="vh-why">Read reasoning<i></i></div></div>', 'pop');

@@ -2027,10 +2027,10 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 #home .vh-more { text-align: center; margin-top: 36px; color: #fff; }
 #home .vh-more .alink .c { background: #fff; }
 #home .vh-more .alink .c svg { stroke: var(--ink-text); }
-/* End-to-end steps (9 Oct 2026): two levels of text, short line first (darker), detail below (smaller, lighter); all visible, no fold */
+/* End-to-end steps (9 Oct 2026): short line and detail run on as one continuous text, same style as step 1
 #home .hm-e2e-st .e2e-text { display: block; }
-#home .hm-e2e-st .e2e-short { display: block; color: var(--ink-text); font-size: .92rem; line-height: 1.4; }
-#home .hm-e2e-st .e2e-full { display: block; margin-top: 8px; font-size: .8rem; line-height: 1.45; color: var(--slate); opacity: .85; }
+#home .hm-e2e-st .e2e-short { display: inline; }
+#home .hm-e2e-st .e2e-full { display: inline; } #home .hm-e2e-st .e2e-full:before { content: " "; }
 /* deployment tiles in the hero's language: dark cards, mint Trade-All, the same three moments */
 #home .vh-dep { width: 80%; background: #0F2B2C; color: #fff; border-radius: 10px; padding: 16px 16px 15px; box-shadow: 0 22px 44px rgba(7,40,42,0.28); font-family: "Inter", system-ui, sans-serif; text-align: left; }
 #home .vh-dep-top { display: flex; align-items: center; gap: 8px; font-size: 11.5px; font-weight: 600; margin-bottom: 10px; }

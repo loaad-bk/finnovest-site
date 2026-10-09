@@ -2859,12 +2859,12 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       <script>
       (function(){
         var R={
-          sys:{n:'Systems integration',w:'Core plugs into your core banking and order management. Your clients use your own front end, or the Mobile SDK under your brand.',s:'Why it fits banks',sh:'sol-banks',i:'int-systems'},
-          sdk:{n:'SDK integration',w:'Core connects to your trading system and the SDK adds advised-trading to the app your clients already use.',s:'Why it fits brokerages',sh:'sol-brokerages',i:'int-sdk'},
-          app:{n:'White-label app',w:'Our complete app under your brand, with the Finnovest Core operating system inside. Without advisors of your own, you connect to one already on the platform.',s:'Why it fits wealth managers',sh:'sol-wealth',i:'int-app'}};
+          sys:{n:'Finnovest Connect',w:'Core plugs into your core banking and order management. Your clients use your own front end, or the Mobile SDK under your brand.',s:'Why it fits banks',sh:'sol-banks',i:'int-systems'},
+          sdk:{n:'Finnovest Embedded',w:'Core connects to your trading system and the SDK adds Advised-trading to the app your clients already use.',s:'Why it fits brokerages',sh:'sol-brokerages',i:'int-sdk'},
+          app:{n:'Finnovest Complete',w:'Our complete app under your brand, with the Finnovest Core operating system inside. Without advisors of your own, you connect to one already on the platform.',s:'Why it fits wealth managers',sh:'sol-wealth',i:'int-app'}};
         document.getElementById('qz-go').onclick=function(){
           var h={};document.querySelectorAll('#qz input:checked').forEach(function(x){h[x.value]=1});
-          var k=!h.advisors?'app':h.core?'sys':h.app?'sdk':'app',r=R[k];
+          var k=!h.advisors?'app':h.app?'sdk':h.core?'sys':'app',r=R[k];
           document.getElementById('qz-name').textContent=r.n;document.getElementById('qz-why').textContent=r.w;
           var s=document.getElementById('qz-sol');s.lastChild.textContent=r.s;s.setAttribute('data-go',r.sh);
           var i=document.getElementById('qz-int');i.lastChild.textContent='How it connects';i.setAttribute('data-go','products');i.setAttribute('data-anchor',r.i);

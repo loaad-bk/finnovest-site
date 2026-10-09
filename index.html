@@ -2012,6 +2012,14 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 #home .hm-world.w3::after { animation-delay: 1.6s; }
 @keyframes adv-ring { 0% { outline-offset: 0; opacity: .95; } 100% { outline-offset: 22px; opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { #home .hm-world.w3::before { animation: none; opacity: 1; outline-offset: 6px; } #home .hm-world.w3::after { display: none; } }
+/* client quotes under the proof stats (9 Oct 2026; quotes from the Marketing two-pager, to be cleared before finnovest.com goes live) */
+#home .vh-quotes { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; max-width: 1180px; margin: 56px auto 0; text-align: left; }
+#home .vh-quote { margin: 0; background: rgba(255,255,255,.05); border-radius: 6px; padding: 34px 30px 28px; display: flex; flex-direction: column; justify-content: space-between; gap: 22px; position: relative; }
+#home .vh-quote:before { content: "\201C"; position: absolute; top: 10px; left: 26px; font: 500 64px/1 "Instrument Sans", sans-serif; color: var(--mint); }
+#home .vh-quote blockquote { margin: 30px 0 0; font: 500 clamp(1.15rem,1.7vw,1.4rem)/1.25 "Instrument Sans", sans-serif; letter-spacing: -.015em; color: #fff; }
+#home .vh-quote figcaption { font-size: .85rem; line-height: 1.45; color: rgba(255,255,255,.62); }
+#home .vh-quote figcaption b { display: block; font-weight: 500; color: #fff; }
+@media (max-width: 900px) { #home .vh-quotes { grid-template-columns: 1fr; } }
 /* deployment tiles in the hero's language: dark cards, mint Trade-All, the same three moments */
 #home .vh-dep { width: 80%; background: #0F2B2C; color: #fff; border-radius: 10px; padding: 16px 16px 15px; box-shadow: 0 22px 44px rgba(7,40,42,0.28); font-family: "Inter", system-ui, sans-serif; text-align: left; }
 #home .vh-dep-top { display: flex; align-items: center; gap: 8px; font-size: 11.5px; font-weight: 600; margin-bottom: 10px; }
@@ -2232,6 +2240,11 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       <div><b>$200M+</b><span>Monthly trading volume</span></div>
       <div><b>53%</b><span>Registered accounts</span></div>
       <div><b>Zero</b><span>Compliance errors since 2018</span></div>
+    </div>
+    <div class="vh-quotes">
+      <figure class="vh-quote"><blockquote>98% of our advised clients want to receive a digital investment recommendation at least once a month.</blockquote><figcaption><b>Assaf Pasternak</b>EVP, Head of Strategy, Discount Bank</figcaption></figure>
+      <figure class="vh-quote"><blockquote>Leaves no room for human error… answers all regulatory demands.</blockquote><figcaption><b>Keren Snai-Leizirov</b>Head of Regulation, Investment Advisory, Discount Bank</figcaption></figure>
+      <figure class="vh-quote"><blockquote>More than 50% of the recommendations are actually authorized.</blockquote><figcaption><b>Yoram Sirkis</b>EVP, FIBI Bank</figcaption></figure>
     </div>
   </div>
 

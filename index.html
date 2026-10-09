@@ -2005,6 +2005,13 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 #home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(6) b, #home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(6) span { transition-delay: 2.65s; }
 @keyframes vh-dotpop { 0% { transform: scale(0); opacity: 0; } 60% { transform: scale(1.18); opacity: 1; } 100% { transform: scale(1); opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { #home .hm-e2e.vh-arm .hm-e2e-st .dot, #home .hm-e2e.vh-arm .hm-e2e-st b, #home .hm-e2e.vh-arm .hm-e2e-st span { animation: none; opacity: 1; transform: none; } #home .hm-e2e.vh-arm:before { transform: none; } }
+/* two-worlds lead line as a full section headline; Advised-trading result card carries a soft mint tap ripple (9 Oct 2026) */
+#home .hm-eq-lead { font-size: clamp(2rem,3.7vw,3.3rem); line-height: 1.02; letter-spacing: -.022em; max-width: 22ch; text-wrap: balance; }
+#home .hm-world.w3 { position: relative; overflow: visible; }
+#home .hm-world.w3::before, #home .hm-world.w3::after { content: ""; position: absolute; inset: 0; border-radius: 6px; outline: 2px solid var(--mint); outline-offset: 0; opacity: 0; pointer-events: none; animation: adv-ring 3.2s cubic-bezier(.2,.6,.3,1) infinite; }
+#home .hm-world.w3::after { animation-delay: 1.6s; }
+@keyframes adv-ring { 0% { outline-offset: 0; opacity: .95; } 100% { outline-offset: 22px; opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { #home .hm-world.w3::before { animation: none; opacity: 1; outline-offset: 6px; } #home .hm-world.w3::after { display: none; } }
 /* deployment tiles in the hero's language: dark cards, mint Trade-All, the same three moments */
 #home .vh-dep { width: 80%; background: #0F2B2C; color: #fff; border-radius: 10px; padding: 16px 16px 15px; box-shadow: 0 22px 44px rgba(7,40,42,0.28); font-family: "Inter", system-ui, sans-serif; text-align: left; }
 #home .vh-dep-top { display: flex; align-items: center; gap: 8px; font-size: 11.5px; font-weight: 600; margin-bottom: 10px; }
@@ -2244,7 +2251,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
           <p></p><div>When the advice layer moves outside your institution, influence over client decisions and asset flows moves with it. Whoever owns that layer increasingly influences where the money goes, leaving your institution at risk of becoming execution infrastructure.&nbsp;</div><p></p>
         </div>
       </div>
-      <div class="hm-center"><p class="rev hm-eq-lead" style="margin-top:72px">Finnovest is first to consolidate two worlds that never truly coexisted:</p></div>
+      <div class="hm-center"><p class="rev hm-eq-lead" style="margin-top:72px">Finnovest is first to consolidate two worlds that <em>never truly coexisted:</em></p></div>
       <div class="hm-eq rev">
         <div class="hm-world w1"><h3>Personalized Non-Discretionary Advice</h3><p>Professional, individually suitable, compliance-validated, documented and accountable.</p></div>
         <div class="hm-op" aria-hidden="true">+</div>
@@ -4814,8 +4821,10 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
     e2e.classList.add('vh-arm');
     /* pop when the strip is actually on screen: any part of it above the lower fifth of the view.
        No ratio threshold (never reached on narrow screens) and no link to the page's .in reveal (a safety timer sets it 1.5 s after load). */
-    var io2 = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { e2e.classList.add('vh-go'); io2.disconnect(); } }); }, { threshold: 0, rootMargin: '0px 0px -20% 0px' });
-    io2.observe(e2e);
+    /* replays: plays each time it comes into view, resets only once it is fully off screen (9 Oct 2026) */
+    var io2 = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) e2e.classList.add('vh-go'); }); }, { threshold: 0, rootMargin: '0px 0px -20% 0px' });
+    var io3 = new IntersectionObserver(function (es) { es.forEach(function (en) { if (!en.isIntersecting) e2e.classList.remove('vh-go'); }); }, { threshold: 0 });
+    io2.observe(e2e); io3.observe(e2e);
   }
   if (reduce) { userPaused = true; $('vh-pp').textContent = '▶'; $('vh-pp').setAttribute('aria-label', 'Play'); }
   run(gen);

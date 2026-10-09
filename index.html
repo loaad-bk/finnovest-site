@@ -1990,7 +1990,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 #home .hm-e2e.vh-arm.vh-go:before { transform: scaleX(1); transition: transform 3s cubic-bezier(.4,0,.2,1) 0.2s; }
 #home .hm-e2e.vh-arm .hm-e2e-st .dot { transform: scale(0); opacity: 0; }
 #home .hm-e2e.vh-arm .hm-e2e-st b, #home .hm-e2e.vh-arm .hm-e2e-st span { opacity: 0; transform: translateY(8px); transition: opacity 0.6s ease, transform 0.6s ease; }
-#home .hm-e2e.vh-arm.vh-go .hm-e2e-st .dot { animation: vh-dotpop 0.7s cubic-bezier(.2,1.4,.4,1) forwards; }
+#home .hm-e2e.vh-arm.vh-go .hm-e2e-st .dot { animation: vh-dotpop 0.9s cubic-bezier(.2,1.4,.4,1) forwards; }
 #home .hm-e2e.vh-arm.vh-go .hm-e2e-st b, #home .hm-e2e.vh-arm.vh-go .hm-e2e-st span { opacity: 1; transform: none; }
 #home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(1) b, #home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(1) span { transition-delay: 0.15s; }
 #home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(2) .dot { animation-delay: 0.5s; }
@@ -2003,7 +2003,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 #home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(5) b, #home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(5) span { transition-delay: 2.15s; }
 #home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(6) .dot { animation-delay: 2.5s; }
 #home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(6) b, #home .hm-e2e.vh-arm.vh-go .hm-e2e-st:nth-child(6) span { transition-delay: 2.65s; }
-@keyframes vh-dotpop { 0% { transform: scale(0); opacity: 0; } 60% { transform: scale(1.18); opacity: 1; } 100% { transform: scale(1); opacity: 1; } }
+@keyframes vh-dotpop { 0% { transform: scale(0); opacity: 0; } 55% { transform: scale(1.45); opacity: 1; } 75% { transform: scale(.92); } 100% { transform: scale(1); opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { #home .hm-e2e.vh-arm .hm-e2e-st .dot, #home .hm-e2e.vh-arm .hm-e2e-st b, #home .hm-e2e.vh-arm .hm-e2e-st span { animation: none; opacity: 1; transform: none; } #home .hm-e2e.vh-arm:before { transform: none; } }
 /* two-worlds lead line as a full section headline; Advised-trading result card carries a soft mint tap ripple (9 Oct 2026) */
 #home .hm-eq-lead { font-size: clamp(2rem,3.7vw,3.3rem); line-height: 1.02; letter-spacing: -.022em; max-width: 22ch; text-wrap: balance; }
@@ -2271,7 +2271,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       </div>
       <div class="hm-e2e rev">
         <div class="hm-e2e-st"><div class="dot">1</div><b>House<br>&nbsp;view</b><span>The house defines asset allocation by risk level, analyst recommendations and system rules.</span></div>
-        <div class="hm-e2e-st"><div class="dot">2</div><b>Recommendation trigger</b><span>Human or autonomous. Unique recommendations, with professional reasoning, pushed to full client book.</span></div>
+        <div class="hm-e2e-st"><div class="dot">2</div><b>Recommendation trigger</b><span>Human or autonomous. Unique recommendations, with professional reasoning, pushed to all eligible clients in the book.</span></div>
         <div class="hm-e2e-st"><div class="dot">3</div><b>Personalized <br>order bundles</b><span>Each recommendation is converted into client-specific buy and sell orders, validated against holdings, exposures, risk, cash and every applicable constraint.</span></div>
         <div class="hm-e2e-st key"><div class="dot">4</div><b>Trade-All™</b><span>One tap approves the complete conditional order bundle and activates an automated execution plan that controls when each order is sent to market.</span></div>
         <div class="hm-e2e-st"><div class="dot">5</div><b>Algorithmic <br>execution</b><span>Dependency management: sells execute first, confirmed sale proceeds fund the dependent buys, and each next order is released automatically.</span></div>
@@ -4821,8 +4821,8 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
     e2e.classList.add('vh-arm');
     /* pop when the strip is actually on screen: any part of it above the lower fifth of the view.
        No ratio threshold (never reached on narrow screens) and no link to the page's .in reveal (a safety timer sets it 1.5 s after load). */
-    /* replays: plays each time it comes into view, resets only once it is fully off screen (9 Oct 2026) */
-    var io2 = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) e2e.classList.add('vh-go'); }); }, { threshold: 0, rootMargin: '0px 0px -20% 0px' });
+    /* replays: plays each time it comes into view (from the middle of the screen), resets only once it is fully off screen (9 Oct 2026) */
+    var io2 = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) e2e.classList.add('vh-go'); }); }, { threshold: 0, rootMargin: '0px 0px -50% 0px' });
     var io3 = new IntersectionObserver(function (es) { es.forEach(function (en) { if (!en.isIntersecting) e2e.classList.remove('vh-go'); }); }, { threshold: 0 });
     io2.observe(e2e); io3.observe(e2e);
   }

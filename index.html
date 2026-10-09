@@ -2030,6 +2030,10 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 /* deployment cards: "Best for" line (9 Oct 2026) */
 #home .hm-tile-txt .hm-best { margin-top: 12px; font-size: .88rem; line-height: 1.45; color: var(--ink-text); }
 #home .hm-tile-txt .hm-best b { font-weight: 500; color: #0B8A5F; margin-right: 4px; }
+/* deployment cards: whole card links to Products, one Find your fit link under the cards (9 Oct 2026) */
+#home .hm-dep-card { cursor: pointer; border-radius: 8px; outline: 2px solid transparent; outline-offset: 10px; transition: outline-color .25s; }
+#home .hm-dep-card:hover, #home .hm-dep-card:focus-visible { outline-color: var(--mint); }
+#home .hm-fit-link { text-align: center; margin-top: 48px; }
 /* hero lede: "advice-driven trades" links to the Advised-trading page (9 Oct 2026); words unchanged */
 #home .vh-lede .vh-adt { color: inherit; cursor: pointer; text-decoration: underline dotted; text-decoration-color: var(--mint); text-decoration-thickness: 1.5px; text-underline-offset: 4px; transition: color .2s; }
 #home .vh-lede .vh-adt:hover, #home .vh-lede .vh-adt:focus-visible { color: var(--mint); text-decoration-style: solid; }
@@ -2342,7 +2346,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
         <p class="lede" style="margin-top:22px;max-width:60ch">Every deployment starts with Finnovest Core, which powers scalable personalized advice and automated trading. From there, institutions can choose how much of the client experience to adopt: integration only, an embedded white-label mobile experience, or a complete Advised-trading application.</p>
       </div>
       <div class="hm-tiles">
-        <div class="rev">
+        <div class="rev hm-dep-card" data-go="products" data-anchor="int-systems" role="link" tabindex="0">
           <div class="hm-tile lime">
             <div class="vh-dep">
               <div class="vh-dep-top"><span class="vh-dep-dot"></span>Advisor console<span>New recommendation</span></div>
@@ -2354,9 +2358,9 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
             </div>
           </div>
 
-          <div class="hm-tile-txt"><span class="hm-step">01 · Finnovest Connect</span><h4>Private deployment</h4><p>Connect Finnovest Core to your existing systems and use its advice, compliance and trading capabilities behind the scenes. Your institution designs and controls the entire client experience.</p><p class="hm-best"><b>Best for</b> banks running their own systems and channels.</p><a class="alink" data-go="products"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>Explore Connect</a></div>
+          <div class="hm-tile-txt"><span class="hm-step">01 · Finnovest Connect</span><h4>Private deployment</h4><p>Connect Finnovest Core to your existing systems and use its advice, compliance and trading capabilities behind the scenes. Your institution designs and controls the entire client experience.</p><p class="hm-best"><b>Best for</b> banks running their own systems and channels.</p></div>
         </div>
-        <div class="rev" style="transition-delay:.1s">
+        <div class="rev hm-dep-card" data-go="products" data-anchor="int-sdk" role="link" tabindex="0" style="transition-delay:.1s">
           <div class="hm-tile teal">
             <div class="vh-dep vh-app">
               <div class="vh-app-bar"><span class="vh-app-av">D</span><span class="vh-app-nm">Your trading app</span><span class="vh-app-bell"></span></div>
@@ -2364,9 +2368,9 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
               <div class="vh-app-card"><div class="vh-dep-hi">Hi <span>Daniel</span>,</div><div class="vh-dep-l">a new recommendation is ready</div><div class="vh-dep-t2">Increase exposure to global technology</div><div class="vh-dep-why">Read reasoning<i></i></div><div class="vh-dep-ta">Trade-All™</div></div>
             </div>
           </div>
-          <div class="hm-tile-txt"><span class="hm-step">02 · Finnovest Embedded</span><h4>White-label mobile SDK</h4><p>Add Advised-trading directly into the mobile app your clients already use. Finnovest Core powers the advice and trading logic, while the white-label SDK delivers the full client experience under your brand.</p><p class="hm-best"><b>Best for</b> brokerages whose clients already trade in their app.</p><a class="alink" data-go="products"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>Explore Embedded</a></div>
+          <div class="hm-tile-txt"><span class="hm-step">02 · Finnovest Embedded</span><h4>White-label mobile SDK</h4><p>Add Advised-trading directly into the mobile app your clients already use. Finnovest Core powers the advice and trading logic, while the white-label SDK delivers the full client experience under your brand.</p><p class="hm-best"><b>Best for</b> brokerages whose clients already trade in their app.</p></div>
         </div>
-        <div class="rev" style="transition-delay:.2s">
+        <div class="rev hm-dep-card" data-go="products" data-anchor="int-app" role="link" tabindex="0" style="transition-delay:.2s">
           <div class="hm-tile mint">
             <div class="vh-dep">
               <div class="vh-dep-meta">Your orders, Daniel</div>
@@ -2376,9 +2380,10 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
             </div>
           </div>
 
-          <div class="hm-tile-txt"><span class="hm-step">03 · Finnovest Complete</span><h4>White-label app</h4><p>A full-service trading app under your brand that combines independent trading and Advised-trading in one app, with Finnovest Core built in end to end. Clients trade on their own, receive professional advice and execute their recommendations with one tap to Trade-All™.</p><p class="hm-best"><b>Best for</b> institutions without an app of their own, or without in-house advisors.</p><a class="alink" data-go="products"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>Explore Complete</a></div>
+          <div class="hm-tile-txt"><span class="hm-step">03 · Finnovest Complete</span><h4>White-label app</h4><p>A full-service trading app under your brand that combines independent trading and Advised-trading in one app, with Finnovest Core built in end to end. Clients trade on their own, receive professional advice and execute their recommendations with one tap to Trade-All™.</p><p class="hm-best"><b>Best for</b> institutions without an app of their own, or without in-house advisors.</p></div>
         </div>
       </div>
+      <div class="hm-fit-link"><a class="alink" data-go="products" data-anchor="fit"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>Not sure which fits? Find your fit</a></div>
     </div>
   </div>
 
@@ -4864,6 +4869,8 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
     var io3 = new IntersectionObserver(function (es) { es.forEach(function (en) { if (!en.isIntersecting) e2e.classList.remove('vh-go'); }); }, { threshold: 0 });
     io2.observe(e2e); io3.observe(e2e);
   }
+  /* deployment cards act as links: Enter opens them too */
+  [].forEach.call(document.querySelectorAll('#home .hm-dep-card'), function (c) { c.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') c.click(); }); });
   if (reduce) { userPaused = true; $('vh-pp').textContent = '▶'; $('vh-pp').setAttribute('aria-label', 'Play'); }
   run(gen);
 })();

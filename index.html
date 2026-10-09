@@ -2027,20 +2027,10 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 #home .vh-more { text-align: center; margin-top: 36px; color: #fff; }
 #home .vh-more .alink .c { background: #fff; }
 #home .vh-more .alink .c svg { stroke: var(--ink-text); }
-/* End-to-end steps fold (9 Oct 2026): short line always shown, full approved text on hover (desktop) or tap */
+/* End-to-end steps (9 Oct 2026): two levels of text, short line first (darker), detail below (smaller, lighter); all visible, no fold */
 #home .hm-e2e-st .e2e-text { display: block; }
-#home .hm-e2e-st .e2e-short { display: block; }
-#home .hm-e2e-st .e2e-full { display: block; max-height: 0; overflow: hidden; margin-top: 0; transition: max-height .45s ease, margin-top .3s ease; font-size: .85rem; }
-#home .hm-e2e-st.has-more { cursor: pointer; outline: none; }
-#home .hm-e2e-st .e2e-hint { display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; padding: 4px 10px 4px 12px; border-radius: 999px; background: var(--tile-mint); color: #0B8A5F; font: 500 .78rem/1 "Inter", sans-serif; }
-#home .hm-e2e-st .e2e-hint span { color: inherit; font-size: inherit; line-height: inherit; }
-#home .hm-e2e-st .e2e-hint svg { width: 10px; height: 10px; stroke: #0B8A5F; stroke-width: 2.6; fill: none; transition: transform .3s; }
-#home .hm-e2e-st .e2e-hint .lbl-less { display: none; }
-#home .hm-e2e-st.open .e2e-full, #home .hm-e2e-st.has-more:focus-visible .e2e-full { max-height: 240px; margin-top: 8px; }
-#home .hm-e2e-st.open .e2e-hint svg, #home .hm-e2e-st.has-more:focus-visible .e2e-hint svg { transform: rotate(180deg); }
-#home .hm-e2e-st.open .e2e-hint .lbl-more, #home .hm-e2e-st.has-more:focus-visible .e2e-hint .lbl-more { display: none; }
-#home .hm-e2e-st.open .e2e-hint .lbl-less, #home .hm-e2e-st.has-more:focus-visible .e2e-hint .lbl-less { display: inline; }
-@media (hover: hover) { #home .hm-e2e-st.has-more:hover .e2e-full { max-height: 240px; margin-top: 8px; } #home .hm-e2e-st.has-more:hover .e2e-hint svg { transform: rotate(180deg); } #home .hm-e2e-st.has-more:hover .e2e-hint .lbl-more { display: none; } #home .hm-e2e-st.has-more:hover .e2e-hint .lbl-less { display: inline; } }
+#home .hm-e2e-st .e2e-short { display: block; color: var(--ink-text); font-size: .92rem; line-height: 1.4; }
+#home .hm-e2e-st .e2e-full { display: block; margin-top: 8px; font-size: .8rem; line-height: 1.45; color: var(--slate); opacity: .85; }
 /* deployment tiles in the hero's language: dark cards, mint Trade-All, the same three moments */
 #home .vh-dep { width: 80%; background: #0F2B2C; color: #fff; border-radius: 10px; padding: 16px 16px 15px; box-shadow: 0 22px 44px rgba(7,40,42,0.28); font-family: "Inter", system-ui, sans-serif; text-align: left; }
 #home .vh-dep-top { display: flex; align-items: center; gap: 8px; font-size: 11.5px; font-weight: 600; margin-bottom: 10px; }
@@ -2305,11 +2295,11 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       </div>
       <div class="hm-e2e rev">
         <div class="hm-e2e-st"><div class="dot">1</div><b>House<br>&nbsp;view</b><span>The house defines asset allocation by risk level, analyst recommendations and system rules.</span></div>
-        <div class="hm-e2e-st has-more" tabindex="0"><div class="dot">2</div><b>Recommendation trigger</b><span class="e2e-text"><span class="e2e-short">Human or autonomous, with professional reasoning.</span><span class="e2e-hint"><span class="lbl-more">More</span><span class="lbl-less">Less</span><svg viewBox="0 0 24 24"><path d="M5 9l7 7 7-7"></path></svg></span><span class="e2e-full">Unique recommendations pushed to all eligible clients in the book.</span></span></div>
-        <div class="hm-e2e-st has-more" tabindex="0"><div class="dot">3</div><b>Personalized <br>advice</b><span class="e2e-text"><span class="e2e-short">Converted to a unique order bundle for every client.</span><span class="e2e-hint"><span class="lbl-more">More</span><span class="lbl-less">Less</span><svg viewBox="0 0 24 24"><path d="M5 9l7 7 7-7"></path></svg></span><span class="e2e-full">Each recommendation is fitted to every client's holdings, exposures, risk and cash, and becomes their own buy and sell orders.</span></span></div>
-        <div class="hm-e2e-st key has-more" tabindex="0"><div class="dot">4</div><b>Trade-All™</b><span class="e2e-text"><span class="e2e-short">One tap approves the whole bundle and starts an automated execution plan.</span><span class="e2e-hint"><span class="lbl-more">More</span><span class="lbl-less">Less</span><svg viewBox="0 0 24 24"><path d="M5 9l7 7 7-7"></path></svg></span><span class="e2e-full">The plan controls when each conditional order is sent to market.</span></span></div>
-        <div class="hm-e2e-st has-more" tabindex="0"><div class="dot">5</div><b>Algorithmic <br>execution</b><span class="e2e-text"><span class="e2e-short">Sells first, then confirmed proceeds fund the buys.</span><span class="e2e-hint"><span class="lbl-more">More</span><span class="lbl-less">Less</span><svg viewBox="0 0 24 24"><path d="M5 9l7 7 7-7"></path></svg></span><span class="e2e-full">Dependency management releases each next order automatically.</span></span></div>
-        <div class="hm-e2e-st has-more" tabindex="0"><div class="dot">6</div><b>Advice documentation &amp; trade reporting</b><span class="e2e-text"><span class="e2e-short">Every record generated automatically.</span><span class="e2e-hint"><span class="lbl-more">More</span><span class="lbl-less">Less</span><svg viewBox="0 0 24 24"><path d="M5 9l7 7 7-7"></path></svg></span><span class="e2e-full">Advice Protocol, approvals, orders and execution records, updated in real time and recorded in your institution's systems.</span></span></div>
+        <div class="hm-e2e-st"><div class="dot">2</div><b>Recommendation trigger</b><span class="e2e-text"><span class="e2e-short">Human or autonomous, with professional reasoning.</span><span class="e2e-full">Unique recommendations pushed to all eligible clients in the book.</span></span></div>
+        <div class="hm-e2e-st"><div class="dot">3</div><b>Personalized <br>advice</b><span class="e2e-text"><span class="e2e-short">Converted to a unique order bundle for every client.</span><span class="e2e-full">Each recommendation is fitted to every client's holdings, exposures, risk and cash, and becomes their own buy and sell orders.</span></span></div>
+        <div class="hm-e2e-st key"><div class="dot">4</div><b>Trade-All™</b><span class="e2e-text"><span class="e2e-short">One tap approves the whole bundle and starts an automated execution plan.</span><span class="e2e-full">The plan controls when each conditional order is sent to market.</span></span></div>
+        <div class="hm-e2e-st"><div class="dot">5</div><b>Algorithmic <br>execution</b><span class="e2e-text"><span class="e2e-short">Sells first, then confirmed proceeds fund the buys.</span><span class="e2e-full">Dependency management releases each next order automatically.</span></span></div>
+        <div class="hm-e2e-st"><div class="dot">6</div><b>Advice documentation &amp; trade reporting</b><span class="e2e-text"><span class="e2e-short">Every record generated automatically.</span><span class="e2e-full">Advice Protocol, approvals, orders and execution records, updated in real time and recorded in your institution's systems.</span></span></div>
       </div>
     </div>
   </div>
@@ -4860,8 +4850,6 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
     var io3 = new IntersectionObserver(function (es) { es.forEach(function (en) { if (!en.isIntersecting) e2e.classList.remove('vh-go'); }); }, { threshold: 0 });
     io2.observe(e2e); io3.observe(e2e);
   }
-  /* step fold: tap (or click) opens the full text, also with reduced motion */
-  if (e2e) [].forEach.call(e2e.querySelectorAll('.hm-e2e-st.has-more'), function (st) { st.addEventListener('click', function () { st.classList.toggle('open'); }); });
   if (reduce) { userPaused = true; $('vh-pp').textContent = '▶'; $('vh-pp').setAttribute('aria-label', 'Play'); }
   run(gen);
 })();

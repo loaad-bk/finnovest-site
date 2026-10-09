@@ -2027,6 +2027,18 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 #home .vh-more { text-align: center; margin-top: 36px; color: #fff; }
 #home .vh-more .alink .c { background: #fff; }
 #home .vh-more .alink .c svg { stroke: var(--ink-text); }
+/* proof band, softer (9 Oct 2026): fewer lines, mint stat figures, quotes on soft tiles, slower and dimmer logo belt */
+#home .vh-proof .vh-marq { border-bottom-color: rgba(255,255,255,.07); }
+#home .vh-proof .vh-belt { animation-duration: 70s; }
+#home .vh-proof .vh-belt .lg { opacity: .72; }
+#home .vh-proof .vh-nums div { border-left: 0; }
+#home .vh-proof .vh-nums b { color: var(--mint); font-size: clamp(30px, 3vw, 44px); }
+#home .vh-proof .vh-nums span { color: rgba(255,255,255,.6); }
+#home .vh-quotes { border-top: 0; padding-top: 0; gap: 20px; margin-top: 44px; }
+#home .vh-quote { border-left: 0; background: rgba(255,255,255,.05); border-radius: 6px; padding: 28px 30px 26px; }
+#home .vh-quote:before { font-size: 56px; line-height: .5; margin-bottom: 12px; }
+#home .vh-quote blockquote { color: rgba(255,255,255,.92); }
+@media (max-width: 900px) { #home .vh-quote { padding: 24px 22px 22px; } }
 /* deployment tiles in the hero's language: dark cards, mint Trade-All, the same three moments */
 #home .vh-dep { width: 80%; background: #0F2B2C; color: #fff; border-radius: 10px; padding: 16px 16px 15px; box-shadow: 0 22px 44px rgba(7,40,42,0.28); font-family: "Inter", system-ui, sans-serif; text-align: left; }
 #home .vh-dep-top { display: flex; align-items: center; gap: 8px; font-size: 11.5px; font-weight: 600; margin-bottom: 10px; }

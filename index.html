@@ -2027,6 +2027,9 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 #home .vh-more { text-align: center; margin-top: 36px; color: #fff; }
 #home .vh-more .alink .c { background: #fff; }
 #home .vh-more .alink .c svg { stroke: var(--ink-text); }
+/* hero lede: "advice-driven trades" links to the Advised-trading page (9 Oct 2026); words unchanged */
+#home .vh-lede .vh-adt { color: inherit; cursor: pointer; text-decoration: underline dotted; text-decoration-color: var(--mint); text-decoration-thickness: 1.5px; text-underline-offset: 4px; transition: color .2s; }
+#home .vh-lede .vh-adt:hover, #home .vh-lede .vh-adt:focus-visible { color: var(--mint); text-decoration-style: solid; }
 /* proof band, softer (9 Oct 2026): fewer lines, mint stat figures, quotes on soft tiles, slower and dimmer logo belt */
 #home .vh-proof .vh-marq { border-bottom-color: rgba(255,255,255,.07); }
 #home .vh-proof .vh-belt { animation-duration: 70s; }
@@ -2198,7 +2201,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 
     <div class="vh-copy">
       <h1>Give your retail investors tailored advice they can <em>execute in one tap.</em></h1>
-      <p class="vh-lede">From one investment idea to thousands of personalized, <span style="white-space:nowrap">advice-driven</span> trades, tailored to each client's holdings, risk profile and constraints. Investors approve the entire recommendation in one tap, while Finnovest manages suitability, compliance and documentation end to end.</p>
+      <p class="vh-lede">From one investment idea to thousands of personalized, <a class="vh-adt" data-go="advisedtrading" title="What is Advised-trading?"><span style="white-space:nowrap">advice-driven</span> trades</a>, tailored to each client's holdings, risk profile and constraints. Investors approve the entire recommendation in one tap, while Finnovest manages suitability, compliance and documentation end to end.</p>
       <div class="vh-cta"><button class="btn btn-mint" data-go="advisedtrading"><span class="vh-play" aria-hidden="true"></span>Advised-trading demo<span class="wipe" aria-hidden="true"><i></i><i></i><i></i></span></button></div>
     </div>
 

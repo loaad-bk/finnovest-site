@@ -1831,6 +1831,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 #vh h1 { font-family: var(--vh-display); font-weight: 500; font-size: clamp(34px, 3.6vw, 54px) !important; line-height: 1.03 !important; letter-spacing: -0.025em; margin: 0 0 20px; text-wrap: balance; color: #fff; max-width: none; }
 #vh h1 em { font-style: italic; }
 #vh .vh-lede { font-size: 15.5px; line-height: 1.55; color: rgba(255,255,255,0.72); max-width: 32em; margin: 0 0 28px; }
+@media (min-width: 901px) { #vh .vh-copy > .vh-lede { font-size: 19px; color: rgba(255,255,255,0.82); max-width: 600px; } } /* Hagar 9.10 review, H6 (12 Oct 2026) */
 #vh .vh-cta .btn { display: inline-flex; align-items: center; gap: 10px; }
 #vh .vh-play { width: 22px; height: 22px; border-radius: 50%; background: var(--vh-teal); display: inline-grid; place-items: center; flex: none; }
 #vh .vh-play::after { content: ""; border-left: 7px solid var(--vh-mint); border-top: 4.5px solid transparent; border-bottom: 4.5px solid transparent; margin-left: 2px; }
@@ -2277,7 +2278,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
     <div class="vh-copy">
       <h1>Give your retail investors tailored advice they can execute in <em>one tap.</em></h1>
       <p class="vh-lede">From one investment idea to thousands of personalized, <a class="vh-adt" data-go="advisedtrading" title="What is Advised-trading?"><span style="white-space:nowrap">advice-driven</span> trades</a>, tailored to each client's holdings, risk profile and constraints. Investors approve the entire recommendation in one tap, while Finnovest manages trading, suitability, compliance and documentation end to end.</p>
-      <div class="vh-cta"><button class="btn btn-mint" data-go="advisedtrading"><span class="vh-play" aria-hidden="true"></span>Advised-trading demo<span class="wipe" aria-hidden="true"><i></i><i></i><i></i></span></button></div>
+      <div class="vh-cta"><button class="btn btn-mint" data-go="advisedtrading">More about Advised-trading<span class="wipe" aria-hidden="true"><i></i><i></i><i></i></span></button></div>
     </div>
 
     <div class="vh-glass vh-pin" id="vh-pin">

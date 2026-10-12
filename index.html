@@ -2272,6 +2272,24 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 #home .vh-proof .vh-more { color: #061A1A; }
 #home .vh-proof .vh-more .alink .c { background: #07282A; }
 #home .vh-proof .vh-more .alink .c svg { stroke: #fff; }
+/* Hagar 9.10 design (12 Oct 2026) for the growth band, the deployment band and the closing band */
+#home .hm-grow { display: grid; grid-template-columns: 360px minmax(0, 1fr); gap: 64px; align-items: start; }
+#home .hm-grow-h { margin: 0; text-align: left; max-width: 20ch; font-family: 'Figtree', "Helvetica Neue", Arial, sans-serif; font-size: 38px !important; line-height: 1.12 !important; letter-spacing: -0.02em; }
+#home .hm-grow-h em, #home .hm-dep-band h2 em { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
+#home .hm-grow-tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+#home .hm-grow-t { box-sizing: border-box; min-height: 272px; border-radius: 6px; padding: 34px 36px 36px; display: flex; flex-direction: column; text-align: left; }
+#home .hm-grow-t svg { width: 22px; height: 22px; flex: none; fill: none; stroke: #061A1A; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+#home .hm-grow-t h3 { margin: 48px 0 10px; font-family: 'Figtree', "Helvetica Neue", Arial, sans-serif; font-weight: 500; font-size: 21px !important; line-height: 1.25 !important; letter-spacing: -0.01em; color: #061A1A; }
+#home .hm-grow-t p { margin: 0; font-size: 14.5px; line-height: 1.55; color: #3F4F4F; }
+@media (max-width: 980px) { #home .hm-grow { grid-template-columns: minmax(0, 1fr); gap: 32px; } #home .hm-grow-h { max-width: none; } }
+@media (max-width: 620px) { #home .hm-grow-tiles { grid-template-columns: minmax(0, 1fr); } #home .hm-grow-t { min-height: 0; } #home .hm-grow-t h3 { margin-top: 28px; } }
+#home .hm-dep-band h2, #home .hm-dep-band h4, #home .cta-band h2 { font-family: 'Figtree', "Helvetica Neue", Arial, sans-serif; }
+#home .dep-icons > div { display: flex; flex-direction: column; align-items: flex-start; border-top: 1px solid rgba(6,26,26,0.12); padding-top: 32px; }
+#home .dep-icons .dep-ic { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 10px; margin-bottom: 20px; flex: none; }
+#home .dep-icons .dep-ic svg { width: 28px; height: 28px; flex: none; }
+#home .dep-icons .hm-tile-txt { align-self: stretch; }
+#home .dep-icons .hm-step { margin-top: 0; }
+#home .cta-band .hm-ripple { display: none; }
 #vh .vh-foot { bottom: 138px !important; }
 @media (max-width: 900px) { .vh-cards { margin-top: -36px; background: linear-gradient(transparent 36px, var(--forest, #07282A) 36px); } .vh-cards-in { grid-template-columns: minmax(0, 1fr); } #vh .vh-foot { bottom: 52px !important; } }
 </style>
@@ -2491,64 +2509,40 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
     </div>
   </div>
 
-  <!-- BUSINESS IMPACT: four outcomes, static, no slider (24 Sep 2026) -->
-  <div class="band lt">
+  <!-- BUSINESS IMPACT in the Hagar 9.10 design (12 Oct 2026): headline on the left, the four outcomes with icons in a two by two grid -->
+  <div class="band lt hm-grow-band">
     <div class="wrap">
-      <div class="hm-center">
-        <h2 class="rev" style="max-width:18ch;margin:0 auto">Turn investment expertise into <em>scalable growth.</em></h2>
-      </div>
-      <div class="hm-outcomes">
-        <div class="hm-out rev" style="background:var(--tile-mint)"><h3>Scale expertise. <em>Not headcount.</em></h3><p>A single system for advice, compliance and trade lowers the barrier to personalized advisory. New players launch without building the infrastructure from scratch, and existing businesses scale with minimal overhead.</p></div>
-        <div class="hm-out rev" style="background:var(--tile-lime)"><h3>Turn dormant accounts into active relationships.</h3><p>Build portfolios from day one, then keep them active with continuous personalized advice tied directly to action and trade.</p></div>
-        <div class="hm-out rev" style="background:var(--tile-lilac)"><h3>Compete on expertise, <em>not only price.</em></h3><p>Personalized advice gives clients a reason to stay beyond price. A personal service inside your own app builds trust, loyalty and meaningful differentiation, so the client relationship stays yours.</p></div>
-        <div class="hm-out rev" style="background:var(--tile-teal)"><h3>Turn product distribution into <em>measurable growth.</em></h3><p>Replace one-to-one distribution with a scalable, personalized model that reaches thousands of clients simultaneously. Every interaction yields behavioral data that refines the next offer and grows reach.</p></div>
+      <div class="hm-grow">
+        <h2 class="hm-grow-h">Turn investment expertise into <em>scalable growth.</em></h2>
+        <div class="hm-grow-tiles">
+          <div class="hm-grow-t" style="background:var(--tile-mint)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16"></path><path d="M7 15v-3M12 15V8M17 15V5"></path></svg><h3>Scale expertise. Not headcount.</h3><p>A single system for advice, compliance and trade lowers the barrier to personalized advisory. New players launch without building the infrastructure from scratch, and existing businesses scale with minimal overhead.</p></div>
+          <div class="hm-grow-t" style="background:var(--tile-lime)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5V12l3 2"></path></svg><h3>Turn dormant accounts into active relationships.</h3><p>Build portfolios from day one, then keep them active with continuous personalized advice tied directly to action and trade.</p></div>
+          <div class="hm-grow-t" style="background:var(--tile-lilac)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.5 5.2 5.7.8-4.1 4 1 5.6L12 16.4l-5.1 2.7 1-5.6-4.1-4 5.7-.8L12 3.5z"></path></svg><h3>Compete on expertise, not only price.</h3><p>Personalized advice gives clients a reason to stay beyond price. A personal service inside your own app builds trust, loyalty and meaningful differentiation, so the client relationship stays yours.</p></div>
+          <div class="hm-grow-t" style="background:var(--tile-teal)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17l5-6 4 4 7-9"></path><path d="M15 6h5v5"></path></svg><h3>Turn product distribution into measurable growth.</h3><p>Replace one-to-one distribution with a scalable, personalized model that reaches thousands of clients simultaneously. Every interaction yields behavioral data that refines the next offer and grows reach.</p></div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- DEPLOYMENT MODELS: three starting points -->
-  <div class="band lt lt2">
+  <!-- DEPLOYMENT MODELS: three starting points. Hagar 9.10 design (12 Oct 2026): a small icon on each card instead of the product illustration -->
+  <div class="band lt lt2 hm-dep-band">
     <div class="wrap">
       <div class="hm-center rev" style="margin-bottom:48px">
         <span class="eyebrow">Deployment models</span>
         <h2 style="max-width:16ch;margin:0 auto">Built around what you <em>already have.</em></h2>
         <p class="lede" style="margin-top:22px;max-width:60ch">Every deployment starts with Finnovest Core, which powers scalable personalized advice and automated trading. From there, institutions can choose how much of the client experience to adopt.</p>
       </div>
-      <div class="hm-tiles">
+      <div class="hm-tiles dep-icons">
         <div class="rev hm-dep-card" data-go="products" data-anchor="int-systems" role="link" tabindex="0">
-          <div class="hm-tile lime">
-            <div class="vh-dep">
-              <div class="vh-dep-top"><span class="vh-dep-dot"></span>Advisor console<span>New recommendation</span></div>
-              <div class="vh-dep-t">Increase exposure to global technology</div>
-              <div class="vh-dep-s">Funding: reduce each client's most overweight holding</div>
-              <div class="vh-dep-row"><span>Eligible investors</span><b>13,452</b></div>
-              <div class="vh-dep-row"><span>Personalized bundles</span><b>13,452</b></div>
-              <div class="vh-dep-ok"><i></i>Sent to 13,452 investors</div>
-            </div>
-          </div>
-
+          <div class="dep-ic" style="background:#E9F4DC"><svg viewBox="0 0 24 24" fill="none" stroke="#061A1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="7" height="7" rx="1.5"></rect><rect x="14" y="13" width="7" height="7" rx="1.5"></rect><path d="M10 7.5h3.5a2 2 0 0 1 2 2V13"></path><path d="M14 16.5h-3.5a2 2 0 0 1-2-2V11"></path></svg></div>
           <div class="hm-tile-txt"><span class="hm-step">01 · Finnovest Connect</span><h4>Private deployment</h4><p>Connect Finnovest Core to your existing systems and use its advice, compliance and trading capabilities behind the scenes. Your institution designs and controls the entire client experience.</p><p class="hm-best"><b>Best for</b> banks running their own systems and channels.</p></div>
         </div>
         <div class="rev hm-dep-card" data-go="products" data-anchor="int-sdk" role="link" tabindex="0" style="transition-delay:.1s">
-          <div class="hm-tile teal">
-            <div class="vh-dep vh-app">
-              <div class="vh-app-bar"><span class="vh-app-av">D</span><span class="vh-app-nm">Your trading app</span><span class="vh-app-bell"></span></div>
-              <div class="vh-app-tabs"><span>Portfolio</span><span class="on">Advice</span><span>Markets</span></div>
-              <div class="vh-app-card"><div class="vh-dep-hi">Hi <span>Daniel</span>,</div><div class="vh-dep-l">a new recommendation is ready</div><div class="vh-dep-t2">Increase exposure to global technology</div><div class="vh-dep-why">Read reasoning<i></i></div><div class="vh-dep-ta">Trade-All™</div></div>
-            </div>
-          </div>
+          <div class="dep-ic" style="background:#C9E5E2"><svg viewBox="0 0 24 24" fill="none" stroke="#061A1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"></rect><rect x="8.75" y="7" width="6.5" height="7" rx="1"></rect><path d="M10.5 18.5h3"></path></svg></div>
           <div class="hm-tile-txt"><span class="hm-step">02 · Finnovest Embedded</span><h4>White-label mobile SDK</h4><p>Add Advised-trading directly into the mobile app your clients already use. Finnovest Core powers the advice and trading logic, while the white-label SDK delivers the full client experience under your brand.</p><p class="hm-best"><b>Best for</b> brokerages whose clients already trade in their app.</p></div>
         </div>
         <div class="rev hm-dep-card" data-go="products" data-anchor="int-app" role="link" tabindex="0" style="transition-delay:.2s">
-          <div class="hm-tile mint">
-            <div class="vh-dep">
-              <div class="vh-dep-meta">Your orders, Daniel</div>
-              <div class="vh-dep-o sell"><span>Sell</span><em>Israeli index fund</em><b>$4,000</b><i></i></div>
-              <div class="vh-dep-o buy"><span>Buy</span><em>Global tech ETF</em><b>$4,500</b><i></i></div>
-              <div class="vh-dep-win"><i></i><div><b>Recommendation and trade documented</b><small>Suitability checked · recorded</small></div></div>
-            </div>
-          </div>
-
+          <div class="dep-ic" style="background:#D2F4E3"><svg viewBox="0 0 24 24" fill="none" stroke="#061A1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"></rect><rect x="8.5" y="6.5" width="3" height="3" rx="0.8"></rect><rect x="12.5" y="6.5" width="3" height="3" rx="0.8"></rect><rect x="8.5" y="10.5" width="3" height="3" rx="0.8"></rect><rect x="12.5" y="10.5" width="3" height="3" rx="0.8"></rect><path d="M10.5 18.5h3"></path></svg></div>
           <div class="hm-tile-txt"><span class="hm-step">03 · Finnovest Complete</span><h4>White-label app</h4><p>A full-service trading app under your brand that combines independent trading and Advised-trading in one app, with Finnovest Core built in end to end. Clients trade on their own, receive professional advice and execute their recommendations with one tap to Trade-All™.</p><p class="hm-best"><b>Best for</b> institutions without an app of their own, or without in-house advisors.</p></div>
         </div>
       </div>

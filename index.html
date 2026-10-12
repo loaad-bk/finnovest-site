@@ -2249,14 +2249,14 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 <!-- ================= HOME ================= -->
 <section class="page live" id="home">
   <!-- VIDEO HERO (8 Oct 2026): Atera-style, from mockup C. Footage in assets/hero/ (Pexels). Script near the end of the file, id vh-script. Restore point: git tag before-video-hero-2026-10-08 -->
-  <div class="band dk dim" id="vh" style="--vh-mood: #0E5A52; --vh-accent: #D7C4F7; --vh-amt: 0.4; --vh-tile: #DDD0EA;">
+  <div class="band dk sending" id="vh" style="--vh-mood: #0E5A52; --vh-accent: #D7C4F7; --vh-amt: 0.4; --vh-tile: #DDD0EA;">
     <div class="vh-vids" aria-hidden="true">
       <video id="vh-v0" src="assets/hero/investor-1.mp4" muted="" loop="" playsinline="" preload="auto" style="filter: saturate(1.15) contrast(1.08) hue-rotate(-10deg) brightness(0.92);"></video>
       <video id="vh-v1" src="assets/hero/investor-2.mp4" muted="" loop="" playsinline="" preload="metadata" style="filter: sepia(0.3) saturate(1.2) brightness(0.95);"></video>
       <video id="vh-v2" src="assets/hero/investor-3.mp4" muted="" loop="" playsinline="" preload="metadata" class="on" style="filter: saturate(0.7) contrast(0.95) brightness(0.96);"></video>
     </div>
     <div class="vh-mood"></div><div class="vh-colorize"></div><div class="vh-glow"></div><div class="vh-tint"></div>
-    <div class="vh-cast on" id="vh-cast"></div>
+    <div class="vh-cast spot" id="vh-cast"></div>
     <canvas class="vh-burst" id="vh-burst" aria-hidden="true" width="2032" height="900"></canvas>
     <div class="vh-wipe go" id="vh-wipe"></div>
 
@@ -2266,10 +2266,11 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       <div class="vh-cta"><button class="btn btn-mint" data-go="advisedtrading"><span class="vh-play" aria-hidden="true"></span>Advised-trading demo<span class="wipe" aria-hidden="true"><i></i><i></i><i></i></span></button></div>
     </div>
 
-    <div class="vh-glass vh-pin on" id="vh-pin">
+    <div class="vh-glass vh-pin" id="vh-pin">
       <div class="vh-top"><span class="vh-dot"></span>Advisor console<span>Live</span></div>
       <div class="vh-pin-t">Increase exposure to global technology</div>
       <div class="vh-pin-n"><b>13,452</b> investors in your book fit this recommendation</div>
+      <div class="vh-pin-e"><span>Executed with Trade-All™</span><b id="vh-exec">0</b><div class="bar"><i id="vh-bar" style="width: 0%;"></i></div><small><em id="vh-pct">0%</em> Trade-All™ conversion</small></div>
     </div>
 
     <div class="vh-layer on" id="vh-layer" aria-live="polite">
@@ -2278,16 +2279,16 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       <div class="vh-thread" id="vh-thread" style="left: 1016.4px; bottom: 150px; height: 450px;"><div class="vh-msg pop old"><div class="vh-meta"><span class="vh-ic"></span><b>Your trading app</b> · now</div><div class="vh-glass vh-bub"><div class="vh-hi">Hi <span>Sara</span>,</div><div class="vh-lbl">a new recommendation is ready</div><div class="vh-ttl">Increase exposure to global technology</div><div class="vh-why">Read reasoning<i></i></div></div></div><div class="vh-msg old"><div class="vh-meta"><span class="vh-av">F</span><b>Your orders, Sara</b> · personalized</div><div class="vh-glass vh-bub"><div class="vh-rows"><div class="vh-o sell in" data-s="done"><span class="side">Sell</span><span class="inst">Government bond fund</span><span class="amt">$5,000</span><span class="st"></span></div><div class="vh-o buy in" data-s="done"><span class="side">Buy</span><span class="inst">Global tech ETF</span><span class="amt">$2,000</span><span class="st"></span></div><div class="vh-o buy in" data-s="done"><span class="side">Buy</span><span class="inst">Global dividend fund</span><span class="amt">$3,000</span><span class="st"></span></div></div></div></div><div class="vh-msg old" style=""><div class="vh-tawrap"><button class="vh-ta busy" type="button" tabindex="-1"><span class="fill" style="width: 100%;"></span><span class="lab">Documenting</span></button><div class="vh-hint">One tap executes all 3 orders</div></div></div><div class="vh-msg "><div class="vh-glass vh-bub win"><span class="vh-ok"></span><div><b>Recommendation and trade documented</b><small>3 of 3 filled · suitability checked</small></div></div></div></div>
     </div>
 
-    <div class="vh-glass vh-console" id="vh-console">
+    <div class="vh-glass vh-console on" id="vh-console">
       <div class="vh-top"><span class="vh-dot"></span>Advisor console<span>New recommendation</span></div>
       <div class="vh-cn-title">Increase exposure to global technology</div>
       <div class="vh-cn-sub">Funding: reduce each client's most overweight holding</div>
-      <div class="vh-cn-row"><span>Eligible investors</span><b id="vh-elig">13,452</b></div>
-      <div class="vh-cn-row"><span>Personalized bundles</span><b id="vh-bund">13,452</b></div>
-      <div class="vh-cn-status done" id="vh-status"><i></i><span id="vh-stat">Sent to 13,452 investors</span></div>
+      <div class="vh-cn-row"><span>Eligible investors</span><b id="vh-elig">3,441</b></div>
+      <div class="vh-cn-row"><span>Personalized bundles</span><b id="vh-bund">0</b></div>
+      <div class="vh-cn-status" id="vh-status"><i></i><span id="vh-stat">Matching against every client book</span></div>
     </div>
 
-    <div class="vh-closing on" id="vh-closing"><p><span class="vh-cl">One investment idea.</span><span class="vh-cl"><em>Thousands</em> of tailored recommendations, simultaneously.</span><span class="vh-cl m">One tap to Trade-All™.</span></p></div>
+    <div class="vh-closing" id="vh-closing"><p><span class="vh-cl">One investment idea.</span><span class="vh-cl"><em>Thousands</em> of tailored recommendations, simultaneously.</span><span class="vh-cl m">One tap to Trade-All™.</span></p></div>
     <div class="vh-foot"><button class="vh-pp" id="vh-pp" type="button" aria-label="Pause">❚❚</button></div>
   </div>
 
@@ -2397,7 +2398,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       <div class="hm-center rev" style="margin-bottom:48px">
         <span class="eyebrow">Deployment models</span>
         <h2 style="max-width:16ch;margin:0 auto">Built around what you <em>already have.</em></h2>
-        <p class="lede" style="margin-top:22px;max-width:60ch">Every deployment starts with Finnovest Core, which powers scalable personalized advice and automated trading. From there, institutions can choose how much of the client experience to adopt: integration only, an embedded white-label mobile experience, or a complete Advised-trading application.</p>
+        <p class="lede" style="margin-top:22px;max-width:60ch">Every deployment starts with Finnovest Core, which powers scalable personalized advice and automated trading. From there, institutions can choose how much of the client experience to adopt.</p>
       </div>
       <div class="hm-tiles">
         <div class="rev hm-dep-card" data-go="products" data-anchor="int-systems" role="link" tabindex="0">
@@ -2508,26 +2509,26 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       </div>
 
       <div class="flow-top">
-        <a data-go="products" data-anchor="st1"><span class="n">01</span><b>House view</b><small>Management sets the position</small></a>
-        <a data-go="products" data-anchor="st2"><span class="n">02</span><b>Recommendation trigger</b><small>Human or autonomous</small></a>
-        <a data-go="products" data-anchor="st3"><span class="n">03</span><b>Personalized order bundles</b><small>Resolved against every portfolio</small></a>
-        <a data-go="products" data-anchor="st5"><span class="n">04</span><b>Trade-All™</b><small>Investors approve once and order bundles are executed</small></a>
-        <a data-go="products" data-anchor="st6"><span class="n">05</span><b>Algorithmic execution</b><small>Every order, to the exchange</small></a>
-        <a data-go="products" data-anchor="st7"><span class="n">06</span><b>Advice documentation &amp; trade reporting</b><small>Generated automatically, updated in real time</small></a>
+        <a data-go="products" data-anchor="st1" class="done"><span class="n">01</span><b>House view</b><small>Management sets the position</small></a>
+        <a data-go="products" data-anchor="st2" class="done"><span class="n">02</span><b>Recommendation trigger</b><small>Human or autonomous</small></a>
+        <a data-go="products" data-anchor="st3" class="done"><span class="n">03</span><b>Personalized order bundles</b><small>Resolved against every portfolio</small></a>
+        <a data-go="products" data-anchor="st5" class="done"><span class="n">04</span><b>Trade-All™</b><small>Investors approve once and order bundles are executed</small></a>
+        <a data-go="products" data-anchor="st6" class="done"><span class="n">05</span><b>Algorithmic execution</b><small>Every order, to the exchange</small></a>
+        <a data-go="products" data-anchor="st7" class="on"><span class="n">06</span><b>Advice documentation &amp; trade reporting</b><small>Generated automatically, updated in real time</small></a>
       </div>
       <div class="flow-rails">
         <div class="hm-cyc-rail"><b>Compliance, control and documentation</b><span>governs every stage</span></div>
         <div class="hm-cyc-rail data"><b>Management and advisor consoles</b><span>follow every stage</span></div>
       </div>
-      <div class="flow-bar" aria-label="Core stages">
+      <div class="flow-bar" aria-label="Core stages" style="--p: 100%;">
         <div class="wrap">
           <span class="lbl">Finnovest Core</span>
-          <a data-go="products" data-anchor="st1"><span class="n">01</span><b>House view</b></a>
-          <a data-go="products" data-anchor="st2"><span class="n">02</span><b>Recommendation</b></a>
-          <a data-go="products" data-anchor="st3"><span class="n">03</span><b>Order bundles</b></a>
-          <a data-go="products" data-anchor="st5"><span class="n">04</span><b>Trade-All™</b></a>
-          <a data-go="products" data-anchor="st6"><span class="n">05</span><b>Execution</b></a>
-          <a data-go="products" data-anchor="st7"><span class="n">06</span><b>Documentation</b></a>
+          <a data-go="products" data-anchor="st1" class="done"><span class="n">01</span><b>House view</b></a>
+          <a data-go="products" data-anchor="st2" class="done"><span class="n">02</span><b>Recommendation</b></a>
+          <a data-go="products" data-anchor="st3" class="done"><span class="n">03</span><b>Order bundles</b></a>
+          <a data-go="products" data-anchor="st5" class="done"><span class="n">04</span><b>Trade-All™</b></a>
+          <a data-go="products" data-anchor="st6" class="done"><span class="n">05</span><b>Execution</b></a>
+          <a data-go="products" data-anchor="st7" class="on"><span class="n">06</span><b>Documentation</b></a>
         </div>
       </div>
 
@@ -4788,7 +4789,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 
   /* executed counter: each tap stands for thousands acting at once; it ends at 26% of 13,452 */
   var execNow = 0;
-  function showExec(n) { var x = $('vh-exec'); if (x) x.textContent = Math.round(n).toLocaleString('en-US'); }
+  function showExec(n) { var x = $('vh-exec'); if (!x) return; x.textContent = Math.round(n).toLocaleString('en-US'); var p = n / ELIG * 100; $('vh-pct').textContent = Math.round(p) + '%'; $('vh-bar').style.width = p + '%'; }
   function execTo(target) { var from = execNow, t0 = performance.now(); execNow = target; (function f() { var k = Math.min(1, (performance.now() - t0) / 1200), e = 1 - Math.pow(1 - k, 3); showExec(from + (target - from) * e); if (k < 1) setTimeout(f, 30); })(); }
   function countUp(el, to, ms) { return new Promise(function (res) { var t0 = performance.now(); (function f() { var k = Math.min(1, Math.max(0, (performance.now() - t0) / ms)), e = 1 - Math.pow(1 - k, 3); el.textContent = Math.round(to * e).toLocaleString('en-US'); if (k < 1) setTimeout(f, 30); else res(); })(); }); }
 
@@ -4919,5 +4920,6 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
   run(gen);
 })();
 </script>
+
 
 </body></html>

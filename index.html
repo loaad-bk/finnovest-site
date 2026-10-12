@@ -2095,6 +2095,60 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 #home .vh-dep-why { display: flex; align-items: center; gap: 8px; margin-top: 9px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.14); font-size: 12.5px; font-weight: 600; color: #fff; }
 #home .vh-dep-why i { order: -1; width: 19px; height: 19px; border-radius: 50%; background: #2EE59D; position: relative; flex: none; }
 #home .vh-dep-why i::after { content: ""; position: absolute; left: 5.5px; top: 6.5px; width: 4px; height: 4px; border: solid #07282A; border-width: 2px 2px 0 0; transform: rotate(45deg); }
+/* Products deployment tiles reuse the Home deployment mockups (12 Oct 2026) */
+#products .vh-dep { width: 80%; background: #0F2B2C; color: #fff; border-radius: 10px; padding: 16px 16px 15px; box-shadow: 0 22px 44px rgba(7,40,42,0.28); font-family: "Inter", system-ui, sans-serif; text-align: left; }
+#products .vh-dep-top { display: flex; align-items: center; gap: 8px; font-size: 11.5px; font-weight: 600; margin-bottom: 10px; }
+#products .vh-dep-top span:last-child { margin-left: auto; font-weight: 400; color: rgba(255,255,255,0.6); }
+#products .vh-dep-dot { width: 7px; height: 7px; border-radius: 50%; background: #2EE59D; box-shadow: 0 0 0 3px rgba(46,229,157,0.2); }
+#products .vh-dep-t { font-family: "Instrument Sans", "Helvetica Neue", Arial, sans-serif; font-weight: 500; font-size: 17px; line-height: 1.2; letter-spacing: -0.01em; }
+#products .vh-dep-s { font-size: 11.5px; color: rgba(255,255,255,0.6); margin: 4px 0 8px; }
+#products .vh-dep-row { display: flex; justify-content: space-between; align-items: baseline; padding: 7px 0; border-top: 1px solid rgba(255,255,255,0.1); font-size: 12px; color: rgba(255,255,255,0.6); }
+#products .vh-dep-row b { font-family: "Instrument Sans", "Helvetica Neue", Arial, sans-serif; font-weight: 500; font-size: 20px; color: #fff; font-variant-numeric: tabular-nums; }
+#products .vh-dep-ok { display: flex; align-items: center; gap: 8px; padding-top: 9px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 12px; color: #2EE59D; }
+#products .vh-dep-ok i, #products .vh-dep-o i, #products .vh-dep-win i { width: 13px; height: 13px; border-radius: 50%; background: #2EE59D; position: relative; flex: none; }
+#products .vh-dep-ok i::after, #products .vh-dep-o i::after { content: ""; position: absolute; left: 4px; top: 1.5px; width: 3px; height: 6px; border: solid #07282A; border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); }
+#products .vh-dep-meta { font-size: 11.5px; font-weight: 600; margin: 0 0 8px 2px; }
+#products .vh-dep-o { display: grid; grid-template-columns: 36px minmax(0, 1fr) auto 13px; gap: 8px; align-items: center; font-size: 13px; padding: 8px 9px; border-radius: 6px; background: rgba(46,229,157,0.1); margin-bottom: 5px; }
+#products .vh-dep-o span { font-size: 10.5px; font-weight: 600; text-align: center; border-radius: 3px; padding: 1px 0; }
+#products .vh-dep-o.sell span { background: rgba(255,170,150,0.18); color: #FFB8A6; }
+#products .vh-dep-o.buy span { background: rgba(46,229,157,0.18); color: #2EE59D; }
+#products .vh-dep-o em { font-style: normal; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#products .vh-dep-o b { font-weight: 500; font-variant-numeric: tabular-nums; }
+#products .vh-dep-win { display: flex; gap: 10px; align-items: center; margin-top: 9px; padding: 10px 12px; border-radius: 8px; background: #2EE59D; color: #07282A; }
+#products .vh-dep-win i { width: 20px; height: 20px; background: #07282A; }
+#products .vh-dep-win i::after { content: ""; position: absolute; left: 7px; top: 4px; width: 4px; height: 8px; border: solid #2EE59D; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+#products .vh-dep-win b { display: block; font-size: 13px; }
+#products .vh-dep-win small { font-size: 11px; opacity: 0.8; }
+#products .vh-dep-phone { position: absolute; left: 8%; right: 8%; top: 29%; bottom: auto; z-index: 2; }
+#products .vh-dep-bub { background: rgba(30,46,48,0.82); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 11px 12px; color: #fff; }
+#products .vh-dep-hi { font-family: "Instrument Sans", "Helvetica Neue", Arial, sans-serif; font-weight: 500; font-size: 19px; line-height: 1.1; }
+#products .vh-dep-hi span { color: #B8F55A; }
+#products .vh-dep-l { font-size: 10.5px; color: rgba(255,255,255,0.62); margin-top: 2px; }
+#products .vh-dep-t2 { font-family: "Instrument Sans", "Helvetica Neue", Arial, sans-serif; font-weight: 500; font-size: 13.5px; line-height: 1.2; margin-top: 2px; }
+#products .vh-dep-ta { margin-top: 8px; height: 36px; border-radius: 999px; background: #2EE59D; color: #07282A; font: 600 14px/36px "Inter", system-ui, sans-serif; text-align: center; box-shadow: 0 8px 22px rgba(46,229,157,0.35); }
+/* deployment tile 02: the recommendation card inside the client's own app, same dark card as tiles 01 and 03 */
+#products .vh-app { padding: 14px 14px 16px; }
+#products .vh-app-bar { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+#products .vh-app-av { width: 22px; height: 22px; border-radius: 50%; background: rgba(184,245,90,0.18); color: #B8F55A; font-size: 10.5px; font-weight: 600; display: grid; place-items: center; }
+#products .vh-app-nm { font-size: 11.5px; font-weight: 600; }
+#products .vh-app-bell { margin-left: auto; width: 7px; height: 7px; border-radius: 50%; background: #2EE59D; box-shadow: 0 0 0 3px rgba(46,229,157,0.2); }
+#products .vh-app-tabs { display: flex; gap: 16px; font-size: 11px; color: rgba(255,255,255,0.5); border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 12px; }
+#products .vh-app-tabs span { padding-bottom: 7px; }
+#products .vh-app-tabs .on { color: #fff; box-shadow: inset 0 -2px 0 #2EE59D; }
+#products .vh-app-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 12px; }
+#products .vh-app-card .vh-dep-ta { margin-top: 12px; }
+/* "Read reasoning" link in the tile 02 recommendation */
+#products .vh-dep-why { display: flex; align-items: center; gap: 8px; margin-top: 9px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.14); font-size: 12.5px; font-weight: 600; color: #fff; }
+#products .vh-dep-why i { order: -1; width: 19px; height: 19px; border-radius: 50%; background: #2EE59D; position: relative; flex: none; }
+#products .vh-dep-why i::after { content: ""; position: absolute; left: 5.5px; top: 6.5px; width: 4px; height: 4px; border: solid #07282A; border-width: 2px 2px 0 0; transform: rotate(45deg); }
+#products .int .vh-dep { width: min(72%, 400px); }
+#products .int .best { flex-wrap: nowrap; align-items: flex-start; }
+#products .int .best > span { white-space: nowrap; padding-top: 2px; }
+/* Add-ons: five cards, three modules above and the two deployment-linked cards below (12 Oct 2026) */
+#addons .pc-grid.pc-5 { grid-template-columns: repeat(6, 1fr); }
+#addons .pc-5 > .pc { grid-column: span 2; }
+#addons .pc-5 > .pc:nth-child(n+4) { grid-column: span 3; }
+@media (max-width: 900px) { #addons .pc-grid.pc-5 { grid-template-columns: 1fr; } #addons .pc-5 > .pc, #addons .pc-5 > .pc:nth-child(n+4) { grid-column: auto; } }
 /* Growth / Scale / Governance cards rising over the hero bottom */
 .vh-cards { position: relative; z-index: 6; margin-top: -118px; padding: 0 24px; background: linear-gradient(transparent 118px, var(--forest, #07282A) 118px); }
 .vh-cards-in { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; max-width: calc(var(--max, 1265px) - 36px); margin: 0 auto; }
@@ -2147,8 +2201,9 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
           </div>
           <div class="dd-col"><a class="dd-h" data-go="products" data-anchor="addons">Add-ons<span class="go">View all →</span></a>
             <a data-go="products" data-anchor="addons">Investor onboarding and profiling</a>
-            <a data-go="products" data-anchor="addons">White-label mobile SDK</a>
+            <a data-go="products" data-anchor="addons">AI advisory conversation</a>
             <a data-go="products" data-anchor="addons">Long-term savings</a>
+            <a data-go="products" data-anchor="addons">White-label mobile SDK</a>
             <a data-go="products" data-anchor="addons">Complete white-label app</a>
           </div>
           <div class="dd-col"><a class="dd-h" data-go="products" data-anchor="integration">Deployment models<span class="go">View all →</span></a>
@@ -2194,45 +2249,45 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 <!-- ================= HOME ================= -->
 <section class="page live" id="home">
   <!-- VIDEO HERO (8 Oct 2026): Atera-style, from mockup C. Footage in assets/hero/ (Pexels). Script near the end of the file, id vh-script. Restore point: git tag before-video-hero-2026-10-08 -->
-  <div class="band dk" id="vh">
+  <div class="band dk dim" id="vh" style="--vh-mood: #0E5A52; --vh-accent: #D7C4F7; --vh-amt: 0.4; --vh-tile: #DDD0EA;">
     <div class="vh-vids" aria-hidden="true">
-      <video id="vh-v0" src="assets/hero/investor-1.mp4" muted loop playsinline preload="auto"></video>
-      <video id="vh-v1" src="assets/hero/investor-2.mp4" muted loop playsinline preload="metadata"></video>
-      <video id="vh-v2" src="assets/hero/investor-3.mp4" muted loop playsinline preload="metadata"></video>
+      <video id="vh-v0" src="assets/hero/investor-1.mp4" muted="" loop="" playsinline="" preload="auto" style="filter: saturate(1.15) contrast(1.08) hue-rotate(-10deg) brightness(0.92);"></video>
+      <video id="vh-v1" src="assets/hero/investor-2.mp4" muted="" loop="" playsinline="" preload="metadata" style="filter: sepia(0.3) saturate(1.2) brightness(0.95);"></video>
+      <video id="vh-v2" src="assets/hero/investor-3.mp4" muted="" loop="" playsinline="" preload="metadata" class="on" style="filter: saturate(0.7) contrast(0.95) brightness(0.96);"></video>
     </div>
     <div class="vh-mood"></div><div class="vh-colorize"></div><div class="vh-glow"></div><div class="vh-tint"></div>
-    <div class="vh-cast" id="vh-cast"></div>
-    <canvas class="vh-burst" id="vh-burst" aria-hidden="true"></canvas>
-    <div class="vh-wipe" id="vh-wipe"></div>
+    <div class="vh-cast on" id="vh-cast"></div>
+    <canvas class="vh-burst" id="vh-burst" aria-hidden="true" width="2032" height="900"></canvas>
+    <div class="vh-wipe go" id="vh-wipe"></div>
 
     <div class="vh-copy">
       <h1>Give your retail investors tailored advice they can <em>execute in one tap.</em></h1>
-      <p class="vh-lede">From one investment idea to thousands of personalized, <a class="vh-adt" data-go="advisedtrading" title="What is Advised-trading?"><span style="white-space:nowrap">advice-driven</span> trades</a>, tailored to each client's holdings, risk profile and constraints. Investors approve the entire recommendation in one tap, while Finnovest manages suitability, compliance and documentation end to end.</p>
+      <p class="vh-lede">From one investment idea to thousands of personalized, <a class="vh-adt" data-go="advisedtrading" title="What is Advised-trading?"><span style="white-space:nowrap">advice-driven</span> trades</a>, tailored to each client's holdings, risk profile and constraints. Investors approve the entire recommendation in one tap, while Finnovest manages trading, suitability, compliance and documentation end to end.</p>
       <div class="vh-cta"><button class="btn btn-mint" data-go="advisedtrading"><span class="vh-play" aria-hidden="true"></span>Advised-trading demo<span class="wipe" aria-hidden="true"><i></i><i></i><i></i></span></button></div>
     </div>
 
-    <div class="vh-glass vh-pin" id="vh-pin">
+    <div class="vh-glass vh-pin on" id="vh-pin">
       <div class="vh-top"><span class="vh-dot"></span>Advisor console<span>Live</span></div>
       <div class="vh-pin-t">Increase exposure to global technology</div>
       <div class="vh-pin-n"><b>13,452</b> investors in your book fit this recommendation</div>
     </div>
 
-    <div class="vh-layer" id="vh-layer" aria-live="polite">
-      <svg class="vh-link" aria-hidden="true"><path id="vh-path" pathLength="1" d="M0 0"></path></svg>
-      <span class="vh-src" id="vh-src"></span>
-      <div class="vh-thread" id="vh-thread"></div>
+    <div class="vh-layer on" id="vh-layer" aria-live="polite">
+      <svg class="vh-link" aria-hidden="true"><path id="vh-path" pathLength="1" d="M 772.4640185546875 712.9935063171387 C 907.7288217773438 712.9935063171387, 907.7288217773438 690, 1018.4000244140625 690"></path></svg>
+      <span class="vh-src" id="vh-src" style="left: 772.464px; top: 712.994px;"></span>
+      <div class="vh-thread" id="vh-thread" style="left: 1016.4px; bottom: 150px; height: 450px;"><div class="vh-msg pop old"><div class="vh-meta"><span class="vh-ic"></span><b>Your trading app</b> · now</div><div class="vh-glass vh-bub"><div class="vh-hi">Hi <span>Sara</span>,</div><div class="vh-lbl">a new recommendation is ready</div><div class="vh-ttl">Increase exposure to global technology</div><div class="vh-why">Read reasoning<i></i></div></div></div><div class="vh-msg old"><div class="vh-meta"><span class="vh-av">F</span><b>Your orders, Sara</b> · personalized</div><div class="vh-glass vh-bub"><div class="vh-rows"><div class="vh-o sell in" data-s="done"><span class="side">Sell</span><span class="inst">Government bond fund</span><span class="amt">$5,000</span><span class="st"></span></div><div class="vh-o buy in" data-s="done"><span class="side">Buy</span><span class="inst">Global tech ETF</span><span class="amt">$2,000</span><span class="st"></span></div><div class="vh-o buy in" data-s="done"><span class="side">Buy</span><span class="inst">Global dividend fund</span><span class="amt">$3,000</span><span class="st"></span></div></div></div></div><div class="vh-msg old" style=""><div class="vh-tawrap"><button class="vh-ta busy" type="button" tabindex="-1"><span class="fill" style="width: 100%;"></span><span class="lab">Documenting</span></button><div class="vh-hint">One tap executes all 3 orders</div></div></div><div class="vh-msg "><div class="vh-glass vh-bub win"><span class="vh-ok"></span><div><b>Recommendation and trade documented</b><small>3 of 3 filled · suitability checked</small></div></div></div></div>
     </div>
 
     <div class="vh-glass vh-console" id="vh-console">
       <div class="vh-top"><span class="vh-dot"></span>Advisor console<span>New recommendation</span></div>
       <div class="vh-cn-title">Increase exposure to global technology</div>
       <div class="vh-cn-sub">Funding: reduce each client's most overweight holding</div>
-      <div class="vh-cn-row"><span>Eligible investors</span><b id="vh-elig">0</b></div>
-      <div class="vh-cn-row"><span>Personalized bundles</span><b id="vh-bund">0</b></div>
-      <div class="vh-cn-status" id="vh-status"><i></i><span id="vh-stat">Matching against every client book</span></div>
+      <div class="vh-cn-row"><span>Eligible investors</span><b id="vh-elig">13,452</b></div>
+      <div class="vh-cn-row"><span>Personalized bundles</span><b id="vh-bund">13,452</b></div>
+      <div class="vh-cn-status done" id="vh-status"><i></i><span id="vh-stat">Sent to 13,452 investors</span></div>
     </div>
 
-    <div class="vh-closing" id="vh-closing"><p><span class="vh-cl">One investment idea.</span><span class="vh-cl"><em>Thousands</em> of tailored recommendations, simultaneously.</span><span class="vh-cl m">One tap to Trade-All™.</span></p></div>
+    <div class="vh-closing on" id="vh-closing"><p><span class="vh-cl">One investment idea.</span><span class="vh-cl"><em>Thousands</em> of tailored recommendations, simultaneously.</span><span class="vh-cl m">One tap to Trade-All™.</span></p></div>
     <div class="vh-foot"><button class="vh-pp" id="vh-pp" type="button" aria-label="Pause">❚❚</button></div>
   </div>
 
@@ -2310,7 +2365,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
         <span class="eyebrow">End-to-end</span>
         <h2><em>One continuous operating system for Advised-trading.</em></h2>
       </div>
-      <div class="hm-e2e rev">
+      <div class="hm-e2e rev vh-arm">
         <div class="hm-e2e-st"><div class="dot">1</div><b>House<br>&nbsp;view</b><span>The house defines asset allocation by risk level, analyst recommendations and system rules.</span></div>
         <div class="hm-e2e-st"><div class="dot">2</div><b>Recommendation trigger</b><span>Human or autonomous. Unique recommendations, with professional reasoning, pushed to all eligible clients in the book.</span></div>
         <div class="hm-e2e-st"><div class="dot">3</div><b>Personalized <br>order bundles</b><span>Each recommendation is converted into client-specific buy and sell orders, validated against holdings, exposures, risk, cash and every applicable constraint.</span></div>
@@ -2456,7 +2511,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
         <a data-go="products" data-anchor="st1"><span class="n">01</span><b>House view</b><small>Management sets the position</small></a>
         <a data-go="products" data-anchor="st2"><span class="n">02</span><b>Recommendation trigger</b><small>Human or autonomous</small></a>
         <a data-go="products" data-anchor="st3"><span class="n">03</span><b>Personalized order bundles</b><small>Resolved against every portfolio</small></a>
-        <a data-go="products" data-anchor="st5"><span class="n">04</span><b>Trade-All™</b><small>The investor approves once</small></a>
+        <a data-go="products" data-anchor="st5"><span class="n">04</span><b>Trade-All™</b><small>Investors approve once and order bundles are executed</small></a>
         <a data-go="products" data-anchor="st6"><span class="n">05</span><b>Algorithmic execution</b><small>Every order, to the exchange</small></a>
         <a data-go="products" data-anchor="st7"><span class="n">06</span><b>Advice documentation &amp; trade reporting</b><small>Generated automatically, updated in real time</small></a>
       </div>
@@ -2582,13 +2637,13 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
                 <div class="pz-g"><h4>Regulation and compliance</h4><p>Regulatory limits and compliance rules, with the rules of the exchange member and of the exchange itself built in.</p></div>
                 <div class="pz-g"><h4>Trading rules</h4><p>Minimum quantities and whole-unit quantities, so every recommendation is ready to execute.</p></div>
                 <div class="pz-g"><h4>The trade-off</h4><p>Bringing the client as close as possible to the optimal target, while recommending the minimum actions needed: less turnover, lower cost, no unnecessary changes.</p></div>
-                <div class="pz-g hi"><h4>All of it, together</h4><p>Building the optimal recommendation under all these constraints is an NP-complete optimization problem: the possibilities grow dramatically with every asset and constraint. The Israel Innovation Authority recognised the algorithm as breakthrough technology for handling them together, across tens of thousands of portfolios in parallel.</p><a class="alink" data-go="products" data-anchor="iia" style="margin-top:16px"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>The technology</a></div>
+                <div class="pz-g hi"><h4>All of it, together</h4><p>Building the optimal recommendation under all these constraints is an NP-complete optimization problem: the possibilities grow dramatically with every asset and constraint. The Israel Innovation Authority recognized the algorithm as breakthrough technology for handling them together, across tens of thousands of portfolios in parallel.</p><a class="alink" data-go="products" data-anchor="iia" style="margin-top:16px"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>The technology</a></div>
               </div>
             </div>
           </div>
 
           <div class="stg" id="st4">
-            <span class="k">04 · Order bundles</span>
+            <span class="k">03 · Order bundles</span>
             <h3>Thousands of order bundles, <em>tailored to all investors simultaneously, in real time.</em></h3>
             <p class="say">Each eligible client receives their own bundle of recommended buy and sell orders. It is checked for regulatory, professional and operational suitability when the recommendation is created and sent, and again in real time when the client opens it.</p>
             <div class="st-2">
@@ -2608,11 +2663,11 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
           </div>
 
           <div class="stg" id="st5">
-            <span class="k">05 · Trade-All™ · Mobile SDK</span>
+            <span class="k">04 · Trade-All™</span>
             <h3>One tap to Trade-All™, <em>in the app they already use.</em></h3>
             <p class="say">After reviewing the recommended bundle, its effect on the portfolio, the commissions and the required disclosure, the client approves the entire bundle in one action. No order is sent to the market without the client's consent.</p>
             <div class="st-2">
-              <div class="st-tile mint"><div class="hm-phone"><div class="scr"><canvas class="hm-burst-phone" width="300" height="560" aria-hidden="true"></canvas><div class="time"><small>23 June</small>11:28</div><div class="notif"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#061A1A" stroke-width="2"><path d="M4 14l5-5 4 4 7-7"></path></svg></span><div><b>Your advisor</b><span>Hi Dave, a new recommendation is ready. One tap to Trade-All™.</span></div></div></div></div></div>
+              <div class="st-tile mint"><div class="hm-phone"><div class="scr"><canvas class="hm-burst-phone" width="300" height="560" aria-hidden="true"></canvas><div class="time"><small>23 June</small>11:28</div><div class="notif"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#061A1A" stroke-width="2"><path d="M4 14l5-5 4 4 7-7"></path></svg></span><div><b>Your trading app</b><span>Hi Daniel, a new recommendation is ready. One tap to Trade-All™.</span></div></div></div></div></div>
               <ul class="st-list">
                 <li><b>Inside your app</b>Through the Mobile SDK, the client's screens sit in your trading app: the recommendation, the order bundle details, the recommendation history and the approval.</li>
                 <li><b>Your login</b>Clients enter through your app, under its own sign-in.</li>
@@ -2623,23 +2678,23 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
           </div>
 
           <div class="stg" id="st6">
-            <span class="k">06 · Trade-All™ order orchestration</span>
+            <span class="k">05 · Algorithmic execution · Trade-All™ order orchestration</span>
             <h3>Orchestrated and supervised, <em>with no human intervention.</em></h3>
             <p class="say">The approval activates Trade-All™. It automatically manages sending the sell and buy orders to the market, setting their sequence against the portfolio in real time, under all the controls above.</p>
             <div class="st-ways">
               <div><b>Dependencies managed</b><p>Waiting for a sale before a purchase, and making sure each action follows the current state of the account and the results of the actions before it.</p></div>
               <div><b>Execution tracked in real time</b><p>Responding to events and edge cases: partial executions, rejections, changes in buying power, different currencies and trading hours.</p></div>
               <div><b>Multi-layer control</b><p>Cross-checks information from independent sources and controls both the trading process and the control layers themselves, to detect and block failures before orders are sent.</p></div>
-              <div><b>Recovery</b><p>After a disconnection, failure or mismatch, the state of accounts and orders can be synchronised and restored from the start of the trading day.</p></div>
+              <div><b>Recovery</b><p>After a disconnection, failure or mismatch, the state of accounts and orders can be synchronized and restored from the start of the trading day.</p></div>
             </div>
             <a class="alink st-more" data-go="products" data-anchor="iia"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>The technology</a>
           </div>
 
           <div class="stg" id="st7">
-            <span class="k">Across every stage</span>
+            <span class="k">06 · Advice documentation &amp; trade reporting</span>
             <h3>Governed and followed, <em>end to end.</em></h3>
             <div class="st-2">
-              <div class="pz-g hi" style="background:var(--tile-mint)"><h4>Compliance, control and documentation</h4><p>Built into the advised-trading cycle, not a check at the end: it controls the move from stage to stage, cross-checks portfolios against regulatory limits when the recommendation is created and again when it is opened, and keeps full documentation.</p><a class="alink" data-go="products" data-anchor="compliance" style="margin-top:16px"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>The advice record</a></div>
+              <div class="pz-g hi" style="background:var(--tile-mint)"><h4>Compliance, control and documentation</h4><p>Built into the Advised-trading cycle, not a check at the end: it controls the move from stage to stage, cross-checks portfolios against regulatory limits when the recommendation is created and again when it is opened, and keeps full documentation.</p><a class="alink" data-go="products" data-anchor="compliance" style="margin-top:16px"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>The Advice Protocol</a></div>
               <div class="pz-g"><h4>Management and advisor consoles</h4><p>Status dashboards for every recommendation and its orders, per client and in aggregate. All the data in the system is made available for in-depth business analysis.</p></div>
             </div>
           </div>
@@ -2677,7 +2732,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
     <div class="wrap">
       <div class="rev" id="iia" style="margin-top:clamp(48px,6vw,80px)">
         <span class="eyebrow">The technology</span>
-        <h2 style="max-width:24ch;margin-bottom:12px">Two components that make advised-trading possible at scale.</h2>
+        <h2 style="max-width:24ch;margin-bottom:12px">Two components that make Advised-trading possible at scale.</h2>
         <p class="lede" style="margin-bottom:28px">One creates the recommendations, the other executes them.&nbsp;</p>
 
         <div class="award">
@@ -2699,11 +2754,11 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
         <div id="compliance">
           <span class="eyebrow plain">Compliance, built in</span>
           <h2 style="margin-bottom:20px">Suitability checked before it is sent. Documented before anyone asks.</h2>
-          <p class="body-dim">Every recommendation is verified against each client's risk profile, holdings, cash and credit before it reaches them. Where it does not fit, it is filtered out, not softened. The reasoning, the checks and the fills are recorded as they happen, so the file is already written when the supervisor wants it. Personalised advice at retail scale, with no exception queue at the end of the day.</p>
+          <p class="body-dim">Every recommendation is verified against each client's risk profile, holdings, cash and credit before it reaches them. Where it does not fit, it is filtered out, not softened. The reasoning, the checks and the fills are recorded as they happen, so the file is already written when the supervisor wants it. Personalized advice at retail scale, with no exception queue at the end of the day.</p>
         </div>
         <div class="pf-rec-col">
-          <div class="pf-rec" role="img" aria-label="The advice record kept for every recommendation: house view, advisor reasoning, suitability check, client approval, execution, retained for review">
-            <div class="pf-rec-top"><span class="pf-rec-l">Advice record</span><span class="pf-rec-s">per client · per recommendation</span></div>
+          <div class="pf-rec" role="img" aria-label="The Advice Protocol kept for every recommendation: house view, advisor reasoning, suitability check, client approval, execution, retained for review">
+            <div class="pf-rec-top"><span class="pf-rec-l">Advice Protocol</span><span class="pf-rec-s">per client · per recommendation</span></div>
             <ul>
               <li><span class="k">House view</span><span class="v">Set by the head of advisory</span><span class="t">✓</span></li>
               <li><span class="k">Reasoning</span><span class="v">Written by the advisor, attached</span><span class="t">✓</span></li>
@@ -2726,11 +2781,12 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       <span class="eyebrow">Add-ons</span>
       <h2>Add what <em>your service needs.</em></h2>
       <p class="lede" style="margin-top:18px">Optional modules that run on top of the Finnovest Core operating system and share its data, its compliance layer and its Trade-All™ execution.</p>
-      <div class="pc-grid" style="grid-template-columns:repeat(2,1fr)">
+      <div class="pc-grid pc-5">
         <div class="pc teal"><h4>Investor onboarding and profiling</h4><p>Finnovest Profiler manages the lifecycle of the advised client: from the needs questionnaire and setting the risk level, through signing the advisory agreement, to managing the profile's validity and renewal throughout the client's life.</p><details class="pc-more"><summary><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span><span class="t-more">More</span><span class="t-less">Less</span></summary><ul class="pc-pts"><li>A needs questionnaire you define and manage, with your compliance team able to update it over time</li><li>A proprietary algorithm that recommends a risk level according to your policy</li><li>A fully digital process in your app, including signing the advisory agreement</li><li>Validity, alerts, reminders and a short renewal process for existing clients</li></ul><p style="margin-top:10px">Eligibility for advice is checked as part of creating every recommendation. A client without a valid profile, or who does not meet your conditions, cannot receive one.</p></details></div>
         <div class="pc lilac"><h4>AI advisory conversation</h4><p>An LLM-based AI layer that lets the client hold a free, personal conversation with your house advisor, without handing the AI responsibility for producing the advice.</p><details class="pc-more"><summary><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span><span class="t-more">More</span><span class="t-less">Less</span></summary><p>The client can talk about their own portfolio, understand why a recommendation was created and what is expected to change, and ask about risk, purchases, sales and the meaning of not acting, all from your house view and your approved professional content and research.</p><p style="margin-top:10px">The AI is not the recommendation engine. Recommendations are still created by the Finnovest Core operating system's algorithms, suitability rules and controls, according to your policy and professional position. The LLM manages the conversation; the client approves once, and Trade-All™ manages the whole bundle.</p></details></div>
         <div class="pc lime"><h4>Long-term savings</h4><p>Advised-trading for long-term savings. Your investment view becomes a personal recommendation for every account, approved in the app in one tap.</p><details class="pc-more"><summary><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span><span class="t-more">More</span><span class="t-less">Less</span></summary><p>Self-directed long-term savings are growing from a niche product into a real alternative for savers who want more control, transparency and flexibility. But self-direction also hands the client the responsibility for investment decisions and for carrying them out.</p><p style="margin-top:10px">Each recommendation follows the client's characteristics, the portfolio's structure, the product's limits and the relevant regulation, with the same One-to-Many and Trade-All™ approach. The client keeps the control and flexibility of managing their own savings, with a professional, personal and digital framework for their decisions.</p></details></div>
-        <div class="pc mint"><h4>Complete white-label app</h4><p>A full mobile app that combines all of Finnovest's capabilities, under your brand: independent trading and advised-trading in one app, for institutions that do not have an app of their own.</p><a class="alink" data-go="products" data-anchor="int-app"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>See it as an integration</a></div>
+        <div class="pc teal"><h4>White-label mobile SDK</h4><p>Advised-trading becomes a second way to trade, inside the app your clients already use.</p><a class="alink" data-go="products" data-anchor="int-sdk"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>See it as a deployment model</a></div>
+        <div class="pc mint"><h4>Complete white-label app</h4><p>A full mobile app that combines all of Finnovest's capabilities, under your brand: independent trading and Advised-trading in one app, for institutions that do not have an app of their own.</p><a class="alink" data-go="products" data-anchor="int-app"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>See it as a deployment model</a></div>
       </div>
     </div>
   </div>
@@ -2738,7 +2794,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
   <!-- 4. INTEGRATION -->
   <div class="band lt lt2" id="integration">
     <div class="wrap">
-      <span class="eyebrow">Integration</span>
+      <span class="eyebrow">Deployment models</span>
       <h2>Three ways to <em>connect it.</em></h2>
       <p class="lede" style="margin-top:18px">The Finnovest Core operating system is the same in every case. What changes is where it plugs in, and that depends on what you already run.</p>
       <div class="px-arch" role="img" aria-label="Finnovest Core connects to the institution's trading system, market data, client and portfolio data, single sign-on, CRM, documentation and compliance systems, and monitoring and logs. It reaches clients through your app with the Mobile SDK and push notifications, and your teams through the advisor and management consoles in the browser.">
@@ -2773,48 +2829,48 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 
       <div class="int rev" id="int-systems">
         <div class="txt">
-          <div class="prod-depth">Into your core systems</div>
-          <h3>Systems integration</h3>
+          <div class="prod-depth">01 · Finnovest Connect · Into your core systems</div>
+          <h3>Private deployment</h3>
           <p class="hook">The Finnovest Core operating system runs inside your environment, connected to the systems behind your service.</p>
           <ul class="prod-pts">
             <li>Connects to your core banking, order management, market data and single sign-on</li>
             <li>Recommendations, documentation and system logs flow back to your CRM, compliance and monitoring systems</li>
             <li>Your clients see it in your own front end, or through the Mobile SDK under your brand</li>
           </ul>
-          <div class="best"><span>Works best for</span><a class="alink" data-go="sol-banks"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>Banks</a></div>
+          <div class="best"><span>Best for</span><a class="alink" data-go="sol-banks"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>banks running their own systems and channels</a></div>
         </div>
-        <div class="hm-tile lime"><div class="hm-ui" style="width:74%"><div class="hd">Advisory desk · one recommendation</div><div class="row"><div><b>Buy</b> Alphabet Inc<small>49 × $331.65</small></div><span>$16,250</span></div><div class="row sel"><div><b>Sell</b> iShares MSCI GLB<small>Funding strategy, chosen per client</small></div><span>$16,596</span></div><div class="hm-chk"><i><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"></path></svg></i>Routed through your order management</div><div class="row" style="border:0"><small>Runs in your environment</small></div></div></div>
+        <div class="hm-tile lime"><div class="vh-dep"><div class="vh-dep-top"><span class="vh-dep-dot"></span>Advisor console<span>New recommendation</span></div><div class="vh-dep-t">Increase exposure to global technology</div><div class="vh-dep-s">Funding: reduce each client's most overweight holding</div><div class="vh-dep-row"><span>Eligible investors</span><b>13,452</b></div><div class="vh-dep-row"><span>Personalized bundles</span><b>13,452</b></div><div class="vh-dep-ok"><i></i>Sent to 13,452 investors</div></div></div>
       </div>
 
       <div class="int flip rev" id="int-sdk">
         <div class="txt">
-          <div class="prod-depth">Into your existing app</div>
-          <h3>SDK integration</h3>
+          <div class="prod-depth">02 · Finnovest Embedded · Into your existing app</div>
+          <h3>White-label mobile SDK</h3>
           <p class="hook">Advised-trading becomes a second way to trade, inside the app your clients already use.</p>
           <ul class="prod-pts">
             <li>The Finnovest Core operating system connects to your trading system and market data; the Mobile SDK places the advisory screens inside your app</li>
             <li>Advised-trading sits next to independent trading, and the client chooses which to use, every time</li>
             <li>Your login, your brand, your execution: no second app and no second login</li>
           </ul>
-          <div class="best"><span>Works best for</span><a class="alink" data-go="sol-brokerages"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>Brokerages</a></div>
+          <div class="best"><span>Best for</span><a class="alink" data-go="sol-brokerages"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>brokerages whose clients already trade in their app</a></div>
         </div>
-        <div class="hm-tile sage"><div class="hm-phone"><div class="scr"><canvas class="hm-burst-phone" width="300" height="560" aria-hidden="true"></canvas><div class="time"><small>23 June</small>11:28</div><div class="notif"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#061A1A" stroke-width="2"><path d="M4 14l5-5 4 4 7-7"></path></svg></span><div><b>Your advisor</b><span>Hi Dave, a new recommendation is ready. One tap to Trade-All™.</span></div></div></div></div></div>
+        <div class="hm-tile teal"><div class="vh-dep vh-app"><div class="vh-app-bar"><span class="vh-app-av">D</span><span class="vh-app-nm">Your trading app</span><span class="vh-app-bell"></span></div><div class="vh-app-tabs"><span>Portfolio</span><span class="on">Advice</span><span>Markets</span></div><div class="vh-app-card"><div class="vh-dep-hi">Hi <span>Daniel</span>,</div><div class="vh-dep-l">a new recommendation is ready</div><div class="vh-dep-t2">Increase exposure to global technology</div><div class="vh-dep-why">Read reasoning<i></i></div><div class="vh-dep-ta">Trade-All™</div></div></div></div>
       </div>
 
       <div class="int rev" id="int-app">
         <div class="txt">
-          <div class="prod-depth">As your own app</div>
+          <div class="prod-depth">03 · Finnovest Complete · As your own app</div>
           <h3>White-label app</h3>
           <p class="hook">A complete trading app under your brand, with Core already inside.</p>
           <ul class="prod-pts">
-            <li>Independent trading and advised-trading in one app: clients trade on their own judgement, or on your advisors' recommendation in one tap</li>
+            <li>Independent trading and Advised-trading in one app: clients trade on their own judgement, or on your advisors' recommendation in one tap</li>
             <li>The Finnovest Core operating system and the app come together and are hosted by us, so there is no app of your own to build or connect</li>
             <li>Bring your own licensed advisors, or connect to one already on the platform</li>
           </ul>
           <span class="also">Also offered as an add-on. <a data-go="products" data-anchor="addons">See Add-ons</a></span>
-          <div class="best"><span>Works best for</span><a class="alink" data-go="sol-wealth"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>Wealth managers</a></div>
+          <div class="best"><span>Best for</span><a class="alink" data-go="sol-wealth"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>institutions without an app of their own, or without in-house advisors</a></div>
         </div>
-        <div class="hm-tile mint"><div class="hm-ui" style="width:74%"><div class="row" style="border:0;padding-top:16px"><b style="font-size:1.1rem">Your brand</b><span class="hm-chip">Independent + advised</span></div><div class="hm-chk"><i><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"></path></svg></i>Trade on your own judgement</div><div class="hm-chk"><i><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"></path></svg></i>Act on your advisor's recommendation</div><div class="hm-chk soft"><i><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"></path></svg></i>Hosted by Finnovest</div><div style="height:14px"></div></div></div>
+        <div class="hm-tile mint"><div class="vh-dep"><div class="vh-dep-meta">Your orders, Daniel</div><div class="vh-dep-o sell"><span>Sell</span><em>Israeli index fund</em><b>$4,000</b><i></i></div><div class="vh-dep-o buy"><span>Buy</span><em>Global tech ETF</em><b>$4,500</b><i></i></div><div class="vh-dep-win"><i></i><div><b>Recommendation and trade documented</b><small>Suitability checked · recorded</small></div></div></div></div>
       </div>
     </div>
   </div>
@@ -2826,29 +2882,33 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
         <div>
           <span class="eyebrow">Find your fit</span>
           <h2>Not sure which fits? <em>Tick what you have.</em></h2>
-          <p class="body-dim" style="max-width:44ch;margin-top:18px">Three questions about what is already in place. We will show you the integration that fits, and why it works for institutions like yours.</p>
-          <p class="body-dim" style="max-width:44ch;margin-top:14px">Or skip the questions and talk to us.</p>
-          <div style="margin-top:22px"><button class="btn btn-ghost btn-sm" data-go="contact">Book a demo<span class="wipe" aria-hidden="true"><i></i><i></i><i></i></span></button></div>
+          <p class="body-dim" style="max-width:44ch;margin-top:18px">Three questions about what is already in place. We will show you the deployment model that fits, and why it works for institutions like yours.</p>
+          <div style="margin-top:26px"><button class="btn btn-mint" type="button" id="qz-open">Find my fit<span class="wipe" aria-hidden="true"><i></i><i></i><i></i></span></button></div>
         </div>
-      <div class="qz" id="qz" style="margin-top:0">
-        <div class="t">Find your fit</div><small style="color:var(--slate-dim)">Tick what is already in place.</small>
+      <div class="qz" id="qz" style="margin-top:0" hidden="">
+        <div class="t">Tick what is already in place.</div>
         <label><input type="checkbox" value="advisors"><span><b>Licensed advisors of your own</b><small>Investment advisors or wealth managers, under your licence</small></span></label>
         <label><input type="checkbox" value="core"><span><b>Core banking and order management of your own</b><small>Your own core banking and order management systems</small></span></label>
         <label><input type="checkbox" value="app"><span><b>A trading app your clients already use</b><small>Independent trading under your brand</small></span></label>
         <button class="btn btn-mint btn-sm" type="button" id="qz-go" style="margin-top:16px">Show my fit<span class="wipe" aria-hidden="true"><i></i><i></i><i></i></span></button>
         <div class="res" id="qz-res"><small style="color:var(--slate-dim)">Your fit</small><br><b id="qz-name"></b><p id="qz-why"></p>
+          <div style="margin:0 0 16px"><button class="btn btn-sm" type="button" id="qz-contact" data-go="contact" style="background:#07282A;color:#fff">Contact us for more details<span class="wipe" aria-hidden="true"><i></i><i></i><i></i></span></button></div>
           <div class="links"><a class="alink" id="qz-sol"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span><span></span></a><a class="alink" id="qz-int"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span><span></span></a></div>
         </div>
       </div>
       <script>
       (function(){
         var R={
-          sys:{n:'Finnovest Connect',w:'Core plugs into your core banking and order management. Your clients use your own front end, or the Mobile SDK under your brand.',s:'Why it fits banks',sh:'sol-banks',i:'int-systems'},
-          sdk:{n:'Finnovest Embedded',w:'Core connects to your trading system and the SDK adds Advised-trading to the app your clients already use.',s:'Why it fits brokerages',sh:'sol-brokerages',i:'int-sdk'},
-          app:{n:'Finnovest Complete',w:'Our complete app under your brand, with the Finnovest Core operating system inside. Without advisors of your own, you connect to one already on the platform.',s:'Why it fits wealth managers',sh:'sol-wealth',i:'int-app'}};
+          sys:{n:'Finnovest Connect',w:'Core plugs into your core banking and order management. Your clients use your own front end, or the Mobile SDK under your brand.',s:'Why it fits banks',sh:'sol-banks',i:'int-systems',c:1},
+          sdk:{n:'Finnovest Embedded',w:'Core connects to your trading system and the SDK adds Advised-trading to the app your clients already use.',s:'Why it fits brokerages',sh:'sol-brokerages',i:'int-sdk',c:2},
+          app:{n:'Finnovest Complete',w:'Our complete app under your brand, with the Finnovest Core operating system inside. Without advisors of your own, you connect to one already on the platform.',s:'Why it fits wealth managers',sh:'sol-wealth',i:'int-app',c:3}};
+        var cur=null;
+        document.getElementById('qz-open').onclick=function(){this.parentNode.hidden=true;var q=document.getElementById('qz');q.hidden=false;var f=q.querySelector('input');if(f)f.focus();};
+        /* hand over to Contact: Partnerships tab, with the fit already chosen */
+        document.getElementById('qz-contact').onclick=function(){var t=document.querySelector('.tab[data-tab="biz"]');if(t)t.click();var s=document.getElementById('c-type');if(s&&cur)s.selectedIndex=cur.c;};
         document.getElementById('qz-go').onclick=function(){
           var h={};document.querySelectorAll('#qz input:checked').forEach(function(x){h[x.value]=1});
-          var k=!h.advisors?'app':h.app?'sdk':h.core?'sys':'app',r=R[k];
+          var k=!h.advisors?'app':h.app?'sdk':h.core?'sys':'app',r=R[k];cur=r;
           document.getElementById('qz-name').textContent=r.n;document.getElementById('qz-why').textContent=r.w;
           var s=document.getElementById('qz-sol');s.lastChild.textContent=r.s;s.setAttribute('data-go',r.sh);
           var i=document.getElementById('qz-int');i.lastChild.textContent='How it connects';i.setAttribute('data-go','products');i.setAttribute('data-anchor',r.i);
@@ -3788,12 +3848,12 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
               <div><label for="c-firm">Firm</label><input id="c-firm" type="text" placeholder="Company"></div>
             </div>
             <div><label for="c-email">Work email</label><input id="c-email" type="email" placeholder="you@yourfirm.com"></div>
-            <div id="biz-only" style="display: none;"><label for="c-type">Which install are you considering?</label>
+            <div id="biz-only" style="display: none;"><label for="c-type">Which deployment model are you considering?</label>
               <select id="c-type">
                 <option>Not sure yet, help me choose</option>
-                <option>Systems integration · into our core systems</option>
-                <option>SDK integration · into our existing app</option>
-                <option>White-label app · our own branded app</option>
+                <option>Finnovest Connect · into our core systems</option>
+                <option>Finnovest Embedded · into our existing app</option>
+                <option>Finnovest Complete · our own branded app</option>
               </select>
             </div>
             <div><label for="c-msg">What are you trying to solve?</label><textarea id="c-msg" placeholder="A sentence or two is plenty."></textarea></div>
@@ -4859,4 +4919,5 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
   run(gen);
 })();
 </script>
+
 </body></html>

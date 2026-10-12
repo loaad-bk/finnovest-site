@@ -504,6 +504,53 @@ function Send-Response($stream, [int]$status, [string]$type, [byte[]]$body) {
   $stream.Flush()
 }
 
+# Static files under assets/ (the hero videos, any image kept as a file). Read-only.
+# Range requests are honoured so the browser can seek inside a clip. A ranged reply is
+# capped at 256 KB and writes time out after 3 s: this server handles one request at a
+# time, and a browser that stops reading a video mid-download must never be able to
+# stall autosave and commit behind it. The browser simply asks for the next piece.
+function Send-File($stream, [string]$path, [string]$range) {
+  $ext  = [System.IO.Path]::GetExtension($path).ToLower()
+  $type = switch ($ext) {
+    '.mp4'  {'video/mp4'}  '.webm' {'video/webm'} '.png'  {'image/png'}  '.jpg' {'image/jpeg'} '.jpeg' {'image/jpeg'}
+    '.webp' {'image/webp'} '.gif'  {'image/gif'}  '.svg'  {'image/svg+xml'} '.woff2' {'font/woff2'}
+    '.css'  {'text/css; charset=utf-8'} '.js' {'text/javascript; charset=utf-8'} '.json' {'application/json'}
+    default {'application/octet-stream'}
+  }
+  $fs = [System.IO.File]::Open($path, [System.IO.FileMode]::Open, [System.IO.FileAccess]::Read, [System.IO.FileShare]::ReadWrite)
+  try {
+    [long]$len = $fs.Length; [long]$from = 0; [long]$to = $len - 1; $status = 200
+    if ($range -match '^bytes=(\d*)-(\d*)$' -and $len -gt 0) {
+      if ($Matches[1] -ne '') {
+        $from = [long]$Matches[1]
+        if ($Matches[2] -ne '') { $to = [Math]::Min([long]$Matches[2], $len - 1) }
+      } elseif ($Matches[2] -ne '') { $from = [Math]::Max([long]0, $len - [long]$Matches[2]) }
+      if ($from -le $to) { $status = 206; $to = [Math]::Min($to, $from + 262144 - 1) } else { $from = 0; $to = $len - 1 }
+    }
+    [long]$count = $to - $from + 1
+    $head = "HTTP/1.1 $status $(if ($status -eq 206) { 'Partial Content' } else { 'OK' })`r`n" +
+            "Content-Type: $type`r`n" +
+            "Content-Length: $count`r`n" +
+            "Accept-Ranges: bytes`r`n" +
+            $(if ($status -eq 206) { "Content-Range: bytes $from-$to/$len`r`n" } else { '' }) +
+            "Cache-Control: no-store`r`n" +
+            "Connection: close`r`n`r`n"
+    $hb = [Text.Encoding]::ASCII.GetBytes($head)
+    try {
+      $stream.WriteTimeout = 3000
+      $stream.Write($hb, 0, $hb.Length)
+      $fs.Position = $from
+      $buf = New-Object byte[] 65536
+      while ($count -gt 0) {
+        $n = $fs.Read($buf, 0, [int][Math]::Min([long]$buf.Length, $count))
+        if ($n -le 0) { break }
+        $stream.Write($buf, 0, $n); $count -= $n
+      }
+      $stream.Flush()
+    } catch { }   # the browser dropped or paused the download; it will ask again
+  } finally { $fs.Dispose() }
+}
+
 function Json([hashtable]$o) { [Text.Encoding]::UTF8.GetBytes(($o | ConvertTo-Json -Compress)) }
 
 # ---------------------------------------------------------------- commit handler
@@ -709,6 +756,20 @@ try {
             Send-Response $stream 200 'application/json' (Json $res)
             if ($res.nochange) { Log "POST /revert - nothing to revert" 'DarkGray' }
             else { Log "POST /revert -> index.html restored to $($res.sha)" 'Green' }
+          }
+          break
+        }
+
+        '^GET /assets/' {
+          # Only real files inside the assets folder; anything else is a 404.
+          $rel  = [System.Uri]::UnescapeDataString((($req.Path -replace '\?.*$','') -replace '^/',''))
+          $root = [System.IO.Path]::GetFullPath((Join-Path $repo 'assets')) + [System.IO.Path]::DirectorySeparatorChar
+          $full = [System.IO.Path]::GetFullPath((Join-Path $repo $rel))
+          if ($full.StartsWith($root, [System.StringComparison]::OrdinalIgnoreCase) -and (Test-Path -LiteralPath $full -PathType Leaf)) {
+            $rg = ''; if ($req.Headers.ContainsKey('range')) { $rg = $req.Headers['range'] }
+            Send-File $stream $full $rg
+          } else {
+            Send-Response $stream 404 'text/plain; charset=utf-8' ([Text.Encoding]::UTF8.GetBytes('Not found'))
           }
           break
         }

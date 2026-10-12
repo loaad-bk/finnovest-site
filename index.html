@@ -1886,6 +1886,78 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 #vh .vh-pin .vh-pin-e .bar { flex: 0 0 100%; height: 3px; margin: 0 0 8px; border-radius: 2px; background: rgba(255,255,255,0.16); }
 #vh .vh-pin .vh-pin-e .bar i { transition: width 1.2s cubic-bezier(.2,.8,.2,1); }
 #vh .vh-pin .vh-pin-e b { font-family: var(--vh-body); font-weight: 600; font-size: 15px; color: #fff; }
+/* Hero film in the Hagar 9.10 design (12 Oct 2026), from 901px wide; phones keep the earlier film look. Natural video colour, light glass boxes, white Trade-All button, blurred desk clip behind the advisor console. Kept by decision: investor names in their own colour, the Read reasoning arrow and the tap ring in that same colour, the pause button. Not used: colour washes, dot bursts, phone line and dot, closing lines. */
+#vh .vh-shade { display: none; }
+#vh .vh-closing { display: none; }
+@property --vh-cb { syntax: '<color>'; inherits: false; initial-value: rgba(46,229,157,0.7); }
+@media (min-width: 901px) {
+  #vh .vh-shade { display: block; position: absolute; inset: 0; z-index: -3; pointer-events: none; background: #000; opacity: 0.5; }
+  #vh .vh-mood, #vh .vh-colorize, #vh .vh-glow, #vh .vh-cast, #vh .vh-wipe, #vh canvas.vh-burst, #vh .vh-link, #vh .vh-src { display: none !important; }
+  #vh .vh-tint { background: linear-gradient(90deg, rgba(0,0,0,0.38) 0%, rgba(0,0,0,0.14) 38%, rgba(0,0,0,0) 62%) !important; }
+  #vh .vh-vids video { filter: none !important; transform: none !important; }
+  #vh .vh-vids video#vh-v3 { filter: blur(14px) saturate(0.9) brightness(0.95) !important; transform: scale(1.08) !important; }
+  #vh.dim .vh-copy, #vh.dim .vh-layer, #vh.dim .vh-pin { opacity: 1 !important; filter: none !important; }
+  #vh .vh-copy { padding-top: clamp(72px, 12.9vh, 116px) !important; }
+  #vh .vh-copy > h1 { max-width: min(700px, 50vw); }
+  #vh .vh-glass { background: linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0.08)) !important; color: #ffffff !important; -webkit-backdrop-filter: blur(26px) saturate(150%) brightness(1.04) !important; backdrop-filter: blur(26px) saturate(150%) brightness(1.04) !important; border: 1px solid rgba(255,255,255,0.22) !important; border-radius: 10px !important; box-shadow: inset 0 1px 0 rgba(255,255,255,0.14), 0 10px 30px rgba(0,0,0,0.12) !important; }
+  #vh .vh-top { color: rgba(255,255,255,0.7) !important; font-weight: 500; font-size: 10.5px; }
+  #vh .vh-top span:last-child { color: rgba(255,255,255,0.5) !important; }
+  #vh .vh-dot { background: #ffffff !important; box-shadow: none !important; animation: none !important; }
+  #vh .vh-cn-title { font-family: 'Inter', system-ui, sans-serif !important; color: #ffffff !important; font-weight: 400 !important; letter-spacing: -0.01em; font-size: 15.5px !important; }
+  #vh .vh-console { width: 292px !important; padding: 14px 16px 12px !important; --vh-cb: rgba(46,229,157,0.7); border: 1px solid var(--vh-cb) !important; }
+  #vh .vh-cn-sub, #vh .vh-cn-row, #vh .vh-cn-status { color: rgba(255,255,255,0.65) !important; }
+  #vh .vh-cn-row b { color: #ffffff !important; font-family: 'Inter', system-ui, sans-serif !important; font-size: 18px !important; font-weight: 500 !important; }
+  #vh .vh-cn-row, #vh .vh-cn-status { border-top: 1px solid rgba(255,255,255,0.12) !important; }
+  #vh .vh-cn-status i { border-color: rgba(255,255,255,0.25) !important; border-top-color: #ffffff !important; }
+  #vh .vh-cn-status.done { color: #2EE59D !important; }
+  #vh .vh-cn-status.done i { background: #2EE59D !important; border-color: #2EE59D !important; }
+  #vh .vh-cn-status.done i::after { border-color: #07282A !important; }
+  #vh .vh-thread { -webkit-mask-image: none !important; mask-image: none !important; }
+  #vh .vh-meta { color: rgba(255,255,255,0.8) !important; font-size: 10.5px !important; text-shadow: 0 1px 6px rgba(0,0,0,0.3); }
+  #vh .vh-meta b { color: #ffffff !important; font-weight: 500 !important; }
+  #vh .vh-ic { background: transparent !important; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.7) !important; }
+  #vh .vh-av { background: rgba(255,255,255,0.9) !important; color: #101616 !important; }
+  #vh .vh-bub { padding: 12px 14px !important; }
+  #vh .vh-hi { font-family: 'Inter', system-ui, sans-serif !important; color: #ffffff !important; font-weight: 400 !important; font-size: 14.5px !important; }
+  #vh .vh-hi span { color: var(--vh-accent) !important; }
+  #vh .vh-lbl { color: rgba(255,255,255,0.6) !important; font-size: 11.5px !important; }
+  #vh .vh-ttl { font-family: 'Inter', system-ui, sans-serif !important; color: #ffffff !important; font-weight: 500 !important; font-size: 13.5px !important; letter-spacing: -0.01em; }
+  #vh .vh-why { border-top: 1px solid rgba(255,255,255,0.14) !important; color: rgba(255,255,255,0.8) !important; font-size: 11.5px !important; }
+  #vh .vh-why i { background: transparent !important; box-shadow: inset 0 0 0 1px var(--vh-accent) !important; }
+  #vh .vh-why i::after { border-color: var(--vh-accent) !important; }
+  #vh .vh-o { background: transparent !important; color: #ffffff !important; border-radius: 0 !important; border-top: 1px solid rgba(255,255,255,0.1) !important; font-size: 12px !important; }
+  #vh .vh-o:first-child { border-top: 0 !important; }
+  #vh .vh-o .side { border-radius: 4px !important; font-size: 10px !important; font-weight: 600 !important; }
+  #vh .vh-o.sell .side { background: rgba(255,92,72,0.22) !important; color: #FFB7AA !important; }
+  #vh .vh-o.buy .side { background: rgba(52,211,130,0.22) !important; color: #A6F2C9 !important; }
+  #vh .vh-o .amt { color: rgba(255,255,255,0.85) !important; }
+  #vh .vh-o .st { border-color: rgba(255,255,255,0.3) !important; }
+  #vh .vh-o[data-s="work"] .st { border-color: rgba(255,255,255,0.2) !important; border-top-color: #ffffff !important; }
+  #vh .vh-o[data-s="done"] .st { background: #ffffff !important; border-color: #ffffff !important; }
+  #vh .vh-o[data-s="done"] .st::after { border-color: #101616 !important; }
+  #vh .vh-ta { height: 50px !important; border-radius: 8px !important; background: #ffffff !important; color: #0C1111 !important; font: 600 15.5px/1 'Inter', system-ui, sans-serif !important; box-shadow: 0 12px 32px rgba(0,0,0,0.28), 0 2px 6px rgba(0,0,0,0.12) !important; border: 0 !important; }
+  #vh .vh-ta .lab { color: #0C1111 !important; }
+  #vh .vh-ta.busy { background: #ffffff !important; }
+  #vh .vh-ta .fill { background: rgba(12,17,17,0.08) !important; }
+  #vh .vh-ring { height: 50px; border-radius: 10px; border-color: var(--vh-accent); }
+  #vh .vh-hint { color: rgba(255,255,255,0.75) !important; }
+  #vh .vh-bub.win { background: linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0.08)) !important; color: #ffffff !important; border: 1px solid rgba(255,255,255,0.22) !important; }
+  #vh .vh-bub.win b { color: #ffffff !important; font-weight: 500 !important; }
+  #vh .vh-bub.win small { color: rgba(255,255,255,0.6) !important; }
+  #vh .vh-ok { background: #ffffff !important; box-shadow: none !important; }
+  #vh .vh-ok::after { border-color: #101616 !important; }
+}
+/* the large advisor console over the blurred desk needs room beside the copy, so it starts at 1240px wide */
+@media (min-width: 1240px) {
+  #vh .vh-console { width: 440px !important; padding: 22px 24px 18px !important; right: 150px !important; bottom: auto !important; top: 190px !important; margin: 0 !important; }
+  #vh .vh-console .vh-top { font-size: 12.5px !important; margin-bottom: 10px; }
+  #vh .vh-console .vh-cn-title { font-size: 24px !important; line-height: 1.2 !important; }
+  #vh .vh-console .vh-cn-sub { font-size: 14px !important; margin: 6px 0 14px !important; }
+  #vh .vh-console .vh-cn-row { font-size: 14.5px !important; padding: 12px 0 !important; }
+  #vh .vh-console .vh-cn-row b { font-size: 30px !important; }
+  #vh .vh-console .vh-cn-status { font-size: 14px !important; padding-top: 12px !important; }
+  #vh.sending .vh-copy { opacity: 1 !important; }
+}
 
 /* bubbles beside each person's own phone */
 #vh .vh-layer { position: absolute; inset: 0; z-index: 3; pointer-events: none; transition: opacity 0.4s ease; }
@@ -2269,8 +2341,9 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       <video id="vh-v0" src="assets/hero/investor-1.mp4" muted="" loop="" playsinline="" preload="auto" style="filter: saturate(1.15) contrast(1.08) hue-rotate(-10deg) brightness(0.92);"></video>
       <video id="vh-v1" src="assets/hero/investor-2.mp4" muted="" loop="" playsinline="" preload="metadata" style="filter: sepia(0.3) saturate(1.2) brightness(0.95);"></video>
       <video id="vh-v2" src="assets/hero/investor-3.mp4" muted="" loop="" playsinline="" preload="metadata" class="on" style="filter: saturate(0.7) contrast(0.95) brightness(0.96);"></video>
+      <video id="vh-v3" src="assets/hero/advisor-desk.mp4" muted="" loop="" playsinline="" preload="auto"></video>
     </div>
-    <div class="vh-mood"></div><div class="vh-colorize"></div><div class="vh-glow"></div><div class="vh-tint"></div>
+    <div class="vh-mood"></div><div class="vh-colorize"></div><div class="vh-glow"></div><div class="vh-shade"></div><div class="vh-tint"></div>
     <div class="vh-cast spot" id="vh-cast"></div>
     <canvas class="vh-burst" id="vh-burst" aria-hidden="true" width="2032" height="900"></canvas>
     <div class="vh-wipe go" id="vh-wipe"></div>
@@ -4700,7 +4773,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       orders: [['Sell', 'Government bond fund', 5000], ['Buy', 'Global tech ETF', 2000], ['Buy', 'Global dividend fund', 3000]] }
   ];
   var ELIG = 13452, EXEC = [1166, 2332, 3498];
-  var vids = [0, 1, 2].map(function (i) { return $('vh-v' + i); });
+  var vids = [0, 1, 2, 3].map(function (i) { return $('vh-v' + i); });
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var fmt = function (n) { return '$' + n.toLocaleString('en-US'); };
   var setVar = function (k, v) { hero.style.setProperty(k, v); };
@@ -4814,26 +4887,29 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
     $('vh-elig').textContent = '0'; $('vh-bund').textContent = '0'; execNow = 0; showExec(0);
     $('vh-status').classList.remove('done'); $('vh-stat').textContent = 'Matching against every client book';
     setVar('--vh-mood', '#0E5A52'); pin.classList.remove('on');
+    showVideo(3, { start: 0, vf: 'blur(14px) saturate(0.9) brightness(0.95)', rate: 1 });
     hero.classList.add('sending'); $('vh-cast').classList.add('spot');
     await wait(150, g);
     c.classList.add('on');
     await wait(450, g);
-    countUp($('vh-elig'), ELIG, 1000);
-    await wait(250, g);
-    await countUp($('vh-bund'), ELIG, 1000);
+    await wait(300, g);
+    countUp($('vh-elig'), ELIG, 1400);
+    await wait(400, g);
+    await countUp($('vh-bund'), ELIG, 1400);
     $('vh-status').classList.add('done'); $('vh-stat').textContent = 'Sent to 13,452 investors';
     burst(c);
-    await wait(800, g);
+    await wait(1800, g);
     var cr = c.getBoundingClientRect(), pr = pin.getBoundingClientRect();
     var dx = (pr.left + pr.width / 2) - (cr.left + cr.width / 2), dy = (pr.top + pr.height / 2) - (cr.top + cr.height / 2), s = Math.min(pr.width / cr.width, 1);
-    c.animate([{ transform: 'none', opacity: 1 }, { transform: 'translate(' + dx + 'px, ' + dy + 'px) scale(' + s + ')', opacity: 0.25 }], { duration: 700, easing: 'cubic-bezier(.65,0,.35,1)', fill: 'forwards' });
+    var T = 'translate(' + dx + 'px, ' + dy + 'px) scale(' + s + ')';
+    c.animate([{ transform: 'none', opacity: 1, '--vh-cb': 'rgba(46,229,157,0.7)' }, { '--vh-cb': 'rgba(255,255,255,0.22)', offset: 0.45 }, { transform: T, opacity: 1, offset: 0.78 }, { transform: T, opacity: 0, '--vh-cb': 'rgba(255,255,255,0.22)' }], { duration: 1100, easing: 'cubic-bezier(.65,0,.35,1)', fill: 'forwards' });
     $('vh-cast').classList.remove('spot');
-    await wait(550, g);
+    await wait(700, g);
     hero.classList.remove('sending'); pin.classList.add('on');
-    await wait(200, g);
-    c.classList.remove('on');
-    await wait(400, g);
-    c.getAnimations().forEach(function (a) { a.cancel(); });
+    await wait(450, g);
+    c.style.visibility = 'hidden'; c.classList.remove('on');
+    await wait(700, g);
+    c.getAnimations().forEach(function (a) { a.cancel(); }); c.style.visibility = '';
   }
 
   async function story(i, g) {
@@ -4908,8 +4984,9 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
     await wait(300, g);
   }
 
+  STORIES.unshift(STORIES.pop());
   async function run(g) {
-    try { var i = 0; while (true) { if (i === 0) await sender(g); await story(i, g); i++; if (i >= STORIES.length) { await closing(g); i = 0; } } }
+    try { var i = 0; while (true) { if (i === 0) await sender(g); await story(i, g); i++; if (i >= STORIES.length) { i = 0; } } }
     catch (e) { if (e !== STOP) console.error(e); }
   }
 

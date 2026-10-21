@@ -2441,15 +2441,6 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 #home .hm-rows .fx-touch1-0 { animation: fw-touch1 14s linear 0ms infinite both; }
 #home .hm-rows .fx-touch2-0 { animation: fw-touch2 14s linear 0ms infinite both; }
 #vh .vh-foot { bottom: 138px !important; }
-/* Lighter, cooler hero grade (21 Oct 2026, previewed as "Hero lighter grade"): no flat black layer, footage lifted and cooled, dark wash only behind the headline, glass darkens what it blurs so white text holds. Restore copy: archive/index-before-hero-lite-2026-10-21.html */
-#vh .vh-shade { background: #0B3A3C; opacity: 0.12; }
-#vh .vh-vids video:not(#vh-v3) { filter: brightness(1.12) saturate(0.78) contrast(0.92) !important; }
-#vh .vh-vids video#vh-v3 { filter: blur(14px) saturate(0.8) brightness(1.1) !important; }
-#vh .vh-cool { position: absolute; inset: 0; z-index: -3; pointer-events: none; background: #7FB3B0; mix-blend-mode: color; opacity: 0.22; }
-#vh .vh-air { position: absolute; inset: 0; z-index: -3; pointer-events: none; background: radial-gradient(55% 65% at 76% 38%, rgba(220,245,240,0.22), transparent 70%); mix-blend-mode: screen; }
-#vh .vh-tint { background: linear-gradient(180deg, rgba(7,40,42,0.30) 0%, rgba(7,40,42,0) 14%), linear-gradient(0deg, rgba(7,40,42,0.40) 0%, rgba(7,40,42,0) 20%), linear-gradient(90deg, rgba(7,40,42,0.82) 0%, rgba(7,40,42,0.58) 30%, rgba(7,40,42,0) 54%); }
-#vh .vh-glass { -webkit-backdrop-filter: blur(26px) saturate(140%) brightness(0.72) !important; backdrop-filter: blur(26px) saturate(140%) brightness(0.72) !important; }
-#vh .vh-hint, #vh .vh-meta { text-shadow: 0 1px 8px rgba(7,40,42,0.7); }
 @media (max-width: 900px) { .vh-cards { margin-top: -36px; background: linear-gradient(transparent 36px, var(--forest, #07282A) 36px); } .vh-cards-in { grid-template-columns: minmax(0, 1fr); } #vh .vh-foot { bottom: 52px !important; } }
 </style>
 <style id="home-2026-10-13">
@@ -2572,44 +2563,44 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 <!-- ================= HOME ================= -->
 <section class="page live" id="home">
   <!-- VIDEO HERO (8 Oct 2026): Atera-style, from mockup C. Footage in assets/hero/ (Pexels). Script near the end of the file, id vh-script. Restore point: git tag before-video-hero-2026-10-08 -->
-  <div class="band dk" id="vh" style="--vh-mood: #7B5BB0; --vh-accent: #D7C4F7; --vh-amt: 0.4; --vh-tile: #DDD0EA;">
+  <div class="band dk sending" id="vh" style="--vh-mood: #0E5A52; --vh-accent: #D7C4F7; --vh-amt: 0.4; --vh-tile: #DDD0EA;">
     <div class="vh-vids" aria-hidden="true">
       <video id="vh-v0" src="assets/hero/investor-1.mp4" muted="" loop="" playsinline="" preload="auto" style="filter: saturate(1.15) contrast(1.08) hue-rotate(-10deg) brightness(0.92);"></video>
       <video id="vh-v1" src="assets/hero/investor-2.mp4" muted="" loop="" playsinline="" preload="metadata" style="filter: sepia(0.3) saturate(1.2) brightness(0.95);"></video>
       <video id="vh-v2" src="assets/hero/investor-3.mp4" muted="" loop="" playsinline="" preload="metadata" class="on" style="filter: saturate(0.7) contrast(0.95) brightness(0.96);"></video>
-      <video id="vh-v3" src="assets/hero/advisor-desk.mp4" muted="" loop="" playsinline="" preload="auto" style="filter: blur(14px) saturate(0.9) brightness(0.95);"></video>
+      <video id="vh-v3" src="assets/hero/advisor-desk.mp4" muted="" loop="" playsinline="" preload="auto"></video>
     </div>
-    <div class="vh-mood"></div><div class="vh-colorize"></div><div class="vh-glow"></div><div class="vh-shade"></div><div class="vh-cool"></div><div class="vh-air"></div><div class="vh-tint"></div>
-    <div class="vh-cast" id="vh-cast"></div>
-    <canvas class="vh-burst" id="vh-burst" aria-hidden="true" width="2541" height="900"></canvas>
+    <div class="vh-mood"></div><div class="vh-colorize"></div><div class="vh-glow"></div><div class="vh-shade"></div><div class="vh-tint"></div>
+    <div class="vh-cast spot" id="vh-cast"></div>
+    <canvas class="vh-burst" id="vh-burst" aria-hidden="true" width="2032" height="900"></canvas>
     <div class="vh-wipe go" id="vh-wipe"></div>
 
     <div class="vh-copy">
-      <h1>Give your retail investors<br>Advised-trading<br><em>tailored advice they can act on.</em></h1>
-      <p class="vh-lede">From one investment idea to thousands of personalized, <span style="white-space:nowrap">advice-driven</span> trades, tailored to each client’s holdings, risk profile and constraints. Investors approve the entire recommendation in one tap, while Finnovest manages trading, suitability, compliance and documentation end to end.</p>
-      <div class="vh-cta"><button class="btn btn-mint" data-go="contact">Book a demo<span class="wipe" aria-hidden="true"><i></i><i></i><i></i></span></button></div>
+      <h1>Give your retail investors tailored advice they can execute in <em>one tap.</em></h1>
+      <p class="vh-lede">From one investment idea to thousands of personalized, <a class="vh-adt" data-go="advisedtrading" title="What is Advised-trading?"><span style="white-space:nowrap">advice-driven</span> trades</a>, tailored to each client’s holdings, risk profile and constraints. Investors approve the entire recommendation in one tap, while Finnovest manages trading, suitability, compliance and documentation end to end.</p>
+      <div class="vh-cta"><button class="btn btn-mint" data-go="advisedtrading">More about Advised-trading<span class="wipe" aria-hidden="true"><i></i><i></i><i></i></span></button></div>
     </div>
 
-    <div class="vh-glass vh-pin on" id="vh-pin">
+    <div class="vh-glass vh-pin" id="vh-pin">
       <div class="vh-top"><span class="vh-dot"></span>Advisor console<span>Live</span></div>
       <div class="vh-pin-t">Increase exposure to global technology</div>
-      <div class="vh-pin-n"><b>13,452</b> investors · <b id="vh-pct">12.8%</b> converted</div>
-      <div class="vh-pin-e"><div class="bar"><i id="vh-bar" style="width: 12.8382%;"></i></div><span>Executed with Trade-All™</span><b id="vh-exec">1,727</b></div>
+      <div class="vh-pin-n"><b>13,452</b> investors · <b id="vh-pct">0%</b> converted</div>
+      <div class="vh-pin-e"><div class="bar"><i id="vh-bar" style="width: 0%;"></i></div><span>Executed with Trade-All™</span><b id="vh-exec">0</b></div>
     </div>
 
     <div class="vh-layer on" id="vh-layer" aria-live="polite">
-      <svg class="vh-link" aria-hidden="true"><path id="vh-path" pathLength="1" d="M 1122.475954985 714.0179073262501 C 1316.79317974325 714.0179073262501, 1316.79317974325 690, 1475.78 690"></path></svg>
-      <span class="vh-src" id="vh-src" style="left: 1122.48px; top: 714.018px;"></span>
-      <div class="vh-thread" id="vh-thread" style="left: 1473.78px; bottom: 150px; height: 450px;"><div class="vh-msg pop old"><div class="vh-meta"><span class="vh-ic"></span><b>Your trading app</b> · now</div><div class="vh-glass vh-bub"><div class="vh-hi">Hi <span>Sara</span>,</div><div class="vh-lbl">a new recommendation is ready</div><div class="vh-ttl">Increase exposure to global technology</div><div class="vh-why">Read reasoning<i></i></div></div></div><div class="vh-msg old"><div class="vh-meta"><span class="vh-av">F</span><b>Your orders, Sara</b> · personalized</div><div class="vh-glass vh-bub"><div class="vh-rows"><div class="vh-o sell in" data-s="done"><span class="side">Sell</span><span class="inst">Government bond fund</span><span class="amt">$5,000</span><span class="st"></span></div><div class="vh-o buy in" data-s="done"><span class="side">Buy</span><span class="inst">Global tech ETF</span><span class="amt">$2,000</span><span class="st"></span></div><div class="vh-o buy in" data-s="done"><span class="side">Buy</span><span class="inst">Global dividend fund</span><span class="amt">$3,000</span><span class="st"></span></div></div></div></div><div class="vh-msg old" style=""><div class="vh-tawrap"><button class="vh-ta busy" type="button" tabindex="-1"><span class="fill" style="width: 100%;"></span><span class="lab">Documenting</span></button><div class="vh-hint">One tap executes all 3 orders</div></div></div><div class="vh-msg "><div class="vh-glass vh-bub win"><span class="vh-ok"></span><div><b>Recommendation and trade documented</b><small>3 of 3 filled · suitability checked</small></div></div></div></div>
+      <svg class="vh-link" aria-hidden="true"><path id="vh-path" pathLength="1" d="M 772.4640185546875 712.9935063171387 C 907.7288217773438 712.9935063171387, 907.7288217773438 690, 1018.4000244140625 690"></path></svg>
+      <span class="vh-src" id="vh-src" style="left: 772.464px; top: 712.994px;"></span>
+      <div class="vh-thread" id="vh-thread" style="left: 1016.4px; bottom: 150px; height: 450px;"><div class="vh-msg pop old"><div class="vh-meta"><span class="vh-ic"></span><b>Your trading app</b> · now</div><div class="vh-glass vh-bub"><div class="vh-hi">Hi <span>Sara</span>,</div><div class="vh-lbl">a new recommendation is ready</div><div class="vh-ttl">Increase exposure to global technology</div><div class="vh-why">Read reasoning<i></i></div></div></div><div class="vh-msg old"><div class="vh-meta"><span class="vh-av">F</span><b>Your orders, Sara</b> · personalized</div><div class="vh-glass vh-bub"><div class="vh-rows"><div class="vh-o sell in" data-s="done"><span class="side">Sell</span><span class="inst">Government bond fund</span><span class="amt">$5,000</span><span class="st"></span></div><div class="vh-o buy in" data-s="done"><span class="side">Buy</span><span class="inst">Global tech ETF</span><span class="amt">$2,000</span><span class="st"></span></div><div class="vh-o buy in" data-s="done"><span class="side">Buy</span><span class="inst">Global dividend fund</span><span class="amt">$3,000</span><span class="st"></span></div></div></div></div><div class="vh-msg old" style=""><div class="vh-tawrap"><button class="vh-ta busy" type="button" tabindex="-1"><span class="fill" style="width: 100%;"></span><span class="lab">Documenting</span></button><div class="vh-hint">One tap executes all 3 orders</div></div></div><div class="vh-msg "><div class="vh-glass vh-bub win"><span class="vh-ok"></span><div><b>Recommendation and trade documented</b><small>3 of 3 filled · suitability checked</small></div></div></div></div>
     </div>
 
-    <div class="vh-glass vh-console" id="vh-console" style="">
+    <div class="vh-glass vh-console on" id="vh-console">
       <div class="vh-top"><span class="vh-dot"></span>Advisor console<span>New recommendation</span></div>
       <div class="vh-cn-title">Increase exposure to global technology</div>
       <div class="vh-cn-sub">Funding: reduce each client’s most overweight holding</div>
-      <div class="vh-cn-row"><span>Suitable investors</span><b id="vh-elig">13,452</b></div>
-      <div class="vh-cn-row"><span>Personalized bundles</span><b id="vh-bund">13,452</b></div>
-      <div class="vh-cn-status done" id="vh-status"><i></i><span id="vh-stat">Sent to 13,452 investors</span></div>
+      <div class="vh-cn-row"><span>Suitable investors</span><b id="vh-elig">3,441</b></div>
+      <div class="vh-cn-row"><span>Personalized bundles</span><b id="vh-bund">0</b></div>
+      <div class="vh-cn-status" id="vh-status"><i></i><span id="vh-stat">Matching against every client book</span></div>
     </div>
 
     <div class="vh-closing" id="vh-closing"><p><span class="vh-cl">One investment idea.</span><span class="vh-cl"><em>Thousands</em> of tailored recommendations, simultaneously.</span><span class="vh-cl m">One tap to Trade-All™.</span></p></div>
@@ -2914,26 +2905,26 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       </div>
 
       <div class="flow-top">
-        <a data-go="products" data-anchor="st1"><span class="n">01</span><b>House view</b><small>Management sets the position</small></a>
-        <a data-go="products" data-anchor="st2"><span class="n">02</span><b>Recommendation trigger</b><small>Human or autonomous</small></a>
-        <a data-go="products" data-anchor="st3"><span class="n">03</span><b>Personalized order bundles</b><small>Resolved against every portfolio</small></a>
-        <a data-go="products" data-anchor="st5"><span class="n">04</span><b>Trade-All™</b><small>Investors approve once and order bundles are executed</small></a>
-        <a data-go="products" data-anchor="st6"><span class="n">05</span><b>Algorithmic execution</b><small>Every order, to the exchange</small></a>
-        <a data-go="products" data-anchor="st7"><span class="n">06</span><b>Advice documentation &amp; trade reporting</b><small>Generated automatically, updated in real time</small></a>
+        <a data-go="products" data-anchor="st1" class="done"><span class="n">01</span><b>House view</b><small>Management sets the position</small></a>
+        <a data-go="products" data-anchor="st2" class="done"><span class="n">02</span><b>Recommendation trigger</b><small>Human or autonomous</small></a>
+        <a data-go="products" data-anchor="st3" class="done"><span class="n">03</span><b>Personalized order bundles</b><small>Resolved against every portfolio</small></a>
+        <a data-go="products" data-anchor="st5" class="done"><span class="n">04</span><b>Trade-All™</b><small>Investors approve once and order bundles are executed</small></a>
+        <a data-go="products" data-anchor="st6" class="done"><span class="n">05</span><b>Algorithmic execution</b><small>Every order, to the exchange</small></a>
+        <a data-go="products" data-anchor="st7" class="on"><span class="n">06</span><b>Advice documentation &amp; trade reporting</b><small>Generated automatically, updated in real time</small></a>
       </div>
       <div class="flow-rails">
         <div class="hm-cyc-rail"><b>Compliance, control and documentation</b><span>governs every stage</span></div>
         <div class="hm-cyc-rail data"><b>Management and advisor consoles</b><span>follow every stage</span></div>
       </div>
-      <div class="flow-bar" aria-label="Core stages" style="--p: 0%;">
+      <div class="flow-bar" aria-label="Core stages" style="--p: 100%;">
         <div class="wrap">
           <span class="lbl">Finnovest Core</span>
-          <a data-go="products" data-anchor="st1"><span class="n">01</span><b>House view</b></a>
-          <a data-go="products" data-anchor="st2"><span class="n">02</span><b>Recommendation</b></a>
-          <a data-go="products" data-anchor="st3"><span class="n">03</span><b>Order bundles</b></a>
-          <a data-go="products" data-anchor="st5"><span class="n">04</span><b>Trade-All™</b></a>
-          <a data-go="products" data-anchor="st6"><span class="n">05</span><b>Execution</b></a>
-          <a data-go="products" data-anchor="st7"><span class="n">06</span><b>Documentation</b></a>
+          <a data-go="products" data-anchor="st1" class="done"><span class="n">01</span><b>House view</b></a>
+          <a data-go="products" data-anchor="st2" class="done"><span class="n">02</span><b>Recommendation</b></a>
+          <a data-go="products" data-anchor="st3" class="done"><span class="n">03</span><b>Order bundles</b></a>
+          <a data-go="products" data-anchor="st5" class="done"><span class="n">04</span><b>Trade-All™</b></a>
+          <a data-go="products" data-anchor="st6" class="done"><span class="n">05</span><b>Execution</b></a>
+          <a data-go="products" data-anchor="st7" class="on"><span class="n">06</span><b>Documentation</b></a>
         </div>
       </div>
 
@@ -5331,9 +5322,6 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
   run(gen);
 })();
 </script>
-
-
-
 
 
 </body></html>

@@ -2574,8 +2574,8 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
   <!-- VIDEO HERO (8 Oct 2026): Atera-style, from mockup C. Footage in assets/hero/ (Pexels). Script near the end of the file, id vh-script. Restore point: git tag before-video-hero-2026-10-08 -->
   <div class="band dk" id="vh" style="--vh-mood: #7B5BB0; --vh-accent: #D7C4F7; --vh-amt: 0.4; --vh-tile: #DDD0EA;">
     <div class="vh-vids" aria-hidden="true">
-      <video id="vh-v0" src="assets/hero/investor-1.mp4" muted="" loop="" playsinline="" preload="auto"></video>
-      <video id="vh-v1" src="assets/hero/investor-2.mp4" muted="" loop="" playsinline="" preload="metadata"></video>
+      <video id="vh-v0" src="assets/hero/investor-1.mp4" muted="" loop="" playsinline="" preload="auto" style="filter: saturate(1.15) contrast(1.08) hue-rotate(-10deg) brightness(0.92);"></video>
+      <video id="vh-v1" src="assets/hero/investor-2.mp4" muted="" loop="" playsinline="" preload="metadata" style="filter: sepia(0.3) saturate(1.2) brightness(0.95);"></video>
       <video id="vh-v2" src="assets/hero/investor-3.mp4" muted="" loop="" playsinline="" preload="metadata" class="on" style="filter: saturate(0.7) contrast(0.95) brightness(0.96);"></video>
       <video id="vh-v3" src="assets/hero/advisor-desk.mp4" muted="" loop="" playsinline="" preload="auto" style="filter: blur(14px) saturate(0.9) brightness(0.95);"></video>
     </div>
@@ -2585,9 +2585,9 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
     <div class="vh-wipe go" id="vh-wipe"></div>
 
     <div class="vh-copy">
-      <h1>Give your retail investors<br>Advised-Trading<br>tailored advice they can execute in <em>one tap.</em></h1>
-      <p class="vh-lede">From one investment idea to thousands of personalized, <a class="vh-adt" data-go="advisedtrading" title="What is Advised-trading?"><span style="white-space:nowrap">advice-driven</span> trades</a>, tailored to each client’s holdings, risk profile and constraints. Investors approve the entire recommendation in one tap, while Finnovest manages trading, suitability, compliance and documentation end to end.</p>
-      <div class="vh-cta"><button class="btn btn-mint" data-go="advisedtrading">More about Advised-trading<span class="wipe" aria-hidden="true"><i></i><i></i><i></i></span></button></div>
+      <h1>Give your retail investors<br>Advised-trading<br><em>tailored advice they can act on.</em></h1>
+      <p class="vh-lede">From one investment idea to thousands of personalized, <span style="white-space:nowrap">advice-driven</span> trades, tailored to each client’s holdings, risk profile and constraints. Investors approve the entire recommendation in one tap, while Finnovest manages trading, suitability, compliance and documentation end to end.</p>
+      <div class="vh-cta"><button class="btn btn-mint" data-go="contact">Book a demo<span class="wipe" aria-hidden="true"><i></i><i></i><i></i></span></button></div>
     </div>
 
     <div class="vh-glass vh-pin on" id="vh-pin">
@@ -2598,8 +2598,8 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
     </div>
 
     <div class="vh-layer on" id="vh-layer" aria-live="polite">
-      <svg class="vh-link" aria-hidden="true"><path id="vh-path" pathLength="1" d="M 965.58 778.7418749999999 C 1246.19 778.7418749999999, 1246.19 690, 1475.78 690"></path></svg>
-      <span class="vh-src" id="vh-src" style="left: 965.58px; top: 778.742px;"></span>
+      <svg class="vh-link" aria-hidden="true"><path id="vh-path" pathLength="1" d="M 1122.475954985 714.0179073262501 C 1316.79317974325 714.0179073262501, 1316.79317974325 690, 1475.78 690"></path></svg>
+      <span class="vh-src" id="vh-src" style="left: 1122.48px; top: 714.018px;"></span>
       <div class="vh-thread" id="vh-thread" style="left: 1473.78px; bottom: 150px; height: 450px;"><div class="vh-msg pop old"><div class="vh-meta"><span class="vh-ic"></span><b>Your trading app</b> · now</div><div class="vh-glass vh-bub"><div class="vh-hi">Hi <span>Sara</span>,</div><div class="vh-lbl">a new recommendation is ready</div><div class="vh-ttl">Increase exposure to global technology</div><div class="vh-why">Read reasoning<i></i></div></div></div><div class="vh-msg old"><div class="vh-meta"><span class="vh-av">F</span><b>Your orders, Sara</b> · personalized</div><div class="vh-glass vh-bub"><div class="vh-rows"><div class="vh-o sell in" data-s="done"><span class="side">Sell</span><span class="inst">Government bond fund</span><span class="amt">$5,000</span><span class="st"></span></div><div class="vh-o buy in" data-s="done"><span class="side">Buy</span><span class="inst">Global tech ETF</span><span class="amt">$2,000</span><span class="st"></span></div><div class="vh-o buy in" data-s="done"><span class="side">Buy</span><span class="inst">Global dividend fund</span><span class="amt">$3,000</span><span class="st"></span></div></div></div></div><div class="vh-msg old" style=""><div class="vh-tawrap"><button class="vh-ta busy" type="button" tabindex="-1"><span class="fill" style="width: 100%;"></span><span class="lab">Documenting</span></button><div class="vh-hint">One tap executes all 3 orders</div></div></div><div class="vh-msg "><div class="vh-glass vh-bub win"><span class="vh-ok"></span><div><b>Recommendation and trade documented</b><small>3 of 3 filled · suitability checked</small></div></div></div></div>
     </div>
 
@@ -5331,6 +5331,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
   run(gen);
 })();
 </script>
+
 
 
 

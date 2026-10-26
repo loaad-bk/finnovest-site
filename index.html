@@ -1817,6 +1817,15 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 .nav-links .dd-p.mm a:hover,.nav-links .dd-p.mm a.on{background:none;color:#0B8A5F}
 .nav-links .dd-p.mm a.mm-eb{font-size:.8125rem;color:#4A5856}
 .nav-links .dd-p.mm a.mm-eb:hover{color:#0B8A5F}
+.dd-p.mm span.mm-eb{font-size:.8125rem;color:#4A5856}
+.mm-short .mm-head{min-height:64px}
+.nav-links .dd-p.mm a.mm-top{grid-column:1/-1;display:flex;align-items:baseline;gap:14px;margin:-6px 0 28px;font-family:var(--display);font-weight:500;font-size:1.375rem;letter-spacing:-.015em}
+.nav-links .dd-p.mm a.mm-top span{font-family:var(--body);font-weight:400;font-size:.875rem;color:#4A5856;letter-spacing:0}
+.mm-os .mm-head{min-height:144px;gap:12px}
+.nav-links .dd-p.mm a.mm-title.mm-t2{font-size:1.375rem}
+.mm-sub2{font-size:.875rem;color:#4A5856}
+.nav-links .dd-p.mm a.mm-whatis{font-size:.875rem;color:#4A5856}
+.mm-cap{margin:0;font-size:.875rem;line-height:1.45;color:#4A5856}
 .nav-links .dd-p.mm a.mm-title{display:flex;flex-direction:column;gap:4px;font-family:var(--display);font-weight:500;font-size:1.625rem;line-height:1.1;letter-spacing:-.02em}
 .mm-title span{font-weight:400;font-size:1.0625rem;line-height:1.2;letter-spacing:-.01em}
 .nav-links .dd-p.mm a.mm-it{display:flex;gap:12px;align-items:flex-start;color:var(--ink-text)}
@@ -1826,16 +1835,33 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 .mm-art i{position:absolute;inset:0;background-image:radial-gradient(circle,#2EE59D 1.3px,transparent 1.8px);background-size:9px 9px;-webkit-mask-image:radial-gradient(ellipse 70% 85% at 60% 50%,#000 0%,rgba(0,0,0,.55) 40%,transparent 75%);mask-image:radial-gradient(ellipse 70% 85% at 60% 50%,#000 0%,rgba(0,0,0,.55) 40%,transparent 75%);transition:transform .6s var(--ease-out)}
 .mm-art i+i{background-image:radial-gradient(circle,#D2F4E3 1.6px,transparent 2.1px);background-position:4.5px 4.5px;-webkit-mask-image:radial-gradient(circle at 60% 50%,#000 0%,transparent 22%);mask-image:radial-gradient(circle at 60% 50%,#000 0%,transparent 22%)}
 .mm-art:hover i{transform:scale(1.04)}
-@media(max-width:1180px){.dd-mega .dd-p.mm{grid-template-columns:repeat(3,minmax(0,1fr))}.mm-feat{display:none}}
+@media(max-width:1180px){.dd-mega .dd-p.mm{grid-template-columns:repeat(3,minmax(0,1fr))}.nav-links .dd-p.mm a.mm-art,.mm-cap{display:none}.mm-feat{grid-column:1/-1;margin-top:28px}}
 .mm-it svg{width:22px;height:22px;flex:none;margin-top:1px}
 .mm-it>span{display:flex;flex-direction:column;gap:4px}
 .mm-it .t{font-size:1rem;font-weight:500}
 .nav-links .dd-p.mm a.mm-it:hover .t{color:#0B8A5F}
 .nav-links .dd-p.mm a small{display:block;font-size:.875rem;line-height:1.45;color:#4A5856;margin:0}
+/* Resources menu (26 Oct 2026): Case studies, Newsroom and Advisory Academy split out of Solutions and Company; client quote as the feature tile; Company items spread across the panel. Restore point: archive/index-before-resources-menu-2026-10-26.html */
+.nav-links .dd-p.mm a.mm-q{display:flex;flex-direction:column;justify-content:space-between;gap:18px;height:250px;padding:24px;border-radius:6px;background:#07282A;color:#fff;box-sizing:border-box}
+.nav-links .dd-p.mm a.mm-q:hover{background:#0A3436;color:#fff}
+.mm-q blockquote{margin:0;font-family:var(--display);font-weight:500;font-size:1.0625rem;line-height:1.35;letter-spacing:-.01em}
+.mm-q-by{display:flex;align-items:center;gap:12px;font-size:.8125rem;line-height:1.35;color:rgba(255,255,255,.7)}
+.mm-q-by img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.mm-q-by b{display:block;color:#2EE59D;font-weight:500}
+.mm-wide{grid-column:1/4;align-self:start}
+.mm-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:40px}
+@media(max-width:1180px){.nav-links .dd-p.mm a.mm-q{display:none}}
+@media(max-width:980px){.nav-links.open .mm-row{display:flex;flex-direction:column}}
 @media(max-width:980px){
   .nav-links.open .dd-mega .dd-p.mm{display:flex;flex-direction:column;width:auto;margin:0;padding:0 0 4px;gap:0}
   .nav-links.open .mm-col{padding:0;margin:0;background:none;border-radius:0}
-  .nav-links.open .mm-feat{display:none}
+  .nav-links.open .mm-feat{display:block;margin:0}
+  .nav-links.open .mm-gap,.nav-links.open .mm-cap,.nav-links.open .dd-p.mm a.mm-art,.nav-links.open .mm-feat .alink .c{display:none}
+  .nav-links.open .dd-p.mm a.alink{display:block;color:rgba(255,255,255,.92);padding:10px 8px;font-weight:400;font-size:.95rem}
+  .nav-links.open .dd-p.mm span.mm-eb{display:block;color:rgba(255,255,255,.45);padding:10px 8px 2px}
+  .nav-links.open .dd-p.mm a.mm-top{display:block;margin:0;padding:10px 8px;font-family:var(--body);font-size:.95rem;font-weight:400;letter-spacing:0;color:rgba(255,255,255,.92)}
+  .nav-links.open .dd-p.mm a.mm-top span,.nav-links.open .mm-sub2{display:none}
+  .nav-links.open .dd-p.mm a.mm-whatis{display:block;padding:10px 8px;font-size:.95rem;color:rgba(255,255,255,.92)}
   .nav-links.open .dd-p.mm a.mm-title{display:block}
   .nav-links.open .mm-title span{font-size:inherit;font-weight:inherit;letter-spacing:0}
   .nav-links.open .mm-head{min-height:0;border:0;margin:0;padding:0;gap:0}
@@ -2536,13 +2562,13 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
     </button>
     <div class="nav-links" id="navlinks">
-      <a data-go="advisedtrading">Advised-trading</a>
-      <div class="dd dd-mega"><button class="dd-t" type="button" aria-expanded="false">Products<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></button>
-        <div class="dd-p mm">
+      <div class="dd dd-mega"><button class="dd-t" type="button" aria-expanded="false">Advised-trading OS<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></button>
+        <div class="dd-p mm mm-os">
+          <a class="mm-top" data-go="products">Advised-trading Operating System<span>Overview →</span></a>
           <div class="mm-col mm-core">
-            <div class="mm-head"><a class="mm-eb" data-go="products" data-anchor="core">Finnovest CORE</a>
+            <div class="mm-head">
               <svg class="mm-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="2.5"></ellipse><path d="M4 11c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"></path><path d="M4 16c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"></path></svg>
-              <a class="mm-title" data-go="products">Advised-trading <span>operating system</span></a></div>
+              <a class="mm-title" data-go="products" data-anchor="core">CORE</a><span class="mm-sub2">The foundation of Advised-trading</span></div>
             <div class="mm-list">
               <a class="mm-it" data-go="products" data-anchor="st3"><span><span class="t">One-to-Many Engine</span><small>Scale professional investment advice</small></span></a>
               <a class="mm-it" data-go="products" data-anchor="st6"><span><span class="t">Trade-All™</span><small>One-tap approval. Seamlessly orchestrated execution.</small></span></a>
@@ -2550,54 +2576,126 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
             </div>
           </div>
           <div class="mm-col mm-sub">
-            <div class="mm-head"><a class="mm-eb" data-go="products" data-anchor="addons">CORE Amplify</a>
-              <svg class="mm-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg></div>
+            <div class="mm-head">
+              <svg class="mm-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg>
+              <a class="mm-title mm-t2" data-go="products" data-anchor="addons">CORE Amplify</a><span class="mm-sub2">Optional add-ons</span></div>
             <div class="mm-list">
               <a class="mm-it" data-go="products" data-anchor="addons"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4.5A2.5 2.5 0 0 0 6.2 4 3 3 0 0 0 4 8.5a3 3 0 0 0 .4 5.2A3 3 0 0 0 7 18.5 2.5 2.5 0 0 0 11 20z"></path><path d="M13 4.5A2.5 2.5 0 0 1 17.8 4 3 3 0 0 1 20 8.5a3 3 0 0 1-.4 5.2 3 3 0 0 1-2.6 4.8 2.5 2.5 0 0 1-4 1.5z"></path><path d="M13 10h3M13 14h2"></path></svg><span><span class="t">Finnovest IQ</span><small>AI-powered investment conversations</small></span></a>
               <a class="mm-it" data-go="products" data-anchor="addons"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 10a6 6 0 0 1 12 0v2"></path><path d="M9 20c.6-1.8 1-3.8 1-6v-4a2 2 0 0 1 4 0v4c0 1.5-.2 3-.6 4.4"></path><path d="M6 14v1c0 1.6-.3 3-.9 4.3"></path><path d="M18 16c-.1 1.4-.4 2.8-.9 4"></path></svg><span><span class="t">Finnovest ID</span><small>Retail investor profiling &amp; intent discovery</small></span></a>
-            </div>
-          </div>
-          <div class="mm-col mm-sub">
-            <div class="mm-head"><a class="mm-eb" data-go="products" data-anchor="addons">Investor applications</a>
-              <svg class="mm-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"></rect><path d="M10.5 18.5h3"></path></svg></div>
-            <div class="mm-list">
-              <a class="mm-it" data-go="products" data-anchor="addons"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-5M9 20v-8M14 20v-6M19 20V9"></path><path d="M4 10l5-4 5 3 6-5"></path></svg><span><span class="t">Finnovest ONE</span><small>Trading &amp; Advised-trading app</small></span></a>
               <a class="mm-it" data-go="products" data-anchor="addons"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v-9"></path><path d="M12 11C12 7 9 5 5 5c0 4 3 6 7 6z"></path><path d="M12 13c0-3 2.5-5 6-5 0 3-2.5 5-6 5z"></path><path d="M8 20h8"></path></svg><span><span class="t">Finnovest FUTURE</span><small>IRA &amp; long-term investments</small></span></a>
             </div>
           </div>
+          <div class="mm-col mm-sub">
+            <div class="mm-head">
+              <svg class="mm-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"></rect><path d="M10.5 18.5h3"></path></svg>
+              <a class="mm-title mm-t2" data-go="products" data-anchor="integration">Investor Applications</a><span class="mm-sub2">Delivery options</span></div>
+            <div class="mm-list">
+              <a class="mm-it" data-go="products" data-anchor="int-systems"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5"></path><path d="M16 7l5 5-5 5"></path></svg><span><span class="t">API</span><small>Your app, your UX</small></span></a>
+              <a class="mm-it" data-go="products" data-anchor="int-sdk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="3"></rect><path d="M3.5 10h17"></path><path d="M10 10v10.5"></path></svg><span><span class="t">White-label SDK</span><small>Embedded Advised-trading experience</small></span></a>
+              <a class="mm-it" data-go="products" data-anchor="int-app"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-5M9 20v-8M14 20v-6M19 20V9"></path><path d="M4 10l5-4 5 3 6-5"></path></svg><span><span class="t">Finnovest ONE</span><small>Complete white-label app</small></span></a>
+            </div>
+          </div>
           <div class="mm-feat">
-            <a class="mm-art" data-go="advisedtrading" aria-label="More about Advised-trading"><i></i><i></i></a>
-            <a class="alink" data-go="advisedtrading"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>More about Advised-trading</a>
+            <a class="mm-art" data-go="products" aria-label="Explore the OS"><i></i><i></i></a>
+            <a class="alink" data-go="products"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>Explore the OS</a>
+            <a class="mm-whatis" data-go="advisedtrading">What is Advised-trading?</a>
           </div>
         </div></div>
-      <div class="dd"><button class="dd-t" type="button" aria-expanded="false">Solutions<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></button>
-        <div class="dd-p">
-          <a data-go="products" data-anchor="fit">Find your fit</a>
-          <span class="sep"></span>
-          <a data-go="sol-banks">Banks</a>
-          <a data-go="sol-brokerages">Brokerages</a>
-          <a data-go="sol-wealth">Wealth managers</a>
-          <span class="sep"></span>
-          <a data-go="advisors">For advisors</a>
-          <a data-go="academy">Advisory Academy</a>
-          <span class="sep"></span>
-          <a data-go="cases">Case studies</a>
+      <div class="dd dd-mega"><button class="dd-t" type="button" aria-expanded="false">Solutions<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></button>
+        <div class="dd-p mm mm-short">
+          <div class="mm-col mm-core">
+            <div class="mm-head"><span class="mm-eb">By institution</span>
+              <svg class="mm-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5L12 4l9 5.5"></path><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8"></path><path d="M3 20.5h18"></path></svg></div>
+            <div class="mm-list">
+              <a class="mm-it" data-go="sol-banks"><span><span class="t">Banks</span></span></a>
+              <a class="mm-it" data-go="sol-brokerages"><span><span class="t">Brokerages</span></span></a>
+              <a class="mm-it" data-go="sol-wealth"><span><span class="t">Wealth managers</span></span></a>
+            </div>
+          </div>
+          <div class="mm-col">
+            <div class="mm-head"><span class="mm-eb">For advisory teams</span>
+              <svg class="mm-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"></circle><path d="M3 19.5c.6-3.3 3-5.2 6-5.2s5.4 1.9 6 5.2"></path><path d="M15.5 5.2a3 3 0 0 1 0 5.6M17.5 14.6c1.8.7 3 2.3 3.4 4.9"></path></svg></div>
+            <div class="mm-list">
+              <a class="mm-it" data-go="advisors"><span><span class="t">For advisors</span><small>An operating system for the work you already do.</small></span></a>
+            </div>
+          </div>
+          <div class="mm-col mm-gap"></div>
+          <div class="mm-feat">
+            <a class="mm-art" data-go="products" data-anchor="fit" aria-label="Find your fit"><i></i><i></i></a>
+            <p class="mm-cap">Not sure which fits? Tick what you have.</p>
+            <a class="alink" data-go="products" data-anchor="fit"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>Find your fit</a>
+          </div>
         </div></div>
-      <div class="dd"><button class="dd-t" type="button" aria-expanded="false">Company<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></button>
-        <div class="dd-p">
-          <a data-go="about">About</a>
-          <a data-go="press">Media</a>
-          <a data-go="articles">Insights</a>
-          <a data-go="events">Events and podcast</a>
-          <a data-go="careers">Careers</a>
-          <a data-go="contact">Contact</a>
+      <div class="dd dd-mega"><button class="dd-t" type="button" aria-expanded="false">Resources<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></button>
+        <div class="dd-p mm mm-short">
+          <div class="mm-col mm-core">
+            <div class="mm-head"><span class="mm-eb">Proof</span>
+              <svg class="mm-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3.5h9l4 4v13H6z"></path><path d="M15 3.5v4h4"></path><path d="M9 12h7M9 15.5h7"></path></svg></div>
+            <div class="mm-list">
+              <a class="mm-it" data-go="cases"><span><span class="t">Case studies</span><small>How banks and brokerages run Advised-trading with Finnovest.</small></span></a>
+            </div>
+          </div>
+          <div class="mm-col">
+            <div class="mm-head"><span class="mm-eb">Newsroom</span>
+              <svg class="mm-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5h13v13a2 2 0 0 0 2 2H6a2 2 0 0 1-2-2z"></path><path d="M17 9h3v9.5a2 2 0 0 1-2 2"></path><path d="M7.5 9h6M7.5 12.5h6M7.5 16h4"></path></svg></div>
+            <div class="mm-list">
+              <a class="mm-it" data-go="press"><span><span class="t">Media</span><small>Coverage, interviews and recognition.</small></span></a>
+              <a class="mm-it" data-go="articles"><span><span class="t">Insights</span><small>Notes on advised-trading, from the people building it.</small></span></a>
+              <a class="mm-it" data-go="events"><span><span class="t">Events and podcast</span><small>Where the industry argues this out loud.</small></span></a>
+            </div>
+          </div>
+          <div class="mm-col">
+            <div class="mm-head"><span class="mm-eb">Learn</span>
+              <svg class="mm-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 5.5c3-1 6-.8 8.5 1 2.5-1.8 5.5-2 8.5-1v13c-3-1-6-.8-8.5 1-2.5-1.8-5.5-2-8.5-1z"></path><path d="M12 6.5v13"></path></svg></div>
+            <div class="mm-list">
+              <a class="mm-it" data-go="academy"><span><span class="t">Advisory Academy</span><small>Training for the teams running the operating system.</small></span></a>
+            </div>
+          </div>
+          <div class="mm-feat">
+            <a class="mm-q" data-go="cases" aria-label="Excellence Trade case study"><blockquote>The system fits the advice to each person’s own horizon and risk… and brings lower-risk assets to investors who would never pick them on their own. That’s why it’s genius.</blockquote><span class="mm-q-by"><img src="data:image/jpeg;base64,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" alt="Dror Yariv"><span><b>Dror Yariv</b>CEO, Excellence Trade</span></span></a>
+            <a class="alink" data-go="cases"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>Read the case studies</a>
+          </div>
         </div></div>
-      <div class="dd dd-retail"><button class="dd-t retail-link" type="button" aria-expanded="false">For retail investors<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></button>
-        <div class="dd-p">
-          <a data-go="howitworks">How it works</a>
-          <a data-go="where">Where to get it</a>
-          <a data-go="insights">Finno Insights</a>
-          <a data-go="poweredby">Powered by Finnovest</a>
+      <div class="dd dd-mega"><button class="dd-t" type="button" aria-expanded="false">Company<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></button>
+        <div class="dd-p mm mm-short">
+          <div class="mm-col mm-core mm-wide">
+            <div class="mm-head"><span class="mm-eb">Company</span>
+              <svg class="mm-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M15.5 8.5l-2 5-5 2 2-5z"></path></svg></div>
+            <div class="mm-list mm-row">
+              <a class="mm-it" data-go="about"><span><span class="t">About</span><small>Bridging the gap between investment professionals and retail investors.</small></span></a>
+              <a class="mm-it" data-go="careers"><span><span class="t">Careers</span><small>Build the layer the advisory industry runs on.</small></span></a>
+              <a class="mm-it" data-go="contact"><span><span class="t">Contact</span><small>Show us your book, we'll show you the operating system.</small></span></a>
+            </div>
+          </div>
+          <div class="mm-feat">
+            <a class="mm-art" data-go="contact" aria-label="Request a demo"><i></i><i></i></a>
+            <p class="mm-cap">Show us your book, we'll show you the operating system.</p>
+            <a class="alink" data-go="contact"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>Request a demo</a>
+          </div>
+        </div></div>
+      <div class="dd dd-retail dd-mega"><button class="dd-t retail-link" type="button" aria-expanded="false">For retail investors<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></button>
+        <div class="dd-p mm mm-short">
+          <div class="mm-col mm-core">
+            <div class="mm-head"><span class="mm-eb">For investors</span>
+              <svg class="mm-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"></rect><path d="M10.5 18.5h3"></path></svg></div>
+            <div class="mm-list">
+              <a class="mm-it" data-go="howitworks"><span><span class="t">How it works</span><small>The professionals' thinking. Your portfolio. Your call.</small></span></a>
+              <a class="mm-it" data-go="poweredby"><span><span class="t">Powered by Finnovest</span><small>That advice came from your advisor. We made it tappable.</small></span></a>
+            </div>
+          </div>
+          <div class="mm-col">
+            <div class="mm-head"><span class="mm-eb">Learn</span>
+              <svg class="mm-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 5.5c3-1 6-.8 8.5 1 2.5-1.8 5.5-2 8.5-1v13c-3-1-6-.8-8.5 1-2.5-1.8-5.5-2-8.5-1z"></path><path d="M12 6.5v13"></path></svg></div>
+            <div class="mm-list">
+              <a class="mm-it" data-go="insights"><span><span class="t">Finno Insights</span><small>Markets, explained without the jargon.</small></span></a>
+            </div>
+          </div>
+          <div class="mm-col mm-gap"></div>
+          <div class="mm-feat">
+            <a class="mm-art" data-go="where" aria-label="Where to get it"><i></i><i></i></a>
+            <p class="mm-cap">Choose your advisor and open an account.</p>
+            <a class="alink" data-go="where"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>Where to get it</a>
+          </div>
         </div></div>
       <button class="btn btn-mint btn-sm" data-go="contact">Request a demo<span class="wipe" aria-hidden="true"><i></i><i></i><i></i></span></button>
     </div>

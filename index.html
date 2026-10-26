@@ -1803,6 +1803,52 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 .dd-p a.dd-h .go{font-size:.75rem;opacity:0;transform:translateX(-4px);transition:opacity .2s,transform .2s}
 .dd-p a.dd-h:hover .go,.dd-p a.dd-h:focus-visible .go{opacity:1;transform:none}
 @media(max-width:980px){.dd-p a.dd-h .go{opacity:.7;transform:none}}
+/* Products mega menu (26 Oct 2026): full-width panel; Finnovest CORE on its own tile, then CORE Amplify, Investor applications and a feature tile. Restore point: archive/index-before-product-menu-2026-10-26.html */
+.nav-links .dd-mega{position:static}
+.dd-mega .dd-p.mm{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) 340px;column-gap:40px;left:0;right:0;margin:0;padding:48px max(44px,calc((100% - var(--max))/2 + 44px));border-radius:0;box-shadow:0 24px 40px rgba(3,20,21,.18);box-sizing:border-box}
+.dd-mega .dd-p.mm::before{top:-28px;height:28px}
+.mm-col{display:flex;flex-direction:column;color:var(--ink-text)}
+.mm-core{background:#F4F8F5;border-radius:6px;padding:20px 20px 24px;margin:-20px 0 0 -20px}
+.mm-head{min-height:150px;display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding-bottom:4px;margin-bottom:18px;border-bottom:1px solid rgba(7,40,42,.12);box-sizing:border-box}
+.mm-ic{width:26px;height:26px;flex:none}
+.mm-list{display:flex;flex-direction:column;gap:18px}
+.mm-sub .mm-list{gap:22px}
+.nav-links .dd-p.mm a{white-space:normal;padding:0;border-radius:0;background:none;color:var(--ink-text)}
+.nav-links .dd-p.mm a:hover,.nav-links .dd-p.mm a.on{background:none;color:#0B8A5F}
+.nav-links .dd-p.mm a.mm-eb{font-size:.8125rem;color:#4A5856}
+.nav-links .dd-p.mm a.mm-eb:hover{color:#0B8A5F}
+.nav-links .dd-p.mm a.mm-title{display:flex;flex-direction:column;gap:4px;font-family:var(--display);font-weight:500;font-size:1.625rem;line-height:1.1;letter-spacing:-.02em}
+.mm-title span{font-weight:400;font-size:1.0625rem;line-height:1.2;letter-spacing:-.01em}
+.nav-links .dd-p.mm a.mm-it{display:flex;gap:12px;align-items:flex-start;color:var(--ink-text)}
+.mm-sub .mm-it{min-height:70px}
+.mm-feat{display:flex;flex-direction:column;gap:16px}
+.nav-links .dd-p.mm a.mm-art{display:block;position:relative;height:250px;border-radius:6px;background:#07282A;overflow:hidden}
+.mm-art i{position:absolute;inset:0;background-image:radial-gradient(circle,#2EE59D 1.3px,transparent 1.8px);background-size:9px 9px;-webkit-mask-image:radial-gradient(ellipse 70% 85% at 60% 50%,#000 0%,rgba(0,0,0,.55) 40%,transparent 75%);mask-image:radial-gradient(ellipse 70% 85% at 60% 50%,#000 0%,rgba(0,0,0,.55) 40%,transparent 75%);transition:transform .6s var(--ease-out)}
+.mm-art i+i{background-image:radial-gradient(circle,#D2F4E3 1.6px,transparent 2.1px);background-position:4.5px 4.5px;-webkit-mask-image:radial-gradient(circle at 60% 50%,#000 0%,transparent 22%);mask-image:radial-gradient(circle at 60% 50%,#000 0%,transparent 22%)}
+.mm-art:hover i{transform:scale(1.04)}
+@media(max-width:1180px){.dd-mega .dd-p.mm{grid-template-columns:repeat(3,minmax(0,1fr))}.mm-feat{display:none}}
+.mm-it svg{width:22px;height:22px;flex:none;margin-top:1px}
+.mm-it>span{display:flex;flex-direction:column;gap:4px}
+.mm-it .t{font-size:1rem;font-weight:500}
+.nav-links .dd-p.mm a.mm-it:hover .t{color:#0B8A5F}
+.nav-links .dd-p.mm a small{display:block;font-size:.875rem;line-height:1.45;color:#4A5856;margin:0}
+@media(max-width:980px){
+  .nav-links.open .dd-mega .dd-p.mm{display:flex;flex-direction:column;width:auto;margin:0;padding:0 0 4px;gap:0}
+  .nav-links.open .mm-col{padding:0;margin:0;background:none;border-radius:0}
+  .nav-links.open .mm-feat{display:none}
+  .nav-links.open .dd-p.mm a.mm-title{display:block}
+  .nav-links.open .mm-title span{font-size:inherit;font-weight:inherit;letter-spacing:0}
+  .nav-links.open .mm-head{min-height:0;border:0;margin:0;padding:0;gap:0}
+  .nav-links.open .mm-ic,.nav-links.open .mm-it svg{display:none}
+  .nav-links.open .mm-list{gap:0}
+  .nav-links.open .mm-sub .mm-it{min-height:0}
+  .nav-links.open .dd-p.mm a.mm-eb{color:rgba(255,255,255,.45);padding:10px 8px 2px}
+  .nav-links.open .dd-p.mm a.mm-title,.nav-links.open .dd-p.mm a.mm-it{color:rgba(255,255,255,.92);padding:10px 8px}
+  .nav-links.open .dd-p.mm a.mm-title{font-family:var(--body);font-size:.95rem;font-weight:400;letter-spacing:0;line-height:1.4}
+  .nav-links.open .mm-it .t{font-weight:400}
+  .nav-links.open .dd-p.mm a small{color:rgba(255,255,255,.5);font-size:.8rem}
+  .nav-links.open .dd-p.mm a:hover,.nav-links.open .dd-p.mm a:hover .t,.nav-links.open .dd-p.mm a.on{color:var(--mint)}
+}
 </style>
 <style id="vh-style">
 /* VIDEO HERO (8 Oct 2026): Atera-style. One recommendation, three investors, each with a personal bundle executed with one tap to Trade-All. Everything scoped to #vh / .vh-proof. */
@@ -2491,26 +2537,37 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
     </button>
     <div class="nav-links" id="navlinks">
       <a data-go="advisedtrading">Advised-trading</a>
-      <div class="dd dd-mega"><button class="dd-t" type="button" aria-expanded="false">Product<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></button>
-        <div class="dd-p">
-          <div class="dd-col"><a class="dd-h" data-go="products" data-anchor="core">Finnovest Core<span class="go">View all →</span></a>
-            <a data-go="products">Advised-trading operating system</a>
-            <a data-go="products" data-anchor="st3">One-to-Many personalization</a>
-            <a data-go="products" data-anchor="st6">Trade-All™ order orchestration</a>
-            <a data-go="products" data-anchor="compliance">Compliance, control and documentation</a>
-            <a data-go="products" data-anchor="st1">Management and advisor consoles</a>
+      <div class="dd dd-mega"><button class="dd-t" type="button" aria-expanded="false">Products<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></button>
+        <div class="dd-p mm">
+          <div class="mm-col mm-core">
+            <div class="mm-head"><a class="mm-eb" data-go="products" data-anchor="core">Finnovest CORE</a>
+              <svg class="mm-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="2.5"></ellipse><path d="M4 11c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"></path><path d="M4 16c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"></path></svg>
+              <a class="mm-title" data-go="products">Advised-trading <span>operating system</span></a></div>
+            <div class="mm-list">
+              <a class="mm-it" data-go="products" data-anchor="st3"><span><span class="t">One-to-Many Engine</span><small>Scale professional investment advice</small></span></a>
+              <a class="mm-it" data-go="products" data-anchor="st6"><span><span class="t">Trade-All™</span><small>One-tap approval. Seamlessly orchestrated execution.</small></span></a>
+              <a class="mm-it" data-go="products" data-anchor="compliance"><span><span class="t">Native Compliance</span><small>Inherent compliance across advisory and trading workflows</small></span></a>
+            </div>
           </div>
-          <div class="dd-col"><a class="dd-h" data-go="products" data-anchor="addons">Add-ons<span class="go">View all →</span></a>
-            <a data-go="products" data-anchor="addons">Investor onboarding and profiling</a>
-            <a data-go="products" data-anchor="addons">AI advisory conversation</a>
-            <a data-go="products" data-anchor="addons">Long-term savings</a>
-            <a data-go="products" data-anchor="addons">White-label mobile SDK</a>
-            <a data-go="products" data-anchor="addons">Complete white-label app</a>
+          <div class="mm-col mm-sub">
+            <div class="mm-head"><a class="mm-eb" data-go="products" data-anchor="addons">CORE Amplify</a>
+              <svg class="mm-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg></div>
+            <div class="mm-list">
+              <a class="mm-it" data-go="products" data-anchor="addons"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4.5A2.5 2.5 0 0 0 6.2 4 3 3 0 0 0 4 8.5a3 3 0 0 0 .4 5.2A3 3 0 0 0 7 18.5 2.5 2.5 0 0 0 11 20z"></path><path d="M13 4.5A2.5 2.5 0 0 1 17.8 4 3 3 0 0 1 20 8.5a3 3 0 0 1-.4 5.2 3 3 0 0 1-2.6 4.8 2.5 2.5 0 0 1-4 1.5z"></path><path d="M13 10h3M13 14h2"></path></svg><span><span class="t">Finnovest IQ</span><small>AI-powered investment conversations</small></span></a>
+              <a class="mm-it" data-go="products" data-anchor="addons"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 10a6 6 0 0 1 12 0v2"></path><path d="M9 20c.6-1.8 1-3.8 1-6v-4a2 2 0 0 1 4 0v4c0 1.5-.2 3-.6 4.4"></path><path d="M6 14v1c0 1.6-.3 3-.9 4.3"></path><path d="M18 16c-.1 1.4-.4 2.8-.9 4"></path></svg><span><span class="t">Finnovest ID</span><small>Retail investor profiling &amp; intent discovery</small></span></a>
+            </div>
           </div>
-          <div class="dd-col"><a class="dd-h" data-go="products" data-anchor="integration">Deployment models<span class="go">View all →</span></a>
-            <a data-go="products" data-anchor="int-systems">Finnovest Connect<small>Into your core systems</small></a>
-            <a data-go="products" data-anchor="int-sdk">Finnovest Embedded<small>Into your existing app</small></a>
-            <a data-go="products" data-anchor="int-app">Finnovest Complete<small>As your own app</small></a>
+          <div class="mm-col mm-sub">
+            <div class="mm-head"><a class="mm-eb" data-go="products" data-anchor="addons">Investor applications</a>
+              <svg class="mm-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"></rect><path d="M10.5 18.5h3"></path></svg></div>
+            <div class="mm-list">
+              <a class="mm-it" data-go="products" data-anchor="addons"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-5M9 20v-8M14 20v-6M19 20V9"></path><path d="M4 10l5-4 5 3 6-5"></path></svg><span><span class="t">Finnovest ONE</span><small>Trading &amp; Advised-trading app</small></span></a>
+              <a class="mm-it" data-go="products" data-anchor="addons"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v-9"></path><path d="M12 11C12 7 9 5 5 5c0 4 3 6 7 6z"></path><path d="M12 13c0-3 2.5-5 6-5 0 3-2.5 5-6 5z"></path><path d="M8 20h8"></path></svg><span><span class="t">Finnovest FUTURE</span><small>IRA &amp; long-term investments</small></span></a>
+            </div>
+          </div>
+          <div class="mm-feat">
+            <a class="mm-art" data-go="advisedtrading" aria-label="More about Advised-trading"><i></i><i></i></a>
+            <a class="alink" data-go="advisedtrading"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>More about Advised-trading</a>
           </div>
         </div></div>
       <div class="dd"><button class="dd-t" type="button" aria-expanded="false">Solutions<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></button>

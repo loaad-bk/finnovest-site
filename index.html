@@ -2058,14 +2058,14 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 .vh-proof .vh-logos .lg { opacity: 0.92; }
 .vh-proof .vh-logos .lg-fibi, .vh-proof .vh-logos .lg-excellence { width: 180px; height: 46px; }
 .vh-proof .vh-logos .lg-discount { width: 100px; height: 64px; }
-.vh-proof .vh-nums { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: 1180px; margin: 34px auto 0; }
+.vh-proof .vh-nums { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); max-width: 1180px; margin: 34px auto 0; }
 .vh-proof .vh-nums div { display: grid; gap: 6px; padding: 0 14px; border-left: 1px solid rgba(255,255,255,0.12); min-width: 0; }
 .vh-proof .vh-nums div:first-child { border-left: 0; }
 .vh-proof .vh-nums b { font-family: "Instrument Sans", "Helvetica Neue", Arial, sans-serif; font-weight: 500; font-size: clamp(34px, 3.4vw, 50px); line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
 .vh-proof .vh-nums span { font-size: 13px; color: rgba(255,255,255,0.64); }
 .vh-proof .vh-iia { display: inline-flex; align-items: center; gap: 14px; margin-top: 34px; font-size: 13px; color: rgba(255,255,255,0.7); }
 .vh-proof .vh-iia .hp-iia-logo { width: 100px; height: 26px; flex: none; }
-@media (max-width: 760px) { .vh-proof .vh-nums { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 28px; } .vh-proof .vh-nums div:nth-child(3) { border-left: 0; } .vh-proof .vh-logos { gap: 22px 40px; } }
+@media (max-width: 760px) { .vh-proof .vh-nums { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 28px; } .vh-proof .vh-nums div:nth-child(3) { border-left: 0; } .vh-proof .vh-nums div:nth-child(5) { grid-column: 1 / -1; } .vh-proof .vh-logos { gap: 22px 40px; } }
 
 /* client logos scroll continuously left to right, fading at both edges */
 .vh-proof .vh-marq { max-width: 1180px; margin: 0 auto; overflow: hidden; padding: 6px 0 38px; border-bottom: 1px solid rgba(255,255,255,0.12); -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 86%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 86%, transparent 100%); }
@@ -2637,7 +2637,8 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
     <div class="vh-nums">
       <div><b>$20B+</b><span>Assets analyzed daily</span></div>
       <div><b>$200M+</b><span>Monthly trading volume</span></div>
-      <div><b>53%</b><span>Registered accounts</span></div>
+      <div><b>52%</b><span>Of recommendations opened</span></div>
+      <div><b>1:2</b><span>Opened recommendations executed</span></div>
       <div><b>Zero</b><span>Compliance errors since 2018</span></div>
     </div>
   </div>

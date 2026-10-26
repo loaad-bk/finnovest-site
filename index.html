@@ -2965,6 +2965,28 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 .ox .ox-cc3 b{font-size:15px;font-weight:600}
 .ox .ox-cc3 span{font-size:13.5px;color:#4A5856;line-height:1.45}
 .ox .ox-qt{font-family:'Instrument Sans',sans-serif;font-weight:500;font-size:22px;line-height:1.3;letter-spacing:-.01em;margin:0;color:#07282A}
+.ox .ox-pts{list-style:none;padding:0;margin:24px 0 0}
+.ox .ox-pts li{padding:12px 0;border-top:1px solid rgba(7,40,42,.12);font-size:15px;line-height:1.5;color:#3F4E4C}
+.ox .ox-pts li b{display:block;font-weight:500;color:#07282A;font-size:16px;margin-bottom:2px}
+.ox .ox-ui{background:#fff;border-radius:6px;padding:20px;width:100%;max-width:400px;font-size:14px;color:#07282A}
+.ox .ox-ok{color:#0B8A5F;font-weight:600}
+.ox .ox-note{margin-top:22px;border-radius:6px;background:#fff;padding:18px 20px;font-size:15px;line-height:1.55;color:#3F4E4C}
+.ox .ox-note b{color:#07282A;font-weight:600}
+.ox .ox-trg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:36px}
+.ox .ox-trg>div{background:#fff;border-radius:6px;padding:22px;display:flex;flex-direction:column;gap:8px}
+.ox .ox-trg .ox-n{font-size:13px;color:#4A5856}
+.ox .ox-trg b{font-family:'Instrument Sans',sans-serif;font-weight:500;font-size:21px;letter-spacing:-.01em}
+.ox .ox-trg span{font-size:14.5px;line-height:1.5;color:#3F4E4C}
+.ox .ox-trg2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}
+.ox .ox-trg2>div{border:1px solid rgba(7,40,42,.14);border-radius:6px;padding:16px 20px;font-size:14.5px;line-height:1.5;color:#3F4E4C}
+.ox .ox-trg2 b{color:#07282A;font-weight:600}
+.ox .ox-cons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:36px}
+.ox .ox-cons>div{background:#F4F8F5;border-radius:6px;padding:22px;display:flex;flex-direction:column;gap:6px}
+.ox .ox-cons b{font-size:16px;font-weight:600}
+.ox .ox-cons span{font-size:14.5px;line-height:1.5;color:#4A5856}
+@media(max-width:900px){
+.ox .ox-trg,.ox .ox-trg2,.ox .ox-cons{grid-template-columns:minmax(0,1fr)}
+}
 @media(max-width:900px){
 .ox .ox-chg,.ox .ox-wfh,.ox .ox-cc,.ox .ox-cc3{grid-template-columns:minmax(0,1fr)}
 .ox .ox-wf{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -5318,16 +5340,56 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
   <section class="ox-band ox-lt" id="ox-os-core-how">
     <div class="ox-w">
       <div class="ox-wfh">
-        <div><span class="ox-eb">The complete workflow</span><h2 class="ox-h2">From one professional view <em>to every documented order.</em></h2></div>
+        <div><span class="ox-eb">The complete workflow</span><h2 class="ox-h2">From one professional view <em>to thousands of executed trades.</em></h2></div>
         <p class="ox-subt" style="margin:0">CORE runs the entire Advised-trading workflow: from your house view to personalized recommendations, the investor's one-tap approval, coordinated execution and full documentation.</p>
       </div>
       <div class="ox-wf">
-        <a data-go="os-core" data-anchor="ox-os-core-how" class="ox-wfi"><span class="ox-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3.5h9l4 4v13H6z"></path><path d="M9 12h7M9 15.5h7"></path></svg></span><span class="ox-num">01</span><b>House view</b><span>Model portfolios, investment ideas, research, and allocation by risk level.</span></a>
-        <a data-go="os-core" data-anchor="ox-os-core-how" class="ox-wfi"><span class="ox-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20c1-4 4-6 7-6s6 2 7 6"></path></svg></span><span class="ox-num">02</span><b>Recommendation trigger</b><span>Human or autonomous: started by an advisor, a client request or the system.</span></a>
+        <a data-go="os-core" data-anchor="ox-os-core-house-view" class="ox-wfi"><span class="ox-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3.5h9l4 4v13H6z"></path><path d="M9 12h7M9 15.5h7"></path></svg></span><span class="ox-num">01</span><b>House view</b><span>Model portfolios, investment ideas, research, and allocation by risk level.</span></a>
+        <a data-go="os-core" data-anchor="ox-os-core-trigger" class="ox-wfi"><span class="ox-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20c1-4 4-6 7-6s6 2 7 6"></path></svg></span><span class="ox-num">02</span><b>Recommendation trigger</b><span>Human or autonomous: started by an advisor, a client request or the system.</span></a>
         <a data-go="os-core" data-anchor="ox-os-core-one-to-many" class="ox-wfi"><span class="ox-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M4 12h16M4 17h7"></path><circle cx="17" cy="7" r="2"></circle><circle cx="14" cy="17" r="2"></circle></svg></span><span class="ox-num">03</span><b>Personalized order bundles</b><span>Fitted to each portfolio, risk profile and constraint, and checked for suitability.</span></a>
         <a data-go="os-core" data-anchor="ox-os-core-trade-all" class="ox-wfi"><span class="ox-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg></span><span class="ox-num">04</span><b>Trade-All™</b><span>The investor approves the whole bundle: one tap to Trade-All™.</span></a>
         <a data-go="os-core" data-anchor="ox-os-core-trade-all" class="ox-wfi"><span class="ox-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17l5-5 4 4 7-8"></path><path d="M15 8h5v5"></path></svg></span><span class="ox-num">05</span><b>Algorithmic execution</b><span>Dependent sell and buy orders orchestrated in real time.</span></a>
         <a data-go="os-core" data-anchor="ox-os-core-compliance" class="ox-wfi"><span class="ox-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg></span><span class="ox-num">06</span><b>Advice documentation &amp; trade reporting</b><span>Every step recorded and reported, as the regulation requires.</span></a>
+      </div>
+    </div>
+  </section>
+  <section class="ox-band ox-lt2" id="ox-os-core-house-view">
+    <div class="ox-w ox-row">
+      <div>
+        <span class="ox-eb">Stage 01 · House view · Management console</span>
+        <h2 class="ox-h2">Your expertise, <em>in your clients' hands.</em></h2>
+        <p class="ox-subt">The head of advisory sets the institution's professional position. CORE then works by the asset allocation defined for each risk level, the recommended securities, and every other constraint in the system.</p>
+        <ul class="ox-pts">
+          <li><b>Asset allocation by risk level</b>The allocation defined for each risk level.</li>
+          <li><b>Limits</b>Minimum and maximum per asset class, duration and credit rating limits, and average and single-security limits.</li>
+          <li><b>Blocked instruments and market permissions</b>Applied to every recommendation.</li>
+          <li><b>Configuration to the house's own policy</b>Trading settings, recommendation settings, and securities and product settings.</li>
+        </ul>
+        <p class="ox-muted" style="font-size:15px;margin-top:16px">Coverage is set by your house view: every market and asset your institution inputs.</p>
+      </div>
+      <div class="ox-tile ox-teal">
+        <div class="ox-ui">
+          <div class="ox-ui-h"><span class="ox-dot"></span>House view<span style="margin-left:auto">Management console</span></div>
+          <div class="ox-kv"><span><b>Alphabet Inc</b><br><span class="ox-muted">House research</span></span><span class="ox-tag ox-b">Buy</span></div>
+          <div class="ox-kv"><span><b>iShares MSCI Global</b><br><span class="ox-muted">House research</span></span><span class="ox-tag">Hold</span></div>
+          <div class="ox-kv"><span class="ox-muted">Asset allocation and limits for each risk level</span><span class="ox-ok">✓</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="ox-band ox-lt" id="ox-os-core-trigger">
+    <div class="ox-w">
+      <span class="ox-eb">Stage 02 · Recommendation trigger · Advisor console</span>
+      <h2 class="ox-h2">Human or autonomous, <em>to every suitable client.</em></h2>
+      <p class="ox-subt">The advisor turns the house view into a recommendation for their own book: what to buy or sell, the funding strategy behind it, and the reasoning, written in their own words. Before sending, they see how many clients it suits.</p>
+      <div class="ox-trg">
+        <div><span class="ox-n">1 · Started by the advisor</span><b>Advisor-initiated</b><span>The house advisor initiates an investment idea to promote to clients: buy, sell or portfolio rebalance. The advisor selects the audience, the instruments and the funding sources.</span></div>
+        <div><span class="ox-n">2 · Started by the client</span><b>Advice on demand</b><span>The client initiates a scan of their portfolio. CORE identifies a risk deviation, or a possible qualitative improvement in the portfolio's assets and allocation.</span></div>
+        <div><span class="ox-n">3 · Started by the system</span><b>Autonomous advisory</b><span>The system runs at predefined times, scans client portfolios, identifies a need, and builds a recommended order bundle for approval.</span></div>
+      </div>
+      <div class="ox-trg2">
+        <div><b>An existing portfolio</b> is imported as it stands, whatever the starting point.</div>
+        <div><b>Building a portfolio from cash</b>, started by the client or by an automatic scan: for new clients, or clients with a high share of cash, a recommendation for a portfolio that matches the client's profile, limits and risk level.</div>
       </div>
     </div>
   </section>
@@ -5337,6 +5399,14 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
         <span class="ox-eb">One-to-Many Engine</span>
         <h2 class="ox-h2">One investment view. <em>Thousands of personalized recommendations.</em></h2>
         <p class="ox-subt">CORE applies your investment logic to each investor's actual portfolio, risk profile, holdings, available funds and applicable constraints, creating individually suitable recommendations at scale.</p>
+        <ul class="ox-pts">
+          <li><b>The client's portfolio</b>The existing holdings, cash and buying power, risk level, and the client's personal limits.</li>
+          <li><b>Exposures</b>Exposure to securities, sectors and ratings, minimum and maximum per asset class, and duration and credit rating limits.</li>
+          <li><b>Regulation and compliance</b>Regulatory limits and compliance rules, with the rules of the exchange member and of the exchange itself built in.</li>
+          <li><b>Trading rules</b>Minimum quantities and whole-unit quantities, so every recommendation is ready to execute.</li>
+          <li><b>The trade-off</b>Bringing the client as close as possible to the optimal target, while recommending the minimum actions needed: less turnover, lower cost, no unnecessary changes.</li>
+        </ul>
+        <div class="ox-note"><b>All of it, together.</b> Building the optimal recommendation under all these constraints is an NP-complete optimization problem: the possibilities grow dramatically with every asset and constraint. The Israel Innovation Authority recognized the algorithm as breakthrough technology for handling them together, across tens of thousands of portfolios in parallel.</div>
         <div style="display:flex;align-items:center;gap:16px;margin-top:24px;flex-wrap:wrap"><span class="ox-iia-sm ox-iia" role="img" aria-label="Israel Innovation Authority"></span><span class="ox-muted" style="font-size:14px;max-width:300px">Recognized by the Israel Innovation Authority as breakthrough technology.</span></div>
       </div>
       <div class="ox-mp">
@@ -5355,6 +5425,14 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
         <span class="ox-eb">Trade-All™</span>
         <h2 class="ox-h2">One tap to <em>Trade-All™.</em></h2>
         <p class="ox-subt">Investors approve an entire personalized bundle of trades in one action. CORE manages and executes multiple, interdependent buy and sell orders in real time, with no manual order entry.</p>
+        <ul class="ox-pts">
+          <li><b>The recommended bundle</b>The full set of orders, personalized to the client.</li>
+          <li><b>Its effect on the portfolio</b>Shown before the client decides.</li>
+          <li><b>Commissions and disclosure</b>Fair disclosure, commissions, special risks and conflicts of interest, under the institution's rules.</li>
+          <li><b>The full documentation</b>The client can read it before deciding.</li>
+          <li><b>A push notification</b>A new recommendation, reminders and other events, through the institution's notification system.</li>
+        </ul>
+        <p class="ox-muted" style="font-size:15px;margin-top:14px">Every bundle is checked for regulatory, professional and operational suitability when it is created and sent, and again in real time when the client opens it.</p>
       </div>
       <div class="ox-tawrap">
         <div class="ox-phone" style="width:230px"><div class="ox-scr" style="min-height:380px;gap:10px">
@@ -5382,11 +5460,52 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
         <span class="ox-eb">Native Compliance</span>
         <h2 class="ox-h2">Compliance <em>by design.</em></h2>
         <p class="ox-subt">Suitability checks, regulatory and institutional controls, investor approvals and complete documentation are built into every stage of the workflow, at scale.</p>
+        <p class="ox-subt" style="font-size:16px">Built into the Advised-trading cycle, not a check at the end: it controls the move from stage to stage, cross-checks portfolios against regulatory limits when the recommendation is created and again when it is opened, and keeps full documentation. Where a recommendation does not fit, it is filtered out, not softened. Personalized advice at retail scale, with no exception queue at the end of the day.</p>
       </div>
       <div class="ox-cc3">
         <div><span class="ox-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"></path></svg></span><b>Investor suitability</b><span>Checked against each investor's profile and portfolio, when created and again when opened.</span></div>
         <div><span class="ox-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M6 3.5h9l4 4v13H6z"></path><path d="M9 12h7M9 15.5h7"></path></svg></span><b>Regulatory controls</b><span>Regulatory and institutional requirements, applied to every recommendation.</span></div>
         <div><span class="ox-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg></span><b>Full documentation</b><span>A complete record from advice to execution, kept as the regulation requires.</span></div>
+      </div>
+    </div>
+  </section>
+  <section class="ox-band ox-lt" id="ox-os-core-consoles">
+    <div class="ox-w ox-row">
+      <div>
+        <span class="ox-eb">Management and advisor consoles</span>
+        <h2 class="ox-h2">Every recommendation, <em>in view.</em></h2>
+        <p class="ox-subt">One console, by role. The status of every recommendation and its orders, per client and in aggregate. All the data in the system is made available for in-depth business analysis.</p>
+        <div class="ox-cons" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+          <div><b>Create recommendations</b><span>Buy, Sell and Smart Rebalance flows.</span></div>
+          <div><b>Static and dynamic client groups</b><span>With limits applied in real time.</span></div>
+          <div><b>Status dashboards</b><span>The status of every recommendation, and of the orders within it.</span></div>
+          <div><b>Notifications</b><span>From the system to the manager and the advisor.</span></div>
+          <div><b>Messages without orders</b><span>Sent to clients either as advice or as a general message.</span></div>
+          <div><b>Client data</b><span>Personal limits set for the individual client.</span></div>
+        </div>
+      </div>
+      <div class="ox-tile ox-lilac">
+        <div class="ox-ui">
+          <div class="ox-ui-h"><span class="ox-dot"></span>Advice Protocol<span style="margin-left:auto">per client · per recommendation</span></div>
+          <div class="ox-kv"><span><b>House view</b><br><span class="ox-muted">Set by the head of advisory</span></span><span class="ox-ok">✓</span></div>
+          <div class="ox-kv"><span><b>Reasoning</b><br><span class="ox-muted">Attached to the recommendation</span></span><span class="ox-ok">✓</span></div>
+          <div class="ox-kv"><span><b>Suitability</b><br><span class="ox-muted">Profile, holdings, cash and credit checked</span></span><span class="ox-ok">✓</span></div>
+          <div class="ox-kv"><span><b>Approval</b><br><span class="ox-muted">Client's tap, time-stamped</span></span><span class="ox-ok">✓</span></div>
+          <div class="ox-kv"><span><b>Execution</b><br><span class="ox-muted">Orders sequenced and filled</span></span><span class="ox-ok">✓</span></div>
+          <div class="ox-kv"><span><b>Retained</b><br><span class="ox-muted">Kept as the regulation requires</span></span><span class="ox-ok">✓</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="ox-band ox-lt2" id="ox-os-core-need">
+    <div class="ox-w">
+      <span class="ox-eb">What you need to start</span>
+      <h2 class="ox-h2">Bring your view. <em>Choose how clients get it.</em></h2>
+      <div class="ox-cons" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+        <div style="background:#fff"><span class="ox-n" style="font-size:13px;color:#4A5856">01</span><b>Your house view</b><span>Allocation by risk level, limits and the recommended securities.</span></div>
+        <div style="background:#fff"><span class="ox-n" style="font-size:13px;color:#4A5856">02</span><b>Your advisors</b><span>Licensed advisors of your own, or recommendations started by the system.</span></div>
+        <div style="background:#fff"><span class="ox-n" style="font-size:13px;color:#4A5856">03</span><b>Client accounts and market access</b><span>Connected with your team during technical design.</span></div>
+        <div style="background:#fff"><span class="ox-n" style="font-size:13px;color:#4A5856">04</span><b>One delivery option</b><span><a data-go="os-api" style="text-decoration:underline">API</a>, <a data-go="os-sdk" style="text-decoration:underline">White-label SDK</a> or <a data-go="os-one" style="text-decoration:underline">Finnovest ONE</a>.</span></div>
       </div>
     </div>
   </section>
@@ -5405,6 +5524,30 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
         <div class="ox-bx"><span>Choose one</span><b>A delivery option</b><span>API, White-label SDK or Finnovest ONE</span></div>
         <span class="ox-plus">+</span>
         <div class="ox-bx"><span>Optional</span><b>CORE Amplify</b><span>Finnovest IQ, ID, FUTURE</span></div>
+      </div>
+    </div>
+  </section>
+  <section class="ox-band ox-lt2" id="ox-os-core-extend">
+    <div class="ox-w">
+      <span class="ox-eb">On top of CORE</span>
+      <h2 class="ox-h2">Extend it. <em>Deliver it.</em></h2>
+      <div class="ox-g2" style="margin-top:36px">
+        <div>
+          <p class="ox-sublbl">CORE Amplify · Optional add-ons</p>
+          <div class="ox-cons" style="grid-template-columns:minmax(0,1fr);margin-top:16px">
+            <a data-go="os-iq" class="ox-cd-it" style="background:#fff;padding:16px"><span class="ox-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4.5A2.5 2.5 0 0 0 6.2 4 3 3 0 0 0 4 8.5a3 3 0 0 0 .4 5.2A3 3 0 0 0 7 18.5 2.5 2.5 0 0 0 11 20z"></path><path d="M13 4.5A2.5 2.5 0 0 1 17.8 4 3 3 0 0 1 20 8.5a3 3 0 0 1-.4 5.2 3 3 0 0 1-2.6 4.8 2.5 2.5 0 0 1-4 1.5z"></path></svg></span><div><b>Finnovest IQ →</b><span>AI-powered investment conversations</span></div></a>
+            <a data-go="os-id" class="ox-cd-it" style="background:#fff;padding:16px"><span class="ox-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M6 10a6 6 0 0 1 12 0v2"></path><path d="M9 20c.6-1.8 1-3.8 1-6v-4a2 2 0 0 1 4 0v4c0 1.5-.2 3-.6 4.4"></path></svg></span><div><b>Finnovest ID →</b><span>Retail investor profiling &amp; intent discovery</span></div></a>
+            <a data-go="os-future" class="ox-cd-it" style="background:#fff;padding:16px"><span class="ox-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v-9"></path><path d="M12 11C12 7 9 5 5 5c0 4 3 6 7 6z"></path><path d="M12 13c0-3 2.5-5 6-5 0 3-2.5 5-6 5z"></path></svg></span><div><b>Finnovest FUTURE →</b><span>IRA &amp; long-term investments</span></div></a>
+          </div>
+        </div>
+        <div>
+          <p class="ox-sublbl">Investor Applications · Delivery options</p>
+          <div class="ox-cons" style="grid-template-columns:minmax(0,1fr);margin-top:16px">
+            <a data-go="os-api" class="ox-cd-it" style="background:#fff;padding:16px"><span class="ox-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5"></path><path d="M16 7l5 5-5 5"></path></svg></span><div><b>API →</b><span>Your app, your UX</span></div></a>
+            <a data-go="os-sdk" class="ox-cd-it" style="background:#fff;padding:16px"><span class="ox-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="3"></rect><path d="M3.5 10h17"></path><path d="M10 10v10.5"></path></svg></span><div><b>White-label SDK →</b><span>Embedded Advised-trading experience</span></div></a>
+            <a data-go="os-one" class="ox-cd-it" style="background:#fff;padding:16px"><span class="ox-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"></rect><path d="M10.5 18.5h3"></path></svg></span><div><b>Finnovest ONE →</b><span>Complete white-label app</span></div></a>
+          </div>
+        </div>
       </div>
     </div>
   </section>

@@ -3184,6 +3184,55 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 .ox .ox-iia-img{height:50px;width:180px}.ox .ox-iia-sm{height:32px;width:116px}
 .ox a[data-go]{cursor:pointer}
 </style>
+<style id="os-menu-2026-10-29">
+/* OS mega menu (29 Oct 2026, design B, option 2): pale ground, round icon chips on the three pages,
+   two-line list of their parts, hairlines between the columns, video card on the right.
+   Clickable cue: every link lifts onto a soft white card on hover. Restore: archive/index-before-os-menu-b-2026-10-29.html */
+.dd-mega .dd-p.mm.mm-os3{display:grid;grid-template-columns:minmax(0,1fr) 320px;column-gap:56px;background:#F4F8F5;padding-top:56px;padding-bottom:60px}
+.mm-os3 .m3-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.mm-os3 .m3-col{display:flex;flex-direction:column;gap:30px;min-width:0;padding:0 28px}
+.mm-os3 .m3-col:first-child{padding-left:0}
+.mm-os3 .m3-col:last-child{padding-right:0}
+.mm-os3 .m3-col+.m3-col{border-left:1px solid rgba(7,40,42,.12)}
+.nav-links .dd-p.mm.mm-os3 a{cursor:pointer}
+.nav-links .dd-p.mm.mm-os3 a.m3-head,.nav-links .dd-p.mm.mm-os3 a.m3-it{margin:-12px -14px;padding:12px 14px;border-radius:10px;color:#07282A;transition:background .2s,box-shadow .2s}
+.nav-links .dd-p.mm.mm-os3 a.m3-head:hover,.nav-links .dd-p.mm.mm-os3 a.m3-it:hover{background:#fff;box-shadow:0 1px 3px rgba(7,40,42,.08)}
+.nav-links .dd-p.mm.mm-os3 a.m3-head{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.mm-os3 .m3-ic{width:72px;height:72px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(7,40,42,.06);transition:background .25s}
+.mm-os3 .m3-svg{width:28px;height:28px;color:#07282A}
+.nav-links .dd-p.mm.mm-os3 a.m3-head:hover .m3-ic{background:#D2F4E3}
+.mm-os3 .m3-ht{display:flex;flex-direction:column;gap:6px}
+.mm-os3 .m3-ht b{font-family:var(--display);font-weight:500;font-size:1.5rem;line-height:1.1;letter-spacing:-.02em}
+.mm-os3 .m3-ht small{font-size:.875rem;color:#5E6E6B}
+.mm-os3 .m3-list{display:flex;flex-direction:column;gap:22px}
+.nav-links .dd-p.mm.mm-os3 a.m3-it{display:flex;flex-direction:column;gap:4px}
+.mm-os3 .m3-it b{font-weight:500;font-size:1rem}
+.mm-os3 .m3-it span{font-size:.875rem;line-height:1.45;color:#5E6E6B}
+.nav-links .dd-p.mm.mm-os3 a.m3-it:hover b,.nav-links .dd-p.mm.mm-os3 a.m3-head:hover .m3-ht b{color:#0B8A5F}
+.nav-links .dd-p.mm.mm-os3 a.m3-feat{display:flex;flex-direction:column;gap:14px;color:#07282A}
+.mm-os3 .m3-thumb{position:relative;display:block;aspect-ratio:16/10;max-width:100%;border-radius:6px;background:#07282A;overflow:hidden}
+.mm-os3 .m3-thumb>i{position:absolute;inset:0;background-image:radial-gradient(circle,#2EE59D 1.2px,transparent 1.7px);background-size:8px 8px;-webkit-mask-image:radial-gradient(ellipse 75% 80% at 62% 45%,#000 0%,rgba(0,0,0,.5) 40%,transparent 75%);mask-image:radial-gradient(ellipse 75% 80% at 62% 45%,#000 0%,rgba(0,0,0,.5) 40%,transparent 75%);transition:transform .6s}
+.mm-os3 .m3-thumb>i+i{background-image:radial-gradient(circle,#D2F4E3 1.5px,transparent 2px);background-position:4px 4px;-webkit-mask-image:radial-gradient(circle at 62% 45%,#000 0%,transparent 24%);mask-image:radial-gradient(circle at 62% 45%,#000 0%,transparent 24%)}
+.mm-os3 .m3-feat:hover .m3-thumb>i{transform:scale(1.05)}
+.mm-os3 .m3-play{position:absolute;left:50%;top:50%;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;background:#fff;transition:transform .25s}
+.mm-os3 .m3-play:after{content:"";position:absolute;left:22px;top:18px;border-style:solid;border-width:10px 0 10px 15px;border-color:transparent transparent transparent #07282A}
+.mm-os3 .m3-feat:hover .m3-play{transform:scale(1.08)}
+.mm-os3 .m3-ft{font-family:var(--display);font-weight:500;font-size:2rem;line-height:1.05;letter-spacing:-.025em}
+.mm-os3 .m3-ft em{font-style:italic;white-space:nowrap}
+.mm-os3 .m3-cap{font-size:.9375rem;font-weight:500;color:#0B8A5F}
+.nav-links .dd-p.mm.mm-os3 a.m3-feat:hover .m3-ft{color:#0B8A5F}
+@media(max-width:1180px){.dd-mega .dd-p.mm.mm-os3{grid-template-columns:minmax(0,1fr);row-gap:40px}.nav-links .dd-p.mm.mm-os3 a.m3-feat{display:grid;grid-template-columns:220px 1fr;align-items:center;column-gap:28px}.mm-os3 .m3-thumb{grid-row:1/3}.mm-os3 .m3-ft{align-self:end}.mm-os3 .m3-cap{grid-column:2;align-self:start}}
+@media(max-width:900px){
+  .nav-links.open .dd-mega .dd-p.mm.mm-os3{display:flex;flex-direction:column;background:none;padding:0 0 4px}
+  .nav-links.open .mm-os3 .m3-cols{display:block}
+  .nav-links.open .mm-os3 .m3-col{gap:0;padding:0;border:0}
+  .nav-links.open .mm-os3 .m3-ic,.nav-links.open .mm-os3 .m3-ht small,.nav-links.open .mm-os3 .m3-it span,.nav-links.open .mm-os3 .m3-thumb,.nav-links.open .mm-os3 .m3-cap{display:none}
+  .nav-links.open .dd-p.mm.mm-os3 a.m3-head,.nav-links.open .dd-p.mm.mm-os3 a.m3-it,.nav-links.open .dd-p.mm.mm-os3 a.m3-feat{display:block;margin:0;padding:10px 8px;border-radius:0;background:none;box-shadow:none;color:rgba(255,255,255,.92)}
+  .nav-links.open .mm-os3 .m3-list{gap:0;padding-left:12px}
+  .nav-links.open .mm-os3 .m3-ht b,.nav-links.open .mm-os3 .m3-ft{font-family:var(--body);font-size:.95rem;font-weight:500;letter-spacing:0}
+  .nav-links.open .mm-os3 .m3-it b{font-weight:400}
+}
+</style>
 </head>
 <body>
 <div class="field"></div>
@@ -3199,43 +3248,38 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
     </button>
     <div class="nav-links" id="navlinks">
       <div class="dd dd-mega"><button class="dd-t" type="button" aria-expanded="false">Advised-trading OS<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></button>
-        <div class="dd-p mm mm-os">
-          <a class="mm-top" data-go="at-overview">Advised-trading Operating System<span>Overview →</span></a>
-          <div class="mm-col mm-core">
-            <a class="mm-head" data-go="os-core">
-              <svg class="mm-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="2.5"></ellipse><path d="M4 11c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"></path><path d="M4 16c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"></path></svg>
-              <span class="mm-title">CORE</span><span class="mm-sub2">The foundation of Advised-trading</span></a>
-            <div class="mm-list">
-              <a class="mm-it" data-go="os-core" data-anchor="ox-os-core-one-to-many"><span><span class="t">One-to-Many Engine</span><small>Scale professional investment advice</small></span></a>
-              <a class="mm-it" data-go="os-core" data-anchor="ox-os-core-trade-all"><span><span class="t">Trade-All™</span><small>One-tap approval. Seamlessly orchestrated execution.</small></span></a>
-              <a class="mm-it" data-go="os-core" data-anchor="ox-os-core-compliance"><span><span class="t">Native Compliance</span><small>Inherent compliance across advisory and trading workflows</small></span></a>
+        <div class="dd-p mm mm-os mm-os3">
+          <div class="m3-cols">
+            <div class="m3-col">
+              <a class="m3-head" data-go="os-core"><span class="m3-ic"><svg class="m3-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="2.5"></ellipse><path d="M4 11c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"></path><path d="M4 16c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"></path></svg></span><span class="m3-ht"><b>CORE</b><small>The foundation of Advised-trading</small></span></a>
+              <div class="m3-list">
+                <a class="m3-it" data-go="os-core" data-anchor="ox-os-core-one-to-many"><b>Recommendation Engine</b><span>Scale professional investment advice</span></a>
+                <a class="m3-it" data-go="os-core" data-anchor="ox-os-core-trade-all"><b>Trade-All™</b><span>One-tap approval. Seamlessly orchestrated execution.</span></a>
+                <a class="m3-it" data-go="os-core" data-anchor="ox-os-core-compliance"><b>Native Compliance</b><span>Inherent compliance across advisory and trading workflows</span></a>
+              </div>
+            </div>
+            <div class="m3-col">
+              <a class="m3-head" data-go="os" data-anchor="ox-os-arch"><span class="m3-ic"><svg class="m3-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg></span><span class="m3-ht"><b>Products</b><small>Optional add-ons</small></span></a>
+              <div class="m3-list">
+                <a class="m3-it" data-go="os-iq"><b>Finnovest IQ</b><span>AI-powered investment conversations</span></a>
+                <a class="m3-it" data-go="os-id"><b>Finnovest ID</b><span>Retail investor profiling &amp; intent discovery</span></a>
+                <a class="m3-it" data-go="os-future"><b>Finnovest FUTURE</b><span>IRA &amp; long-term investments</span></a>
+              </div>
+            </div>
+            <div class="m3-col">
+              <a class="m3-head" data-go="os" data-anchor="ox-os-delivery"><span class="m3-ic"><svg class="m3-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"></rect><path d="M10.5 18.5h3"></path></svg></span><span class="m3-ht"><b>Investor Interface</b><small>Delivery options</small></span></a>
+              <div class="m3-list">
+                <a class="m3-it" data-go="os-api"><b>API</b><span>Your app, your UX</span></a>
+                <a class="m3-it" data-go="os-sdk"><b>White-label SDK</b><span>Embedded Advised-trading experience</span></a>
+                <a class="m3-it" data-go="os-one"><b>Finnovest ONE</b><span>Complete white-label app</span></a>
+              </div>
             </div>
           </div>
-          <div class="mm-col mm-sub">
-            <a class="mm-head" data-go="os" data-anchor="ox-os-arch">
-              <svg class="mm-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg>
-              <span class="mm-title mm-t2">CORE Amplify</span><span class="mm-sub2">Optional add-ons</span></a>
-            <div class="mm-list">
-              <a class="mm-it" data-go="os-iq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4.5A2.5 2.5 0 0 0 6.2 4 3 3 0 0 0 4 8.5a3 3 0 0 0 .4 5.2A3 3 0 0 0 7 18.5 2.5 2.5 0 0 0 11 20z"></path><path d="M13 4.5A2.5 2.5 0 0 1 17.8 4 3 3 0 0 1 20 8.5a3 3 0 0 1-.4 5.2 3 3 0 0 1-2.6 4.8 2.5 2.5 0 0 1-4 1.5z"></path><path d="M13 10h3M13 14h2"></path></svg><span><span class="t">Finnovest IQ</span><small>AI-powered investment conversations</small></span></a>
-              <a class="mm-it" data-go="os-id"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 10a6 6 0 0 1 12 0v2"></path><path d="M9 20c.6-1.8 1-3.8 1-6v-4a2 2 0 0 1 4 0v4c0 1.5-.2 3-.6 4.4"></path><path d="M6 14v1c0 1.6-.3 3-.9 4.3"></path><path d="M18 16c-.1 1.4-.4 2.8-.9 4"></path></svg><span><span class="t">Finnovest ID</span><small>Retail investor profiling &amp; intent discovery</small></span></a>
-              <a class="mm-it" data-go="os-future"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v-9"></path><path d="M12 11C12 7 9 5 5 5c0 4 3 6 7 6z"></path><path d="M12 13c0-3 2.5-5 6-5 0 3-2.5 5-6 5z"></path><path d="M8 20h8"></path></svg><span><span class="t">Finnovest FUTURE</span><small>IRA &amp; long-term investments</small></span></a>
-            </div>
-          </div>
-          <div class="mm-col mm-sub">
-            <a class="mm-head" data-go="os" data-anchor="ox-os-delivery">
-              <svg class="mm-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"></rect><path d="M10.5 18.5h3"></path></svg>
-              <span class="mm-title mm-t2">Investor Interface</span><span class="mm-sub2">Delivery options</span></a>
-            <div class="mm-list">
-              <a class="mm-it" data-go="os-api"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5"></path><path d="M16 7l5 5-5 5"></path></svg><span><span class="t">API</span><small>Your app, your UX</small></span></a>
-              <a class="mm-it" data-go="os-sdk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="3"></rect><path d="M3.5 10h17"></path><path d="M10 10v10.5"></path></svg><span><span class="t">White-label SDK</span><small>Embedded Advised-trading experience</small></span></a>
-              <a class="mm-it" data-go="os-one"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-5M9 20v-8M14 20v-6M19 20V9"></path><path d="M4 10l5-4 5 3 6-5"></path></svg><span><span class="t">Finnovest ONE</span><small>Complete white-label app</small></span></a>
-            </div>
-          </div>
-          <div class="mm-feat">
-            <a class="mm-art" data-go="os" aria-label="Explore the OS"><i></i><i></i></a>
-            <a class="alink" data-go="os"><span class="c"><svg viewBox="0 0 24 24"><path d="M8 4l8 8-8 8"></path></svg></span>Explore the OS</a>
-            <a class="mm-whatis" data-go="at-overview">What is Advised-trading?</a>
-          </div>
+          <a class="m3-feat" data-go="at-overview">
+            <span class="m3-thumb"><i></i><i></i><span class="m3-play" aria-hidden="true"></span></span>
+            <span class="m3-ft">What is <em>Advised-trading?</em></span>
+            <span class="m3-cap">Read the overview</span>
+          </a>
         </div></div>
       <div class="dd dd-mega"><button class="dd-t" type="button" aria-expanded="false">Solutions<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></button>
         <div class="dd-p mm mm-short">
@@ -5237,7 +5281,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       <div style="margin-top:40px">
         <a data-go="os-core" class="ox-layer ox-mint">
           <div><span class="ox-ln">01 / FOUNDATION · always included</span><p class="ox-lt3">CORE</p><p>The foundation of Advised-trading</p></div>
-          <div class="ox-items"><span class="ox-item"><b>One-to-Many Engine</b><span>Scale professional investment advice</span></span><span class="ox-item"><b>Trade-All™</b><span>One-tap approval. Seamlessly orchestrated execution.</span></span><span class="ox-item"><b>Native Compliance</b><span>Inherent compliance across advisory and trading workflows</span></span></div>
+          <div class="ox-items"><span class="ox-item"><b>Recommendation Engine</b><span>Scale professional investment advice</span></span><span class="ox-item"><b>Trade-All™</b><span>One-tap approval. Seamlessly orchestrated execution.</span></span><span class="ox-item"><b>Native Compliance</b><span>Inherent compliance across advisory and trading workflows</span></span></div>
         </a>
         <div class="ox-layer ox-lilac">
           <div><span class="ox-ln">02 / ENHANCEMENTS · optional</span><p class="ox-lt3">CORE Amplify</p><p>Optional add-ons</p></div>
@@ -5268,7 +5312,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       </div>
       <p class="ox-h3" style="margin-top:48px">What you buy</p>
       <div class="ox-buy">
-        <div class="ox-bx ox-here"><span>Always</span><b>CORE</b><span>One-to-Many Engine, Trade-All™, Native Compliance</span></div>
+        <div class="ox-bx ox-here"><span>Always</span><b>CORE</b><span>Recommendation Engine, Trade-All™, Native Compliance</span></div>
         <span class="ox-plus">+</span>
         <div class="ox-bx"><span>Choose one</span><b>A delivery option</b><span>API, White-label SDK or Finnovest ONE</span></div>
         <span class="ox-plus">+</span>
@@ -5396,7 +5440,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
   <section class="ox-band ox-lt2" id="ox-os-core-one-to-many">
     <div class="ox-w ox-row">
       <div>
-        <span class="ox-eb">One-to-Many Engine</span>
+        <span class="ox-eb">Recommendation Engine</span>
         <h2 class="ox-h2">One investment view. <em>Thousands of personalized recommendations.</em></h2>
         <p class="ox-subt">CORE applies your investment logic to each investor's actual portfolio, risk profile, holdings, available funds and applicable constraints, creating individually suitable recommendations at scale.</p>
         <ul class="ox-pts">
@@ -5624,7 +5668,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
         <div class="ox-card ox-lt2"><span class="ox-n">03</span><h3 class="ox-h3"><span class="ox-ph">[Anything else the institution provides]</span></h3><p><span class="ox-ph">[One line]</span></p></div>
       </div>
       <div class="ox-buy">
-        <div class="ox-bx"><span>Always</span><b>CORE</b><span>One-to-Many Engine, Trade-All™, Native Compliance</span></div>
+        <div class="ox-bx"><span>Always</span><b>CORE</b><span>Recommendation Engine, Trade-All™, Native Compliance</span></div>
         <span class="ox-plus">+</span>
         <div class="ox-bx"><span>Choose one</span><b>A delivery option</b><span>API, White-label SDK or Finnovest ONE</span></div>
         <span class="ox-plus">+</span>
@@ -5723,7 +5767,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
         <div class="ox-card ox-lt2"><span class="ox-n">03</span><h3 class="ox-h3">Any delivery option</h3><p>Works with API, White-label SDK and Finnovest ONE.</p></div>
       </div>
       <div class="ox-buy">
-        <div class="ox-bx"><span>Always</span><b>CORE</b><span>One-to-Many Engine, Trade-All™, Native Compliance</span></div>
+        <div class="ox-bx"><span>Always</span><b>CORE</b><span>Recommendation Engine, Trade-All™, Native Compliance</span></div>
         <span class="ox-plus">+</span>
         <div class="ox-bx"><span>Choose one</span><b>A delivery option</b><span>API, White-label SDK or Finnovest ONE</span></div>
         <span class="ox-plus">+</span>
@@ -5787,7 +5831,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
         <h2 class="ox-h2">The same CORE, <em>for long-term savings.</em></h2>
         <ol class="ox-steps">
           <li><span><b>Your investment view</b><span class="ox-ph">[Who sets it, for which savings products]</span></span></li>
-          <li><span><b>One-to-Many Engine</b>A personal recommendation for every account, within the product's limits.</span></li>
+          <li><span><b>Recommendation Engine</b>A personal recommendation for every account, within the product's limits.</span></li>
           <li><span><b>The saver decides</b>Portfolio effect and disclosure shown before deciding.</span></li>
           <li><span><b>One tap to Trade-All™</b>The whole recommendation, approved in one action.</span></li>
         </ol>
@@ -5800,12 +5844,12 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       <span class="ox-eb">What you need</span>
       <h2 class="ox-h2">CORE and <em>your savings products.</em></h2>
       <div class="ox-g3" style="margin-top:40px">
-        <div class="ox-card ox-lt2"><span class="ox-n">01</span><h3 class="ox-h3">CORE</h3><p>FUTURE uses the same One-to-Many Engine, Trade-All™ and Native Compliance.</p></div>
+        <div class="ox-card ox-lt2"><span class="ox-n">01</span><h3 class="ox-h3">CORE</h3><p>FUTURE uses the same Recommendation Engine, Trade-All™ and Native Compliance.</p></div>
         <div class="ox-card ox-lt2"><span class="ox-n">02</span><h3 class="ox-h3">Your long-term savings products</h3><p><span class="ox-ph">[Which products and accounts]</span></p></div>
         <div class="ox-card ox-lt2"><span class="ox-n">03</span><h3 class="ox-h3">A delivery option</h3><p>API, White-label SDK or Finnovest ONE.</p></div>
       </div>
       <div class="ox-buy">
-        <div class="ox-bx"><span>Always</span><b>CORE</b><span>One-to-Many Engine, Trade-All™, Native Compliance</span></div>
+        <div class="ox-bx"><span>Always</span><b>CORE</b><span>Recommendation Engine, Trade-All™, Native Compliance</span></div>
         <span class="ox-plus">+</span>
         <div class="ox-bx"><span>Choose one</span><b>A delivery option</b><span>API, White-label SDK or Finnovest ONE</span></div>
         <span class="ox-plus">+</span>
@@ -5848,7 +5892,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       <h2 class="ox-h2">Keep your app. <em>Add Advised-trading behind it.</em></h2>
       <div class="ox-g3" style="margin-top:40px">
         <div class="ox-card ox-lt2"><span class="ox-n">Your experience</span><h3 class="ox-h3">Your design, your flow</h3><p>Your institution designs and controls the entire client experience.</p></div>
-        <div class="ox-card ox-lt2"><span class="ox-n">The full system</span><h3 class="ox-h3">All of CORE behind it</h3><p>One-to-Many Engine, Trade-All™ and Native Compliance, whatever your screens look like.</p></div>
+        <div class="ox-card ox-lt2"><span class="ox-n">The full system</span><h3 class="ox-h3">All of CORE behind it</h3><p>Recommendation Engine, Trade-All™ and Native Compliance, whatever your screens look like.</p></div>
         <div class="ox-card ox-lt2"><span class="ox-n">Your clients</span><h3 class="ox-h3">They stay with you</h3><p>Advised-trading next to independent trading, in the app they already trust.</p></div>
       </div>
     </div>
@@ -5870,7 +5914,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       <span class="ox-eb">What you need</span>
       <h2 class="ox-h2">Best for banks running <em>their own systems and channels.</em></h2>
       <div class="ox-buy">
-        <div class="ox-bx"><span>Always</span><b>CORE</b><span>One-to-Many Engine, Trade-All™, Native Compliance</span></div>
+        <div class="ox-bx"><span>Always</span><b>CORE</b><span>Recommendation Engine, Trade-All™, Native Compliance</span></div>
         <span class="ox-plus">+</span>
         <div class="ox-bx ox-here"><span>Your delivery option</span><b>API</b><span>This page</span></div>
         <span class="ox-plus">+</span>
@@ -5955,7 +5999,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       <span class="ox-eb">What you need</span>
       <h2 class="ox-h2">Best for brokerages whose clients <em>already trade in their app.</em></h2>
       <div class="ox-buy">
-        <div class="ox-bx"><span>Always</span><b>CORE</b><span>One-to-Many Engine, Trade-All™, Native Compliance</span></div>
+        <div class="ox-bx"><span>Always</span><b>CORE</b><span>Recommendation Engine, Trade-All™, Native Compliance</span></div>
         <span class="ox-plus">+</span>
         <div class="ox-bx ox-here"><span>Your delivery option</span><b>White-label SDK</b><span>This page</span></div>
         <span class="ox-plus">+</span>

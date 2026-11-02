@@ -3279,20 +3279,26 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 #at-overview .c2-n{font-size:clamp(96px,12.5vw,180px);padding-right:.1em;margin-right:-.1em;background:linear-gradient(120deg,#CF7DF4 0%,#7CF59A 55%,#6EEFD3 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 #at-overview .c2-under{margin-top:14px;font-family:'Instrument Sans',sans-serif;font-size:30px;font-weight:500;letter-spacing:-.015em;color:#fff;line-height:1.2;white-space:nowrap}
 #at-overview .c2-why{font-size:18px;line-height:1.55;color:#3F4E4C;margin:0}
-#at-overview .at-tile{padding:44px 24px}
-#at-overview .at-choose{position:relative;width:min(400px,100%)}
-#at-overview .at-ph{width:300px;margin:0 auto}
-#at-overview .at-sc{min-height:640px;padding:26px 18px 22px;gap:10px;box-sizing:border-box}
+#at-overview .at-tile{padding:40px 24px}
+@media(min-width:901px){#at-overview .ox-newcat .at-gaprow{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px}}
+#at-overview .at-two{position:relative;display:flex;justify-content:center;gap:28px;width:100%}
+#at-overview .at-two:after{content:"\2192";position:absolute;left:50%;top:50%;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;background:#07282A;color:#2EE59D;font-size:15px;line-height:30px;text-align:center}
+#at-overview .at-ph{flex:1 1 0;min-width:0;max-width:280px}
+#at-overview .at-sc{position:relative;min-height:470px;height:100%;padding:24px 14px 16px;gap:8px;box-sizing:border-box}
 #at-overview .at-pickh{margin-top:auto;font-size:13px;color:#4A5856}
-#at-overview .at-path{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid rgba(7,40,42,.16);border-radius:14px;padding:12px 16px;text-align:left}
+#at-overview .at-last{margin-bottom:auto}
+#at-overview .at-path{position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid rgba(7,40,42,.16);border-radius:14px;padding:12px 16px;text-align:left}
 #at-overview .at-path b{display:block;font-weight:500;font-size:15px;color:#07282A}
 #at-overview .at-path small{display:block;margin-top:2px;font-size:12.5px;color:#4A5856}
 #at-overview .at-path i{font-style:normal;color:#07282A}
 #at-overview .at-path.at-on{background:#2EE59D;border-color:#2EE59D}
 #at-overview .at-path.at-on small{color:#07282A}
-#at-overview .at-rec{position:absolute;left:0;right:0;top:66px;box-sizing:border-box;background:#fff;border-radius:16px;padding:18px 20px;text-align:left;color:#07282A;font-size:14px;box-shadow:0 18px 44px rgba(7,40,42,.2)}
-#at-overview .at-rec .ox-ui-t{margin:2px 0 10px}
-#at-overview .at-why{margin:12px 0 8px;border:1px solid #07282A;border-radius:999px;text-align:center;padding:11px 13px;font-weight:500;color:#07282A;background:#fff}
+#at-overview .at-rec{font-size:13px}
+#at-overview .at-rec .ox-ui-t{margin:2px 0 8px;font-size:17px;line-height:1.2}
+#at-overview .at-rec .ox-ui-h{font-size:11.5px;margin:0}
+#at-overview .at-rec .at-rows{margin-bottom:auto}
+#at-overview .at-rec .ox-tag{font-size:10.5px;padding:2px 5px;margin-right:4px}
+#at-overview .at-why{margin:12px 0 0;border:1px solid #07282A;border-radius:999px;text-align:center;padding:10px;font-weight:500;color:#07282A;background:#fff}
 #at-overview .at-why+.ox-ta{margin-top:0}
 #at-overview .at-rec .ox-tag.ox-s{background:#EDEFEA;color:#3F4E4C}
 #at-overview .at-core-more{margin-top:8px}
@@ -3329,6 +3335,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
   #at-overview .c2-st{padding:40px 32px}
   #at-overview .c2-under{font-size:24px}
 }
+@media(max-width:600px){#at-overview .at-two{flex-direction:column;align-items:center}#at-overview .at-two:after{display:none}#at-overview .at-ph{flex:none;width:280px}}
 @media(max-width:900px){
   #at-overview .ox-sdkvis{margin:56px auto 30px!important;max-width:100%!important}
   #at-overview .fx-ma-notif{left:12px!important;width:calc(100% - 24px)!important;box-sizing:border-box}
@@ -3353,20 +3360,21 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 #at-overview .at-chart .ox-dres span{font-size:14.5px;line-height:1.45;color:#3F4E4C}
 @media(max-width:900px){#at-overview .at-chart .ox-dgm{padding:20px}#at-overview .at-chart .ox-dbox b{min-height:0}#at-overview .at-chart .ox-dres{margin-top:18px}}
 /* Approval on the phone, the same order as the Home hero: tap, Selling, Buying, Documenting, documented. CSS only, 14s loop. */
-#at-overview .at-rec .ox-kv{margin:0 -8px;padding:9px 8px;border-radius:6px}
-#at-overview .at-amt{display:inline-flex;align-items:center;gap:8px}
-#at-overview .at-st{width:18px;height:18px;border-radius:50%;background:#0B8A5F;color:#fff;font:700 11px/18px var(--body);text-align:center;font-style:normal;opacity:0;flex:none}
+#at-overview .at-rec .ox-kv{margin:0 -6px;padding:8px 6px;border-radius:6px;gap:6px;font-size:12.5px}
+#at-overview .at-amt{display:inline-flex;align-items:center;gap:5px}
+#at-overview .at-st{width:15px;height:15px;line-height:15px!important;font-size:9px!important;border-radius:50%;background:#0B8A5F;color:#fff;font:700 11px/18px var(--body);text-align:center;font-style:normal;opacity:0;flex:none}
 #at-overview .at-st:before{content:"\2713"}
-#at-overview .at-rec .ox-ta{position:relative;overflow:hidden;height:46px;padding:0}
+#at-overview .at-rec .ox-ta{position:relative;overflow:hidden;height:42px;padding:0;margin-top:0;flex:none}
 #at-overview .at-fill{position:absolute;inset:0;background:#0B8A5F;transform:scaleX(0);transform-origin:0 50%}
 #at-overview .at-l{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0}
 #at-overview .at-l0{opacity:1}
-#at-overview .at-ring{position:absolute;right:48%;bottom:30px;width:56px;height:56px;margin-right:-28px;border-radius:50%;border:2px solid #fff;background:rgba(46,229,157,.45);opacity:0;pointer-events:none}
-#at-overview .at-win{position:absolute;left:20px;right:20px;bottom:18px;height:106px;box-sizing:border-box;border-radius:12px;background:#2EE59D;color:#07282A;display:flex;align-items:center;gap:12px;padding:0 16px;opacity:0;pointer-events:none}
-#at-overview .at-win i{flex:none;width:26px;height:26px;border-radius:50%;background:#07282A;color:#2EE59D;font:700 14px/26px var(--body);text-align:center;font-style:normal}
+#at-overview .at-ring{position:absolute;left:50%;bottom:20px;width:46px;height:46px;margin-left:-23px;border-radius:50%;border:2px solid #fff;background:rgba(46,229,157,.45);opacity:0;pointer-events:none}
+#at-overview .at-ring1{left:50%;top:50%;bottom:auto;margin:-23px 0 0 -23px;background:rgba(7,40,42,.18);border-color:#07282A}
+#at-overview .at-win{position:absolute;left:14px;right:14px;bottom:16px;height:104px;box-sizing:border-box;border-radius:12px;background:#2EE59D;color:#07282A;display:flex;align-items:center;gap:10px;padding:0 12px;opacity:0;pointer-events:none}
+#at-overview .at-win i{flex:none;width:22px;height:22px;border-radius:50%;background:#07282A;color:#2EE59D;font:700 14px/26px var(--body);text-align:center;font-style:normal}
 #at-overview .at-win i:before{content:"\2713"}
-#at-overview .at-win b{display:block;font-weight:600;font-size:14.5px;line-height:1.25}
-#at-overview .at-win small{display:block;margin-top:3px;font-size:12.5px}
+#at-overview .at-win b{display:block;font-weight:600;font-size:13px;line-height:1.25}
+#at-overview .at-win small{display:block;margin-top:3px;font-size:11.5px}
 @media(prefers-reduced-motion:no-preference){
   #at-overview .at-l0{animation:at-l0 14s linear infinite}
   #at-overview .at-l1{animation:at-l1 14s linear infinite}
@@ -3377,6 +3385,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
   #at-overview .at-s2{animation:at-s2 14s linear infinite}
   #at-overview .at-s3{animation:at-s3 14s linear infinite}
   #at-overview .at-ring{animation:at-ring 14s ease-out infinite}
+  #at-overview .at-ring1{animation:at-ring1 14s ease-out infinite}
   #at-overview .at-win{animation:at-win 14s ease-out infinite}
   #at-overview .at-r1{animation:at-r1 14s linear infinite}
   #at-overview .at-r2{animation:at-r2 14s linear infinite}
@@ -3391,6 +3400,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 @keyframes at-s2{0%,45%{opacity:0}46%,92%{opacity:1}96%,100%{opacity:0}}
 @keyframes at-s3{0%,53%{opacity:0}54%,92%{opacity:1}96%,100%{opacity:0}}
 @keyframes at-ring{0%,14%{opacity:0;transform:scale(.7)}17%{opacity:1;transform:scale(1)}20%{opacity:1;transform:scale(.8)}25%,100%{opacity:0;transform:scale(1.6)}}
+@keyframes at-ring1{0%,2%{opacity:0;transform:scale(.7)}4%{opacity:1;transform:scale(1)}6%{opacity:1;transform:scale(.8)}10%,100%{opacity:0;transform:scale(1.6)}}
 @keyframes at-win{0%,64%{opacity:0;transform:translateY(8px)}67%,92%{opacity:1;transform:none}95%,100%{opacity:0;transform:none}}
 @keyframes at-r1{0%,22%{background:transparent}24%,35%{background:rgba(46,229,157,.2)}37%,100%{background:transparent}}
 @keyframes at-r2{0%,37%{background:transparent}39%,45%{background:rgba(46,229,157,.2)}47%,100%{background:transparent}}
@@ -5234,14 +5244,14 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       <div class="at-core-more"><a data-go="os" class="ox-alink"><span class="ox-c"><svg width="10" height="10" viewBox="0 0 12 12" aria-hidden="true"><path d="M4.5 2.5L8 6l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8"></path></svg></span>Explore Advised-trading OS</a></div>
       </div>
       <div class="ox-tile ox-mint at-tile">
-        <div class="at-choose" role="img" aria-label="A trading app with a new recommendation on top, and the choice between Advised-trading and Independent trading">
+        <div class="at-two" role="img" aria-label="Two phone screens: the choice between Advised-trading and Independent trading, then a recommendation approved with Trade-All and documented">
           <div class="ox-phone at-ph"><div class="ox-scr at-sc">
             <div class="ox-ui-h"><span class="ox-dot"></span>Your trading app</div>
             <div class="at-pickh">Choose your path</div>
-            <div class="at-path at-on"><span><b>Advised-trading</b><small>1 new recommendation</small></span><i>→</i></div>
-            <div class="at-path"><span><b>Independent trading</b><small>Place your own orders</small></span><i>→</i></div>
+            <div class="at-path at-on"><span>Advised-trading<small>1 new recommendation</small></span><i>&rarr;</i><span class="at-ring at-ring1"></span></div>
+            <div class="at-path at-last"><span>Independent trading<small>Place your own orders</small></span><i>&rarr;</i></div>
           </div></div>
-          <div class="at-rec">
+          <div class="ox-phone at-ph"><div class="ox-scr at-sc at-rec">
             <div class="ox-ui-h"><span class="ox-dot"></span>a new recommendation is ready</div>
             <div class="ox-ui-t">Increase exposure to global technology</div>
             <div class="at-rows">
@@ -5251,9 +5261,9 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
             </div>
             <div class="at-why">Read the rationale</div>
             <div class="ox-ta"><i class="at-fill"></i><span class="at-l at-l0">Trade-All</span><span class="at-l at-l1">Selling</span><span class="at-l at-l2">Buying</span><span class="at-l at-l3">Documenting</span></div>
-          <span class="at-ring"></span>
-          <div class="at-win"><i></i><span><b>Recommendation and trade documented</b><small>3 of 3 filled · suitability checked</small></span></div>
-          </div>
+            <span class="at-ring"></span>
+            <div class="at-win"><i></i><span><b>Recommendation and trade documented</b><small>3 of 3 filled · suitability checked</small></span></div>
+          </div></div>
         </div>
       </div>
       </div>

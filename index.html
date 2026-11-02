@@ -2600,6 +2600,8 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 .ox .ox-teal{background:#C9E5E2}
 .ox .ox-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:72px;align-items:center}
 .ox .ox-row.ox-rev>.ox-tile{order:-1}
+/* Advised-trading overview: text and visual swap sides row to row (2 Nov 2026). */
+@media(min-width:901px){#at-overview .ox>section:nth-of-type(3) .ox-row>:first-child,#at-overview .ox>section:nth-of-type(4) .ox-row>:first-child,#at-overview .ox>section:nth-of-type(5) .ox-row>:first-child{order:1}}
 .ox .ox-tile{border-radius:6px;padding:44px;min-height:420px;display:flex;align-items:center;justify-content:center}
 .ox .ox-steps{list-style:none;padding:0;margin:26px 0 0;counter-reset:s}
 .ox .ox-steps li{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:15px 0;border-top:1px solid rgba(7,40,42,.12);font-size:15px;line-height:1.5;color:#3F4E4C}
@@ -3234,7 +3236,15 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
   .nav-links.open .mm-os3 .m3-it b{font-weight:400}
 }
 </style>
-</head>
+<style id="os-pages-2026-10-29">
+/* Dropdowns close once a link is clicked, even while the pointer is still over the panel
+   (.dd:hover and :focus-within would otherwise keep it open). Script near the end, id dd-close. */
+.dd.shut>.dd-p{opacity:0!important;visibility:hidden!important;pointer-events:none!important;transition:none!important}
+.ox a.ox-card{color:inherit;text-decoration:none;transition:transform .25s}
+.ox a.ox-card:hover{transform:translateY(-3px)}
+.ox .ox-more{margin-top:auto;padding-top:8px;font-weight:500;font-size:15px;color:#0B8A5F}
+.ox .ox-teal{background:#C9E5E2}
+</style></head>
 <body>
 <div class="field"></div>
 <div class="shell">
@@ -3248,19 +3258,19 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
     </button>
     <div class="nav-links" id="navlinks">
-      <div class="dd dd-mega"><button class="dd-t" type="button" aria-expanded="false">Advised-trading OS<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></button>
+      <div class="dd dd-mega on"><button class="dd-t" type="button" aria-expanded="false">Advised-trading OS<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></button>
         <div class="dd-p mm mm-os mm-os3">
           <div class="m3-cols">
             <div class="m3-col">
               <a class="m3-head" data-go="os-core"><span class="m3-ic"><svg class="m3-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="2.5"></ellipse><path d="M4 11c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"></path><path d="M4 16c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"></path></svg></span><span class="m3-ht"><b>CORE</b><small>The foundation of Advised-trading</small></span></a>
               <div class="m3-list">
-                <a class="m3-it" data-go="os-core" data-anchor="ox-os-core-one-to-many"><b>Recommendation Engine</b><span>Scale professional investment advice</span></a>
-                <a class="m3-it" data-go="os-core" data-anchor="ox-os-core-trade-all"><b>Trade-All™</b><span>One-tap approval. Seamlessly orchestrated execution.</span></a>
-                <a class="m3-it" data-go="os-core" data-anchor="ox-os-core-compliance"><b>Native Compliance</b><span>Inherent compliance across advisory and trading workflows</span></a>
+                <a class="m3-it" data-go="os-recommendation-engine"><b>Recommendation Engine</b><span>Scale professional investment advice</span></a>
+                <a class="m3-it" data-go="os-trade-all"><b>Trade-All™</b><span>One-tap approval. Seamlessly orchestrated execution.</span></a>
+                <a class="m3-it" data-go="os-compliance"><b>Native Compliance</b><span>Inherent compliance across advisory and trading workflows</span></a>
               </div>
             </div>
             <div class="m3-col">
-              <a class="m3-head" data-go="os" data-anchor="ox-os-arch"><span class="m3-ic"><svg class="m3-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg></span><span class="m3-ht"><b>Products</b><small>Optional add-ons</small></span></a>
+              <a class="m3-head" data-go="os-products"><span class="m3-ic"><svg class="m3-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg></span><span class="m3-ht"><b>Products</b><small>Optional add-ons</small></span></a>
               <div class="m3-list">
                 <a class="m3-it" data-go="os-iq"><b>Finnovest IQ</b><span>AI-powered investment conversations</span></a>
                 <a class="m3-it" data-go="os-id"><b>Finnovest ID</b><span>Retail investor profiling &amp; intent discovery</span></a>
@@ -3268,7 +3278,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
               </div>
             </div>
             <div class="m3-col">
-              <a class="m3-head" data-go="os" data-anchor="ox-os-delivery"><span class="m3-ic"><svg class="m3-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"></rect><path d="M10.5 18.5h3"></path></svg></span><span class="m3-ht"><b>Investor Interface</b><small>Delivery options</small></span></a>
+              <a class="m3-head" data-go="os-interface"><span class="m3-ic"><svg class="m3-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"></rect><path d="M10.5 18.5h3"></path></svg></span><span class="m3-ht"><b>Investor Interface</b><small>Delivery options</small></span></a>
               <div class="m3-list">
                 <a class="m3-it" data-go="os-api"><b>API</b><span>Your app, your UX</span></a>
                 <a class="m3-it" data-go="os-sdk"><b>White-label SDK</b><span>Embedded Advised-trading experience</span></a>
@@ -3276,7 +3286,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
               </div>
             </div>
           </div>
-          <a class="m3-feat" data-go="at-overview">
+          <a class="m3-feat on" data-go="at-overview">
             <span class="m3-thumb"><i></i><i></i><span class="m3-play" aria-hidden="true"></span></span>
             <span class="m3-ft">What is <em>Advised-trading?</em></span>
             <span class="m3-cap">Read the overview</span>
@@ -3399,17 +3409,17 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
 <!-- ================= HOME ================= -->
 <section class="page live" id="home">
   <!-- VIDEO HERO (8 Oct 2026): Atera-style, from mockup C. Footage in assets/hero/ (Pexels). Script near the end of the file, id vh-script. Restore point: git tag before-video-hero-2026-10-08 -->
-  <div class="band dk sending" id="vh" style="--vh-mood: #0E5A52; --vh-accent: #D7C4F7; --vh-amt: 0.4; --vh-tile: #DDD0EA;">
+  <div class="band dk sending" id="vh" style="--vh-mood: #0E5A52; --vh-accent: #FFC27A; --vh-amt: 0.32; --vh-tile: #FBE6CF;">
     <div class="vh-vids" aria-hidden="true">
-      <video id="vh-v0" src="assets/hero/investor-1.mp4" muted="" loop="" playsinline="" preload="auto" style="filter: saturate(1.15) contrast(1.08) hue-rotate(-10deg) brightness(0.92);"></video>
-      <video id="vh-v1" src="assets/hero/investor-2.mp4" muted="" loop="" playsinline="" preload="metadata" style="filter: sepia(0.3) saturate(1.2) brightness(0.95);"></video>
-      <video id="vh-v2" src="assets/hero/investor-3.mp4" muted="" loop="" playsinline="" preload="metadata" class="on" style="filter: saturate(0.7) contrast(0.95) brightness(0.96);"></video>
-      <video id="vh-v3" src="assets/hero/advisor-desk.mp4" muted="" loop="" playsinline="" preload="auto"></video>
+      <video id="vh-v0" src="assets/hero/investor-1.mp4" muted="" loop="" playsinline="" preload="auto"></video>
+      <video id="vh-v1" src="assets/hero/investor-2.mp4" muted="" loop="" playsinline="" preload="metadata"></video>
+      <video id="vh-v2" src="assets/hero/investor-3.mp4" muted="" loop="" playsinline="" preload="metadata"></video>
+      <video id="vh-v3" src="assets/hero/advisor-desk.mp4" muted="" loop="" playsinline="" preload="auto" class="on" style="filter: blur(14px) saturate(0.9) brightness(0.95);"></video>
     </div>
     <div class="vh-mood"></div><div class="vh-colorize"></div><div class="vh-glow"></div><div class="vh-shade"></div><div class="vh-tint"></div>
     <div class="vh-cast spot" id="vh-cast"></div>
-    <canvas class="vh-burst" id="vh-burst" aria-hidden="true" width="2032" height="900"></canvas>
-    <div class="vh-wipe go" id="vh-wipe"></div>
+    <canvas class="vh-burst" id="vh-burst" aria-hidden="true" width="0" height="0"></canvas>
+    <div class="vh-wipe" id="vh-wipe"></div>
 
     <div class="vh-copy">
       <h1>Give your retail investors tailored advice they can execute in <em>one tap.</em></h1>
@@ -3424,17 +3434,17 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       <div class="vh-pin-e"><div class="bar"><i id="vh-bar" style="width: 0%;"></i></div><span>Executed with Trade-All™</span><b id="vh-exec">0</b></div>
     </div>
 
-    <div class="vh-layer on" id="vh-layer" aria-live="polite">
-      <svg class="vh-link" aria-hidden="true"><path id="vh-path" pathLength="1" d="M 772.4640185546875 712.9935063171387 C 907.7288217773438 712.9935063171387, 907.7288217773438 690, 1018.4000244140625 690"></path></svg>
-      <span class="vh-src" id="vh-src" style="left: 772.464px; top: 712.994px;"></span>
-      <div class="vh-thread" id="vh-thread" style="left: 1016.4px; bottom: 150px; height: 450px;"><div class="vh-msg pop old"><div class="vh-meta"><span class="vh-ic"></span><b>Your trading app</b> · now</div><div class="vh-glass vh-bub"><div class="vh-hi">Hi <span>Sara</span>,</div><div class="vh-lbl">a new recommendation is ready</div><div class="vh-ttl">Increase exposure to global technology</div><div class="vh-why">Read reasoning<i></i></div></div></div><div class="vh-msg old"><div class="vh-meta"><span class="vh-av">F</span><b>Your orders, Sara</b> · personalized</div><div class="vh-glass vh-bub"><div class="vh-rows"><div class="vh-o sell in" data-s="done"><span class="side">Sell</span><span class="inst">Government bond fund</span><span class="amt">$5,000</span><span class="st"></span></div><div class="vh-o buy in" data-s="done"><span class="side">Buy</span><span class="inst">Global tech ETF</span><span class="amt">$2,000</span><span class="st"></span></div><div class="vh-o buy in" data-s="done"><span class="side">Buy</span><span class="inst">Global dividend fund</span><span class="amt">$3,000</span><span class="st"></span></div></div></div></div><div class="vh-msg old" style=""><div class="vh-tawrap"><button class="vh-ta busy" type="button" tabindex="-1"><span class="fill" style="width: 100%;"></span><span class="lab">Documenting</span></button><div class="vh-hint">One tap executes all 3 orders</div></div></div><div class="vh-msg "><div class="vh-glass vh-bub win"><span class="vh-ok"></span><div><b>Recommendation and trade documented</b><small>3 of 3 filled · suitability checked</small></div></div></div></div>
+    <div class="vh-layer" id="vh-layer" aria-live="polite">
+      <svg class="vh-link" aria-hidden="true"><path id="vh-path" pathLength="1" d="M 1163.2133752441407 767.6250114440918 C 1300.9627135009766 767.6250114440918, 1300.9627135009766 690, 1413.6667175292969 690"></path></svg>
+      <span class="vh-src" id="vh-src" style="left: 1163.21px; top: 767.625px;"></span>
+      <div class="vh-thread" id="vh-thread" style="left: 1411.67px; bottom: 150px; height: 450px;"></div>
     </div>
 
-    <div class="vh-glass vh-console on" id="vh-console">
+    <div class="vh-glass vh-console" id="vh-console" style="">
       <div class="vh-top"><span class="vh-dot"></span>Advisor console<span>New recommendation</span></div>
       <div class="vh-cn-title">Increase exposure to global technology</div>
       <div class="vh-cn-sub">Funding: reduce each client’s most overweight holding</div>
-      <div class="vh-cn-row"><span>Suitable investors</span><b id="vh-elig">3,441</b></div>
+      <div class="vh-cn-row"><span>Suitable investors</span><b id="vh-elig">0</b></div>
       <div class="vh-cn-row"><span>Personalized bundles</span><b id="vh-bund">0</b></div>
       <div class="vh-cn-status" id="vh-status"><i></i><span id="vh-stat">Matching against every client book</span></div>
     </div>
@@ -3474,7 +3484,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
       <div><b>$20B+</b><span>Assets analyzed daily</span></div>
       <div><b>$200M+</b><span>Monthly trading volume</span></div>
       <div><b>52%</b><span>Of recommendations opened</span></div>
-      <div><b>1:2</b><span>Opened recommendations executed</span></div>
+      <div><b>1:2</b><span>Convert to trade</span></div>
       <div><b>Zero</b><span>Compliance errors since 2018</span></div>
     </div>
   </div>
@@ -4194,7 +4204,7 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
         </div>
 
         <div class="at-legs">
-          <svg class="at-arrows" aria-hidden="true"><path id="at-arrow-1" stroke="#5C7089" d="M0 190.4 C 34 190.4, 50 159.6, 84 159.6 M78 154.6 L 84 159.6 L 78 164.6"></path><path id="at-arrow-2" stroke="#2EE59D" d="M0 271.8 C 34 271.8, 50 305.0, 84 305.0 M78 300.0 L 84 305.0 L 78 310.0"></path></svg>
+          <svg class="at-arrows" aria-hidden="true"><path id="at-arrow-1" stroke="#5C7089" d="M0 190.1 C 34 190.1, 50 159.6, 84 159.6 M78 154.6 L 84 159.6 L 78 164.6"></path><path id="at-arrow-2" stroke="#2EE59D" d="M0 271.2 C 34 271.2, 50 305.0, 84 305.0 M78 300.0 L 84 305.0 L 78 310.0"></path></svg>
           <div class="at-leg one">
             <div class="h">Path 1 · Independent-trading</div>
             <h4>Your ideas, your research, your orders.</h4>
@@ -5065,9 +5075,9 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
     <div class="ox-w ox-hgrid">
       <div>
         <span class="ox-eb">Advised-trading overview</span>
-        <h1 class="ox-h1">Bring professional advice into the world of <em>retail investing.</em></h1>
-        <p class="ox-lede">Advised-trading gives financial institutions a one-stop retail investing service: professional, personalized investment advice and simple execution, all inside the experience investors already use.</p>
-        <p class="ox-lede2">It brings the depth of traditional investment advice into the digital environment retail investors expect, without sending them elsewhere for ideas, guidance or action.</p>
+        <h1 class="ox-h1">Advised-trading<br>brings professional advice into the world of <em>retail investing.</em></h1>
+        <p class="ox-lede">Advised-trading gives financial institutions the ability to provide their retail investors a one-stop retail investing experience: professional, personalized investment advice and simple execution, all inside the experience investors already use.</p>
+        <p class="ox-lede2"><br></p>
         <div class="ox-btns"><a data-go="os" class="ox-pill ox-d">Explore the OS →</a><a data-go="contact" class="ox-pill ox-gd">Request a demo</a></div>
       </div>
       <div class="ox-dgm">
@@ -6126,6 +6136,286 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
   </section>
 </div></section>
 <!-- OS-FIRST PAGES END -->
+<section class="page" id="os-products"><div class="ox">
+  <nav class="ox-crumb" aria-label="Breadcrumb"><div class="ox-w"><a data-go="os">Advised-trading OS</a><span>/</span><b>Products</b></div></nav>
+  <section class="ox-hero">
+    <div class="ox-burst"></div>
+    <div class="ox-w">
+      <span class="ox-eb">Advised-trading OS · Products</span>
+      <h1 class="ox-h1">Products. <em>Optional add-ons.</em></h1>
+      <p class="ox-lede"><span class="ox-ph">[Draft page. The headlines below show what it will include; text to come.]</span></p>
+      <div class="ox-btns"><a data-go="contact" class="ox-pill ox-m">Request a demo</a></div>
+      <div style="height:84px"></div>
+    </div>
+  </section>
+  <section class="ox-band ox-lt">
+    <div class="ox-w">
+      <span class="ox-eb">Why add-ons</span>
+      <h2 class="ox-h2"><span class="ox-ph">[What Products add on top of CORE]</span></h2>
+      <p class="ox-subt"><span class="ox-ph">[Which needs each add-on answers, and that each runs on CORE]</span></p>
+    </div>
+  </section>
+  <section class="ox-band ox-lt2">
+    <div class="ox-w">
+      <span class="ox-eb">The three products</span>
+      <h2 class="ox-h2"><span class="ox-ph">[Three add-ons, one foundation]</span></h2>
+      <div class="ox-g3" style="margin-top:40px">
+        <a data-go="os-iq" class="ox-card ox-lilac"><h3 class="ox-h3">Finnovest IQ</h3><p>AI-powered investment conversations</p><span class="ox-more">Read more</span></a>
+        <a data-go="os-id" class="ox-card ox-lime"><h3 class="ox-h3">Finnovest ID</h3><p>Retail investor profiling &amp; intent discovery</p><span class="ox-more">Read more</span></a>
+        <a data-go="os-future" class="ox-card ox-mint"><h3 class="ox-h3">Finnovest FUTURE</h3><p>IRA &amp; long-term investments</p><span class="ox-more">Read more</span></a>
+      </div>
+    </div>
+  </section>
+  <section class="ox-band ox-lt">
+    <div class="ox-w">
+      <span class="ox-eb">How you buy it</span>
+      <h2 class="ox-h2"><span class="ox-ph">[CORE, one delivery option, any add-ons]</span></h2>
+      <p class="ox-subt"><span class="ox-ph">[How Products combine with CORE and with the Investor Interface you choose]</span></p>
+    </div>
+  </section>
+  <section class="ox-band ox-lt2">
+    <div class="ox-w">
+      <span class="ox-eb">Fit</span>
+      <h2 class="ox-h2"><span class="ox-ph">[Which product for which institution]</span></h2>
+      <p class="ox-subt"><span class="ox-ph">[Banks, brokerages, wealth managers: what each tends to start with]</span></p>
+    </div>
+  </section>
+  <section class="ox-band ox-lt">
+    <div class="ox-w">
+      <span class="ox-eb">Proof</span>
+      <h2 class="ox-h2"><span class="ox-ph">[Running today]</span></h2>
+      <p class="ox-subt"><span class="ox-ph">[A figure or a client quote for the add-ons]</span></p>
+    </div>
+  </section>
+  <section class="ox-band ox-lt2">
+    <div class="ox-w">
+      <p class="ox-sublbl">Runs on</p><div class="ox-chips"><a data-go="os-core">CORE</a><a data-go="os-interface">Investor Interface</a></div>
+    </div>
+  </section>
+  <section class="ox-cta">
+    <div class="ox-ripple"></div>
+    <div class="ox-w">
+      <h2 class="ox-h2">Give advice <em>the way retail investors expect it.</em></h2>
+      <div class="ox-btns"><a data-go="contact" class="ox-pill ox-m">Request a demo</a></div>
+    </div>
+  </section>
+</div></section>
+<section class="page" id="os-interface"><div class="ox">
+  <nav class="ox-crumb" aria-label="Breadcrumb"><div class="ox-w"><a data-go="os">Advised-trading OS</a><span>/</span><b>Investor Interface</b></div></nav>
+  <section class="ox-hero">
+    <div class="ox-burst"></div>
+    <div class="ox-w">
+      <span class="ox-eb">Advised-trading OS · Investor Interface</span>
+      <h1 class="ox-h1">Investor Interface. <em>Delivery options.</em></h1>
+      <p class="ox-lede"><span class="ox-ph">[Draft page. The headlines below show what it will include; text to come.]</span></p>
+      <div class="ox-btns"><a data-go="contact" class="ox-pill ox-m">Request a demo</a></div>
+      <div style="height:84px"></div>
+    </div>
+  </section>
+  <section class="ox-band ox-lt">
+    <div class="ox-w">
+      <span class="ox-eb">Why it matters</span>
+      <h2 class="ox-h2"><span class="ox-ph">[How CORE reaches your investors]</span></h2>
+      <p class="ox-subt"><span class="ox-ph">[One recommendation, delivered inside the experience your investors already use]</span></p>
+    </div>
+  </section>
+  <section class="ox-band ox-lt2">
+    <div class="ox-w">
+      <span class="ox-eb">The three ways</span>
+      <h2 class="ox-h2"><span class="ox-ph">[Pick the one that fits what you run]</span></h2>
+      <div class="ox-g3" style="margin-top:40px">
+        <a data-go="os-api" class="ox-card ox-teal"><h3 class="ox-h3">API</h3><p>Your app, your UX</p><span class="ox-more">Read more</span></a>
+        <a data-go="os-sdk" class="ox-card ox-mint"><h3 class="ox-h3">White-label SDK</h3><p>Embedded Advised-trading experience</p><span class="ox-more">Read more</span></a>
+        <a data-go="os-one" class="ox-card ox-lime"><h3 class="ox-h3">Finnovest ONE</h3><p>Complete white-label app</p><span class="ox-more">Read more</span></a>
+      </div>
+    </div>
+  </section>
+  <section class="ox-band ox-lt">
+    <div class="ox-w">
+      <span class="ox-eb">Compare</span>
+      <h2 class="ox-h2"><span class="ox-ph">[What you already have, what you get]</span></h2>
+      <p class="ox-subt"><span class="ox-ph">[Side by side: what each option needs from you and what it gives your investors]</span></p>
+    </div>
+  </section>
+  <section class="ox-band ox-lt2">
+    <div class="ox-w">
+      <span class="ox-eb">Getting started</span>
+      <h2 class="ox-h2"><span class="ox-ph">[Not sure which fits?]</span></h2>
+      <p class="ox-subt"><span class="ox-ph">[A short guide from what the institution runs today to the right option]</span></p>
+    </div>
+  </section>
+  <section class="ox-band ox-lt">
+    <div class="ox-w">
+      <p class="ox-sublbl">Works with</p><div class="ox-chips"><a data-go="os-core">CORE</a><a data-go="os-products">Products</a></div>
+    </div>
+  </section>
+  <section class="ox-cta">
+    <div class="ox-ripple"></div>
+    <div class="ox-w">
+      <h2 class="ox-h2">Give advice <em>the way retail investors expect it.</em></h2>
+      <div class="ox-btns"><a data-go="contact" class="ox-pill ox-m">Request a demo</a></div>
+    </div>
+  </section>
+</div></section>
+<section class="page" id="os-recommendation-engine"><div class="ox">
+  <nav class="ox-crumb" aria-label="Breadcrumb"><div class="ox-w"><a data-go="os">Advised-trading OS</a><span>/</span><a data-go="os-core">CORE</a><span>/</span><b>Recommendation Engine</b></div></nav>
+  <section class="ox-hero">
+    <div class="ox-burst"></div>
+    <div class="ox-w">
+      <span class="ox-eb">Advised-trading OS · CORE</span>
+      <h1 class="ox-h1">Recommendation Engine. <em>Scale professional investment advice.</em></h1>
+      <p class="ox-lede"><span class="ox-ph">[Draft page. The headlines below show what it will include; text to come.]</span></p>
+      <div class="ox-btns"><a data-go="contact" class="ox-pill ox-m">Request a demo</a></div>
+      <div style="height:84px"></div>
+    </div>
+  </section>
+  <section class="ox-band ox-lt">
+    <div class="ox-w">
+      <span class="ox-eb">What it does</span>
+      <h2 class="ox-h2"><span class="ox-ph">[One house view, thousands of personalized recommendations]</span></h2>
+      <p class="ox-subt"><span class="ox-ph">[How one recommendation becomes a unique one for every client]</span></p>
+    </div>
+  </section>
+  <section class="ox-band ox-lt2">
+    <div class="ox-w">
+      <span class="ox-eb">What it checks</span>
+      <h2 class="ox-h2"><span class="ox-ph">[Fitted to every client]</span></h2>
+      <p class="ox-subt"><span class="ox-ph">[Holdings, available cash, credit, risk profile and stated goals]</span></p>
+    </div>
+  </section>
+  <section class="ox-band ox-lt">
+    <div class="ox-w">
+      <span class="ox-eb">Funding</span>
+      <h2 class="ox-h2"><span class="ox-ph">[The advisor sets a funding strategy, not a sale]</span></h2>
+      <p class="ox-subt"><span class="ox-ph">[How the engine picks what to sell for each client]</span></p>
+    </div>
+  </section>
+  <section class="ox-band ox-lt2">
+    <div class="ox-w">
+      <span class="ox-eb">Recognition</span>
+      <h2 class="ox-h2"><span class="ox-ph">[Recognized by the Israel Innovation Authority]</span></h2>
+      <p class="ox-subt"><span class="ox-ph">[The Generic Constraints Algorithm, recognized as breakthrough technology]</span></p>
+    </div>
+  </section>
+  <section class="ox-band ox-lt">
+    <div class="ox-w">
+      <p class="ox-sublbl">The other parts of CORE</p><div class="ox-chips"><a data-go="os-core">CORE</a><a data-go="os-trade-all">Trade-All™</a><a data-go="os-compliance">Native Compliance</a></div>
+    </div>
+  </section>
+  <section class="ox-cta">
+    <div class="ox-ripple"></div>
+    <div class="ox-w">
+      <h2 class="ox-h2">Give advice <em>the way retail investors expect it.</em></h2>
+      <div class="ox-btns"><a data-go="contact" class="ox-pill ox-m">Request a demo</a></div>
+    </div>
+  </section>
+</div></section>
+<section class="page" id="os-trade-all"><div class="ox">
+  <nav class="ox-crumb" aria-label="Breadcrumb"><div class="ox-w"><a data-go="os">Advised-trading OS</a><span>/</span><a data-go="os-core">CORE</a><span>/</span><b>Trade-All™</b></div></nav>
+  <section class="ox-hero">
+    <div class="ox-burst"></div>
+    <div class="ox-w">
+      <span class="ox-eb">Advised-trading OS · CORE</span>
+      <h1 class="ox-h1">Trade-All™. <em>One-tap approval. Seamlessly orchestrated execution.</em></h1>
+      <p class="ox-lede"><span class="ox-ph">[Draft page. The headlines below show what it will include; text to come.]</span></p>
+      <div class="ox-btns"><a data-go="contact" class="ox-pill ox-m">Request a demo</a></div>
+      <div style="height:84px"></div>
+    </div>
+  </section>
+  <section class="ox-band ox-lt">
+    <div class="ox-w">
+      <span class="ox-eb">For the investor</span>
+      <h2 class="ox-h2"><span class="ox-ph">[One tap to Trade-All™]</span></h2>
+      <p class="ox-subt"><span class="ox-ph">[What the investor sees, and how one tap approves the whole recommendation]</span></p>
+    </div>
+  </section>
+  <section class="ox-band ox-lt2">
+    <div class="ox-w">
+      <span class="ox-eb">Execution</span>
+      <h2 class="ox-h2"><span class="ox-ph">[Every order in the bundle, executed together]</span></h2>
+      <p class="ox-subt"><span class="ox-ph">[Dependent sell and buy orders orchestrated in real time]</span></p>
+    </div>
+  </section>
+  <section class="ox-band ox-lt">
+    <div class="ox-w">
+      <span class="ox-eb">After the tap</span>
+      <h2 class="ox-h2"><span class="ox-ph">[Confirmation and reporting]</span></h2>
+      <p class="ox-subt"><span class="ox-ph">[What the investor and the institution see once the bundle is executed]</span></p>
+    </div>
+  </section>
+  <section class="ox-band ox-lt2">
+    <div class="ox-w">
+      <span class="ox-eb">Recognition</span>
+      <h2 class="ox-h2"><span class="ox-ph">[Recognized by the Israel Innovation Authority]</span></h2>
+      <p class="ox-subt"><span class="ox-ph">[The Automatic Order Management Module, recognized as breakthrough technology]</span></p>
+    </div>
+  </section>
+  <section class="ox-band ox-lt">
+    <div class="ox-w">
+      <p class="ox-sublbl">The other parts of CORE</p><div class="ox-chips"><a data-go="os-core">CORE</a><a data-go="os-recommendation-engine">Recommendation Engine</a><a data-go="os-compliance">Native Compliance</a></div>
+    </div>
+  </section>
+  <section class="ox-cta">
+    <div class="ox-ripple"></div>
+    <div class="ox-w">
+      <h2 class="ox-h2">Give advice <em>the way retail investors expect it.</em></h2>
+      <div class="ox-btns"><a data-go="contact" class="ox-pill ox-m">Request a demo</a></div>
+    </div>
+  </section>
+</div></section>
+<section class="page" id="os-compliance"><div class="ox">
+  <nav class="ox-crumb" aria-label="Breadcrumb"><div class="ox-w"><a data-go="os">Advised-trading OS</a><span>/</span><a data-go="os-core">CORE</a><span>/</span><b>Native Compliance</b></div></nav>
+  <section class="ox-hero">
+    <div class="ox-burst"></div>
+    <div class="ox-w">
+      <span class="ox-eb">Advised-trading OS · CORE</span>
+      <h1 class="ox-h1">Native Compliance. <em>Inherent compliance across advisory and trading workflows.</em></h1>
+      <p class="ox-lede"><span class="ox-ph">[Draft page. The headlines below show what it will include; text to come.]</span></p>
+      <div class="ox-btns"><a data-go="contact" class="ox-pill ox-m">Request a demo</a></div>
+      <div style="height:84px"></div>
+    </div>
+  </section>
+  <section class="ox-band ox-lt">
+    <div class="ox-w">
+      <span class="ox-eb">Suitability</span>
+      <h2 class="ox-h2"><span class="ox-ph">[Checked when created and when opened]</span></h2>
+      <p class="ox-subt"><span class="ox-ph">[How every recommendation is checked against each client]</span></p>
+    </div>
+  </section>
+  <section class="ox-band ox-lt2">
+    <div class="ox-w">
+      <span class="ox-eb">Documentation</span>
+      <h2 class="ox-h2"><span class="ox-ph">[Every step recorded, as the regulation requires]</span></h2>
+      <p class="ox-subt"><span class="ox-ph">[Advice documentation and trade reporting]</span></p>
+    </div>
+  </section>
+  <section class="ox-band ox-lt">
+    <div class="ox-w">
+      <span class="ox-eb">Control</span>
+      <h2 class="ox-h2"><span class="ox-ph">[The head of advisory stays in control]</span></h2>
+      <p class="ox-subt"><span class="ox-ph">[House rules, limits and approvals set once, applied to every recommendation]</span></p>
+    </div>
+  </section>
+  <section class="ox-band ox-lt2">
+    <div class="ox-w">
+      <span class="ox-eb">Track record</span>
+      <h2 class="ox-h2"><span class="ox-ph">[Zero compliance errors since 2018]</span></h2>
+      <p class="ox-subt"><span class="ox-ph">[The record behind it]</span></p>
+    </div>
+  </section>
+  <section class="ox-band ox-lt">
+    <div class="ox-w">
+      <p class="ox-sublbl">The other parts of CORE</p><div class="ox-chips"><a data-go="os-core">CORE</a><a data-go="os-recommendation-engine">Recommendation Engine</a><a data-go="os-trade-all">Trade-All™</a></div>
+    </div>
+  </section>
+  <section class="ox-cta">
+    <div class="ox-ripple"></div>
+    <div class="ox-w">
+      <h2 class="ox-h2">Give advice <em>the way retail investors expect it.</em></h2>
+      <div class="ox-btns"><a data-go="contact" class="ox-pill ox-m">Request a demo</a></div>
+    </div>
+  </section>
+</div></section>
 <section class="page" id="contact">
   <div class="band lt lt2 pg-hero-lt pg-contact">
     <div class="wrap">
@@ -7224,6 +7514,26 @@ strong[style*="var(--mint)"]{color:var(--mint-text)!important}
   [].forEach.call(document.querySelectorAll('#home .hm-dep-card'), function (c) { c.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') c.click(); }); });
   if (reduce) { userPaused = true; $('vh-pp').textContent = '▶'; $('vh-pp').setAttribute('aria-label', 'Play'); }
   run(gen);
+})();
+</script>
+
+
+
+
+<script id="dd-close">
+/* Close the open dropdown as soon as one of its links is clicked; it can open again once the
+   pointer leaves it, or when its button is clicked. */
+(function(){
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('.nav .dd-p [data-go]'); if(!a) return;
+    var d=a.closest('.dd'); if(!d) return;
+    d.classList.add('shut');
+    if(document.activeElement&&document.activeElement.blur) document.activeElement.blur();
+    d.addEventListener('mouseleave',function f(){ d.classList.remove('shut'); d.removeEventListener('mouseleave',f); });
+  });
+  document.querySelectorAll('.nav .dd-t').forEach(function(b){
+    b.addEventListener('click',function(){ var d=b.closest('.dd'); if(d) d.classList.remove('shut'); });
+  });
 })();
 </script>
 

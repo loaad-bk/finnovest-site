@@ -6825,85 +6825,245 @@ html body .ox .tx-a{text-align:right}
   </section>
 </div></section>
 <section class="page" id="os-trade-all"><div class="ox">
+<style id="ta-hagar-rows-2026-11-07">
+#os-trade-all .at-close{font-weight:500;color:#07282A}
+#os-trade-all .ox-ch .ox-tile{min-height:0;padding:40px}
+#os-trade-all .re-ln{list-style:none;margin:22px 0 0;padding:0;max-width:560px}
+#os-trade-all .re-ln li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:4px 12px;padding:13px 0;border-top:1px solid rgba(7,40,42,.12);font-size:15.5px;line-height:1.45;color:#3F4E4C}
+#os-trade-all .re-ln li i{grid-row:1/3;font-style:normal;font-size:13px;color:#4A5856;padding-top:3px}
+#os-trade-all .re-ln li b{font-family:'Instrument Sans',sans-serif;font-weight:500;font-size:19px;letter-spacing:-.01em;color:#07282A}
+#os-trade-all .re-ui{background:#fff;border-radius:6px;padding:20px 22px;width:100%;max-width:400px;font-size:14px;color:#07282A}
+#os-trade-all .re-ui .ox-ui-h{margin-bottom:8px}
+#os-trade-all .re-ui .ox-ui-t{margin-bottom:6px}
+#os-trade-all .re-ck{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 4px}
+#os-trade-all .re-ck span{display:inline-flex;align-items:center;gap:6px;background:#F4F8F5;border-radius:4px;padding:6px 9px;font-size:12.5px}
+#os-trade-all .re-ck span:before{content:"✓";color:#0B8A5F;font-weight:700;font-size:11px}
+#os-trade-all .re-or{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-top:1px solid rgba(7,40,42,.08)}
+#os-trade-all .re-or em{font-style:normal;font-size:12px;border-radius:4px;padding:2px 7px;margin-right:8px}
+#os-trade-all .re-or .re-s{background:#F9E1DF;color:#8A2F28}
+#os-trade-all .re-or .re-b{background:#D2F4E3;color:#0B5F42}
+#os-trade-all .re-or small{color:#4A5856;white-space:nowrap}
+#os-trade-all .re-ui .ox-ta{margin-top:14px}
+#os-trade-all .re-trg{display:flex;flex-direction:column;gap:10px;width:100%;max-width:400px}
+#os-trade-all .re-trg>div{background:#fff;border-radius:6px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;font-size:14px}
+#os-trade-all .re-trg>div small{color:#4A5856;font-size:12.5px}
+#os-trade-all .re-trg .re-hv{background:#07282A;color:#fff;margin-top:6px;flex-direction:column;align-items:flex-start;gap:4px;padding:16px 18px}
+#os-trade-all .re-trg .re-hv small{color:#2EE59D}
+#os-trade-all .re-dk{background:#07282A;color:#fff;text-align:center}
+#os-trade-all .re-dk .ox-h2{margin:12px auto 0;max-width:20ch}
+#os-trade-all .re-dk .ox-eb{color:rgba(255,255,255,.72)}
+#os-trade-all .re-dk .ox-subt{color:rgba(255,255,255,.8);margin:20px auto 0}
+#os-trade-all .re-dk .ox-subt b{color:#2EE59D;font-weight:500}
+#os-trade-all .ox-ch .at-rc:before{display:none}
+#os-trade-all .re-no3{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin:48px auto 0;max-width:1120px;text-align:left}
+#os-trade-all .re-rel .ox-scr{min-height:440px}
+#os-trade-all .re-rc{background:#F4F8F5;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px}
+#os-trade-all .re-rc small{font-size:12px;color:#4A5856}
+#os-trade-all .re-rc b{font-family:'Instrument Sans',sans-serif;font-weight:500;font-size:18px;line-height:1.2}
+#os-trade-all .re-rc span{font-size:13px;color:#3F4E4C}
+#os-trade-all .re-rat{border:1px solid rgba(7,40,42,.25);border-radius:999px;text-align:center;padding:11px;font-weight:500;font-size:14px}
+@media (max-width:1100px){#os-trade-all .re-no3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+#os-trade-all .re-no3>div{border-top:1px solid rgba(255,255,255,.25);padding-top:20px;display:flex;flex-direction:column;gap:8px}
+#os-trade-all .re-no3 b{font-family:'Instrument Sans',sans-serif;font-weight:500;font-size:24px;line-height:1.12;letter-spacing:-.012em;color:#2EE59D}
+#os-trade-all .re-no3 span{font-size:15.5px;line-height:1.5;color:rgba(255,255,255,.8)}
+@media (max-width:900px){#os-trade-all .re-no3{grid-template-columns:minmax(0,1fr);gap:20px}}
+#os-trade-all .re-iia .ox-note{max-width:820px;margin:12px auto 0}
+#os-trade-all .ox-quotes{padding:96px 0}
+#os-trade-all .ox-quotes .ox-h2{text-align:center;margin:0 auto 32px;max-width:none}
+#os-trade-all .oq-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:960px;margin:0 auto;text-align:left}
+#os-trade-all .oq{margin:0;display:flex;flex-direction:column;justify-content:space-between;gap:22px;background:#D2F4E3;border:0;border-radius:8px;padding:30px 32px 26px}
+#os-trade-all .oq:before{content:"\201C";display:block;font:400 64px/.45 'Playfair Display',Georgia,serif;color:#0B8A5F;margin-bottom:4px}
+#os-trade-all .oq blockquote{margin:0;flex:1 1 auto;font-family:'Figtree',system-ui,sans-serif;font-weight:500;font-size:21px;line-height:1.35;letter-spacing:-.01em;color:#061A1A}
+#os-trade-all .oq figcaption{display:flex;align-items:flex-start;gap:14px;min-height:62px;font-size:14px;line-height:1.45;color:#2F5A4C}
+#os-trade-all .oq figcaption img{width:48px;height:48px;border-radius:999px;object-fit:cover;flex:none;display:block}
+#os-trade-all .oq figcaption b{display:block;font-weight:500;color:#061A1A}
+@media (max-width:900px){#os-trade-all .oq-grid{grid-template-columns:minmax(0,1fr)}}
+</style>
+<style id="ta-extra-2026-11-07">
+#os-trade-all .ta-ch{display:flex;flex-direction:column;gap:0;margin-top:8px}
+#os-trade-all .ta-ch>div{display:grid;grid-template-columns:20px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 0;border-top:1px solid rgba(7,40,42,.08);font-size:13.5px}
+#os-trade-all .ta-ch>div>i{font-style:normal;font-size:12px;color:#4A5856}
+#os-trade-all .ta-ch em{font-style:normal;font-size:11.5px;border-radius:4px;padding:2px 6px;margin-right:6px}
+#os-trade-all .ta-ch .re-s{background:#F9E1DF;color:#8A2F28}
+#os-trade-all .ta-ch .re-b{background:#D2F4E3;color:#0B5F42}
+#os-trade-all .ta-st{font-size:11.5px;border-radius:999px;padding:3px 9px;white-space:nowrap;background:#F4F8F5;color:#3F4E4C}
+#os-trade-all .ta-st.ta-ok{background:#D2F4E3;color:#0B5F42}
+#os-trade-all .ta-st.ta-wt{background:#FFF4D6;color:#7A5A00}
+#os-trade-all .ta-ch>div.ta-pr{grid-template-columns:20px minmax(0,1fr);background:#07282A;color:#fff;border-radius:6px;padding:9px 12px;margin:4px 0;border-top:0;font-size:12.5px}
+#os-trade-all .ta-ch>div.ta-pr i{color:#2EE59D}
+#os-trade-all .ta-kv{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid rgba(7,40,42,.08);font-size:14px}
+#os-trade-all .ta-kv span:last-child{color:#0B8A5F;font-weight:600}
+#os-trade-all .ta-ph .ox-scr{min-height:440px}
+#os-trade-all .ta-ph .ta-ch>div{grid-template-columns:minmax(0,1fr) auto;font-size:12.5px}
+#os-trade-all .ta-ph .ta-ch>div>i{display:none}
+#os-trade-all .oq-grid.ta-one{grid-template-columns:minmax(0,1fr);max-width:620px}
+#os-trade-all .ta-lede2{font-size:16px;line-height:1.55;color:#3F4E4C;max-width:540px;margin:14px 0 0}
+#os-trade-all .ta-stat{display:flex;align-items:center;gap:16px;margin-top:26px;padding-top:20px;border-top:1px solid rgba(7,40,42,.14);max-width:540px}
+#os-trade-all .ta-stat b{font-family:'Instrument Sans',sans-serif;font-weight:500;font-size:44px;letter-spacing:-.02em;line-height:1;color:#0B8A5F;flex:none}
+#os-trade-all .ta-stat span{font-size:15px;line-height:1.4;color:#07282A}
+#os-trade-all .ta-fn{margin:40px 0 0;font-size:13px;line-height:1.5;color:#4A5856}
+#os-trade-all .ta-stat small{display:block;font-size:12.5px;color:#4A5856;margin-top:4px}
+</style>
   <nav class="ox-crumb" aria-label="Breadcrumb"><div class="ox-w"><a data-go="os">Advised-trading OS</a><span>/</span><a data-go="os-core">Advised-trading foundations</a><span>/</span><b>Trade-All™</b></div></nav>
     <div class="at-backbar"><div class="ox-w"><a data-go="os-core" data-anchor="ox-os-core-trade-all">← Back to Advised-trading foundations</a></div></div>
-  <section class="ox-hero">
-    <div class="ox-w">
-      <span class="ox-eb">Technical explanation</span>
-      <h1 class="ox-h1">Trade-All™. <em>One-tap approval. Seamlessly orchestrated trades.</em></h1>
-      <p class="ox-lede">Function, inputs, logic and output of the system that executes an approved bundle as one interdependent sequence, in real time.</p>
-      <div style="height:60px"></div>
-    </div>
-  </section>
-  <section class="ox-band ox-lt">
-    <div class="ox-w ox-row">
-      <div><span class="ox-eb">Function</span><h2 class="ox-h2">Orchestrated and supervised, <em>with no human intervention.</em></h2><p class="ox-subt">The approval activates Trade-All™. It automatically manages sending the sell and buy orders to the market through your trading systems, setting their sequence against the portfolio in real time, under the core operating system's controls.</p><p class="ox-subt" style="font-size:16px">Instead of leaving the investor to build and place orders one by one, each recommendation arrives as a personalized bundle of buy and sell orders. The investor approves once. Trade-All™ sends the sales first, funds each purchase from confirmed sale proceeds, and documents every step. The investor never leaves your app and never confirms order by order.</p></div>
-      <div class="ox-tawrap">
-        <div class="ox-phone" style="width:230px"><div class="ox-scr" style="min-height:380px;gap:10px">
-          <div class="ox-ui-h"><span class="ox-dot"></span>a new recommendation is ready</div>
-          <div class="ox-ui-t" style="font-size:17px">Increase exposure to global technology</div>
-          <div class="ox-kv"><span><span class="ox-tag ox-s">Sell</span> Government bond fund</span><b>$5,000</b></div>
-          <div class="ox-kv"><span><span class="ox-tag ox-b">Buy</span> Global tech ETF</span><b>$2,000</b></div>
-          <div class="ox-kv"><span><span class="ox-tag ox-b">Buy</span> Global dividend fund</span><b>$3,000</b></div>
-          <div class="ox-ui-s">Portfolio effect shown before approval</div>
-          <div class="ox-ta">Trade-All</div>
-        </div></div>
-        <div class="ox-ta-steps">
-          <div><i>✓</i>Send the sell orders</div>
-          <div><i>✓</i>Confirm the sale proceeds</div>
-          <div><i>✓</i>Send the dependent buy orders</div>
-          <div><i>✓</i>Document every step</div>
+  <section class="ox-ch">
+    <div class="ox-w ox-chg">
+      <div>
+        <span class="ox-eb">Core operating system / Trade-All™</span>
+        <h1 class="ox-h1">One tap to <span style="white-space:nowrap">Trade-All™.</span> <em>So acting on advice is simple.</em></h1>
+        <p class="ox-lede">The investor approves the whole recommendation in one tap: no orders to create, no working out how to fund them, no confirming and executing them one by one.</p>
+        <p class="ta-lede2">Behind the tap, Trade-All™ executes thousands of unique sell and buy order bundles simultaneously, each one sequenced, funded, booked and documented.</p>
+        <div class="ox-btns"><a data-go="contact" class="ox-pill ox-m">Request a demo</a></div>
+      </div>
+      <div class="ox-tile ox-mint tx-tile">
+        <div class="tx-scr">
+          <div class="tx-h"><span class="tx-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l5-6 4 4 7-9"></path><path d="M15 6h5v5"></path></svg></span><b>My Advice</b><span>For your portfolio</span></div>
+          <div class="tx-t">Increase exposure to global technology</div>
+          <div class="tx-sub">6 orders · prepared for you</div>
+          <div class="tx-list"><div class="fvx tx-in"><div class="tx-row"><span class="tx-tag" style="background:#EDEFEA;color:#3F4E4C">Sell</span><span class="tx-n">Government bond fund</span><span class="tx-a">$5,000</span><span class="fvx tx-ok tx-ok0">✓</span></div><div class="tx-row"><span class="tx-tag" style="background:#EDEFEA;color:#3F4E4C">Sell</span><span class="tx-n">Emerging markets fund</span><span class="tx-a">$1,500</span><span class="fvx tx-ok tx-ok1">✓</span></div><div class="tx-row"><span class="tx-tag" style="background:#D2F4E3;color:#0B5F42">Buy</span><span class="tx-n">Global tech ETF</span><span class="tx-a">$2,000</span><span class="fvx tx-ok tx-ok2">✓</span></div><div class="tx-row"><span class="tx-tag" style="background:#D2F4E3;color:#0B5F42">Buy</span><span class="tx-n">Global dividend fund</span><span class="tx-a">$3,000</span><span class="fvx tx-ok tx-ok3">✓</span></div><div class="tx-row"><span class="tx-tag" style="background:#D2F4E3;color:#0B5F42">Buy</span><span class="tx-n">Semiconductor ETF</span><span class="tx-a">$1,000</span><span class="fvx tx-ok tx-ok4">✓</span></div><div class="tx-row"><span class="tx-tag" style="background:#D2F4E3;color:#0B5F42">Buy</span><span class="tx-n">Cloud computing fund</span><span class="tx-a">$500</span><span class="fvx tx-ok tx-ok5">✓</span></div></div></div>
+          <div class="fvx tx-btn"><i class="fvx tx-fill"></i><span class="fvx tx-l1">Trade-All</span><span class="fvx tx-l2">Executing 6 orders…</span><span class="fvx tx-l3">6 of 6 filled · documented</span></div>
+          <span class="fvx tx-touch"></span>
         </div>
       </div>
     </div>
   </section>
-  <section class="ox-band ox-lt2">
+  <section class="ox-band ox-lt" id="ox-ta-complexity">
     <div class="ox-w ox-row at-flip">
-      <div><span class="ox-eb">Inputs</span><h2 class="ox-h2">The bundle <em>the client approves.</em></h2><p class="ox-muted" style="font-size:15px;margin-top:14px">Every bundle is checked for regulatory, professional and operational suitability when it is created and sent. All parameters are validated again in real time when the client opens it, at approval and at order submission.</p></div>
-      <div><ul class="ox-pts">
-          <li><b>The recommended bundle</b>The full set of orders, personalized to the client.</li>
-          <li><b>Its effect on the portfolio</b>Shown before the client decides.</li>
-          <li><b>Commissions and disclosure</b>Fair disclosure, commissions, special risks and conflicts of interest, under the institution's rules.</li>
-          <li><b>The full documentation</b>The client can read it before deciding.</li>
-          <li><b>A push notification</b>A new recommendation, reminders and other events, through the institution's notification system.</li>
-        </ul></div>
-    </div>
-  </section>
-  <section class="ox-band ox-lt">
-    <div class="ox-w">
-      <span class="ox-eb">Logic</span>
-      <h2 class="ox-h2">Interdependent orders, <em>orchestrated in real time.</em></h2>
-      <p class="ox-subt">Algorithms orchestrate the entire execution: dependencies, funding, portfolio constraints, partial fills and real-time market conditions.</p>
-      <div class="ox-cons" style="grid-template-columns:repeat(2,minmax(0,1fr))">
-        <div><b>Dependencies managed</b><span>Waiting for a sale before a purchase, and making sure each action follows the current state of the account and the results of the actions before it. Price, balances, holdings, validity, buying power and limits are checked in real time before sending, and the chain completes according to the actual trading results.</span></div>
-        <div><b>Execution tracked in real time</b><span>Following the status, average price and filled quantity of every order, and responding to events and edge cases: partial executions, rejections, changes in buying power, different currencies and trading hours.</span></div>
-        <div><b>Multi-layer control</b><span>Cross-checks information from independent sources and controls both the trading process and the control layers themselves, to detect and block failures before orders are sent.</span></div>
-        <div><b>Recovery</b><span>After a disconnection, failure or mismatch, the state of accounts and orders can be synchronized and restored from the start of the trading day.</span></div>
+      <div>
+        <span class="ox-eb">The problem it solves</span>
+        <h2 class="ox-h2">Great advice that is hard to act on <em>gives the investor nothing.</em></h2>
+        <p class="ox-subt">Alone, the investor has to work out every order: what to sell, how much, how to fund each purchase and in what order. Then place and confirm each one, and wait for each sale before buying.</p>
+        <p class="ox-subt">One wrong quantity or price, and the exchange member's or the exchange's controls can block the order. The advice is lost, and the investor's trust in you with it.</p>
+        <div class="ta-stat"><b>60%+</b><span>of investors struggle to translate recommendations into orders.*</span></div>
+        <p class="ox-subt at-close">Trade-All™ does all of it from one tap, with no human intervention.</p>
       </div>
-      <div style="margin-top:36px"><div class="ox-feats ox-f4 at-f4">
-          <div class="ox-feat"><span class="ox-ic">1</span><div><b>One approval</b><span>The whole recommendation, approved in one tap.</span></div></div>
-          <div class="ox-feat"><span class="ox-ic">2</span><div><b>Order bundles</b><span>Buys and sells prepared as one coherent action.</span></div></div>
-          <div class="ox-feat"><span class="ox-ic">3</span><div><b>Real-time orchestration</b><span>Funding, sequencing and partial fills handled automatically.</span></div></div>
-          <div class="ox-feat"><span class="ox-ic">4</span><div><b>No manual order building</b><span>No orders to write, no selling first and waiting.</span></div></div>
-        </div></div>
+      <div class="ox-tile ox-teal"><div class="re-ui">
+        <div class="ox-ui-h"><span class="ox-dot"></span>Trade-All™ · one bundle</div>
+        <div class="ox-ui-t">One approval, one order chain</div>
+        <div class="ta-ch">
+          <div><i>1</i><span><em class="re-s">Sell</em>Government bond fund</span><span class="ta-st ta-ok">Filled</span></div>
+          <div><i>2</i><span><em class="re-s">Sell</em>Emerging markets fund</span><span class="ta-st ta-wt">Partially filled</span></div>
+          <div class="ta-pr"><i>✓</i><span>Proceeds confirmed: government bond fund</span></div>
+          <div><i>3</i><span><em class="re-b">Buy</em>Global tech ETF</span><span class="ta-st">Sent</span></div>
+          <div><i>4</i><span><em class="re-b">Buy</em>Global dividend fund</span><span class="ta-st ta-wt">Waiting for the sale</span></div>
+        </div>
+      </div></div>
     </div>
   </section>
-  <section class="ox-band ox-lt2">
+  <section class="ox-band ox-lt2" id="ox-ta-how">
+    <div class="ox-w ox-row">
+      <div>
+        <span class="ox-eb">How it works</span>
+        <h2 class="ox-h2">Approve. Check. Sequence. Complete. <em>Automatically.</em></h2>
+        <ul class="re-ln">
+          <li><i>01</i><b>One approval for the whole bundle.</b>After the investor sees the portfolio effect, commissions and disclosure.</li>
+          <li><i>02</i><b>Checked again before sending.</b>Price, balances, holdings, validity, buying power and limits, and anything that changed since the recommendation was created.</li>
+          <li><i>03</i><b>Sales first, purchases funded.</b>Dependent orders are sent in sequence, each purchase funded from the sale before it.</li>
+          <li><i>04</i><b>Completed by actual results.</b>The chain continues according to what actually fills.</li>
+        </ul>
+        <p class="ox-subt at-close">Every step time-stamped and documented, as regulation requires.</p>
+      </div>
+      <div class="ox-tile ox-mint"><div class="re-ui">
+        <div class="ox-ui-h"><span class="ox-dot"></span>Before sending · one bundle</div>
+        <div class="ox-ui-t">Checked in real time</div>
+        <div class="ta-kv"><span>Price</span><span>✓</span></div>
+        <div class="ta-kv"><span>Balances and holdings</span><span>✓</span></div>
+        <div class="ta-kv"><span>Validity</span><span>✓</span></div>
+        <div class="ta-kv"><span>Buying power</span><span>✓</span></div>
+        <div class="ta-kv"><span>Limits</span><span>✓</span></div>
+        <div class="ta-kv"><span>Changes since the recommendation</span><span>✓</span></div>
+        <div class="ox-ta">Cleared to send</div>
+      </div></div>
+    </div>
+  </section>
+  <section class="ox-band ox-lt" id="ox-ta-scale">
+    <div class="ox-w ox-row at-flip">
+      <div>
+        <span class="ox-eb">At scale</span>
+        <h2 class="ox-h2">Thousands of unique bundles. <em>Executed simultaneously, in real time.</em></h2>
+        <p class="ox-subt">Advice is created during working hours. Each investor approves whenever they choose, within the recommendation's validity period.</p>
+        <p class="ox-subt">Whenever they tap, their bundle runs on the account and the market of that moment.</p>
+        <p class="ox-subt at-close">Every edge case accounted for.</p>
+      </div>
+      <div class="ox-tile ox-lime"><div class="re-ui">
+        <div class="ox-ui-h"><span class="ox-dot"></span>Trade-All™ · every bundle</div>
+        <div class="ox-ui-t">Edge cases, handled</div>
+        <div class="re-ck"><span>Partial fills</span><span>Rejected orders</span><span>Updated and cancelled orders</span><span>Different currencies</span><span>Trading hours</span><span>Minimum quantities</span></div>
+        <div class="ox-ta">Executed · documented</div>
+      </div></div>
+    </div>
+  </section>
+  <section class="ox-band ox-lt2" id="ox-ta-control">
+    <div class="ox-w ox-row">
+      <div>
+        <span class="ox-eb">Control</span>
+        <h2 class="ox-h2">Supervised at every layer. <em>Failures blocked before orders are sent.</em></h2>
+        <ul class="re-ln">
+          <li><i>1</i><b>Built to pass the exchange's controls</b>Every order is checked against the exchange member's and the exchange's rules before it is sent, so it is not blocked.</li>
+          <li><i>2</i><b>Independent cross-checks</b>Information from independent sources is cross-checked, and the control layers are themselves controlled.</li>
+          <li><i>3</i><b>Recovery</b>After a disconnection, failure or mismatch, accounts and orders are restored to a verified state.</li>
+        </ul>
+      </div>
+      <div class="ox-tile ox-lilac"><div class="re-trg">
+        <div><b>Exchange member and exchange rules</b><small>Built in</small></div>
+        <div><b>Independent cross-checks</b><small>Controls on the controls</small></div>
+        <div class="re-hv"><small>Recovery</small><b>Restored to a verified state</b></div>
+      </div></div>
+    </div>
+  </section>
+  <section class="ox-band ox-lt" id="ox-ta-visibility">
+    <div class="ox-w ox-row at-flip">
+      <div>
+        <span class="ox-eb">Visibility</span>
+        <h2 class="ox-h2">The investor sees every order. <em>Your advisors see every client.</em></h2>
+        <p class="ox-subt">In your app, the investor follows each order from sent to filled to documented, with a notification at every change.</p>
+        <p class="ox-subt">Your advisors see every recommendation and its orders, per client and in aggregate: status, average price and filled quantity, with alerts on rejections, cancellations and operational events, and what was executed against what was recommended.</p>
+        <p class="ox-subt at-close">Advice that is easy to act on is advice investors come back for.</p>
+      </div>
+      <div class="ox-tile ox-teal ta-ph"><div class="ox-phone"><div class="ox-scr">
+        <div class="ox-ui-h"><span class="ox-dot"></span>Your trading app · Your orders</div>
+        <div class="ox-ui-t">Increase exposure to global technology</div>
+        <div class="ta-ch">
+          <div><i></i><span><em class="re-s">Sell</em>Government bond fund</span><span class="ta-st ta-ok">Filled</span></div>
+          <div><i></i><span><em class="re-s">Sell</em>Emerging markets fund</span><span class="ta-st ta-ok">Filled</span></div>
+          <div><i></i><span><em class="re-b">Buy</em>Global tech ETF</span><span class="ta-st ta-ok">Filled</span></div>
+          <div><i></i><span><em class="re-b">Buy</em>Global dividend fund</span><span class="ta-st ta-ok">Filled</span></div>
+          <div><i></i><span><em class="re-b">Buy</em>Semiconductor ETF</span><span class="ta-st ta-ok">Filled</span></div>
+          <div><i></i><span><em class="re-b">Buy</em>Cloud computing fund</span><span class="ta-st ta-ok">Filled</span></div>
+        </div>
+        <div class="ox-ta">Documented ✓</div>
+      </div></div></div>
+    </div>
+  </section>
+  <section class="ox-band re-dk">
     <div class="ox-w">
-      <span class="ox-eb">Output</span>
-      <h2 class="ox-h2">Executed orders, <em>documented as they happen.</em></h2>
-      <p class="ox-subt">Advice Protocol, approvals, orders and execution records, generated automatically, updated in real time and recorded in your institution's systems.</p>
-      <p class="ox-subt">The status of every recommendation and of the orders within it is visible per client and in aggregate, and executed orders carry through to booking in your trading and operational systems.</p>
+      <span class="ox-eb">End-to-end execution</span>
+      <h2 class="ox-h2">One tap. <em>Nothing left for the investor to do.</em></h2>
+      <div class="re-no3">
+        <div><b>No leaving the app.</b><span>The investor approves and follows every order inside your app.</span></div>
+        <div><b>No confirming order by order.</b><span>One approval covers the whole bundle.</span></div>
+        <div><b>No waiting between orders.</b><span>Purchases are funded from sale proceeds automatically.</span></div>
+        <div><b>Nothing left unrecorded.</b><span>Every approval, order and fill, documented as regulation requires.</span></div>
+      </div>
     </div>
   </section>
-  <section class="ox-band ox-lt">
+  <section class="ox-band ox-lt ox-quotes" id="ox-ta-quotes">
+    <div class="ox-w">
+      <h2 class="ox-h2">In our clients’ <em>own words</em></h2>
+      <div class="oq-grid">
+        <figure class="oq"><blockquote>The system fits the advice to each person’s own horizon and risk… and brings lower-risk assets to investors who would never pick them on their own. That’s why it’s genius.</blockquote><figcaption><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAUEBAQEAwUEBAQGBQUGCA0ICAcHCBALDAkNExAUExIQEhIUFx0ZFBYcFhISGiMaHB4fISEhFBkkJyQgJh0gISD/2wBDAQUGBggHCA8ICA8gFRIVICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICD/wAARCADAAMADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD0OiiipLCiiigAooooAKKKKACiiigAoqYRKsXmSMQvsM0jCFQSZVAX73P3frTHZkVFDzwxhj5bvGgJaReQCOopLW7tryBJYXBDjOM9PagfKxaKcylWINNpEhRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAVJHGWPI4pqDLgYzUOp3CwaXcXTRfJEpJ3PjjvxTKSuTSXtnbW3nysiQ84dyADisOXxfpksvl27AbeWcANx7eteW654pgmVYwTJJHhU+b5QoJ4APf/AOtWDPrwviWLLC2MExrtPA4qW+x2RpRW56fqXj26s7hpraZXt0BOwqPmGcZBH54rF1H4kLc6RHGbfbcbicgkAj8Opryi81IW0TxpIzhhglu/NZ91cO0yzwScRlG454xS1NLRXQ908F+P7O509tN1S5SPaTH5rHGQQcVU8M+MNHtvEV0lxd7bNhvUYyN4CgL69M14Jc3Vxb3G+3bCH5lHUMO1TJqTxyQbcCWbl+3aq1J5Y6+Z9kxX1jf8W11DIyruba4O32NHBAZSGU8hgcg182aJ4kNp5gEmcrsYH7reufWu78MeMLm0VYnLXFsWyUY5IUDqvvSv3MpUNLpnq9FQ2t1b3tnFd2sgkhlXcrD/AD1qamcuwUUUUCCiiigAooooAKKKKACiiigAoooMiQxvNJ92NSx/Cge5R1fU4tL06R3fErr+7UHk+9eH+JPE+r37m3udRLRZz5fQKffHWtbxp4mlvL5zHGAAOGY9B6e1eeRu+o6hHAkYeXdk7ecfXtUXO+nBRVupTluopsqzDcT1bPHvx3qGWKaRspucnkHHP6V6bonw+86QPdJzjOAPWu4svAljDhjAGI9qwlWijuhhpS3PBLXw5ql+6j7O5jPBY5H5109n4FuGtwjwOq9A2OntXvdpoMEQAWMBRxirn2JUJVY1C/Ss3iOyOiOES3Z86/8ACv7kZiCkgnggHmud1Twhe2kgleNvkXPA6HOK+o5bBGJIUDtwKzrvRre4XZJEpGPShYhieEXRnyj9nurdsSK2YxnOepzWto+t3MOoIJGIQe/SvZtU8CWNy7sIgrnjOOtcDq3gqawkeSFCQpDED610RqRkck6E4Hovw21xXnm0dnyki+fFk/xD7wH4c/hXpVfOHgnU20bxZbPdYGJtucdAeCD+FfRysjoskbh0YZVh0IrVHm142lcWiiimc4UUUUAFFFFABRRRQAUUUUAFYHiu/a10xLeNirXBIJH90f8A66365zxjCX0aKdAPMik6+uQaUtjWlbnVzxPWgo1OYyHylbqWGQxPat34b+HRfar57IqAE42qetVb62juYHnmUszDKA+5xmvVPhlp8dmIpCo9fesZtqNj0aXxXO2tNCis1AC5ZuST3NXjYgYAGK3LiNflfHXmoZFGQO+K4nA9ONRtXMxbQAYAFDWYPGOtaAXHakK5PTmlYvnZjvYksQBwPWq01oFPTGa6BoiOM5z+lVLiP5ct+WKlocZ3ObltF54znvWLd6JHcuRgAcqePvCuouEwGPOO1UN2Cc007MuSujwL4h+H5tH1SC6tAyxOy54z0716h8PtWk1Hw+8EgB+ykBWHocnFL8QrBb/wtKypmSPlfXPpWB8MZxbzT2IyqypnBOfmX/61ehSldanh4qFrnp1FFFbHlhRRRQAUUUUAFFFFABRRRQAVz/i2QJo6KT95mIHqQv8A9eugrkvG9ysNraxEZZ9+AOp6Ck9jWl8SOFELyzpDGQsO9AN3fIzivb/CemRwWcMYRt/DM1eW6NaLJc2olAQx5kcZzz0Az+Ar2Tw4kk0BnbJDdvSsJHfG6dzpZV3RKw54qsy89M+lXkTbBtfr/Kqcr4bjGKwkjsg9LEez5jjp2pOVJ4o89QcE01pkY+9ZmyuDNkjmq9wflPFS5BPWo5woj6ikyo7mPcp07e1ZUq7WyB3rWnkAbbn8TVF0RiSevWotqdWyMnVIludJniflWXmvKvCcjab42tIWJ2SzlBj3BAH6ivXdQikbS7jyhltpIGK8Y0Rw3jexuOcCYZx1BJ/+tXZR2PJxR7hRSnqaSus8MKKKKACiiigAooooAKKKKACuU8YW/mSWMpBIVWHHrkV10Sqz/OSEUbmI7AdaZeWdp4jsWWG2a0ntzlBuyCPWsKlaMHyvc9DCYSpVTqR2WhyOn6ekYiAUhmOW969r02CO306AKuMqM15bDZ/ZvEiwOTlQpPvnrXrCvttlLYChRzUXN0rMq6jfi2jwBzjkntXCarq2ti4DWtu86H+4QK6LUrqMebPO21E565zXmesav4i1Gzu5tLJ062hOPuZlkGeSvbgZNZW5nZHXFuEbkt94p8X20pUaNEV7NJOoqey8Xa48yrdaQY1b+MOGX9K5Pwrp0uuX0i397qCIAx33SKjKwJwRgkMD7/lxXW6XYy2Rlg83zlj67Vwr+4HY+tKrBwNaFWNVO3Q7WyvmniDYI+tV9S1QwRYVCx9vWrmmQobUrwM9q57xCZVuIbeHPzk7iozgAfzrFM1W5zWpeJtdjv2Sx0hriPOAxYDNQ2+teLZW/wBK0KSOM942B4/OqWs6QEsk1APfO5Db1tofMlXpgYYgE9T1A4xS+HrbXLTRZtQTVZJHhbIt5xgSjuMc4b8x2rpVK8bnNOulPkV/uO10e/e7Ty5o2SRTgq45/GvPdQsI9E+J8EcCBYpblZVP91W7AfnXd6deLqMKX6AxSg4ZTxWJ4tto38aeG7pyQrnaSB1IbirpWMcQmzrD1NJSn7xpK6jwgooooAKKKKACiiigAooooAWQkWFxs+8do/DPNa9tHb2eiyXlxJ5WX3AAZO0CsqIbnMZ6SDaavamA88UDHEDqFVuxGK8rExcanN3R9Zlk1Uw3sdrNt/1/WxX1CGO61TTb+0bPmoNxx94Z4P5Gu4Kk2oQn+GseWws44LRUXiBcKQcHtWvDNuRskbcfKRW6+FXOGdvaPlMW70+OZgJCSmfunp+VUby0j8vy0iwBwNvGK6GUxltoPJ5xWZPE5JIGKy2OiK5jmX08AcDFSQaYVBIYnPbPetfyQGJOTn1pZGWORUPAPHFQ7y3OlKysSWMbJGScZPArC1iPzb+PhlPb345rrzEkcUagYG3JrmNXXZeCUn5V5q+WyM01Irx2pRNoOc+tH2HY7PtVS3XvWhbKWiUkZNTmMBfn5YdDihO2hMotmJDZrG7sgKgnkdvrVXVYYnudOMigsnmBcjocDmtufAxtAAzzWTqkLSXFrMvSFHYj1JGBTv7rsFKN6sFLuTnnB9QDSUAFUVSckKBRXoRvyq583VSVSSjtdhRRRVGQUUUUAFFFFABRRRQA5W2urehBroktoWtZreXEkb4aLPUA+lc3WlbagogWC46Jwje3pXNiKfOro9PL8QqUnGTsn+aNZVC6fGhLHY20FupHrVi0kY7osEEcr9Kp28huN8isvlKNp55B7VNGSr7QSDjArOKfLZnVVa5+aLvct4UfMeoqnLNiQ/wgdan3FV68nvWfdEiU49OMVlLQ6aTuxssoBLfrUNq0NxdeZPKEji+bLHFQSsZWCY4zg47VQ1SFJrRlVxuxgjsw9CKjqdlrqzOlNwhIMc5kjPIZuhrE1IxySmNjncMcGuX02VdItvs1nB5EEhZhCpOxTnkj0+lZmo3V9e6hEtzGViikGACcE+px1rTUyXLtc7+wkCxiJjyvGc9auySqq1hWEhjQfNu9Sas3FwNoBbBNRcpxEuJgX469cVSvJD55cE7Y1Ax9aZJLl93oc/Wi2IdpS4B3P3q7e6ZU/wCKn2LLfeNJTnOXY+9Nr0T5ZhRRRQIKKKKACiiigAooooAKKKkhhedyq4AALMx6KB1JoGlfRGpo0m2C6Q8ggHFaSMpIYcntWLpE9vLcXcEW5sIPmJxnnsO1Xo3VZhH1x2rmlJN6Hp0oOMFcstKPNwMHIqvePkcDBpGP73bu2hj9KinKHJBzgZPNYTWh2UpWZlXVy0TYX6ke3vVImeeIlV+9+HGKgv8A7bNOIrIqJc7Sz52qD/8AqqqbLX2A82e1AHyrhGYfzFRFdEdsIufUsT6dcyW6paspwwJYncevIpmoWMjqGjMfmYPBOTmqbWXieN18u4sck46Mv8qpyWPiZJlLXNgF/i+RifzzWvKzoeGja6ki1BPeW0ixMxIUjnOefStaKczR7zwelc5cya3BsZoYJkBHzAkEc9ga1bOVpLZ2IKDPfispLocspOLsy4Mm4CbME45q+FWMkIoGOMiqVmA9xvB4HNXa7acdNTxcVVkpWi7BRRRWx5wUUUUAFFFFABRRRQAUUUUAHJOAMk9q9H03wjGPCdxbXI2Xt6mWY9Y+6r/jXP8AgzSBqGsfa5hmCzw+P7z/AMI/rXqPWqSvuHM07o+ctPnOk+NrrTLhtt1FGFmjJ5GTwfoccV1M043JKhwAM1f+JvhVDMPFunwYvIUEd1tHMkQOQfquT+BrkLfUQ0atvyjcg+9edO8ajTPeg1VoRkt+p0Kkb/MbBGfXkVWu5Xx8gHJ5A6GqtlfRuWgdlLLz0xxVxmUq3IAB4qnqZrRlCIorHLAkMd1Su8yxl7VgWbuTTJreNx8oAPQYNSwqsca845xyevvWLi90dUKltDGvNU1qBsLbiVh1GQahF9qsxAktVGeS2QMVuTTx7vnGP931rPmlETMxGRzkY7Vbi7GyqO+pSb95H++OXz+ANRxvti8vhRnt0qUTRSRhUXYMH8aZEnnSEAfMOCD2pwj3OarM1LNSsRY9TxVigKEUIOijFFdyVlY8KpLmk2FFFFMzCiiigAooooAKKKKAClVWd1RRuZiAAO5pK3/DGmXVzrFrerGFtoJA7SOODjsPU0wPQ9D0tdH0WC0KqJyN8xHdj/h0rVXpTW+9mnKeaogjuIVmgaORQyMCCCODXg/ifw43hrWWSMMdPuCTbnsh6lPw7e1e/HmsbW9ItdX06azu4g8cg/FT2I9xWVWnzrzOrDV3Rl5M+e3YhldCVc8AjirVvrLx/u5gOO9WtQ0q+0fVX06+G7B3RSY+WVPX6+tUJrPzVbI69CP881wpNOzPbfK1dbGvDqUMjBFKk9gTgVFfXnICj5ucEdR6nFc1JbTQScLvHY96jaW5K7ml3EDGXH6VorHO01saLXpklwxDt97K8Y47fWoprz7QgBPlsCQcknp71Q2yyMCyhcdCD0FK1tJk4kODySo6VpoTzSLkcyrIrq2FxgDOCa1NJUTXyI7Y/iOTnBxxWNBD5aZOctyTya19Kk/4mTAjbtVdp7HJ5/Smt7ITTlubkkbxOUcYYU2tJfLuo/Jfjj5G/uf/AFqz5I3ikaORdrKcEV0HmTg4Ow2iiikZhRRRQAUUUUAFKASQACSeAB3q5p2l3uq3X2exhMjdWPRVHqT2r0XRPCVnpJW4uWW5u8cO3Cp/uj+pppXC5haB4QDlbrWFIXqtvnGf97/Cu4CLFGscUaIi8BVGAKkNqjDMcm1vrkVWLOsnlt8rdM1qlYktRsWG1hyP5VIOOlVI5PLjJkbDR8nPcVbDBlDI2QRkGkxDx0pjrkUuSFx3pT0pAcv4l0C31rTmt5fklX5opB1Q/wCFeRyWs9jqEljeRbJozgr2PuPavf5EDJ0rlvEvhqHV7YyKNs8Y+VwOf/risalLmV1ud2GxHI+WWx5O1qHBJTOexPWq0unoQ3yY+n9a25LaW3le3nXDpwQe/v7io32gYK8etcN+57HJpdPQwBp7L0B49TT1tETO4ZIGSTW0yx44J9cnmqkio5zkjHJ96tSIdNszdg/g/StCytkS3jZeWbnNV59qwMwXAVePpSaDcNfNDMuVVh909sVpSknJiqU3GB0lqjqwcgkd/pWrdaVcXlqJ4Ii0qYGOhYf/AFqn09MEu3CKu4sewqzFcSyXTEOyAHaqg9BXaoqx5VR82hzLabqKZ3WM4x/sGq8kUsRxLE8f+8pFekRy5jVmfbkVKSki7WKuPQ8ijkOXU8vors9T8P2dx81qBbTnnA+4fqO34Vyt5Y3NhMYrmMr6MOVP0NS00BWoooqQP//Z" alt="Dror Yariv"><span><b>Dror Yariv</b>CEO, Excellence Trade</span></figcaption></figure>
+        <figure class="oq"><blockquote>Leaves no room for human error… answers all regulatory demands.</blockquote><figcaption><img src="data:image/jpeg;base64,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" alt="Keren Snai-Leizirov"><span><b>Keren Snai-Leizirov</b>Head of Regulation, Investment Advisory, FIBI Bank</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+  <section class="ox-band ox-lt2 re-iia">
     <div class="ox-w">
       <div class="at-iiah"><span class="ox-iia-sm ox-iia" role="img" aria-label="Israel Innovation Authority"></span><p class="ox-h3">Recognized by the Israel Innovation Authority as breakthrough technology.</p></div>
       <div class="ox-card at-grad at-grad1"><h3 class="ox-h3">Automatic Order Management Module.</h3><p>Manages and supervises the sending of multiple interdependent trade orders for each individual client, with no human intervention, executing several trades from a single press of the approval button. Interdependent is the hard part: when a sale funds a purchase, the orders rely on each other.</p></div>
     </div>
   </section>
   <section class="ox-band ox-lt at-cont">
-    <div class="ox-w"><a data-go="os-core" data-anchor="ox-os-core-compliance" class="ox-pill ox-d">Continue: Native Compliance →</a></div>
+    <div class="ox-w"><a data-go="os-core" data-anchor="ox-os-core-compliance" class="ox-pill ox-d">Continue: Native Compliance →</a><p class="ta-fn">* Finnovest research, June 2026. A representative sample of independent investors in Israel.</p></div>
   </section>
   <section class="ox-cta">
     <div class="ox-ripple"></div>

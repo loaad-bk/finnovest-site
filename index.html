@@ -6644,107 +6644,173 @@ html body .ox .tx-a{text-align:right}
   </section>
 </div></section>
 <section class="page" id="os-sdk"><div class="ox">
+<style id="sdk-hagar-rows-2026-11-07">
+#os-sdk .at-close{font-weight:500;color:#07282A}
+#os-sdk .ox-ch .ox-tile{min-height:0;padding:40px}
+#os-sdk .re-ln{list-style:none;margin:22px 0 0;padding:0;max-width:560px}
+#os-sdk .re-ln li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:4px 12px;padding:13px 0;border-top:1px solid rgba(7,40,42,.12);font-size:15.5px;line-height:1.45;color:#3F4E4C}
+#os-sdk .re-ln li i{grid-row:1/3;font-style:normal;font-size:13px;color:#4A5856;padding-top:3px}
+#os-sdk .re-ln li b{font-family:'Instrument Sans',sans-serif;font-weight:500;font-size:19px;letter-spacing:-.01em;color:#07282A}
+#os-sdk .re-ui{background:#fff;border-radius:6px;padding:20px 22px;width:100%;max-width:400px;font-size:14px;color:#07282A}
+#os-sdk .re-ui .ox-ui-h{margin-bottom:8px}
+#os-sdk .re-ui .ox-ui-t{margin-bottom:6px}
+#os-sdk .re-ck{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 4px}
+#os-sdk .re-ck span{display:inline-flex;align-items:center;gap:6px;background:#F4F8F5;border-radius:4px;padding:6px 9px;font-size:12.5px}
+#os-sdk .re-ck span:before{content:"✓";color:#0B8A5F;font-weight:700;font-size:11px}
+#os-sdk .re-or{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-top:1px solid rgba(7,40,42,.08)}
+#os-sdk .re-or em{font-style:normal;font-size:12px;border-radius:4px;padding:2px 7px;margin-right:8px}
+#os-sdk .re-or .re-s{background:#F9E1DF;color:#8A2F28}
+#os-sdk .re-or .re-b{background:#D2F4E3;color:#0B5F42}
+#os-sdk .re-or small{color:#4A5856;white-space:nowrap}
+#os-sdk .re-ui .ox-ta{margin-top:14px}
+#os-sdk .re-trg{display:flex;flex-direction:column;gap:10px;width:100%;max-width:400px}
+#os-sdk .re-trg>div{background:#fff;border-radius:6px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;font-size:14px}
+#os-sdk .re-trg>div small{color:#4A5856;font-size:12.5px}
+#os-sdk .re-trg .re-hv{background:#07282A;color:#fff;margin-top:6px;flex-direction:column;align-items:flex-start;gap:4px;padding:16px 18px}
+#os-sdk .re-trg .re-hv small{color:#2EE59D}
+#os-sdk .re-dk{background:#07282A;color:#fff;text-align:center}
+#os-sdk .re-dk .ox-h2{margin:12px auto 0;max-width:20ch}
+#os-sdk .re-dk .ox-eb{color:rgba(255,255,255,.72)}
+#os-sdk .re-dk .ox-subt{color:rgba(255,255,255,.8);margin:20px auto 0}
+#os-sdk .re-dk .ox-subt b{color:#2EE59D;font-weight:500}
+#os-sdk .ox-ch .at-rc:before{display:none}
+#os-sdk .re-no3{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin:48px auto 0;max-width:1120px;text-align:left}
+#os-sdk .re-rel .ox-scr{min-height:440px}
+#os-sdk .re-rc{background:#F4F8F5;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px}
+#os-sdk .re-rc small{font-size:12px;color:#4A5856}
+#os-sdk .re-rc b{font-family:'Instrument Sans',sans-serif;font-weight:500;font-size:18px;line-height:1.2}
+#os-sdk .re-rc span{font-size:13px;color:#3F4E4C}
+#os-sdk .re-rat{border:1px solid rgba(7,40,42,.25);border-radius:999px;text-align:center;padding:11px;font-weight:500;font-size:14px}
+@media (max-width:1100px){#os-sdk .re-no3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+#os-sdk .re-no3>div{border-top:1px solid rgba(255,255,255,.25);padding-top:20px;display:flex;flex-direction:column;gap:8px}
+#os-sdk .re-no3 b{font-family:'Instrument Sans',sans-serif;font-weight:500;font-size:24px;line-height:1.12;letter-spacing:-.012em;color:#2EE59D}
+#os-sdk .re-no3 span{font-size:15.5px;line-height:1.5;color:rgba(255,255,255,.8)}
+@media (max-width:900px){#os-sdk .re-no3{grid-template-columns:minmax(0,1fr);gap:20px}}
+#os-sdk .re-iia .ox-note{max-width:820px;margin:12px auto 0}
+#os-sdk .ox-quotes{padding:96px 0}
+#os-sdk .ox-quotes .ox-h2{text-align:center;margin:0 auto 32px;max-width:none}
+#os-sdk .oq-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:960px;margin:0 auto;text-align:left}
+#os-sdk .oq{margin:0;display:flex;flex-direction:column;justify-content:space-between;gap:22px;background:#D2F4E3;border:0;border-radius:8px;padding:30px 32px 26px}
+#os-sdk .oq:before{content:"\201C";display:block;font:400 64px/.45 'Playfair Display',Georgia,serif;color:#0B8A5F;margin-bottom:4px}
+#os-sdk .oq blockquote{margin:0;flex:1 1 auto;font-family:'Figtree',system-ui,sans-serif;font-weight:500;font-size:21px;line-height:1.35;letter-spacing:-.01em;color:#061A1A}
+#os-sdk .oq figcaption{display:flex;align-items:flex-start;gap:14px;min-height:62px;font-size:14px;line-height:1.45;color:#2F5A4C}
+#os-sdk .oq figcaption img{width:48px;height:48px;border-radius:999px;object-fit:cover;flex:none;display:block}
+#os-sdk .oq figcaption b{display:block;font-weight:500;color:#061A1A}
+@media (max-width:900px){#os-sdk .oq-grid{grid-template-columns:minmax(0,1fr)}}
+</style>
+<style id="sdk-extra-2026-11-07">
+#os-sdk .ta-ch{display:flex;flex-direction:column;gap:0;margin-top:8px}
+#os-sdk .ta-ch>div{display:grid;grid-template-columns:20px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 0;border-top:1px solid rgba(7,40,42,.08);font-size:13.5px}
+#os-sdk .ta-ch>div>i{font-style:normal;font-size:12px;color:#4A5856}
+#os-sdk .ta-ch em{font-style:normal;font-size:11.5px;border-radius:4px;padding:2px 6px;margin-right:6px}
+#os-sdk .ta-ch .re-s{background:#F9E1DF;color:#8A2F28}
+#os-sdk .ta-ch .re-b{background:#D2F4E3;color:#0B5F42}
+#os-sdk .ta-st{font-size:11.5px;border-radius:999px;padding:3px 9px;white-space:nowrap;background:#F4F8F5;color:#3F4E4C}
+#os-sdk .ta-st.ta-ok{background:#D2F4E3;color:#0B5F42}
+#os-sdk .ta-st.ta-wt{background:#FFF4D6;color:#7A5A00}
+#os-sdk .ta-ch>div.ta-pr{grid-template-columns:20px minmax(0,1fr);background:#07282A;color:#fff;border-radius:6px;padding:9px 12px;margin:4px 0;border-top:0;font-size:12.5px}
+#os-sdk .ta-ch>div.ta-pr i{color:#2EE59D}
+#os-sdk .ta-kv{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid rgba(7,40,42,.08);font-size:14px}
+#os-sdk .ta-kv span:last-child{color:#0B8A5F;font-weight:600}
+#os-sdk .ta-ph .ox-scr{min-height:440px}
+#os-sdk .ta-ph .ta-ch>div{grid-template-columns:minmax(0,1fr) auto;font-size:12.5px}
+#os-sdk .ta-ph .ta-ch>div>i{display:none}
+#os-sdk .oq-grid.ta-one{grid-template-columns:minmax(0,1fr);max-width:620px}
+#os-sdk .ta-lede2{font-size:16px;line-height:1.55;color:#3F4E4C;max-width:540px;margin:14px 0 0}
+#os-sdk .ta-stat{display:flex;align-items:center;gap:16px;margin-top:26px;padding-top:20px;border-top:1px solid rgba(7,40,42,.14);max-width:540px}
+#os-sdk .ta-stat b{font-family:'Instrument Sans',sans-serif;font-weight:500;font-size:44px;letter-spacing:-.02em;line-height:1;color:#0B8A5F;flex:none}
+#os-sdk .ta-stat span{font-size:15px;line-height:1.4;color:#07282A}
+#os-sdk .ta-fn{margin:40px 0 0;font-size:13px;line-height:1.5;color:#4A5856}
+#os-sdk .ta-stat small{display:block;font-size:12.5px;color:#4A5856;margin-top:4px}
+#os-sdk .ox-ch .ox-tile{min-height:0;padding:40px}
+#os-sdk .re-gain{text-align:center}
+#os-sdk .re-gain .ox-h2{margin:12px auto 0;max-width:20ch}
+#os-sdk .re-gain .re-no3>div{border-top:1px solid rgba(7,40,42,.18)}
+#os-sdk .re-gain .re-no3 b{color:#07282A}
+#os-sdk .re-gain .re-no3 span{color:#3F4E4C}
+</style>
   <nav class="ox-crumb" aria-label="Breadcrumb"><div class="ox-w"><a data-go="os">Advised-trading OS</a><span>/</span><a data-go="os-interface">Delivery options</a><span>/</span><b>White-label SDK</b></div></nav>
     <div class="at-backbar"><div class="ox-w"><a data-go="os-interface" data-anchor="ox-os-interface-sdk">← Back to Delivery options</a></div></div>
-<section class="ox-hero">
-    <div class="ox-burst"></div>
-    <div class="ox-w">
-      <span class="ox-eb">Delivery option</span>
-      <h1 class="ox-h1">White-label SDK. <em><span style="white-space:nowrap">Advised-trading,</span> as we designed it.</em></h1>
-      <p class="ox-lede">Embed Finnovest’s designed advisory journey inside your existing app, bringing our expertise in retail investor behavior into the experience, from receiving a recommendation to acting through Trade-All™.</p>
-      <div class="ox-btns"><a data-go="contact" class="ox-pill ox-m">Request a demo</a><a data-go="os-sdk" data-anchor="ox-os-sdk-compare" class="ox-pill ox-g">Compare the three</a></div>
-      <div class="ox-shot ox-teal">
-        <div class="ox-phone" style="width:260px"><div class="ox-scr" style="min-height:420px">
-          <div class="ox-ui-h"><span class="ox-dot"></span>Your trading app</div>
-          <div class="ox-tabs"><span>Portfolio</span><span class="ox-on">Advice</span><span>Markets</span></div>
-          <div style="font-size:15px">Hi Daniel,<br><span class="ox-muted">a new recommendation is ready</span></div>
-          <div class="ox-ui-t">Increase exposure to global technology</div>
-          <div class="ox-ui-s">Read the rationale</div>
-          <div class="ox-ta">Trade-All</div>
-        </div></div>
+  <section class="ox-ch">
+    <div class="ox-w ox-chg">
+      <div>
+        <span class="ox-eb">Delivery option / White-label SDK</span>
+        <h1 class="ox-h1">Get the professional <span style="white-space:nowrap">Advised-trading</span> experience <em>embedded in your app.</em></h1>
+        <p class="ox-lede">Give every client personal, professional advice inside the app they already trade in. The White-label SDK adds ready-built Advised-trading screens, designed from our experience with retail investors, under your brand and behind your login.</p>
+        <p class="ta-lede2">Each recommendation reaches every client, and they act on it the moment they are ready, with one tap to Trade-All™.</p>
+        <div class="ox-btns"><a data-go="contact" class="ox-pill ox-m">Request a demo</a></div>
       </div>
+      <div class="ox-tile ox-teal"><div class="ox-phone" style="width:270px"><div class="ox-scr" style="min-height:440px">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div style="display:flex;align-items:center;gap:8px;background:#F4F8F5;border-radius:6px;padding:7px 11px"><span style="width:18px;height:18px;border-radius:50%;background:#07282A;display:inline-block"></span><b style="font-size:12px;font-weight:600">Your brand</b></div>
+            <span class="ox-muted" style="font-size:12px">Hi Daniel</span>
+          </div>
+          <div class="ox-ui-t" style="margin-top:10px">How would you like to invest today?</div>
+          <div style="border:1px solid rgba(7,40,42,.16);border-radius:12px;padding:13px 14px"><b style="display:block;font-size:14px;font-weight:500">Independent trading</b><span class="ox-muted" style="font-size:12px">Place your own orders</span></div>
+          <div style="background:#07282A;color:#fff;border-radius:12px;padding:13px 14px;position:relative"><b style="display:block;font-size:14px;font-weight:500"><span style="white-space:nowrap">Advised-trading</span></b><span style="font-size:12px;color:#C9E5E2">Personal recommendations, one tap to Trade-All™</span><span style="position:absolute;top:12px;right:12px;background:#2EE59D;color:#07282A;font-size:10px;font-weight:600;border-radius:999px;padding:2px 8px">1 new</span></div>
+          <div class="ox-tabs" style="margin-top:auto;justify-content:space-between;border-top:1px solid rgba(7,40,42,.1);padding-top:12px"><span class="ox-on">Invest</span><span>Portfolio</span><span>Markets</span></div>
+        </div></div></div>
     </div>
   </section>
-  <section class="ox-band ox-lt ox-first">
-    <div class="ox-w">
-      <span class="ox-eb">Why it matters</span>
-      <h2 class="ox-h2">Advised-trading in your app, <em>ready to use.</em></h2>
-      <div class="ox-g3" style="margin-top:40px">
-        <div class="ox-card ox-lt2"><span class="ox-n">Ready</span><h3 class="ox-h3">The screens are built</h3><p>The recommendation, the order bundle details, the recommendation history and the approval.</p></div>
-        <div class="ox-card ox-lt2"><span class="ox-n">Choice</span><h3 class="ox-h3">A second way to trade</h3><p>Next to independent trading. The client chooses which to use, every time.</p></div>
-        <div class="ox-card ox-lt2"><span class="ox-n">Yours</span><h3 class="ox-h3">No second app, no second login</h3><p>Your login, your brand, your execution.</p></div>
+  <section class="ox-band ox-lt" id="ox-sdk-what">
+    <div class="ox-w ox-row at-flip">
+      <div>
+        <span class="ox-eb">The expertise behind it</span>
+        <h2 class="ox-h2">Built for investors <em>who trade on their own.</em></h2>
+        <p class="ox-subt">Retail investors are used to trading independently. They still want professional advice, just not the old way, in a one-on-one meeting with an advisor.</p>
+        <p class="ox-subt">Finnovest has spent nearly a decade adapting real-time professional advice to the age of the retail investor. Every screen is built on it.</p>
+        <ul class="re-ln">
+          <li><i>1</i><b>Advice where they trade</b>In the app, next to their portfolio. No meeting, no call.</li>
+          <li><i>2</i><b>Clear enough to decide</b>The rationale and the effect on their portfolio, in plain words.</li>
+          <li><i>3</i><b>Easy to act on</b>One tap to Trade-All™ executes the entire bundle.</li>
+        </ul>
+        <p class="ox-subt at-close">So advice-driven trades are as easy as trading on their own.</p>
       </div>
+      <div class="ox-tile ox-lilac"><div class="re-ui">
+        <div class="ox-ui-h"><span class="ox-dot"></span>White-label SDK · inside your app</div>
+        <div class="ox-ui-t">Every Advised-trading screen</div>
+        <div class="ta-kv"><span>Joining and profiling</span><span>✓</span></div>
+        <div class="ta-kv"><span>Recommendations and history</span><span>✓</span></div>
+        <div class="ta-kv"><span>Rationale and portfolio effect</span><span>✓</span></div>
+        <div class="ta-kv"><span>Disclosure and status</span><span>✓</span></div>
+        <div class="ta-kv"><span>Notifications</span><span>✓</span></div>
+        <div class="ox-ta">Trade-All</div>
+      </div></div>
     </div>
   </section>
-  <section class="ox-band ox-lt2">
-    <div class="ox-w">
-      <span class="ox-eb">How it works</span>
-      <h2 class="ox-h2">Your app outside. <em>Our screens inside.</em></h2>
-      <div class="ox-g4" style="margin-top:40px">
-        <div class="ox-card ox-lt"><span class="ox-n">What you get</span><h3 class="ox-h3">Advised-trading screens under your brand</h3><p>With the core operating system behind them, through to the executed, documented order.</p></div>
-        <div class="ox-card ox-lt"><span class="ox-n">What you build</span><h3 class="ox-h3">Place the SDK in your app</h3><p>Place the SDK in your trading app, behind your login. The Advised-trading screens come ready-built.</p></div>
-        <div class="ox-card ox-lt"><span class="ox-n">Who owns the UI</span><h3 class="ox-h3">Shared</h3><p>Your app, our Advised-trading screens. Your responsibility for the UX is medium.</p></div>
-        <div class="ox-card ox-lt"><span class="ox-n">Customization</span><h3 class="ox-h3">Under your brand</h3><p>The ready-built screens appear under your brand, inside your app.</p></div>
-      </div>
-    </div>
-  </section>
-  <section class="ox-band ox-lt" id="ox-os-sdk-screens">
+  <section class="ox-band ox-lt2" id="ox-sdk-run">
     <div class="ox-w ox-row">
       <div>
-        <span class="ox-eb">What is inside</span>
-        <h2 class="ox-h2">Every screen. <em>Every notification.</em></h2>
-        <p class="ox-subt">The client never moves to an outside system. Recommendations go out proactively, only to clients found suitable, and the push opens the recommendation card directly in your app.</p>
-        <ul class="ox-pts">
-          <li><b>A new recommendation</b>And a reminder while it is still valid.</li>
-          <li><b>Status changes</b>In the recommendation or its orders, through to completion or a need to act.</li>
-          <li><b>Advisor alerts</b>On a cancellation, rejection or operational event.</li>
+        <span class="ox-eb">What it takes</span>
+        <h2 class="ox-h2">Four things to run it. <em>Built on what you already have.</em></h2>
+        <ul class="re-ln">
+          <li><i>1</i><b>The core connection</b>The core operating system linked to your client, portfolio and trading systems.</li>
+          <li><i>2</i><b>The SDK in your app</b>Added to your existing app, behind your single sign-on.</li>
+          <li><i>3</i><b>Your brand</b>Your logo, colors and fonts on every screen.</li>
+          <li><i>4</i><b>Your house view</b>The professional policy every recommendation follows.</li>
         </ul>
+        <p class="ox-subt at-close">Finnovest runs the operating system behind it.</p>
       </div>
-      <div>
-        <ul class="ox-pts">
-          <li><b>Joining</b>Onboarding, consent, questionnaire and profiling.</li>
-          <li><b>Recommendations</b>Active recommendations and their history.</li>
-          <li><b>Understanding</b>A short explanation, the professional rationale, and the securities and actions.</li>
-          <li><b>Portfolio effect</b>The effect on the portfolio, before and after.</li>
-          <li><b>Disclosure</b>Fair disclosure, commissions and documentation.</li>
-          <li><b>Status</b>The recommendation and the orders sent to market.</li>
-          <li><b>Approval</b>The whole recommendation, approved in one action.</li>
-        </ul>
-      </div>
+      <div class="ox-tile ox-mint"><div class="re-ui">
+        <div class="ox-ui-h"><span class="ox-dot"></span>White-label SDK · what it takes</div>
+        <div class="ox-ui-t">Ready to run</div>
+        <div class="ta-kv"><span>Core connection to your systems</span><span>✓</span></div>
+        <div class="ta-kv"><span>SDK inside your app</span><span>✓</span></div>
+        <div class="ta-kv"><span>Your brand on every screen</span><span>✓</span></div>
+        <div class="ta-kv"><span>Your house view</span><span>✓</span></div>
+        <div class="ox-ta">Advised-trading for every client</div>
+      </div></div>
     </div>
   </section>
-  <section class="ox-band ox-lt2" id="ox-os-sdk-compare">
+  <section class="ox-band ox-lt re-gain">
     <div class="ox-w">
-      <span class="ox-eb">What you need</span>
-      <h2 class="ox-h2">Best for brokerages whose clients <em>already trade in their app.</em></h2>
-      <div class="ox-buy">
-        <div class="ox-bx"><span>Always</span><b>Core operating system</b><span>Recommendation Engine, Trade-All™, Native Compliance</span></div>
-        <span class="ox-plus">+</span>
-        <div class="ox-bx ox-here"><span>Your delivery option</span><b>White-label SDK</b><span>This page</span></div>
-        <span class="ox-plus">+</span>
-        <div class="ox-bx"><span>Optional</span><b>Products</b><span>Finnovest IQ, ID, FUTURE</span></div>
-      </div>
-      <div class="ox-cmpbox">
-        <table class="ox-cmp">
-          <thead><tr><th></th><th><a data-go="os-api">API →</a></th><th>White-label SDK</th><th><a data-go="os-one">Finnovest ONE →</a></th></tr></thead>
-          <tbody>
-            <tr><th>Integration with your systems</th><td>Yes</td><td class="ox-on">Yes</td><td>Yes</td></tr>
-            <tr><th>Your existing interface</th><td>Yes</td><td class="ox-on">Yes</td><td>Not required</td></tr>
-            <tr><th>Ready Advised-trading experience</th><td>No, you design it</td><td class="ox-on">Yes, embedded in your app</td><td>Yes</td></tr>
-            <tr><th>Full trading app</th><td>Yours</td><td class="ox-on">Yours</td><td>Provided under your brand</td></tr>
-            <tr><th>Your responsibility for the UX</th><td>High</td><td class="ox-on">Medium</td><td>Relatively low</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-  <section class="ox-band ox-lt">
-    <div class="ox-w">
-      <figure class="at-oq"><blockquote>The system fits the advice to each person’s own horizon and risk… and brings lower-risk assets to investors who would never pick them on their own. That’s why it’s genius.</blockquote><figcaption><img src="data:image/jpeg;base64,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" alt="Dror Yariv"><span><b>Dror Yariv</b>CEO, Excellence Trade</span></figcaption></figure>
-      <a data-go="cases" class="ox-alink at-cs"><span class="ox-c"><svg width="10" height="10" viewBox="0 0 12 12" aria-hidden="true"><path d="M4.5 2.5L8 6l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8"></path></svg></span>Read the case studies</a>
-      <div class="ox-g2" style="margin-top:40px">
-        <div><p class="ox-sublbl">Runs on</p><div class="ox-chips"><a data-go="os-core">Core operating system →</a></div></div>
-        <div><p class="ox-sublbl">Products that work with it</p><div class="ox-chips"><a data-go="os-iq">Finnovest IQ →</a><a data-go="os-id">Finnovest ID →</a><a data-go="os-future">Finnovest FUTURE →</a></div></div>
+      <span class="ox-eb">What you gain</span>
+      <h2 class="ox-h2">A proven experience, ready to act. <em>Connected, not built.</em></h2>
+      <div class="re-no3">
+        <div><b>Nothing to design.</b><span>The Advised-trading experience comes ready.</span></div>
+        <div><b><span style="white-space:nowrap">Advised-trading,</span> built in.</b><span>Refined with banks and brokerages.</span></div>
+        <div><b>A second way to trade.</b><span>Next to independent trading. The client chooses which to use, every time.</span></div>
+        <div><b>Your brand throughout.</b><span>No second app, no second login.</span></div>
       </div>
     </div>
   </section>

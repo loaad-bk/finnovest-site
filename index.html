@@ -8408,7 +8408,7 @@ html.h2-sm #at-overview .ox-h2{font-size:38px!important;line-height:1.12!importa
       }
     }
   });
-  document.querySelectorAll('.nav .dd-t').forEach(function(b){
+  document.querySelectorAll('.nav .dd-t:not(.nav-q)').forEach(function(b){
     b.addEventListener('click',function(e){
       e.stopPropagation();
       var d=b.parentNode, o=!d.classList.contains('open');

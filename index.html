@@ -7828,7 +7828,7 @@ html body .ox .tx-a{text-align:right}
         <span class="ox-eb">How Trade-All™ works</span>
         <h2 class="ox-h2"><span style="white-space:nowrap">Trade-All™</span> <br>orchestrates the full order bundle automatically.</h2>
         <ul class="re-ln">
-          <li><i>01</i><b>Investors approve the whole buy and sell order bundle.</b>After the investor sees the portfolio effect, commissions and disclosure one approval tap commits the trade orchestration.</li>
+          <li><i>01</i><b>Investors approve the whole buy and sell order bundle.</b>After the investor sees the portfolio effect, commissions and disclosure, one approval tap commits the trade orchestration.</li>
           <li><i>02</i><b>Checked again in real time before sending.</b>Price, balances, holdings, validity, buying power and limits, and anything that changed since the recommendation was created.</li>
           <li><i>03</i><b>Sales first, purchases funded.</b>Dependent orders are sent in sequence, each purchase funded from the sale before it.</li>
           <li><i>04</i><b>Traded on what actually executes.</b>Each next order follows what was actually executed, including partial sales.</li>
@@ -7858,11 +7858,11 @@ html body .ox .tx-a{text-align:right}
         <p class="ox-subt">Whenever they tap, their bundle runs on the account and the market of that moment.</p>
         <p class="ox-subt at-close">Every edge case accounted for.</p>
       </div>
-      <div class="ox-tile ox-lime"><div class="re-ui">
+      <div class="ox-tile ox-lime"><div class="re-ui ta-edge">
         <div class="ox-ui-h"><span class="ox-dot"></span>Trade-All™ · every bundle</div>
         <div class="ox-ui-t">Edge cases, handled</div>
         <div class="re-ck"><span>Partial fills</span><span>Rejected orders</span><span>Updated and cancelled orders</span><span>Different currencies</span><span>Trading hours</span><span>Minimum quantities</span></div>
-        <div class="ox-ta">Executed · documented</div>
+        <div class="ox-ta">Traded · documented</div>
       </div></div>
     </div>
   </section>
@@ -7891,7 +7891,6 @@ html body .ox .tx-a{text-align:right}
         <h2 class="ox-h2">The investor sees every order. <em>Your advisors see every client.</em></h2>
         <p class="ox-subt">In your app, the investor follows each order from sent to filled to documented, with a notification at every change.</p>
         <p class="ox-subt">Your advisors see every recommendation and its orders, per client and in aggregate: status, average price and filled quantity, with alerts on rejections, cancellations and operational events, and what was executed against what was recommended.</p>
-        <p class="ox-subt at-close">Advice that is easy to act on is advice investors come back for.</p>
       </div>
       <div class="ox-tile ox-teal ta-ph"><div class="ox-phone"><div class="ox-scr">
         <div class="ox-ui-h"><span class="ox-dot"></span>Your trading app · Your orders</div>
@@ -10034,6 +10033,22 @@ html body #os-recommendation-engine .re-chip.is-win .re-win{opacity:1}
 @media (prefers-reduced-motion:reduce){html body #os-recommendation-engine .re-chip{opacity:1}}
 </style>
 <style id="hagar-1311-ta">
+/* At scale picture: the edge-case checks tick in one by one, then the pill (only when the script arms it) */
+html body #os-trade-all .ta-edge.ta-arm .re-ck span{opacity:.35;background:#fff}
+html body #os-trade-all .ta-edge.ta-arm .re-ck span:before{display:inline-block;opacity:0;transform:scale(.2)}
+html body #os-trade-all .ta-edge.ta-arm .ox-ta{opacity:0;transform:translateY(8px)}
+html body #os-trade-all .ta-edge.ta-go .re-ck span{animation:taEdgeOn .45s ease forwards}
+html body #os-trade-all .ta-edge.ta-go .re-ck span:before{animation:taEdgeTick .4s cubic-bezier(.3,1.6,.5,1) forwards}
+html body #os-trade-all .ta-edge.ta-go .re-ck span:nth-child(1),html body #os-trade-all .ta-edge.ta-go .re-ck span:nth-child(1):before{animation-delay:.2s}
+html body #os-trade-all .ta-edge.ta-go .re-ck span:nth-child(2),html body #os-trade-all .ta-edge.ta-go .re-ck span:nth-child(2):before{animation-delay:.5s}
+html body #os-trade-all .ta-edge.ta-go .re-ck span:nth-child(3),html body #os-trade-all .ta-edge.ta-go .re-ck span:nth-child(3):before{animation-delay:.8s}
+html body #os-trade-all .ta-edge.ta-go .re-ck span:nth-child(4),html body #os-trade-all .ta-edge.ta-go .re-ck span:nth-child(4):before{animation-delay:1.1s}
+html body #os-trade-all .ta-edge.ta-go .re-ck span:nth-child(5),html body #os-trade-all .ta-edge.ta-go .re-ck span:nth-child(5):before{animation-delay:1.4s}
+html body #os-trade-all .ta-edge.ta-go .re-ck span:nth-child(6),html body #os-trade-all .ta-edge.ta-go .re-ck span:nth-child(6):before{animation-delay:1.7s}
+html body #os-trade-all .ta-edge.ta-go .ox-ta{animation:taEdgePill .6s ease 2.3s forwards}
+@keyframes taEdgeOn{to{opacity:1;background:#F4F8F5}}
+@keyframes taEdgeTick{to{opacity:1;transform:none}}
+@keyframes taEdgePill{to{opacity:1;transform:none}}
 html body #os-trade-all .ta-seq .re-s{background:#EDEFEA;color:#3F4E4C}
 html body #os-trade-all .ta-seq .re-b{background:#D2F4E3;color:#0B5F42}
 /* How it works picture: two steps, sells then buys, proceeds between */
@@ -10541,6 +10556,25 @@ html body #os-recommendation-engine .re-one b{display:block;font-family:'Figtree
   window.addEventListener('hashchange', function () { setTimeout(run, 80); });
   document.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('[data-go="os-trade-all"]')) setTimeout(run, 80); });
   setTimeout(run, 300);
+})();
+</script>
+<script id="ta-edge-2026-11-16">
+/* Trade-All, At scale picture: the edge-case checks tick in once each time the page opens, when the card comes into view. Without the script, or with reduced motion, the card shows its finished state. */
+(function () {
+  var card = document.querySelector('#os-trade-all .ta-edge'); if (!card || !window.IntersectionObserver) return;
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  card.classList.add('ta-arm');
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting && e.intersectionRatio > .5) card.classList.add('ta-go'); });
+  }, { threshold: [0, .5, .8] });
+  io.observe(card);
+  var reset = function () {
+    var pg = document.getElementById('os-trade-all');
+    if (pg && pg.classList.contains('live')) return;
+    card.classList.remove('ta-go');
+  };
+  window.addEventListener('hashchange', function () { setTimeout(reset, 80); });
+  document.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('[data-go]')) setTimeout(reset, 80); });
 })();
 </script>
 </body></html>

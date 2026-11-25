@@ -11200,24 +11200,13 @@ html body #os-trade-all .ta-iia-mod i{flex:none;width:22px;height:22px;border-ra
 #os-compliance .re-trg>div small{color:#4A5856;font-size:12.5px}
 #os-compliance .re-trg .re-hv{background:#07282A;color:#fff;margin-top:6px;flex-direction:column;align-items:flex-start;gap:4px;padding:16px 18px}
 #os-compliance .re-trg .re-hv small{color:#2EE59D}
-#os-compliance .re-dk{background:#07282A;color:#fff;text-align:center}
-#os-compliance .re-dk .ox-h2{margin:12px auto 0;max-width:20ch}
-#os-compliance .re-dk .ox-eb{color:rgba(255,255,255,.72)}
-#os-compliance .re-dk .ox-subt{color:rgba(255,255,255,.8);margin:20px auto 0}
-#os-compliance .re-dk .ox-subt b{color:#2EE59D;font-weight:500}
 #os-compliance .ox-ch .at-rc:before{display:none}
-#os-compliance .re-no3{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin:48px auto 0;max-width:1120px;text-align:left}
 #os-compliance .re-rel .ox-scr{min-height:440px}
 #os-compliance .re-rc{background:#F4F8F5;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px}
 #os-compliance .re-rc small{font-size:12px;color:#4A5856}
 #os-compliance .re-rc b{font-family:'Instrument Sans',sans-serif;font-weight:500;font-size:18px;line-height:1.2}
 #os-compliance .re-rc span{font-size:13px;color:#3F4E4C}
 #os-compliance .re-rat{border:1px solid rgba(7,40,42,.25);border-radius:999px;text-align:center;padding:11px;font-weight:500;font-size:14px}
-@media (max-width:1100px){#os-compliance .re-no3{grid-template-columns:repeat(2,minmax(0,1fr))}}
-#os-compliance .re-no3>div{border-top:1px solid rgba(255,255,255,.25);padding-top:20px;display:flex;flex-direction:column;gap:8px}
-#os-compliance .re-no3 b{font-family:'Instrument Sans',sans-serif;font-weight:500;font-size:24px;line-height:1.12;letter-spacing:-.012em;color:#2EE59D}
-#os-compliance .re-no3 span{font-size:15.5px;line-height:1.5;color:rgba(255,255,255,.8)}
-@media (max-width:900px){#os-compliance .re-no3{grid-template-columns:minmax(0,1fr);gap:20px}}
 #os-compliance .re-iia .ox-note{max-width:820px;margin:12px auto 0}
 #os-compliance .ox-quotes{padding:96px 0}
 #os-compliance .ox-quotes .ox-h2{text-align:center;margin:0 auto 32px;max-width:none}
@@ -11364,18 +11353,6 @@ html body #os-trade-all .ta-iia-mod i{flex:none;width:22px;height:22px;border-ra
       </div></div>
     </div>
   </section>
-  <section class="ox-band re-dk" style="--tw-in: 96.0px; transform: none;">
-    <div class="ox-w r-ctr">
-      <span class="ox-eb">Native Compliance</span>
-      <h2 class="ox-h2">Give the advice clients want. <em>Keep full control.</em></h2>
-      <div class="re-no3">
-        <div><b>No general tips.</b><span>Only personal advice from the view of licensed professionals.</span></div>
-        <div><b>No ineligible investor.</b><span>A recommendation never reaches an investor without a valid profile.</span></div>
-        <div><b>No unsuitable recommendation.</b><span>If it does not fit, it is filtered out, not softened.</span></div>
-        <div><b>No missing record.</b><span>Every check and decision, on record.</span></div>
-      </div>
-    </div>
-  </section>
   <section class="ox-band ox-lt ox-quotes" id="ox-nc-quotes">
     <div class="ox-w r-ctr">
       <h2 class="ox-h2">In our clients’ <em>own words</em></h2>
@@ -11385,15 +11362,15 @@ html body #os-trade-all .ta-iia-mod i{flex:none;width:22px;height:22px;border-ra
       </div>
     </div>
   </section>
-  <section class="ox-band ox-lt at-cont re-bridge-band">
-    <div class="ox-w"><div class="re-bridge"><div><span class="ox-eb">Next: Investor experience</span><p class="re-bridge-t">Deliver Advised-trading through the investor experience that fits your institution.</p></div><a data-go="os-core" data-anchor="ox-os-core-interface" class="ox-pill ox-d">Continue: Investor experience →</a></div></div>
-  </section>
   <section class="ox-cta r-cta">
     <div class="ox-ripple"></div>
     <div class="ox-w">
       <h2 class="ox-h2">Ready to lead <em>Advised-trading?</em></h2>
       <div class="ox-btns"><a data-go="contact" class="ox-pill ox-m">Request a demo</a></div>
     </div>
+  </section>
+  <section class="ox-band ox-lt at-cont re-bridge-band">
+    <div class="ox-w"><div class="re-bridge"><div><span class="ox-eb">Next: Investor experience</span><p class="re-bridge-t">Deliver Advised-trading through the investor experience that fits your institution.</p></div><a data-go="os-core" data-anchor="ox-os-core-interface" class="ox-pill ox-d">Continue: Investor experience →</a></div></div>
   </section>
 </div></section>
 <section class="page" id="contact">
@@ -13402,12 +13379,6 @@ html body #os-compliance .ox-row .ox-tile :is(.re-ui,.re-trg>div:not(.re-hv),.ox
 html body #os-compliance .ox-row .ox-tile .re-hv{border-radius:6px!important;box-shadow:var(--r-shadow)!important}
 html body #os-compliance .ox-row .ox-tile .ox-phone{box-shadow:var(--r-shadow)!important}
 html body #os-compliance .ox-band.ox-lt2{border-top:1px solid var(--r-line)}
-/* M4 the key idea: one dark band, inset with 16px corners that open out on scroll */
-html body #os-compliance .re-dk{background:#07282A!important;border-top:0!important;color:#fff;margin:24px 0!important;clip-path:inset(0 var(--tw-in,32px) round 16px);-webkit-clip-path:inset(0 var(--tw-in,32px) round 16px)}
-html body #os-compliance .re-dk .ox-eb{color:rgba(255,255,255,.62)!important}
-html body #os-compliance .re-dk .ox-h2{color:#fff!important}
-html body #os-compliance .re-dk .re-no3{gap:24px!important}
-html body #os-compliance .re-dk .re-no3>div{border:1px solid rgba(255,255,255,.14)!important;border-radius:6px!important;background:#0B3335!important;padding:28px 26px 26px!important}
 /* M5 quotes: Hagar's quote card */
 html body #os-compliance .r-quote{background:#C9F2DF!important;border:0!important;border-radius:8px!important;box-shadow:none!important;padding:30px 32px 26px!important;text-align:left}
 html body #os-compliance .r-quote blockquote{font-family:'Playfair Display',Georgia,serif!important;font-style:normal!important;font-weight:400!important;font-size:24px!important;line-height:1.25!important;letter-spacing:-0.01em!important;color:#061A1A!important}
